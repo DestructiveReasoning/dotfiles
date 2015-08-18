@@ -1,0 +1,81 @@
+URxvt*geometry: 110x30
+URxvt*depth: 32
+URxvt*background: [84]#000000
+URxvt*foreground: #bed6ff
+URxvt*color12: #ffff00
+URxvt*color4: #bbbbff
+URxvt*scrollBar: false
+URxvt*font: xft:Inconsolata:size=14
+!URxvt*font: xft:nexus-font:size=18
+URxvt*letterSpace: -1
+
+xterm*geometry: 100x24
+xterm*background: #060607
+!xterm*foreground: #bbbbee
+xterm*foreground: #99aaee
+xterm*color12: #444477
+xterm*color4: #9999ff
+xterm*scrollbar: false
+xterm*faceName: Tamsyn:size=16:antialias=true
+!xterm*faceName: terminus:size=13:antialias=true
+xterm*font: 80x30
+xterm*termName: xterm-256color
+xterm*utf8: 1
+
+!COLORS
+!
+!Black
+!URxvt*color0: 	#000000
+!URxvt*color8: 	#000000
+!
+!White
+!URxvt*color7: 	#FFFFFF
+!URxvt*color15:	#FFFFFF
+!
+!Red
+URxvt*color1:	#FF0000
+URxvt*color9:	#FF3333
+!
+!Green
+URxvt*color2:	#559955
+URxvt*color10:	#226622
+!
+!Yellow
+URxvt*color3:	#FFFF33
+URxvt*color11:	#AAAA00
+!
+!Magenta
+URxvt*color5:	#444477
+URxvt*color13:	#666699
+!
+!CYAN
+!URxvt*color6: #4E9E9E
+!URxvt*color14:	#85D5D4
+!
+!!Black
+xterm*color0: 	#000000
+xterm*color8: 	#222222
+!
+!White
+!xterm*color7: 	#FFFFFF
+!xterm*color15:	#FFFFFF
+!
+!Red
+xterm*color1:	#FF0000
+xterm*color9:	#FF3333
+!
+!Green
+xterm*color2:	#559955
+xterm*color10:	#226622
+!
+!Yellow
+xterm*color3:	#FFFF33
+xterm*color11:	#AAAA00
+!
+!Magenta
+xterm*color5:	#444477
+xterm*color13:	#666699
+!
+!CYAN
+!xterm*color6: #4E9E9E
+!xterm*color14:	#85D5D4
