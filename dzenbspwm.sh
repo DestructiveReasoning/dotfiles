@@ -108,69 +108,6 @@ volume() {
 	color_side=#aaaaaa
 	location=500*16
 	size=10
-	muted=0
-	speakericon=$SPEAKER #Choose between $SPEAKER1 and $SPEAKER2
-	vol=$(amixer get Master | grep 'Mono:' | grep -P -o "[0-9]+%" | sed 's/.$//') #Get Master volume percentage, remove the trailing bracket
-
-
-	if [[ $vol = "" ]]; then
-		vol=$(amixer get Master | grep 'Front Left:' | grep -P -o "[0-9]+%" | sed 's/.$//') #Different volume configurations
-	fi
-	
-	if [[ $vol = 0 ]]; then
-		color_side=#ff2222
-		muted=1
-	fi
-
-	vol=$(expr $vol / $size)
-	vol=$(echo $vol | sed -r 's/\.[0-9]+//') #Floor the volume ratio
-	off=$(expr $size - $vol)
-	
-	line="^p(_RIGHT)^p(-$location)"
-	
-	if [[ $(amixer get Speaker | grep 'Unable') ]]; then #If the Speaker is found...
-		speakervol=$(amixer get Speaker | grep "off")
-		if [[ $(amixer get Speaker | grep "off") ]]; then #Speaker is muted...
-			line="${line}^fg(#ff9999)^i($MUTED) ^fg()"
-		else                            #Speaker is not muted...
-			line="${line}^i($speakericon) "	
-		fi
-	else 
-		if [[ $muted = "1" ]]; then
-			line="${line}^fg(#ff9999)^i($MUTED) ^fg()"
-		else
-			line="${line}^i($speakericon) "	
-		fi
-	fi
-
-
-	line="${line}^fg($color_side)Master: [^fg($color_vol)"
-
-	for i in `seq 1 $vol`;
-	do
-		line="${line}|"
-	done
-
-	line="${line}^fg($color_off)"
-
-	vol=$(expr $vol + 1)
-
-	for i in `seq $vol  $size`; 
-	do
-		line="${line}|"
-	done
-
-	line="${line}^fg($color_side)]"
-
-	echo -ne "${line}"
-}
-
-volume2() {
-	color_vol=#444477
-	color_off=#333333
-	color_side=#aaaaaa
-	location=500*16
-	size=10
 	speakericon=$SPEAKER
 	line="^p(_RIGHT)^p(-$location)"
 
@@ -259,7 +196,7 @@ battery() {
 while true; do
 	clock
 	workspaces
-	volume2
+	volume
 	wifi
 	music
 	battery
