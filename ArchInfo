@@ -1,0 +1,12 @@
+Here is a list of software, so you don't forget what stuff is called
+
+CLI Clock:	tty-clock
+CLI Timer:	utimer
+CLI Music:	mp3blaster or ncmpcpp
+
+AUR4, missing .SRCINFO:
+git filter-branch -f --tree-filter "test -f .SRCINFO || mksrcinfo"
+
+Insults for typo program: ~/.typo
+
+rofi -bg #111111 -bgalt #000000 -bg-active #aaaaaa -fg #aaaa00 -fg_active #0000ff -font Tamsyn 16 -bc white -bw 2 -key-run F6 -key-window F7
