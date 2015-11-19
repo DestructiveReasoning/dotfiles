@@ -28,11 +28,17 @@ let g:NERDTreeDirArrow = 1
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '_'
 
+"Vim-LaTeX
+"au BufWritePost *.tex silent call Tex_RunLaTeX()
+"au BufWritePost *.tex silent !pkill -USR1 xdvi.bin
+au BufWritePost *.tex silent !pdflatex %
+
 "STATUSLINE
 let g:mode = 0
 colorscheme wiltz
 set laststatus=2
 set statusline=
+set hlsearch
 
 function! DrawStatus(mode)
 	if &readonly
@@ -88,9 +94,16 @@ set cursorline
 set nolist
 filetype plugin indent on
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++ -stdlib=sdl2'
+let type = &ft
+echon type
+
 
 set incsearch
 set showmode
+
+autocmd BufNewFile,BufRead *.hs set expandtab
+autocmd BufNewFile,BufRead *.hs set shiftwidth=4
+autocmd BufNewFile,BufRead *.hs set tabstop=4
 
 command! -nargs=* Stab call Stab()
 function! Stab()
@@ -124,6 +137,7 @@ nmap <C-O> o<Esc>
 "Delete Line
 nmap <C-D> S<Esc>0i<BS><Esc>
 "Move line up/down
+unmap <C-S-J>
 nmap <C-S-J> ddp
 nmap <C-S-K> ddkkp
 vmap <C-S-J> :m '>+1<CR>gv=gv
@@ -135,6 +149,9 @@ nmap <C-S-B> j]}v[{k
 "nmap <F3> 0/\/\/<CR><DEL><DEL> 
 
 map <F2> :call Comment()<CR>
+imap <F2> <ESC>:call Comment()<CR>i
+map <C-U> :call Comment()<CR>j
+imap <C-U> :call Comment()<CR>
 
 "vmap <C-C> "+yi
 vnoremap <C-C> :w !xsel -b<CR><CR>
@@ -152,10 +169,36 @@ endfunc
 function! Comment()
 	let line = getline('.')
 	let linenumber = line('.')
-	let pos = match(line,"//")
+	let type = &ft
+	let comment = "//"
+	let len = 2
+	if type == "vim"
+		let comment = "\""
+		let len = 1
+	elseif type == "haskell"
+		let comment = "--"
+		let len = 2
+	elseif type == "xdefaults"
+		let comment = "!"
+		let len = 1
+	elseif type == "zsh"
+		let comment = "#"
+		let len = 1
+	elseif type == "sh"
+		let comment = "#"
+		let len = 1
+	elseif type == "conf"
+		let comment = "#"
+		let len = 1
+	elseif type == "python"
+		let comment = "#"
+		let len = 1
+	endif
+	
+	let pos = match(line,comment)
 	let n = 0
 
-	while n < pos
+	while n < 100
 		if line[n] != ' ' && line[n] != '\t'
 			break
 		endif
@@ -164,13 +207,27 @@ function! Comment()
 	endwhile
 
 	if n == pos && pos != -1
-		let line = strpart(line,0,pos).strpart(line,pos+2)
+		let line = strpart(line,0,pos).strpart(line,pos+len)
 	else
-		let line = "//".line
+		let line = comment.line
+"		let line = strpart(line,0,n).(comment.strpart(line,n))
 	endif
 
 	let err = setline(linenumber,line)
 endfunction
+" This doesn't work.
+function! Init()
+	let num = line('.')
+	let line = getline('.')
+"	let err = setline(num,line)
+	let type = &ft
+	let line = line.type
+	if type == "haskell"
+"		let line = getline('.')
+"		let line = line."THIS IS HASKELL"
+		set expandtab
+	endif
+endfunction
 
+":call Init()
 "PLUGINS
-
