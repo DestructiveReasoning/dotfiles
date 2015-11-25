@@ -16,7 +16,7 @@ runtime! archlinux.vim
 
 "scriptencoding utf-8
 "set encoding=utf-8
-"set list listchars=tab:\>\ ,eol:-
+set list listchars=tab:\‣\ ,eol:¬
 
 "PATHOGEN
 filetype off
@@ -86,12 +86,13 @@ set clipboard=unnamedplus
 set t_co=256
 syntax on
 set number
+set relativenumber
 set autoindent
 set smartindent
 set ruler	" Line number and cursor pos
 set cindent
 set cursorline
-set nolist
+set list
 filetype plugin indent on
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++ -stdlib=sdl2'
 let type = &ft
@@ -127,6 +128,7 @@ endfunc
 
 "Simple Shortcuts
 nmap <C-S-N> :NERDTreeToggle<CR>
+nmap <C-S-R> :set relativenumber!<CR>
 
 "Format block
 nmap <F1> =i}
