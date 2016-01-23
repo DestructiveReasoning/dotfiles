@@ -35,7 +35,8 @@ au BufWritePost *.tex silent !pdflatex %
 
 "STATUSLINE
 let g:mode = 0
-colorscheme wiltz
+let g:BASH_Ctrl_j = 'off'
+colorscheme moon
 set laststatus=2
 set statusline=
 set hlsearch
@@ -128,7 +129,7 @@ endfunc
 
 "Simple Shortcuts
 nmap <C-S-N> :NERDTreeToggle<CR>
-nmap <C-S-R> :set relativenumber!<CR>
+nmap <F3> :set relativenumber!<CR>
 
 "Format block
 nmap <F1> =i}
@@ -140,10 +141,16 @@ nmap <C-O> o<Esc>
 nmap <C-D> S<Esc>0i<BS><Esc>
 "Move line up/down
 unmap <C-S-J>
-nmap <C-S-J> ddp
-nmap <C-S-K> ddkkp
-vmap <C-S-J> :m '>+1<CR>gv=gv
-vmap <C-S-K> :m '<-2<CR>gv=gv
+noremap <C-S-J> ddp
+noremap <Down> ddp
+nmap <F4> ddp
+nnoremap <C-S-K> ddkkp
+nnoremap <Up> ddkkp
+vnoremap <C-S-J> :m '>+1<CR>gv=gv
+vnoremap <Down> :m '>+1<CR>gv=gv
+vmap <F4> :m '>+1<CR>gv=gv
+vnoremap <C-S-K> :m '<-2<CR>gv=gv
+vnoremap <Up> :m '<-2<CR>gv=gv
 "Selecting a block
 nmap <C-S-B> j]}v[{k
 
@@ -153,7 +160,7 @@ nmap <C-S-B> j]}v[{k
 map <F2> :call Comment()<CR>
 imap <F2> <ESC>:call Comment()<CR>i
 map <C-U> :call Comment()<CR>j
-imap <C-U> :call Comment()<CR>
+imap <C-U> <ESC>:call Comment()<CR>i
 
 "vmap <C-C> "+yi
 vnoremap <C-C> :w !xsel -b<CR><CR>
