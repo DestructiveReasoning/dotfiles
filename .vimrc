@@ -17,9 +17,10 @@ runtime! archlinux.vim
 "scriptencoding utf-8
 "set encoding=utf-8
 set list listchars=tab:\‣\ ,eol:¬
+let g:tex_flavor='tex'
 
 "PATHOGEN
-filetype off
+"filetype off
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -29,9 +30,9 @@ let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '_'
 
 "Vim-LaTeX
-"au BufWritePost *.tex silent call Tex_RunLaTeX()
-"au BufWritePost *.tex silent !pkill -USR1 xdvi.bin
-au BufWritePost *.tex silent !pdflatex %
+au BufWritePost *.tex silent call Tex_RunLaTeX()
+au BufWritePost *.tex silent !pkill -USR1 xdvi.bin
+au BufWritePost *.tex !pdflatex % 
 
 "STATUSLINE
 let g:mode = 0
@@ -40,6 +41,7 @@ colorscheme moon
 set laststatus=2
 set statusline=
 set hlsearch
+set fdm=manual
 
 function! DrawStatus(mode)
 	if &readonly
@@ -86,6 +88,7 @@ set nocompatible
 set clipboard=unnamedplus 
 set t_co=256
 syntax on
+"set ft
 set number
 set relativenumber
 set autoindent
@@ -94,6 +97,8 @@ set ruler	" Line number and cursor pos
 set cindent
 set cursorline
 set list
+set tabstop=4
+set shiftwidth=4
 filetype plugin indent on
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++ -stdlib=sdl2'
 let type = &ft
@@ -106,6 +111,11 @@ set showmode
 autocmd BufNewFile,BufRead *.hs set expandtab
 autocmd BufNewFile,BufRead *.hs set shiftwidth=4
 autocmd BufNewFile,BufRead *.hs set tabstop=4
+autocmd BufNewFile,BufRead *.tex Wrap()
+autocmd BufNewFile,BufRead *.tex set tw=100
+
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 
 command! -nargs=* Stab call Stab()
 function! Stab()
@@ -130,25 +140,25 @@ endfunc
 "Simple Shortcuts
 nmap <C-S-N> :NERDTreeToggle<CR>
 nmap <F3> :set relativenumber!<CR>
+nmap <F4> :wa<CR>:!make<CR>
 
 "Format block
 nmap <F1> =i}
 "Fold block
 nmap <NUL> ^v]}zf
 "Insert row
-nmap <C-O> o<Esc>
+"nmap <C-O> o<Esc>
 "Delete Line
 nmap <C-D> S<Esc>0i<BS><Esc>
 "Move line up/down
-unmap <C-S-J>
 noremap <C-S-J> ddp
 noremap <Down> ddp
-nmap <F4> ddp
+"nmap <F4> ddp
 nnoremap <C-S-K> ddkkp
 nnoremap <Up> ddkkp
 vnoremap <C-S-J> :m '>+1<CR>gv=gv
 vnoremap <Down> :m '>+1<CR>gv=gv
-vmap <F4> :m '>+1<CR>gv=gv
+"vmap <F4> :m '>+1<CR>gv=gv
 vnoremap <C-S-K> :m '<-2<CR>gv=gv
 vnoremap <Up> :m '<-2<CR>gv=gv
 "Selecting a block
@@ -201,6 +211,9 @@ function! Comment()
 		let len = 1
 	elseif type == "python"
 		let comment = "#"
+		let len = 1
+	elseif type == "tex"
+		let comment = "%"
 		let len = 1
 	endif
 	
