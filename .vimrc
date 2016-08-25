@@ -37,7 +37,7 @@ au BufWritePost *.tex !pdflatex %
 "STATUSLINE
 let g:mode = 0
 let g:BASH_Ctrl_j = 'off'
-colorscheme moon
+colorscheme wiltz
 set laststatus=2
 set statusline=
 set hlsearch
