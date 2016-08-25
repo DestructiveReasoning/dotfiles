@@ -31,6 +31,12 @@ super + {o,i}
 	bspc window {older,newer} -f; \
 	bspc control --record-history on
 
+alt + {minus,equal}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2))
+
+alt + 0
+	bspc config -d focused window_gap 16
+
 super + y
 	bspc window -w last.manual
 
@@ -67,6 +73,12 @@ super + ctrl + {1-9}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} ^{1-9,10}
 
+super + q
+	bspc desktop --rotate 90
+
+super + e
+	bspc desktop --rotate 270
+
 ~button1
 	bspc pointer -g focus
 
@@ -87,16 +99,32 @@ super + @button{1-3}
 #
 
 super + Return
-	urxvt
+	termite
+
+super + shift + Return
+	termite -c ~/termitetestconfig
 
 super + alt + Return
-	xterm
+	urxvt
 
 super + ctrl + c
-	chromium
+	chromium # && pkill chromium
+
+super + ctrl + alt + c
+	chromium --incognito # && pkill chromium
 
 super + ctrl + p
 	firefox --private-window http://www.google.ca
+
+super + p
+	firefox
+
+super + v
+	vivaldi-stable
+
+super + alt + b
+	abs/surf/src/surf-0.6/surf-open.sh www.google.ca
+#	tabbed -d >/tmp/tabbed.xid && surf -e $(</tmp/tabbed.xid) https://www.archlinux.org
 #midori -p
 
 super + f
@@ -104,6 +132,12 @@ super + f
 
 super + space
 	dmenu_run -nb "#00000A" -nf "#333344" -sb "#00000A" -sf yellow -fn "Tamsyn -16" -i
+
+super + alt + space
+	/home/harwiltz/rofiscript.sh
+
+ctrl + alt + space
+	/home/harwiltz/rofifull.sh
 
 alt + l
 	libreoffice
@@ -117,6 +151,51 @@ super + ctrl + f
 alt + p
 	scrot temp.png
 
+super + ctrl + d
+	xbacklight -dec 20
+
+super + ctrl + b
+	xbacklight -inc 20
+
+super + alt + p
+	mpc toggle
+
+super + alt + s 
+	mpc stop
+
+super + alt + comma
+	mpc prev
+
+super + alt + period
+	mpc next
+
+super + alt + m
+	amixer -q sset Master toggle
+
+ctrl + alt + minus
+	amixer -q sset Master 10%-
+
+ctrl + alt + equal
+	amixer -q sset Master 10%+
+
+ctrl + alt + underscore
+	xbacklight -dec 20
+
+ctrl + alt + plus
+	xbacklight -inc 20
+
+ctrl + alt + l
+	/home/harwiltz/lockscreen.sh
+
+ctrl + alt + p
+	/home/harwiltz/project.sh
+
+ctrl + alt + u
+	/home/harwiltz/unproject.sh
+
+# reload dzen2
+super + alt + d
+	pkill dzen2 && /home/harwiltz/dzenbspwm.sh
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
