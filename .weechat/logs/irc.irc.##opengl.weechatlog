@@ -1,0 +1,462 @@
+2016-05-09 11:53:59	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##OpenGL
+2016-05-09 11:53:59	(●)	Topic for ##OpenGL is "Vulkan discussion in ##vulkan Specs: http://www.opengl.org/registry/ SDK: http://www.opengl.org/sdk/ Tutorials: https://open.gl/ Examples: https://github.com/progschj/OpenGL-Examples https://github.com/g-truc/ogl-samples  Rules: https://gist.github.com/665044 Logs: http://echelog.com/?opengl | Video tutorials: http://www.youtube.com/watch?v=JNahswHfXfw&list=PLgRQpWV"
+2016-05-09 11:53:59	(●)	Topic set by ville on Sat, 21 Mar 2015 18:55:17
+2016-05-09 11:53:59	(●)	Channel ##OpenGL: 342 nicks (0 ops, 0 voices, 342 normals)
+2016-05-09 11:53:59	(●)	PvNotice(ChanServ): As per http://freenode.net/policy.shtml#aboutchannels we are now ##OpenGL. If you were using irssi and tried to join #OpenGL, you might need to part and join again, irssi is a bit flaky with redirects.
+2016-05-09 11:54:01	(●)	Channel created on Sun, 26 Nov 2006 06:42:49
+2016-05-09 11:54:30	<--	IwfY (~marcel@x5ce0c52d.dyn.telefonica.de) has quit (Quit: Leaving)
+2016-05-09 11:55:32	harwiltz	Hey guys. I'm having trouble learning OpenGL. I've read a bunch of books and watched a lot of youtube tutorials, but every time I try I feel like I just end up copying down a bunch of code that I'll never be able to reproduce, and then I get really bored and quit. Any suggestions on how to learn and really understand all the code, so it doesn't feel like I'm just copying everything down?
+2016-05-09 11:57:31	<--	CrizMobius (~CrizMobiu@176.56.245.118) has quit (Read error: Connection reset by peer)
+2016-05-09 11:57:40	afl_ext1	harwiltz set up goals first
+2016-05-09 11:57:48	afl_ext1	and be sure to learn moden opengl
+2016-05-09 11:57:50	afl_ext1	modern*
+2016-05-09 11:58:18	harwiltz	afl_ext1: I guess that makes sense, so I guess I can just do some really small stuff. What exactly do you mean by modern opengl?
+2016-05-09 11:58:44	afl_ext1	the one with shaders and buffers, not with glbegin and things like that
+2016-05-09 11:58:57	afl_ext1	more specifically > 3.3 core
+2016-05-09 11:59:26	harwiltz	afl_ext1: Ok that's fine, every book I've read uses shaders and buffers
+2016-05-09 11:59:32	afl_ext1	great
+2016-05-09 11:59:41	afl_ext1	then set up a goal and split it into smaller problems
+2016-05-09 11:59:48	harwiltz	afl_ext1: Is there anywhere I can find some beginner ideas for small projects to build?
+2016-05-09 12:00:01	afl_ext1	like, at first i decided that I will try to make very simple flight simulator
+2016-05-09 12:00:23	afl_ext1	you know 1 mesh terrain and 1 mesh plane and it flies
+2016-05-09 12:00:27	afl_ext1	after that things gone smooth
+2016-05-09 12:00:52	harwiltz	afl_ext1: That's actually a really cool idea
+2016-05-09 12:00:52	afl_ext1	it looked like this https://www.youtube.com/watch?v=lgsBaHe4bKw
+2016-05-09 12:01:00	-->	SHC_ (~quassel@117.204.32.95) has joined ##OpenGL
+2016-05-09 12:01:25	<--	NBN (~quassel@197.3.5.45) has quit (Remote host closed the connection)
+2016-05-09 12:01:45	harwiltz	That's beautiful!
+2016-05-09 12:02:00	afl_ext1	No but it served as great lerning project :D
+2016-05-09 12:02:16	harwiltz	But that looks way more complicated than anything I've ever done in opengl
+2016-05-09 12:02:41	<--	mat^2 (~Mathias@130.226.161.124) has quit (Ping timeout: 260 seconds)
+2016-05-09 12:02:52	afl_ext1	its just 2 meshes
+2016-05-09 12:03:34	harwiltz	Yeah, but there's shadows and stuff, and it looks like you must have made a .obj parser or something
+2016-05-09 12:03:41	afl_ext1	no shadows at all
+2016-05-09 12:03:52	harwiltz	afl_ext1: Sorry, I meant lighting
+2016-05-09 12:03:53	afl_ext1	obj is super simple
+2016-05-09 12:03:56	afl_ext1	no lighting
+2016-05-09 12:04:01	harwiltz	?
+2016-05-09 12:04:04	<--	SHC (~quassel@59.93.127.98) has quit (Ping timeout: 250 seconds)
+2016-05-09 12:04:11	afl_ext1	just a function depending on height on terrain and 1 dot on model
+2016-05-09 12:04:49	harwiltz	afl_ext1: But still, you had the effect of changing the color of the plane and terrain in a cool way
+2016-05-09 12:05:11	afl_ext1	its just dot(normal, vec3(1,1,1)) * blue color as I remember
+2016-05-09 12:05:20	afl_ext1	max(0, dot(...))
+2016-05-09 12:05:49	harwiltz	Still pretty cool
+2016-05-09 12:06:35	harwiltz	Well you sir have inspired me. Do you think trying something like that in OpenGL ES on an Android phone would complicate things at all?
+2016-05-09 12:06:42	afl_ext1	no
+2016-05-09 12:06:54	harwiltz	Ok cool. And did you have collision detection?
+2016-05-09 12:07:03	afl_ext1	done with bullet physics
+2016-05-09 12:07:20	afl_ext1	but its not neccesary for a start of course
+2016-05-09 12:08:04	harwiltz	afl_ext1: Ok cool. Out of curiosity, how 'realistic' were the airplane dynamics? 
+2016-05-09 12:08:19	afl_ext1	nothing at all XD
+2016-05-09 12:08:31	harwiltz	Hahaha ok. Still looked cool though
+2016-05-09 12:08:42	afl_ext1	I think the video was made when repo was on this commit: https://github.com/achlubek/vengine/tree/26f02463b36612c0ff902dc7167f2cc2c54ada74
+2016-05-09 12:08:55	harwiltz	Oh cool, thanks!
+2016-05-09 12:09:06	afl_ext1	https://github.com/achlubek/vengine/blob/26f02463b36612c0ff902dc7167f2cc2c54ada74/Tester/Airplane.cs
+2016-05-09 12:09:11	afl_ext1	physics was that off :D
+2016-05-09 12:09:25	afl_ext1	also its dramatically stupid and not optimized
+2016-05-09 12:09:53	harwiltz	Hahahaha
+2016-05-09 12:10:00	<--	d4rkforce (~darkforce@pdpc/supporter/student/d4rkforce) has quit (Ping timeout: 276 seconds)
+2016-05-09 12:10:03	harwiltz	Do you have a video of what it looks like now?
+2016-05-09 12:10:09	<--	abs25 (~abs25@141-136-186-200.dsl.iskon.hr) has quit (Ping timeout: 246 seconds)
+2016-05-09 12:10:11	afl_ext1	yeah
+2016-05-09 12:10:24	afl_ext1	https://www.youtube.com/watch?v=DfFrGvWcBd8
+2016-05-09 12:10:31	afl_ext1	and then i abandoned this project and started c++ port
+2016-05-09 12:11:52	<--	SHC_ (~quassel@117.204.32.95) has quit (Ping timeout: 250 seconds)
+2016-05-09 12:12:21	harwiltz	Jesus! That's beautiful
+2016-05-09 12:12:34	afl_ext1	it was also slow
+2016-05-09 12:12:47	<--	Seppy (~SilentPen@unaffiliated/silentpenguin) has quit (Remote host closed the connection)
+2016-05-09 12:12:57	harwiltz	Not quite a flight simulator anymore but the graphics are amazing
+2016-05-09 12:13:05	-->	demilux (~demilux@70.99.232.36) has joined ##OpenGL
+2016-05-09 12:14:03	harwiltz	How did you even make those models?
+2016-05-09 12:14:35	afl_ext1	its not mine, the models
+2016-05-09 12:14:57	afl_ext1	the big model is http://graphics.cs.williams.edu/data/meshes.xml first crytek sponza
+2016-05-09 12:15:07	afl_ext1	and the figure is called lucy, you can find on the web
+2016-05-09 12:15:16	harwiltz	Ok. So is a lot of the work that went into this in the shaders?
+2016-05-09 12:15:43	afl_ext1	yeah mostly into shaders and graphics in general
+2016-05-09 12:15:58	<--	ravior (~ravior@89.121.200.106) has quit (Quit: Konversation terminated!)
+2016-05-09 12:16:01	harwiltz	The textures look real. Crazy
+2016-05-09 12:16:23	afl_ext1	voxel cone tracing is amazing yes :d
+2016-05-09 12:16:25	afl_ext1	but slow
+2016-05-09 12:16:53	harwiltz	Never heard of that before. Quite a bit out of the scope of my understanding at this point, I would imagine
+2016-05-09 12:17:11	afl_ext1	yes dont mess your head with that yet
+2016-05-09 12:17:25	harwiltz	How long did your project take you?
+2016-05-09 12:17:34	harwiltz	*How long were you working on it?
+2016-05-09 12:17:35	<--	dickybob (7YUAAYVX9@host-2-97-108-2.as13285.net) has quit (Ping timeout: 244 seconds)
+2016-05-09 12:17:56	-->	dickybob (~ANDYd@host-92-23-159-167.as13285.net) has joined ##OpenGL
+2016-05-09 12:17:59	afl_ext1	a little bit over 1 year
+2016-05-09 12:18:17	harwiltz	Wow. Very impressive, I thought it would have been longer
+2016-05-09 12:21:22	harwiltz	afl_ext1: Do you think OpenGL is overkill for making 2D games? I planned on using it to make a nice looking 2D game with shadows and stuff
+2016-05-09 12:21:40	afl_ext1	no, its okay
+2016-05-09 12:21:44	afl_ext1	because it will be very fast
+2016-05-09 12:22:21	harwiltz	afl_ext1: Ok nice. Gonna try making a simple 2D thing for my phone before I move on to that flight simulator. I'm inspired now ;)
+2016-05-09 12:22:45	afl_ext1	i was going to say that you can also make simple pokemon game clone
+2016-05-09 12:22:49	<--	p2inches (7a9b2def@gateway/web/freenode/ip.122.155.45.239) has quit (Quit: Page closed)
+2016-05-09 12:22:53	afl_ext1	instead of flight sim if you want
+2016-05-09 12:23:12	harwiltz	afl_ext1: That would be pretty cool too
+2016-05-09 12:23:46	harwiltz	I'm gonna just try rendering a simple 'starfield' thing first to ground myself, then I'll try something more game-like
+2016-05-09 12:23:47	<--	ratchetfreak (c351a8d8@gateway/web/freenode/ip.195.81.168.216) has quit (Ping timeout: 250 seconds)
+2016-05-09 12:26:01	-->	cam_y (~cam_y@162.222.103.203) has joined ##OpenGL
+2016-05-09 12:28:31	<--	Lucretia (~laguest@pdpc/supporter/active/lucretia) has quit (Read error: No route to host)
+2016-05-09 12:28:47	Twipply	Have you done anything graphical/OpenGL before harwiltz?
+2016-05-09 12:30:27	Twipply	Just wondering how come you're targeting mobile, not that that's necessarily bad or anything
+2016-05-09 12:32:07	-->	echotangoecho (~echotango@dhcp-089-098-177-067.chello.nl) has joined ##OpenGL
+2016-05-09 12:33:56	<--	Timbo (~tma@cpc5-sgyl28-2-0-cust125.sgyl.cable.virginm.net) has quit (Changing host)
+2016-05-09 12:33:56	-->	Timbo (~tma@tremulous/developer/timbo) has joined ##OpenGL
+2016-05-09 12:35:35	<--	Elysion (~elysion@ppp14-2-88-38.lns21.adl6.internode.on.net) has quit
+2016-05-09 12:36:02	harwiltz	Twipply: Never. Just targeting mobile because I want to make an android game
+2016-05-09 12:36:33	Twipply	Alright
+2016-05-09 12:36:37	Twipply	Make sure to show results if and when
+2016-05-09 12:37:14	harwiltz	Sounds good!
+2016-05-09 12:39:41	-->	nikki93 (~nikki93@c-67-169-12-37.hsd1.ca.comcast.net) has joined ##OpenGL
+2016-05-09 12:40:00	-->	zenbae (~jmcveigh@CPE788df7e9ac61-CM788df7e9ac60.cpe.net.cable.rogers.com) has joined ##OpenGL
+2016-05-09 12:40:53	<--	echotangoecho (~echotango@dhcp-089-098-177-067.chello.nl) has quit (Ping timeout: 252 seconds)
+2016-05-09 12:42:54	-->	Matthijs (~quassel@unaffiliated/matthijs) has joined ##OpenGL
+2016-05-09 12:45:39	-->	DrBenway_ (~DrBenway@190.246.178.171) has joined ##OpenGL
+2016-05-09 12:47:36	<--	DrBenway (~DrBenway@190.246.178.171) has quit (Ping timeout: 246 seconds)
+2016-05-09 12:47:59	<--	foreignFunction (~ai@46.219.241.52) has quit (Quit: Leaving.)
+2016-05-09 12:54:50	-->	BearishMushroom (~BearishMu@90-231-174-194-no159.tbcn.telia.com) has joined ##OpenGL
+2016-05-09 12:55:01	-->	cam_y_ (~cam_y@209-234-175-138.static.twtelecom.net) has joined ##OpenGL
+2016-05-09 12:57:25	<--	cam_y (~cam_y@162.222.103.203) has quit (Ping timeout: 240 seconds)
+2016-05-09 13:00:17	-->	s0s (~Sos@d152-149.icpnet.pl) has joined ##OpenGL
+2016-05-09 13:00:22	<--	d4ryus (~d4ryus@p54989C15.dip0.t-ipconnect.de) has quit (Killed (verne.freenode.net (Nickname regained by services)))
+2016-05-09 13:00:22	-->	d4ryus (~d4ryus@p54988C4A.dip0.t-ipconnect.de) has joined ##OpenGL
+2016-05-09 13:05:54	<--	Arch1eN (~Arch1eN@77.79.228.134) has quit (Ping timeout: 276 seconds)
+2016-05-09 13:06:55	(●)	DrBenway_ is now known as DrBenway
+2016-05-09 13:09:45	-->	ratchetfreak (5ee07139@gateway/web/freenode/ip.94.224.113.57) has joined ##OpenGL
+2016-05-09 13:14:30	<--	cam_y_ (~cam_y@209-234-175-138.static.twtelecom.net) has quit (Remote host closed the connection)
+2016-05-09 13:17:41	-->	mat^2 (~Mathias@91.103.38.8) has joined ##OpenGL
+2016-05-09 13:19:36	<--	c64zottel (~orko@2a02:270:2014:40:3e97:eff:fe80:48ec) has quit (Ping timeout: 260 seconds)
+2016-05-09 13:20:07	<--	flavi0 (~anon@qutebrowser/dev/flavi0) has quit (Quit: leaving)
+2016-05-09 13:20:35	-->	echotangoecho (~echotango@dhcp-089-098-177-067.chello.nl) has joined ##OpenGL
+2016-05-09 13:21:54	-->	cam_y (~cam_y@209-234-175-138.static.twtelecom.net) has joined ##OpenGL
+2016-05-09 13:22:59	-->	w4ffles_ (~textual@65-36-10-68.static.grandenetworks.net) has joined ##OpenGL
+2016-05-09 13:23:12	<--	w4ffles_ (~textual@65-36-10-68.static.grandenetworks.net) has quit (Remote host closed the connection)
+2016-05-09 13:25:46	-->	Lucretia (~laguest@pdpc/supporter/active/lucretia) has joined ##OpenGL
+2016-05-09 13:26:33	-->	Ryp (~ryp@laf94-4-88-190-202-176.fbxo.proxad.net) has joined ##OpenGL
+2016-05-09 13:27:36	-->	abs25 (~abs25@141-136-186-200.dsl.iskon.hr) has joined ##OpenGL
+2016-05-09 13:28:49	<--	nikki93 (~nikki93@c-67-169-12-37.hsd1.ca.comcast.net) has quit (Remote host closed the connection)
+2016-05-09 13:29:03	-->	carado (~carado@savhon.org) has joined ##OpenGL
+2016-05-09 13:30:56	-->	KAHR-Alpha (~Alpha@AReims-652-1-181-237.w92-142.abo.wanadoo.fr) has joined ##OpenGL
+2016-05-09 13:32:25	<--	afl_ext1 (~afl_ext3@cfk254.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 260 seconds)
+2016-05-09 13:35:56	<--	toor_ (~toor@eth-east-parth2-46-193-65-52.wb.wifirst.net) has quit (Ping timeout: 250 seconds)
+2016-05-09 13:37:20	-->	GarrettShields (~GarrettSh@2607:fea8:a25f:ffed:f89a:9270:64c2:3854) has joined ##OpenGL
+2016-05-09 13:40:06	<--	rleigh_ (~rleigh@unaffiliated/rleigh) has quit (Ping timeout: 246 seconds)
+2016-05-09 13:40:17	<--	rleigh (~rleigh@unaffiliated/rleigh) has quit (Ping timeout: 252 seconds)
+2016-05-09 13:43:33	-->	hoy (uid160532@gateway/web/irccloud.com/x-exmeciymeaimyfii) has joined ##OpenGL
+2016-05-09 13:49:26	-->	Waynes (~wayness@23.94.61.168) has joined ##OpenGL
+2016-05-09 13:49:33	<--	dickybob (~ANDYd@host-92-23-159-167.as13285.net) has quit (Ping timeout: 244 seconds)
+2016-05-09 13:51:26	hoy	I'm going crazy with gamma, can someone tell me why this https://www.shadertoy.com/view/ldySz1 gradient code looks perceptually linear despite having no gamma correction ?
+2016-05-09 13:52:50	<--	_28_ria (~igoryonya@opfr028.ru) has quit (Ping timeout: 250 seconds)
+2016-05-09 13:53:18	hoy	shouldn't the pow(2.2) of my monitor make this gradient darker and thus not linear ?
+2016-05-09 13:54:20	-->	pazul (~pazul@ptr-2hj4tbi3h8zz7gojvlcg7rouf.ip6.access.telenet.be) has joined ##OpenGL
+2016-05-09 13:54:21	<--	cam_y (~cam_y@209-234-175-138.static.twtelecom.net) has quit (Remote host closed the connection)
+2016-05-09 13:54:35	-->	toor_ (~toor@eth-east-parth2-46-193-65-52.wb.wifirst.net) has joined ##OpenGL
+2016-05-09 16:27:59	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##OpenGL
+2016-05-09 16:27:59	(●)	Topic for ##OpenGL is "Vulkan discussion in ##vulkan Specs: http://www.opengl.org/registry/ SDK: http://www.opengl.org/sdk/ Tutorials: https://open.gl/ Examples: https://github.com/progschj/OpenGL-Examples https://github.com/g-truc/ogl-samples  Rules: https://gist.github.com/665044 Logs: http://echelog.com/?opengl | Video tutorials: http://www.youtube.com/watch?v=JNahswHfXfw&list=PLgRQpWV"
+2016-05-09 16:27:59	(●)	Topic set by ville on Sat, 21 Mar 2015 18:55:17
+2016-05-09 16:27:59	(●)	Channel ##OpenGL: 341 nicks (0 ops, 0 voices, 341 normals)
+2016-05-09 16:27:59	(●)	PvNotice(ChanServ): As per http://freenode.net/policy.shtml#aboutchannels we are now ##OpenGL. If you were using irssi and tried to join #OpenGL, you might need to part and join again, irssi is a bit flaky with redirects.
+2016-05-09 16:28:01	(●)	Channel created on Sun, 26 Nov 2006 06:42:49
+2016-05-09 16:28:07	kazuka_	what is ambient occlusion for?
+2016-05-09 16:28:09	-->	fooBard (~henrique_@186.194.99.59) has joined ##OpenGL
+2016-05-09 16:28:18	<--	bzztploink (~bzztploin@gateway/vpn/privateinternetaccess/bzztploink) has quit (Remote host closed the connection)
+2016-05-09 16:28:47	-->	bzztploink (~bzztploin@gateway/vpn/privateinternetaccess/bzztploink) has joined ##OpenGL
+2016-05-09 16:28:50	afl_ext1	for ambient occlusion
+2016-05-09 16:28:56	harwiltz	Hey guys. I'm trying to render a simple square using opengl es on my samsung note 4. However, I get a message saying 'called unimplemented OpenGL ES API' and nothing is being rendered. Anyone know how to fix this?
+2016-05-09 16:29:03	afl_ext1	limiting incoming light on surfaces hidden by other
+2016-05-09 16:29:22	-->	ArkaZeen (~ArkaZeen@CPE00fc8dcba053-CM00fc8dcba050.cpe.net.cable.rogers.com) has joined ##OpenGL
+2016-05-09 16:30:08	derhass	harwiltz: which gles version?
+2016-05-09 16:30:14	harwiltz	2.0
+2016-05-09 16:30:31	Shockk	this might be a crude example but this is what ambient occlusion is kazuka_
+2016-05-09 16:30:34	Shockk	https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fwordsfromthewhiteroom.files.wordpress.com%2F2013%2F01%2Fa_very_white_room_by_stylewalker.jpg&f=1
+2016-05-09 16:30:42	harwiltz	My phone is fairly new, I can't imagine it doesn't support version 2
+2016-05-09 16:30:51	Shockk	it's the darker areas at the corners and edges
+2016-05-09 16:32:19	<--	wolfcub (~henrique_@186.194.99.59) has quit (Ping timeout: 260 seconds)
+2016-05-09 16:34:12	-->	ravior_ (~ravior@5-13-136-38.residential.rdsnet.ro) has joined ##OpenGL
+2016-05-09 16:34:14	<--	ravior (~ravior@2a02:2f0e:c320:152b:224:d7ff:feb5:311c) has quit (Read error: No route to host)
+2016-05-09 16:34:46	kazuka_	is ambient occlusion camera dependent?
+2016-05-09 16:35:11	kazuka_	where do you map the ambient occlusion texture
+2016-05-09 16:35:45	harwiltz	If you order your vertices counter clockwise, does it matter which vertex goes first?
+2016-05-09 16:36:04	afl_ext1	kazuka_ its depending on camera
+2016-05-09 16:36:13	afl_ext1	its also absolutely not correct
+2016-05-09 16:36:42	kazuka_	ok
+2016-05-09 16:36:43	Yaniel	ambient occlusion is absolutely not dependent on camera
+2016-05-09 16:36:47	Yaniel	SSAO is
+2016-05-09 16:36:53	afl_ext1	ah yes ok
+2016-05-09 16:36:55	Yaniel	(screenspace ambient occlusion)
+2016-05-09 16:37:04	kazuka_	what is ssao
+2016-05-09 16:37:07	kazuka_	ok
+2016-05-09 16:37:17	harwiltz	I just restarted android-studio and now everything is ok...
+2016-05-09 16:38:01	Yaniel	SSAO is a postprocessing effect
+2016-05-09 16:38:32	kazuka_	is SSAO expensive in computation
+2016-05-09 16:38:55	Yaniel	yes
+2016-05-09 16:39:18	kazuka_	what is mxaa
+2016-05-21 21:01:50	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##OpenGL
+2016-05-21 21:01:50	(●)	Topic for ##OpenGL is "Vulkan discussion in ##vulkan Specs: http://www.opengl.org/registry/ SDK: http://www.opengl.org/sdk/ Tutorials: https://open.gl/ Examples: https://github.com/progschj/OpenGL-Examples https://github.com/g-truc/ogl-samples  Rules: https://gist.github.com/665044 Logs: http://echelog.com/?opengl | Video tutorials: http://www.youtube.com/watch?v=JNahswHfXfw&list=PLgRQpWV"
+2016-05-21 21:01:50	(●)	Topic set by ville on Sat, 21 Mar 2015 18:55:17
+2016-05-21 21:01:50	(●)	Channel ##OpenGL: 315 nicks (0 ops, 0 voices, 315 normals)
+2016-05-21 21:01:50	(●)	PvNotice(ChanServ): As per http://freenode.net/policy.shtml#aboutchannels we are now ##OpenGL. If you were using irssi and tried to join #OpenGL, you might need to part and join again, irssi is a bit flaky with redirects.
+2016-05-21 21:01:53	(●)	Channel created on Sun, 26 Nov 2006 06:42:49
+2016-05-21 21:02:50	TheChubu	you know what isnt easy?
+2016-05-21 21:02:53	TheChubu	skeletal animation
+2016-05-21 21:02:59	harwiltz	Hey guys. Anyone willing to explain the relevance/meaning of the fourth dimension when drawing stuff in 3D? I've been trying to understand this for a while, but I haven't gotten very far and now I'm trying to draw stuff but the stuff I'm trying to draw is not appearing
+2016-05-21 21:03:00	TheChubu	followed by shadow mapping
+2016-05-21 21:03:04	-->	seangrove (~user@s41.BMT-e1.vectant.ne.jp) has joined ##OpenGL
+2016-05-21 21:03:13	TheChubu	what fourth dimension?
+2016-05-21 21:03:17	TheChubu	you mean the 4x4 matrices?
+2016-05-21 21:03:21	harwiltz	x,y,z,w
+2016-05-21 21:03:25	harwiltz	Yeah
+2016-05-21 21:03:28	ratchetfreak	https://en.wikipedia.org/wiki/Homogeneous_coordinates
+2016-05-21 21:03:30	<--	PaulCape_ (~PaulCapes@204.28.124.82) has quit (Ping timeout: 244 seconds)
+2016-05-21 21:03:37	harwiltz	ratchetfreak: Thanks
+2016-05-21 21:04:06	TheChubu	4x4 matrices are there for translation. you cant represent a 3d translation with a 3x3 matrix.
+2016-05-21 21:04:15	TheChubu	its a shear in 4d if you will.
+2016-05-21 21:04:25	TheChubu	but what you care about is that it looks just like a translation.
+2016-05-21 21:04:37	ratchetfreak	it allows all affine transformations and projection to be represented by a 4x4 matrix
+2016-05-21 21:05:15	TheChubu	ah yeah, projections, no clue how those work.
+2016-05-21 21:05:20	harwiltz	I guess that makes sense. Can you help me understand the geometric meaning of the w component though? Like how do I know what to set w as for a point
+2016-05-21 21:05:30	ratchetfreak	swap w and z and then projection divide
+2016-05-21 21:05:50	harwiltz	So swap w and z, and then divide everything by the fourth component?
+2016-05-21 21:05:53	ratchetfreak	this makes more distant object become smaller on screen
+2016-05-21 21:06:00	ratchetfreak	for projection yeah
+2016-05-21 21:06:20	ratchetfreak	each point should have 1 for the w component
+2016-05-21 21:06:35	harwiltz	Woah now I'm lost...
+2016-05-21 21:06:42	harwiltz	How is that swapping w and z?
+2016-05-21 21:07:04	ratchetfreak	hold up
+2016-05-21 21:07:37	ratchetfreak	at the start each point has 1 for the w component
+2016-05-21 21:07:56	harwiltz	Ok, but why would the w's change?
+2016-05-21 21:08:05	harwiltz	Or what do you mean by at the start?
+2016-05-21 21:08:13	ratchetfreak	the input
+2016-05-21 21:08:29	ratchetfreak	then after multiplying with the transform and view matrices the point is in a space where the camera is at origin and looking down the Z axis
+2016-05-21 21:08:57	ratchetfreak	then you apply the projection matrix
+2016-05-21 21:08:58	harwiltz	Ok, and thats when you do the perspective divide
+2016-05-21 21:09:04	harwiltz	Ok, I see
+2016-05-21 21:09:10	<--	hexagoxel (~hexagoxel@p5B29A723.dip0.t-ipconnect.de) has quit (Ping timeout: 244 seconds)
+2016-05-21 21:09:38	ratchetfreak	the porjection matrix isn't just swapping z and w it also includes a scale and a shift along the Z to make the result fit in the correct bound
+2016-05-21 21:10:10	harwiltz	ratchetfreak: Yeah ok, I understand that. Now I'm just not sure why my stuff isn't being drawn into my camera's field of view ;)
+2016-05-21 21:10:24	-->	PaulCape_ (~PaulCapes@204.28.124.82) has joined ##OpenGL
+2016-05-21 21:10:29	ratchetfreak	that way all points that end up on the screen will be inside a [-1,1] cube
+2016-05-21 21:11:03	harwiltz	Ok, thinking about this for a sec...
+2016-05-21 21:11:13	ratchetfreak	so check the data and ensure the points end up inside that NDC cube
+2016-05-21 21:11:33	<--	Occulus2057 (~Alfred@24-113-58-44.wavecable.com) has quit (Quit: Leaving)
+2016-05-21 21:12:27	harwiltz	... I think I did something very dumb...
+2016-05-21 21:12:32	<--	PaulCapestany (~PaulCapes@204.28.124.82) has quit (Ping timeout: 246 seconds)
+2016-05-21 21:12:58	harwiltz	I'm pretty sure I translated the camera on y instead of z and that's why nothing is being rendered
+2016-05-21 21:13:04	-->	PaulCapestany (~PaulCapes@204.28.124.82) has joined ##OpenGL
+2016-05-21 21:13:07	harwiltz	Not sure how I managed that
+2016-05-21 21:13:23	<--	CapsAdmin (~CapsAdmin@ti0115a400-2093.bb.online.no) has quit (Read error: Connection reset by peer)
+2016-05-21 21:13:34	<--	Twipply (~Dunno@cpc1-mapp10-2-0-cust641.12-4.cable.virginm.net) has quit (Quit: Leaving)
+2016-05-21 21:14:05	-->	CapsAdmin (~CapsAdmin@ti0115a400-2093.bb.online.no) has joined ##OpenGL
+2016-05-21 21:14:33	harwiltz	ratchetfreak: Suppose I wanted to draw a mesh square centered at the origin, would I make the dimensions of its center 0,0,1,0?
+2016-05-21 21:14:46	<--	Salvakiya (~Salvakiya@host86-148-58-247.range86-148.btcentralplus.com) has quit (Ping timeout: 260 seconds)
+2016-05-21 21:15:14	<--	tm604 (~tom@pdpc/supporter/professional/tm604) has quit (Ping timeout: 260 seconds)
+2016-05-21 21:15:20	<--	PaulCape_ (~PaulCapes@204.28.124.82) has quit (Ping timeout: 246 seconds)
+2016-05-21 21:15:35	ratchetfreak	with a transformation matrix?
+2016-05-21 21:16:16	harwiltz	No, I'm not doing any translations yet
+2016-05-21 21:16:34	harwiltz	Just drawing triangles and feeding them hard-coded vertices
+2016-05-21 21:16:40	ratchetfreak	then doing it at 0,0,0,1 is better
+2016-05-21 21:16:58	harwiltz	Ok, I'll try that. Thanks
+2016-05-21 21:16:59	ratchetfreak	if w is 0 then the point won't get drawn
+2016-05-21 21:17:16	ratchetfreak	divide by 0 and all that...
+2016-05-21 21:17:37	-->	SwiftMatt (~Objective@162.242.95.187) has joined ##OpenGL
+2016-05-21 21:17:47	harwiltz	Good point
+2016-05-21 21:18:07	derhass	there is no division by 0
+2016-05-21 21:18:27	derhass	the only point fullfilling the -w <= x,y,z, <= w for w =0 would be (0,0,0)
+2016-05-21 21:18:35	-->	sandeepkr__ (~sandeep@111.235.64.4) has joined ##OpenGL
+2016-05-21 21:18:51	derhass	which a typical projection matrix will never produce
+2016-05-21 21:19:21	<--	Lemml (~andreas@p54AFE479.dip0.t-ipconnect.de) has quit (Read error: Connection reset by peer)
+2016-05-21 21:21:59	<--	sandeepkr_ (~sandeep@111.235.64.4) has quit (Ping timeout: 246 seconds)
+2016-05-21 21:22:36	<--	kuldeep (~kuldeepdh@unaffiliated/kuldeepdhaka) has quit (Ping timeout: 276 seconds)
+2016-05-21 21:23:18	harwiltz	Finally got something to draw... I think my problem was that I hadn't positioned my camera far enough backward so the mesh was outside the field of view.
+2016-05-21 21:27:00	<--	ratchetfreak (~ratchetfr@2a02:1811:d32:1800:3cd2:9c55:2883:d838) has quit (Quit: Bye Bye)
+2016-05-21 21:27:00	-->	xissburg (~xissburg@2a02:8109:a4c0:226c:c430:e0a1:b482:7b29) has joined ##OpenGL
+2016-05-21 21:27:12	-->	PaulCape_ (~PaulCapes@204.28.124.82) has joined ##OpenGL
+2016-05-21 21:28:43	<--	konom (~tamatias@213.57.65.44) has quit (Quit: Leaving)
+2016-05-21 21:29:02	-->	fqtw_ (~me@x5d80310e.dyn.telefonica.de) has joined ##OpenGL
+2016-05-21 21:29:20	<--	PaulCapestany (~PaulCapes@204.28.124.82) has quit (Ping timeout: 246 seconds)
+2016-05-21 21:32:03	<--	xissburg (~xissburg@2a02:8109:a4c0:226c:c430:e0a1:b482:7b29) has quit (Ping timeout: 260 seconds)
+2016-05-21 21:32:16	<--	nine_9 (~Nine_9@189.79.20.88) has quit (Ping timeout: 260 seconds)
+2016-05-21 21:32:44	<--	fqtw (~me@x5d806ebd.dyn.telefonica.de) has quit (Ping timeout: 260 seconds)
+2016-05-21 21:35:12	-->	robot-beethoven (~robot-bee@c-73-65-29-166.hsd1.mn.comcast.net) has joined ##OpenGL
+2016-05-21 21:35:24	-->	kuldeep (~kuldeepdh@unaffiliated/kuldeepdhaka) has joined ##OpenGL
+2016-05-21 21:35:57	<--	Void7 (~Void7@205.157.147.198) has quit (Ping timeout: 240 seconds)
+2016-05-21 21:38:09	harwiltz	Hey guys. I'm new to the homogeneous coordinates concept. Say I want to render a 'star field', basically just squares moving towards the camera. Should I be changing the z coordinates of the squares, or the w coordinates?
+2016-05-21 21:43:10	-->	Void7 (~Void7@205.157.147.198) has joined ##OpenGL
+2016-05-21 21:43:36	-->	dexter0_ (~dexter0@2601:647:5801:4900:bd83:f058:9ab7:23cc) has joined ##OpenGL
+2016-05-21 21:45:05	<--	Heasummn (~Heasummn@c-73-51-87-243.hsd1.il.comcast.net) has quit (Ping timeout: 246 seconds)
+2016-05-21 21:45:47	-->	nine_9 (~Nine_9@189.79.20.88) has joined ##OpenGL
+2016-05-21 21:46:32	<--	dexter0 (~dexter0@c-73-222-1-210.hsd1.ca.comcast.net) has quit (Ping timeout: 250 seconds)
+2016-05-21 21:46:32	(●)	dexter0_ is now known as dexter0
+2016-05-21 21:48:22	(●)	CoolerExtreme is now known as Cooler
+2016-05-21 21:49:37	<--	Zerflag (~zerflag@216-19-179-103.dyn.novuscom.net) has quit (Remote host closed the connection)
+2016-05-21 21:55:28	-->	PaulCapestany (~PaulCapes@204.28.124.82) has joined ##OpenGL
+2016-05-21 21:55:42	<--	Cooler (~CoolerExt@117.204.122.6) has quit (Quit: Leaving)
+2016-05-21 21:56:51	-->	Zerflag (~zerflag@216-19-179-103.dyn.novuscom.net) has joined ##OpenGL
+2016-05-21 21:57:41	<--	PaulCape_ (~PaulCapes@204.28.124.82) has quit (Ping timeout: 246 seconds)
+2016-05-22 15:58:09	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##OpenGL
+2016-05-22 15:58:09	(●)	Topic for ##OpenGL is "Vulkan discussion in ##vulkan Specs: http://www.opengl.org/registry/ SDK: http://www.opengl.org/sdk/ Tutorials: https://open.gl/ Examples: https://github.com/progschj/OpenGL-Examples https://github.com/g-truc/ogl-samples  Rules: https://gist.github.com/665044 Logs: http://echelog.com/?opengl | Video tutorials: http://www.youtube.com/watch?v=JNahswHfXfw&list=PLgRQpWV"
+2016-05-22 15:58:09	(●)	Topic set by ville on Sat, 21 Mar 2015 18:55:17
+2016-05-22 15:58:09	(●)	Channel ##OpenGL: 341 nicks (0 ops, 0 voices, 341 normals)
+2016-05-22 15:58:09	(●)	PvNotice(ChanServ): As per http://freenode.net/policy.shtml#aboutchannels we are now ##OpenGL. If you were using irssi and tried to join #OpenGL, you might need to part and join again, irssi is a bit flaky with redirects.
+2016-05-22 15:58:10	(●)	Channel created on Sun, 26 Nov 2006 06:42:49
+2016-05-22 15:59:21	harwiltz	Hello. I just rendered my first texture, and I want to try moving it around the screen. Is it recommended to change the values in the vertex buffer of the texture, or to store position values and translate the view matrix and then translate back?
+2016-05-22 15:59:46	-->	ScorpionJack (~Scorpion@unaffiliated/scorpionjack) has joined ##OpenGL
+2016-05-22 16:00:05	he_	I was provided this file for the JPEG texturizing part: http://dpaste.com/2JSNDJ7
+2016-05-22 16:00:59	he_	@afl_ext
+2016-05-22 16:01:40	Stragus	Your code was compiled with a different version of libjpeg than the one being linked
+2016-05-22 16:02:12	he_	how can I solve that issue
+2016-05-22 16:02:21	he_	? I am a total noob for that sort of things
+2016-05-22 16:02:28	ratchetfreak	get a newer version of libjpeg
+2016-05-22 16:02:43	Yaniel	harwiltz: usually you'll want to do the latter
+2016-05-22 16:02:48	Stragus	harwiltz, use matrices when transforming a bunch of otherwise static geometry, reupload for dynamic geometry
+2016-05-22 16:02:49	-->	lucaswan_ (~lucaswang@140.206.99.37) has joined ##OpenGL
+2016-05-22 16:03:07	-->	Heasummn_ (~Heasummn@c-73-51-87-243.hsd1.il.comcast.net) has joined ##OpenGL
+2016-05-22 16:03:29	<--	xissburg (~xissburg@ip5f5bf4a0.dynamic.kabel-deutschland.de) has quit (Remote host closed the connection)
+2016-05-22 16:03:39	he_	I cant unfortunately
+2016-05-22 16:03:46	harwiltz	Yaniel and Stragus, you guys are conflicting each other ;)
+2016-05-22 16:03:48	he_	Our teacher is going to retire in a few moths
+2016-05-22 16:04:01	he_	and he is a pain in the ass (sorry...)
+2016-05-22 16:04:10	he_	and he wants us to use that old stuff
+2016-05-22 16:04:34	<--	echotangoecho (~echotango@dhcp-089-098-177-067.chello.nl) has quit (Remote host closed the connection)
+2016-05-22 16:04:35	harwiltz	Let's say my texture is a player in a video game, so it will be moving frequently. Is it more efficient to update the data in the vertex buffer?
+2016-05-22 16:04:45	Yaniel	it is a sprite then
+2016-05-22 16:04:49	<--	lucaswang (~lucaswang@14.47.125.218) has quit (Ping timeout: 246 seconds)
+2016-05-22 16:04:49	Yaniel	which is static geometry
+2016-05-22 16:05:06	<--	night-owl (nightowl@2604:180::b0a8:78a4) has quit (Quit: ZNC - http://znc.in)
+2016-05-22 16:05:07	afl_ext	moving static geometry is not dynamic geometry
+2016-05-22 16:05:15	harwiltz	Oh, I'm sorry. That makes sense
+2016-05-22 16:05:18	afl_ext	dynamic geometry is for example waves on ocean
+2016-05-22 16:05:24	afl_ext	or grass on wind and so on
+2016-05-22 16:05:33	Stragus	Waves on ocean should probably be done in the vertex shader though
+2016-05-22 16:05:36	harwiltz	I see. So I should translate my view matrix 
+2016-05-22 16:05:37	<--	Lucretia (~laguest@pdpc/supporter/active/lucretia) has quit (Remote host closed the connection)
+2016-05-22 16:05:53	ratchetfreak	and depending on how "dynamic" you could just make it static and use tricks in the vertex shader to make it look dynamic
+2016-05-22 16:05:58	afl_ext	translate it with object model matrix
+2016-05-22 16:06:11	<--	pazul (~pazul@ptr-2hj4tbi3h8zz7nkffa2i9705l.ip6.access.telenet.be) has quit (Read error: Connection reset by peer)
+2016-05-22 16:06:19	Yaniel	grass on ocean *can* be static geometry too depending on how it is implemented
+2016-05-22 16:06:37	-->	pazul (~pazul@ptr-2hj4tbi3h8zz7nkffa2i9705l.ip6.access.telenet.be) has joined ##OpenGL
+2016-05-22 16:06:51	ratchetfreak	instancing with a "random" or periodic offset
+2016-05-22 16:07:42	afl_ext	going this way both can be meshless too
+2016-05-22 16:07:56	ratchetfreak	but that's a bit advanced
+2016-05-22 16:09:31	<--	he_ (b91e3681@gateway/web/freenode/ip.185.30.54.129) has left ##OpenGL
+2016-05-22 16:10:50	-->	Seppy (~SilentPen@unaffiliated/silentpenguin) has joined ##OpenGL
+2016-05-22 16:17:07	harwiltz	So if I want to move my sprite, should I be translating the projection matrix or the model matrix? I'm thinking the model matrix, but then I have to compute the projection matrix each frame
+2016-05-22 16:17:35	derhass_	harwiltz: that doesn't make sense
+2016-05-22 16:17:49	harwiltz	derhass_: What doesn't make sense?
+2016-05-22 16:17:50	derhass_	why would you have to recompute the projection matrix?
+2016-05-22 16:18:12	harwiltz	That's a good question. Probably because I don't know what I'm doing ;)
+2016-05-22 16:18:15	<--	Void7 (~Void7@205.157.147.198) has quit (Ping timeout: 244 seconds)
+2016-05-22 16:18:21	<--	Mysoft (~user@unaffiliated/mysoft) has quit (Ping timeout: 276 seconds)
+2016-05-22 16:18:58	harwiltz	Actually, my render procedure doesn't depend on the model matrix though
+2016-05-22 16:19:21	Yaniel	the model (sprite or mesh) transform is in the model matrix
+2016-05-22 16:20:00	Yaniel	which can be recomputed for each model every frame if things move
+2016-05-22 16:20:30	harwiltz	Not the way I have it... I literally never refer to my model matrix unless the aspect ratio changes (this is an android app)
+2016-05-22 16:20:45	harwiltz	So my sprite is only given access to the projection matrix
+2016-05-22 16:20:49	afl_ext	i think you're doing it wrong
+2016-05-22 16:21:10	harwiltz	afl_ext: That's possible... but I'm following a book
+2016-05-22 16:21:34	harwiltz	Not saying you're wrong, just saying I think I may have to restart
+2016-05-22 16:21:37	Yaniel	that doesn't make it right
+2016-05-22 16:21:42	derhass_	if your book has model matrices depend on the aspect ratio of the viewport, do yourself a favour and throw it away
+2016-05-22 16:22:26	ratchetfreak	it's the projection matrix' job to adjust for the aspect ratio
+2016-05-22 16:22:40	harwiltz	derhass_: The model matrix isn't dependent on the aspect ratio, the projection matrix is. But when the aspect ratio changes I multiply the projection matrix by the model matrix
+2016-05-22 16:23:10	harwiltz	So I'm saying I think I have to multiply my projection matrix by my model matrix each frame
+2016-05-22 16:23:25	ratchetfreak	not that unusual
+2016-05-22 16:23:33	harwiltz	Oh, ok
+2016-05-22 16:23:38	derhass_	usually, you also have a view matrix inbetween
+2016-05-22 16:23:46	derhass_	which often changes poer frame, too
+2016-05-22 16:23:52	derhass_	*per
+2016-05-22 16:24:00	harwiltz	But then how do I get my original projection matrix back? Should I be storing a temporary array?
+2016-05-22 16:25:04	ratchetfreak	yeah cache it if you are going to be needing it again
+2016-05-22 16:25:32	<--	groton (~groton@unaffiliated/groton) has quit (Quit: groton)
+2016-05-22 16:25:34	harwiltz	Ok. This just seems really inefficient, but I guess it has to be done
+2016-05-22 16:26:02	Yaniel	there are much less efficient things people do
+2016-05-22 16:26:05	harwiltz	Although I guess it's just one 64 bit array so it isn't really a bg deal
+2016-05-22 16:26:08	harwiltz	*big deal
+2016-05-22 16:26:10	Yaniel	like using immediate mode
+2016-05-22 16:27:25	-->	Emersont1 (~Emersont1@host109-155-162-255.range109-155.btcentralplus.com) has joined ##OpenGL
+2016-05-22 16:27:47	Emersont1	Hi
+2016-05-22 16:27:57	<--	NegativeZero (~quassel@121-79-229-19.dsl.sta.inspire.net.nz) has quit (Quit: No Ping reply in 180 seconds.)
+2016-05-22 16:28:01	<--	prophile (~alynn@oftn/oswg-member/prophile) has quit (Ping timeout: 250 seconds)
+2016-05-22 16:28:20	Stragus	harwiltz, you say it's... less efficient keeping a copy of a matrix than having to get it back from an API?
+2016-05-22 16:28:29	Stragus	We don't have the same definition of efficiency
+2016-05-22 16:28:51	Yaniel	let's see... an API call with 20-40 layers of stack vs a local variable
+2016-05-22 16:29:00	Yaniel	yeah the API call is definitely faster
+2016-05-22 16:29:08	ratchetfreak	which may need to communicate with th eGPU
+2016-05-22 16:29:18	harwiltz	Stragus: I didn't say that
+2016-05-22 16:29:25	-->	NegativeZero (~quassel@121-79-229-19.dsl.sta.inspire.net.nz) has joined ##OpenGL
+2016-05-22 16:29:25	derhass_	Yaniel: but, but, ... it's HW-accelearted!!!
+2016-05-22 16:29:57	harwiltz	I've never done graphics stuff before, I just thought having extra arrays and doing matrix multiplication every frame seemed expensive. Not comparing it to API stuff
+2016-05-22 16:30:08	ratchetfreak	rockets go pretty fast but it takes ages to set one up to get going
+2016-05-22 16:30:12	Emersont1	Could someone do me a massive favour and play a round of name the shader with this http://m.imgur.com/gallery/M4xaZ and also, does this way the shadows are cast have a name
+2016-05-22 16:30:35	Stragus	harwiltz, CPUs can do a crazcy amount of calculations "per frame" (as long as you aren't using Python, Javascript or such)
+2016-05-22 16:30:39	Stragus	Not as crazy as GPUs though
+2016-05-22 16:30:49	ratchetfreak	you have 16 milliseconds to do your stuff in
+2016-05-22 16:30:49	Yaniel	Emersont1: but you already have a prefectly good name there
+2016-05-22 16:30:58	-->	prophile (~alynn@oftn/oswg-member/prophile) has joined ##OpenGL
+2016-05-22 16:31:03	ratchetfreak	compare that to how many operations per second you can do
+2016-05-22 16:31:50	Emersont1	Yaniel: for the shader or the shadows?
+2016-05-22 16:32:00	Yaniel	shader
+2016-05-22 16:32:13	afl_ext	Emersont1 thats your realtime graphics?
+2016-05-22 16:32:14	Yaniel	as for the shadows, that looks like dithered shadows?
+2016-05-22 16:32:47	harwiltz	Stragus, Ok, that makes sense
+2016-05-22 16:32:58	Yaniel	nvm, that was actually a fence
+2016-05-22 16:33:05	Emersont1	afl_ext, no I found it online, but want to recreate it
+2016-05-22 16:33:07	derhass_	hrhrhr
+2016-05-22 16:33:08	Yaniel	dunno, directional shadows?
+2016-05-22 16:33:37	ImQ009	Emersont1, most likely cascaded shadowmapping
+2016-05-22 16:33:45	ratchetfreak	looks like simple diffuse shading for the color
+2016-05-22 16:33:48	<--	harha_ (harha_@y55.ip4.netikka.fi) has quit
+2016-05-22 16:34:11	Emersont1	Does the dull surface lighting have a name? Like Ik it ain't phong or cel
+2016-05-22 16:34:15	Yaniel	could also be shadow volumes
+2016-05-22 16:34:27	Yaniel	flat shading?
+2016-05-22 16:34:31	DR0ID_	hi line 691 is that the correct way to read data back? https://bpaste.net/show/81608807bcdb
+2016-05-22 16:34:32	afl_ext	this is 100% raytraced to be precise
+2016-05-22 16:34:38	ImQ009	http://developer.download.nvidia.com/SDK/10.5/opengl/src/cascaded_shadow_maps/doc/cascaded_shadow_maps.pdf
+2016-05-22 16:34:53	Yaniel	well flat diffuse + ambient occlusion
+2016-05-22 16:35:30	afl_ext	look at indirect lighting its pathtraced or similar non realtime thing
+2016-05-22 16:35:38	afl_ext	so i believe the shadows are done with help of that
+2016-05-22 16:39:31	Yaniel	yeah pathtracing could be
+2016-05-22 16:40:04	<--	abs25__ (~abs25@23-229.dsl.iskon.hr) has quit (Read error: Connection reset by peer)
+2016-05-22 16:40:33	Yaniel	but I kinda doubt it
+2016-05-22 16:43:06	-->	meoblast001 (~meoblast@192.121.68.2) has joined ##OpenGL
+2016-05-22 16:46:07	<--	zalatovo (~zalatovo@unaffiliated/zalatovo) has quit (Ping timeout: 246 seconds)
+2016-05-22 16:47:08	<--	gester (~xrosax@host86-139-190-139.range86-139.btcentralplus.com) has quit (Ping timeout: 252 seconds)
+2016-05-22 16:54:41	-->	xissburg (~xissburg@ip5f5bf4a0.dynamic.kabel-deutschland.de) has joined ##OpenGL
+2016-05-22 16:56:06	<--	zagabar (~zagabar@unaffiliated/zagabar) has quit (Quit: WeeChat 1.4)
+2016-05-22 16:57:10	-->	Hadriscus (Hadriscus@2a01:e35:2ebe:12f0:a44c:8db9:86ac:8e37) has joined ##OpenGL
+2016-05-22 16:58:39	-->	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has joined ##OpenGL
+2016-05-22 16:58:46	<--	karab44 (~karab44@unaffiliated/karab44) has quit (Quit: Bye bye! o/)
+2016-05-22 16:58:59	-->	Lucretia (~laguest@pdpc/supporter/active/lucretia) has joined ##OpenGL
+2016-05-22 16:59:40	-->	Xark (~Xark@unaffiliated/xark) has joined ##OpenGL
+2016-05-22 16:59:41	<--	gxm1221 (gxm1221@24.115.161.31.res-cmts.pbg.ptd.net) has quit
+2016-05-22 16:59:43	<--	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has left ##OpenGL ("Leaving")
+2016-05-22 16:59:51	-->	gxm1221 (gxm1221@24.115.161.31.res-cmts.pbg.ptd.net) has joined ##OpenGL
+2016-05-22 16:59:53	<--	gxm1221 (gxm1221@24.115.161.31.res-cmts.pbg.ptd.net) has left ##OpenGL
+2016-05-22 16:59:58	-->	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has joined ##OpenGL
+2016-05-22 17:00:19	<--	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has left ##OpenGL ("Leaving")
+2016-05-22 17:00:27	-->	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has joined ##OpenGL
+2016-05-22 17:00:47	<--	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has left ##OpenGL
+2016-05-22 17:00:58	-->	Twipply (~Dunno@cpc1-mapp10-2-0-cust641.12-4.cable.virginm.net) has joined ##OpenGL
+2016-05-22 17:01:13	-->	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has joined ##OpenGL
+2016-05-22 17:01:17	<--	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has left ##OpenGL ("Leaving")
+2016-05-22 17:01:38	-->	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has joined ##OpenGL
+2016-05-22 17:01:41	<--	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has left ##OpenGL ("Leaving")
+2016-05-22 17:01:46	<--	xissburg (~xissburg@ip5f5bf4a0.dynamic.kabel-deutschland.de) has quit (Ping timeout: 240 seconds)
+2016-05-22 17:01:46	<--	pbor (~paolo@host14-78-dynamic.50-79-r.retail.telecomitalia.it) has quit (Remote host closed the connection)
+2016-05-22 17:03:09	-->	zalatovo (~zalatovo@unaffiliated/zalatovo) has joined ##OpenGL
+2016-05-22 17:03:36	<--	Lemml (~andreas@p54AFED59.dip0.t-ipconnect.de) has quit (Quit: www.adrastea.com)
+2016-05-22 17:06:45	<--	DR0ID_ (~DR0ID_@57.9.105.92.dynamic.wline.res.cust.swisscom.ch) has quit (Quit: battery low! Going to regenerate. Shutting down non essential systems  ... .. .)
+2016-05-22 17:07:00	<--	Metalith (~Jordy@c-73-34-139-4.hsd1.co.comcast.net) has quit (Ping timeout: 260 seconds)
+2016-05-22 17:07:57	-->	Metalith (~Jordy@c-73-34-139-4.hsd1.co.comcast.net) has joined ##OpenGL
+2016-05-22 17:09:04	-->	AfroThundr (~AfroThund@2601:147:c000:ef5e:b432:7d58:4908:d033) has joined ##OpenGL
+2016-05-22 17:09:42	-->	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has joined ##OpenGL
+2016-05-22 17:11:28	<--	demilux (~demilux@c-73-254-66-213.hsd1.wa.comcast.net) has quit (Remote host closed the connection)
+2016-05-22 17:12:05	<--	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has quit (Client Quit)
+2016-05-22 17:12:19	-->	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has joined ##OpenGL
+2016-05-22 17:12:24	<--	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has quit (Client Quit)
+2016-05-22 17:13:14	-->	gxm1221 (gxm1221@24.115.161.31.res-cmts.pbg.ptd.net) has joined ##OpenGL
+2016-05-22 17:13:16	<--	gxm1221 (gxm1221@24.115.161.31.res-cmts.pbg.ptd.net) has quit (Client Quit)
+2016-05-22 17:13:59	-->	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has joined ##OpenGL
+2016-05-22 17:14:00	<--	Xark (~Xark@unaffiliated/xark) has quit (Ping timeout: 260 seconds)
+2016-05-22 17:14:14	<--	gxm1221 (~geekoRock@24.115.161.31.res-cmts.pbg.ptd.net) has quit (Client Quit)
+2016-05-22 17:15:04	-->	Void7 (~Void7@205.157.147.198) has joined ##OpenGL

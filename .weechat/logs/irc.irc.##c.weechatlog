@@ -1,0 +1,225 @@
+2016-02-09 15:46:57	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##c
+2016-02-09 15:46:57	--	Topic for ##c is "The C Programming Language | C11 is the current C Standard | PASTE (>3 lines): http://ideone.com/ | WIKI: http://www.iso-9899.info/ | BOOKS: http://www.iso-9899.info/wiki/Books | Test your C knowledge in #cjeopardy!"
+2016-02-09 15:46:57	--	Topic set by pragma- on Sat, 28 Nov 2015 21:48:40
+2016-02-09 15:46:57	--	Channel ##c: 1018 nicks (1 op, 0 voices, 1017 normals)
+2016-02-09 15:46:57	--	PvNotice(ChanServ): Welcome to ##c! We engage in C programming discussions at all levels of expertise; don't hesitate to ask your question. If applicable, please prepare a testcase and paste it at http://ideone.com. We don't know about C++ (##c++) or C# (##csharp).
+2016-02-09 15:46:57	--	URL for ##c: http://www.iso-9899.info/
+2016-02-09 15:46:59	--	Channel created on Sun, 26 Nov 2006 06:42:39
+2016-02-09 15:47:56	harwiltz	Hello. I'm trying to write a base converter program in C but I'm having issues parsing large inputs. I'm using unsigned long long int and it won't parse numbers with 10 or more digits.
+2016-02-09 15:47:59	<--	diogenese (~diogenese@diogenese.velotech.net) has quit (Quit: Leaving)
+2016-02-09 15:48:08	<--	c0fe_machine (~c0fe_mach@c-73-211-168-79.hsd1.il.comcast.net) has quit (Read error: Connection reset by peer)
+2016-02-09 15:48:45	<--	Benji__ (~anonymous@90.212.148.189) has quit (Quit: Benji__)
+2016-02-09 15:48:45	-->	c0fe_machine (~c0fe_mach@c-73-211-168-79.hsd1.il.comcast.net) has joined ##c
+2016-02-09 15:49:18	-->	jdqx (~jdqx@2602:306:cc94:1950:e589:618:98c9:55b3) has joined ##c
+2016-02-09 15:49:31	jalt	it probably exceeds LONG_MAX?
+2016-02-09 15:49:34	<--	Yarne (~Yarne@31.205.25.203) has quit (Remote host closed the connection)
+2016-02-09 15:49:51	twkm	harwiltz: sounds like your arithmetic or logic are flawed.  what debugging have you done?
+2016-02-09 15:50:02	harwiltz	I don't think so, I'm pretty sure LONG_MAX can hold up to 20 digits
+2016-02-09 15:50:04	-->	Yarne (~Yarne@31.205.25.203) has joined ##c
+2016-02-09 15:50:33	harwiltz	twkm, I really don't think the logic is flawed. I'm manually converting the string to an unsigned long long int, and I print out every multiplication necessary to do so
+2016-02-09 15:50:36	jalt	look into the error and the man page for strtoll: http://linux.die.net/man/3/strtol
+2016-02-09 15:50:37	@candide	Title of jalt's link: strtol(3): convert string to long integer - Linux man page
+2016-02-09 15:50:42	twkm	besides, ULLONG_MAX would be the relevant macro.
+2016-02-09 15:50:44	harwiltz	The one that screws up is a 10 digit number
+2016-02-09 15:51:04	harwiltz	twkm, yes, and ULLONG_MAX is way greater than 10 digits long
+2016-02-09 15:51:09	twkm	harwiltz: you would be converting every digit else just use strtoull.
+2016-02-09 15:51:23	harwiltz	twkm, thanks, I'll try that
+2016-02-09 15:51:36	<--	project2501a (~barfoo@lopsa/member/project2501a) has quit (Quit: project2501a)
+2016-02-09 15:51:39	-->	smudkavi (~smudkavi@208.72.125.2) has joined ##c
+2016-02-09 15:52:11	jalt	the u is unsigned, so make sure you won't need to parse negative numbers
+2016-02-09 15:52:23	twkm	ac = ac * base + digits[c].
+2016-02-09 15:52:32	harwiltz	jalt, I definitely dont need to do negative numbers, but thanks
+2016-02-09 15:53:21	harwiltz	twkm, even strtoull gives me a screwed up number
+2016-02-09 15:53:34	jalt	you may want to paste a testcase into ideone
+2016-02-09 15:53:36	-->	BoogoesPewPew (~f@cpe-104-174-12-105.socal.res.rr.com) has joined ##c
+2016-02-09 15:53:44	harwiltz	I'm trying to parse 9999999999, and I keep getting 1410065407
+2016-02-09 15:53:48	twkm	*shrug*  you aren't sharing even a statement much less a test case.  do you expect we can read your mind?
+2016-02-09 15:54:14	twkm	however, i'll guess that it is your printf that sucks.
+2016-02-09 15:54:29	harwiltz	Ok, I have this:
+2016-02-09 15:54:48	harwiltz	printf("%d\n",strtoull("9999999999",0,10));
+2016-02-09 15:55:01	harwiltz	The code I thought was clear enough to not need to share a snippet
+2016-02-09 15:55:02	twkm	yup, you fucked up the printf.
+2016-02-09 15:55:15	harwiltz	I guess I shouldn't be using %d...
+2016-02-09 15:55:21	harwiltz	yup I'm a dumbass
+2016-02-09 15:55:27	jalt	%d is for int, which will be 32bit on your system, which cannot hold your 999 value
+2016-02-09 15:55:43	twkm	feh.  ignore the assertion as to size.
+2016-02-09 15:56:11	jalt	i am right because he told me he got 1410065407 before
+2016-02-09 15:56:21	twkm	immaterial.
+2016-02-09 15:56:34	DHex	Hi
+2016-02-09 15:56:43	harwiltz	Wait but even with %u I get the same thing
+2016-02-09 15:56:52	Arch-TK	that's unsigned
+2016-02-09 15:56:53	crahan_	typedef struct bigNumber { char digit[1000]; }  , 1 digit per cas
+2016-02-09 15:56:53	jalt	%llu
+2016-02-09 15:56:54	twkm	you don't read the docs very well harwiltz.
+2016-02-09 15:56:58	Arch-TK	strtoull returns unsigned long long
+2016-02-09 15:57:08	harwiltz	I didn't see a %llu on the page I'm on
+2016-02-09 15:57:16	twkm	printf expects int due the %d, but the type of the argument is unsigned long long, so harwiltz has undefined behavior not "cannot hold your value".
+2016-02-09 15:57:21	jalt	no, you should see u and ll as a modifier
+2016-02-09 15:57:22	twkm	*READ* the page.
+2016-02-09 15:57:26	Arch-TK	harwiltz: that's because l is a length modifier
+2016-02-09 15:57:40	harwiltz	ok thanks guys
+2016-02-09 15:57:58	<--	HelloAtMega (~HelloShit@se-217-129-90-2.netvisao.pt) has quit (Ping timeout: 250 seconds)
+2016-02-09 15:58:02	Arch-TK	ll*
+2016-02-09 15:58:18	<--	crahan_ (~crahan@81-66-56-44.rev.numericable.fr) has quit (Quit: Quitte)
+2016-02-09 15:58:18	jalt	you were not wrong the first tie Arch-TK :)
+2016-02-09 15:58:23	jalt	*time
+2016-02-09 15:58:54	<--	baetheus- (~brandon@null.pub) has quit (Quit: Wherever I go, there I am.)
+2016-02-09 15:59:01	Arch-TK	jalt: I am aware, but in this case, he wants the ll modifier not the l modifier.
+2016-02-09 15:59:28	-->	baetheus (~brandon@null.pub) has joined ##c
+2016-02-09 15:59:43	twkm	ewww, what a horrible typedef.
+2016-02-09 16:00:01	<--	DenBeke (~DenBeke@94-226-3-62.access.telenet.be) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2016-02-09 16:00:29	-->	makaveli0227TL (~makaveli0@69.74.59.115) has joined ##c
+2016-02-09 16:00:38	Arch-TK	twkm: which typedef?
+2016-02-09 16:01:20	twkm	the one crahan emitted before running away.
+2016-02-09 16:01:39	<--	mi6x3m (~mi6x3m@x55b3aca1.dyn.telefonica.de) has quit (Ping timeout: 248 seconds)
+2016-02-09 16:01:58	<--	carvantes (~atomic@carvantes-acer720.dynamic.ucsd.edu) has quit (Quit: WeeChat 0.4.2)
+2016-02-09 16:02:05	-->	Khaotic_ (~Khaotic@unaffiliated/khaotic) has joined ##c
+2016-02-09 16:02:05	-->	treehug88 (~textual@static-108-30-103-59.nycmny.fios.verizon.net) has joined ##c
+2016-02-09 16:02:08	-->	carvantes (~atomic@carvantes-acer720.dynamic.ucsd.edu) has joined ##c
+2016-02-09 16:02:12	Arch-TK	twkm: I'd be curious as to how the fuck he is expecting that to work...
+2016-02-14 12:10:05	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##c
+2016-02-14 12:10:05	--	Topic for ##c is "The C Programming Language | C11 is the current C Standard | PASTE (>3 lines): http://ideone.com/ | WIKI: http://www.iso-9899.info/ | BOOKS: http://www.iso-9899.info/wiki/Books | Test your C knowledge in #cjeopardy!"
+2016-02-14 12:10:05	--	Topic set by pragma- on Sat, 28 Nov 2015 21:48:40
+2016-02-14 12:10:05	--	Channel ##c: 1009 nicks (1 op, 0 voices, 1008 normals)
+2016-02-14 12:10:05	--	PvNotice(ChanServ): Welcome to ##c! We engage in C programming discussions at all levels of expertise; don't hesitate to ask your question. If applicable, please prepare a testcase and paste it at http://ideone.com. We don't know about C++ (##c++) or C# (##csharp).
+2016-02-14 12:10:05	--	URL for ##c: http://www.iso-9899.info/
+2016-02-14 12:10:06	--	Channel created on Sun, 26 Nov 2006 06:42:39
+2016-02-14 12:10:44	<--	bcdmo (~bsvh@unaffiliated/bcdmo) has quit (Ping timeout: 248 seconds)
+2016-02-14 12:10:48	harwiltz	Hello. Can someone explain to me how to do algebra with modulo?
+2016-02-14 12:11:10	<--	snuffeluffegus (~snuffeluf@cpe-24-211-149-107.nc.res.rr.com) has quit (Quit: leaving)
+2016-02-14 12:12:33	-->	cousteau (~cousteau@213.102.132.37.dynamic.jazztel.es) has joined ##c
+2016-02-14 12:16:31	<--	ptz0 (~ptz0@95.163.86.172) has quit (Remote host closed the connection)
+2016-02-14 12:17:02	<--	Jesin (~Jesin@pool-108-45-39-144.washdc.fios.verizon.net) has quit (Remote host closed the connection)
+2016-02-14 12:17:44	-->	Ormu (niemia3@gateway/shell/tkk.fi/x-pzhzxiqaqmizgpmj) has joined ##c
+2016-02-14 12:17:52	<--	Ormu (niemia3@gateway/shell/tkk.fi/x-pzhzxiqaqmizgpmj) has left ##c ("dead 'n gone")
+2016-02-14 12:18:19	-->	jackbrown (~se@unaffiliated/jackbrown) has joined ##c
+2016-02-14 12:18:39	guts	http://codepad.org/HxCZsApO
+2016-02-14 12:19:18	<--	FunkyAss (~Funky@unaffiliated/funkyass) has quit (Quit: Make my Funk the P-Funk)
+2016-02-14 12:19:19	<--	mdw (~mdw@109.144.251.209) has quit (Quit: Sleeping Zzzzz)
+2016-02-14 12:19:36	-->	LoneHerm_ (~lonehermi@199.231.245.197) has joined ##c
+2016-02-14 12:20:16	<--	m477_ (~m477@93-137-232-52.adsl.net.t-com.hr) has quit (Ping timeout: 240 seconds)
+2016-02-14 12:20:26	<--	Murii (~donvlad@79.113.199.71) has quit (Quit: Live long and prosper!)
+2016-02-14 12:20:42	-->	Jesin (~Jesin@pool-108-45-39-144.washdc.fios.verizon.net) has joined ##c
+2016-02-14 12:20:56	cousteau	guts, "remainder", not "reminder"
+2016-02-14 12:21:18	-->	farlepet (~farlepet@97-90-231-162.dhcp.eucl.wi.charter.com) has joined ##c
+2016-02-14 12:22:37	guts	OMG so sorry, how could I do this?!?!
+2016-02-14 12:22:52	<--	shikanta1a (~shikantaz@ip5f5af21f.dynamic.kabel-deutschland.de) has quit (Quit: leaving)
+2016-02-14 12:23:01	cousteau	also what's that, an implementation of long division using arrays in base 10?
+2016-02-14 12:23:08	-->	ptz0 (~ptz0@95.163.86.172) has joined ##c
+2016-02-14 12:23:29	sphinxo	Is this the right place to ask for code review?
+2016-02-14 12:23:41	-->	M4GNV5 (~M4GNV5@p54988ADC.dip0.t-ipconnect.de) has joined ##c
+2016-02-14 12:24:23	cousteau	sphinxo, what kind of code review?  As in "is this algorithm OK" or as in "is this code written properly"?
+2016-02-14 12:24:50	sphinxo	cousteau: second kind
+2016-02-14 12:24:54	guts	cousteau: YEs
+2016-02-14 12:25:08	cousteau	well, maybe... is the code long?
+2016-02-14 12:25:18	sphinxo	not too long
+2016-02-14 12:25:23	sphinxo	http://lpaste.net/6237444123373076480
+2016-02-14 12:25:27	cousteau	guts, I see... does it work, or did it have a problem?
+2016-02-14 12:25:34	sphinxo	Have a look at that monstrosity
+2016-02-14 12:25:54	guts	Problem, cousteau
+2016-02-14 12:26:19	<--	Guest91820 (~tomas@host86-135-152-223.range86-135.btcentralplus.com) has quit (Quit: Leaving)
+2016-02-14 12:27:08	cousteau	sphinxo, well, first of all I prefer `sizeof hello` to `sizeof(hello)`
+2016-02-14 12:27:31	quelqun_dautre	but that's nothing more than personal preference
+2016-02-14 12:27:34	sphinxo	and i'm passing vm not hello into that function
+2016-02-14 12:27:46	-->	milner08 (~tomas@host86-135-152-223.range86-135.btcentralplus.com) has joined ##c
+2016-02-14 12:28:01	arlek_	any tips on how to make this code cleaner (but not sacrifice the simplicity)? http://pastebin.com/stcdv2t7
+2016-02-14 12:28:19	cousteau	typedefing a struct is usually unadvised unless it's for "creating an API" as you're doing, so it's ok
+2016-02-14 12:28:37	<--	chask (~chask@host93-11-dynamic.16-79-r.retail.telecomitalia.it) has quit (Quit: Leaving)
+2016-02-14 12:28:46	<--	pysec (~pyphile@ip-2a02-2149-822e-5300-7415-24a4-cf0d-1b0b.ip6.forthnet.gr) has quit (Ping timeout: 240 seconds)
+2016-02-14 12:29:00	-->	AJavaIdiot (~chatzilla@unaffiliated/ajavaidiot) has joined ##c
+2016-02-14 12:29:03	jackcom	http://ideone.com/Iog5mh
+2016-02-14 12:29:06	cousteau	#pragma once   is not standard though; I'd just use the classic   #ifndef VM_H_  #define VM_H_  /* code */  #endif
+2016-02-14 12:29:10	<--	mayhew (~mayhew@hlfxns016cw-142068191020.dhcp-dynamic.FibreOp.ns.bellaliant.net) has left ##c
+2016-02-14 12:29:16	sphinxo	Yeah ok
+2016-02-14 12:29:34	-->	weox (uid112413@gateway/web/irccloud.com/x-kifhigbkfutobfog) has joined ##c
+2016-02-14 12:29:53	<--	Borgesvive (~Zumbido@wikipedia/Borgesvive) has quit (Remote host closed the connection)
+2016-02-14 12:29:59	-->	cagmz (~cagmz@cpe-76-95-140-68.socal.res.rr.com) has joined ##c
+2016-02-14 12:30:17	-->	Anathema_ (~anathema@213.185.15.218) has joined ##c
+2016-02-14 12:30:23	-->	oleo_ (~oleo@unaffiliated/oleo) has joined ##c
+2016-02-14 12:30:26	cousteau	sphinxo, some next() are missing the ; after them...
+2016-02-14 12:30:45	cousteau	oh wait...
+2016-02-14 12:31:11	cousteau	#define next(); <-- doesn't need the ;
+2016-02-14 12:31:12	-->	masoudd (~masoudd@5.114.68.135) has joined ##c
+2016-02-14 12:31:23	sphinxo	thanks
+2016-02-14 12:31:32	cousteau	I'd rather do   #define next() goto *labels[vm->DP++]
+2016-02-14 12:31:32	jackcom	if ((fp = fopen(*++argv, "r")) == NULL)   <—— i don’t know *++argv’s meaning?
+2016-02-14 12:31:36	M4GNV5	so C# has MethodInfo.Invoke, js has Function.prototype.apply is there a way to obtain similar functionality in C? like this: http://pastebin.com/tMJdS48E ? the only way i can think of is going the asm way, but i hope theres an inbuilt way of doing this?
+2016-02-14 12:31:51	M4GNV5	and hello btw
+2016-02-14 12:31:52	cagmz	I'm having an issue with unnamed pipes and forking. My child process is the writer but it sometimes stops short of writing the whole input to the buffer. any ideas? https://gist.github.com/anonymous/7dc09e5b6d41d53a40e4
+2016-02-14 12:32:16	<--	oleo (~oleo@unaffiliated/oleo) has quit (Ping timeout: 240 seconds)
+2016-02-14 12:32:20	--	brunov0id is now known as d3lf0
+2016-02-14 12:32:47	cagmz	if I give the program a solid block of numbers with no newlines, it writes/reads them perfectly between child and parent
+2016-02-14 12:33:01	cousteau	although that's a bit ugly to do... using goto, macro magic, and that GCC && thingy
+2016-02-14 12:33:09	-->	urodna (~urodna@cpe-68-174-21-226.si.res.rr.com) has joined ##c
+2016-02-14 12:33:19	<--	urodna (~urodna@cpe-68-174-21-226.si.res.rr.com) has quit (Changing host)
+2016-02-14 12:33:19	-->	urodna (~urodna@unaffiliated/urodna) has joined ##c
+2016-02-14 12:33:20	<--	kernelk (~kernelk@124.123.194.46) has quit (Ping timeout: 264 seconds)
+2016-02-14 12:33:33	-->	anewuser (~anewuser@unaffiliated/anewuser) has joined ##c
+2016-02-14 12:33:58	-->	jokoon (jokoon@2a01:e35:398b:5d60:35d8:b068:539c:8b8f) has joined ##c
+2016-02-14 12:34:18	cousteau	M4GNV5, no, there's no way to call a function with a number of arguments variable at runtime
+2016-02-14 12:34:23	jackcom	*++argv  <—— what is it? i don’t know :(
+2016-02-14 12:34:29	-->	tsathoggua (~tsathoggu@cpe-75-82-51-231.socal.res.rr.com) has joined ##c
+2016-02-14 12:34:32	cousteau	jackcom, what is ++argv?
+2016-02-14 12:34:50	jackcom	*++argv cousteau
+2016-02-14 12:35:01	cousteau	yes, I didn't ask about that.  What is ++argv?
+2016-02-14 12:35:11	jackcom	oh
+2016-02-14 12:35:21	cousteau	(it's a bit complicated, since argv is a pointer)
+2016-02-14 12:36:04	jackcom	argv is pointer
+2016-02-14 12:36:13	cousteau	so ++argv is...?
+2016-02-14 12:36:20	M4GNV5	jackcom, its like argv = argv + 1; *argv; in one step
+2016-02-14 12:36:27	jackcom	yeah i know
+2016-02-14 12:36:37	jackcom	then what is type of argv?
+2016-02-14 12:36:47	jokoon	I have a void* which I want to decompress to a char array using zlib, cam somebody explain to me how to do it, because the zlib_how.html has 2 do nested loop and I don't understand everything
+2016-02-14 12:36:47	Learath2	M4GNV5, foo(args[0],args[1],args[2]) ? or void foo(int args[]) ?
+2016-02-14 12:37:03	cousteau	jackcom, the function prototype of main() almost says it
+2016-02-14 12:37:10	cousteau	it's a char **
+2016-02-14 12:37:19	jackcom	oh
+2016-02-14 12:37:29	Learath2	or do you not know the number of arguments
+2016-02-14 12:37:38	jackcom	char *argv[]  == char **?
+2016-02-14 12:37:45	M4GNV5	Learath2, i only have the length of args in an integer and foo as a void* from dlsym
+2016-02-14 12:37:57	cousteau	jackcom, only because it's a parameter declaration
+2016-02-14 12:38:33	cousteau	functions can't take arrays as arguments, so when you do void foo(int x[]) you're actually doing void foo(int *x)
+2016-02-14 12:38:42	-->	rkazak (~rkazak@c-24-6-104-170.hsd1.ca.comcast.net) has joined ##c
+2016-02-14 12:39:08	jackcom	oh
+2016-02-14 12:39:18	-->	vikaton (uid59278@gateway/web/irccloud.com/x-vbqjamxgugdgvaun) has joined ##c
+2016-02-14 12:39:30	jackcom	foo(int x[])  x is pointer instead of array?
+2016-02-14 12:39:38	cousteau	(NB: functions can take pointers to arrays, so void foo(int x[3][3]) is not the same as void foo(int **x))
+2016-02-14 12:39:43	cousteau	jackcom, yes
+2016-02-14 12:40:27	cousteau	however if you declare an array like   int y[3];   then it's not the same as a pointer; this is an exceptional thing function parameter declaration allows
+2016-02-14 12:40:33	jackcom	i don’t know why function can’t take arrays as arguments?
+2016-02-14 12:40:39	-->	Vexyl (~abc@unaffiliated/vexyl) has joined ##c
+2016-02-14 12:40:50	cousteau	because it can't; C is designed that waty
+2016-02-14 12:40:52	cousteau	*way
+2016-02-14 12:41:14	-->	carvantes (~carvantes@atomic-g74sx.dynamic.ucsd.edu) has joined ##c
+2016-02-14 12:41:31	<--	mad_enz (~mad_enz@CPE00508b114c3e-CM00fc8d50aef0.cpe.net.fido.ca) has quit (Quit: Leaving)
+2016-02-14 12:41:39	-->	IWishIKnew (~IWishIKne@nv-71-52-56-106.dhcp.embarqhsd.net) has joined ##c
+2016-02-14 12:41:40	<--	zrneely (~zrneely@dhcp-18-189-77-229.dyn.MIT.EDU) has quit (Ping timeout: 248 seconds)
+2016-02-14 12:42:11	<--	aaro (~aaro@unaffiliated/xyox/x-040147) has quit (Ping timeout: 260 seconds)
+2016-02-14 12:42:21	cousteau	C passes arguments to functions by value, i.e. it evaluates whatever you use to call the function and passes a copy of the result of evaluating it.  However when you evaluate an array in C you don't get the whole array, but a pointer to the first element
+2016-02-14 12:42:25	-->	mytec (~mytec@ip98-182-45-213.ri.ri.cox.net) has joined ##c
+2016-02-14 12:42:28	<--	LoneHerm_ (~lonehermi@199.231.245.197) has quit (Remote host closed the connection)
+2016-02-14 12:43:22	<--	Left_Turn (~Left_Turn@unaffiliated/turn-left/x-3739067) has quit (Ping timeout: 245 seconds)
+2016-02-14 12:43:26	-->	Aeroblop (~Aeroblop@5ec13782.skybroadband.com) has joined ##c
+2016-02-14 12:43:30	-->	Zumbido (~Zumbido@wikipedia/Borgesvive) has joined ##c
+2016-02-14 12:43:59	<--	tingol (~tingol@93-86-18-80.dynamic.isp.telekom.rs) has quit (Ping timeout: 256 seconds)
+2016-02-14 12:44:02	<--	Zumbido (~Zumbido@wikipedia/Borgesvive) has quit (Client Quit)
+2016-02-14 12:44:37	-->	Left_Turn (~Left_Turn@unaffiliated/turn-left/x-3739067) has joined ##c
+2016-02-14 12:44:44	-->	Zumbido (~Zumbido@wikipedia/Borgesvive) has joined ##c
+2016-02-14 12:44:47	<--	Left_Turn (~Left_Turn@unaffiliated/turn-left/x-3739067) has quit (Max SendQ exceeded)
+2016-02-14 12:44:52	Aeroblop	I'm trying to implement a linked list queue, which has a pointer to the head of the list (for popping elements) and a pointer to the end of the list (for easy enqueueing).
+2016-02-14 12:45:06	-->	mh3f (~matthew@howle.org) has joined ##c
+2016-02-14 12:45:26	Aeroblop	I'd like to instantiate n queues, so far I simply have an array of head pointers and an array of end pointers
+2016-02-14 12:45:33	guts	cousteau: Did you look at my code?
+2016-02-14 12:45:47	Aeroblop	such that heads[6] would point to the head of the seventh queue.
+2016-02-14 12:45:54	cousteau	guts, yes, but I didn't know what the problem was
+2016-02-14 12:45:55	guts	http://codepad.org/HxCZsApO
+2016-02-14 12:46:13	guts	Arbitrary precision arithmetic division
+2016-02-14 12:46:25	cousteau	oh, arbitrary precision, I see
+2016-02-14 12:46:40	cousteau	no, I mean what was wrong with it, not what the problem you wanted to solve was
+2016-02-14 12:46:57	<--	knicklux (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763) has quit (Remote host closed the connection)
+2016-02-14 12:47:02	-->	zrneely (~zrneely@dhcp-18-189-77-229.dyn.MIT.EDU) has joined ##c
+2016-02-14 12:47:04	cousteau	(anyway I'd rather implement that sort of thing using binary or a power of 2 base rather than decimal)
+2016-02-14 12:47:05	Aeroblop	I was just wondering what the best way to implement it into my program so I can have n queues. I was thinking of a function that just returns these two arrays of pointers, with an input int n. How would I go about doing this?
+2016-02-14 12:47:40	cousteau	Aeroblop, I'd rather have an array of struct { head, tail } than 2 separate arrays
+2016-02-14 12:47:42	Aeroblop	here is my code: http://ideone.com/8q81pK
+2016-02-14 12:48:21	<--	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has left ##c ("WeeChat 1.4")

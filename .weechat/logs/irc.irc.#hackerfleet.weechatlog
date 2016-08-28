@@ -1,0 +1,23 @@
+2016-08-03 17:44:06	-->	harwiltz (~harwiltz@modemcable008.180-58-74.mc.videotron.ca) has joined #hackerfleet
+2016-08-03 17:44:06	(●)	Topic for #hackerfleet is "Welcome to #hackerfleet! | Live installation: https://github.com/Hackerfleet/hfos/blob/master/README.rst#quickie-install - report issues at https://github.com/Hackerfleet/hfos/issues | Development: https://github.com/hackerfleet/ | We are NOT here to help you hack anyone."
+2016-08-03 17:44:06	(●)	Topic set by riot (riot@gateway/shell/c-base/x-tiiosfuccvrkukce) on Fri, 29 Jul 2016 12:06:34
+2016-08-03 17:44:06	(●)	Channel #hackerfleet: 11 nicks (2 ops, 0 voices, 9 normals)
+2016-08-03 17:44:08	(●)	Channel created on Sun, 26 Jun 2011 12:51:02
+2016-08-03 17:44:31	<--	harwiltz (~harwiltz@modemcable008.180-58-74.mc.videotron.ca) has left #hackerfleet ("WeeChat 1.5")
+2016-08-03 17:45:36	-->	harwiltz (~harwiltz@modemcable008.180-58-74.mc.videotron.ca) has joined #hackerfleet
+2016-08-03 17:45:36	(●)	Topic for #hackerfleet is "Welcome to #hackerfleet! | Live installation: https://github.com/Hackerfleet/hfos/blob/master/README.rst#quickie-install - report issues at https://github.com/Hackerfleet/hfos/issues | Development: https://github.com/hackerfleet/ | We are NOT here to help you hack anyone."
+2016-08-03 17:45:36	(●)	Topic set by riot (riot@gateway/shell/c-base/x-tiiosfuccvrkukce) on Fri, 29 Jul 2016 12:06:34
+2016-08-03 17:45:36	(●)	Channel #hackerfleet: 11 nicks (2 ops, 0 voices, 9 normals)
+2016-08-03 17:45:38	(●)	Channel created on Sun, 26 Jun 2011 12:51:02
+2016-08-03 17:45:47	(●)	You are now known as BobSacamano
+2016-08-03 17:47:02	BobSacamano	Hello all. I'm interested to learn how tools like aircrack-ng work. I'm not interested in using those tools, but more how I can build them myself. Is there anywhere I can learn stuff like that? I already know how to code.
+2016-08-03 17:47:44	@riot	I think you misunderstand what this channel is about.
+2016-08-03 17:48:01	@riot	Maybe the topic helps? ;)
+2016-08-03 17:48:23	@riot	We're hackers developing maritime technology/stuff/source
+2016-08-03 17:48:24	BobSacamano	riot: That's very possible. Do you know of another channel that's better suited for my inquiry?
+2016-08-03 17:48:35	BobSacamano	riot: Oh. Definitely a misunderstanding
+2016-08-03 17:48:40	@riot	hmm. Not sure. Did you check #aircrack ?
+2016-08-03 17:48:56	BobSacamano	riot: Didn't even think of that, haha. I'll try
+2016-08-03 17:49:01	BobSacamano	Sorry for the inconvenience
+2016-08-03 17:49:06	@riot	But actually, having played with that before: why don't you just try it out? Not much you can break, except the law.. (careful with that)
+2016-08-03 17:50:20	BobSacamano	I was planning on trying it on my own network. But I have no clue where to start programming-wise. I don't know how the attacks work

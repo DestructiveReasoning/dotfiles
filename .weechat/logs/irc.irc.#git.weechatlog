@@ -1,0 +1,188 @@
+2016-03-31 22:30:07	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #git
+2016-03-31 22:30:07	--	Topic for #git is "Welcome to #git, the place for git help and new versions: https://lkml.org/lkml/2016/3/28/436 | First visit? Read: http://jk.gs/git | Getting "cannot send to channel"? /msg gitinfo .voice | You can checkout any time you like, but you can never diff."
+2016-03-31 22:30:07	--	Topic set by Eugene (eugene@kashpureff.org) on Wed, 30 Mar 2016 21:35:58
+2016-03-31 22:30:07	--	Channel #git: 1195 nicks (1 op, 10 voices, 1184 normals)
+2016-03-31 22:30:09	--	Channel created on Sun, 26 Nov 2006 06:42:45
+2016-03-31 22:30:14	-->	garyserj (~garyserj@82-69-82-248.dsl.in-addr.zen.co.uk) has joined #git
+2016-03-31 22:30:27	harwiltz	Hey guys. Is it possible to remove specific commits from a repo?
+2016-03-31 22:30:47	<--	CubiK (~CubiK@unaffiliated/cubik) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-03-31 22:31:07	_ikke_	!sensitive
+2016-03-31 22:31:07	@gitinfo	[!filter_sensitive] You can use filter-branch to remove sensitive data from a repository's history. https://help.github.com/articles/remove-sensitive-data/
+2016-03-31 22:31:24	harwiltz	Thanks
+2016-03-31 22:31:29	_ikke_	Sorry, that's something different
+2016-03-31 22:31:38	-->	ochorocho__ (~Thunderbi@p548A6EAC.dip0.t-ipconnect.de) has joined #git
+2016-03-31 22:31:58	_ikke_	Are these old or new commits
+2016-03-31 22:31:59	harwiltz	I want to basically 'clear history' on some of my gits
+2016-03-31 22:32:16	harwiltz	_ikke_: From a few days ago
+2016-03-31 22:32:44	-->	iv4nnunes (~ivanelson@179.124.130.9-static.ipcarrier.com.br) has joined #git
+2016-03-31 22:33:47	<--	rominronin (~rominroni@89.185.127.226) has quit (Ping timeout: 276 seconds)
+2016-03-31 22:33:47	<--	daynaskully (~digifiv5e@unaffiliated/daynaskully) has quit (Ping timeout: 276 seconds)
+2016-03-31 22:33:48	<--	hexagoxel (~hexagoxel@p4FCCC3F7.dip0.t-ipconnect.de) has quit (Ping timeout: 244 seconds)
+2016-03-31 22:33:55	<--	imacinto (~imacinto@unaffiliated/imacinto) has quit (Ping timeout: 248 seconds)
+2016-03-31 22:34:37	-->	Bruce_ (~Bruce@cpe-104-33-59-122.socal.res.rr.com) has joined #git
+2016-03-31 22:34:44	-->	hexagoxel (~hexagoxel@p4FCCD766.dip0.t-ipconnect.de) has joined #git
+2016-03-31 22:34:51	_ikke_	You'd have to use rebase to remove the commit(s)
+2016-03-31 22:34:57	-->	digidog (~digidog@x4db4d2a3.dyn.telefonica.de) has joined #git
+2016-03-31 22:35:10	harwiltz	Ok, I was just looking into that. Trying now
+2016-03-31 22:35:29	-->	daynaskully (~digifiv5e@unaffiliated/daynaskully) has joined #git
+2016-03-31 22:35:50	<--	ochorocho__ (~Thunderbi@p548A6EAC.dip0.t-ipconnect.de) has quit (Ping timeout: 250 seconds)
+2016-03-31 22:36:16	<--	nevyn (~nevyn@106.ip-158-69-219.net) has quit (Ping timeout: 250 seconds)
+2016-03-31 22:36:38	<--	ivan_on_trac (~ivanelson@200.164.85.242) has quit (Ping timeout: 268 seconds)
+2016-03-31 22:37:09	harwiltz	_ikke_: How do I know my commit number? I'm looking at a tutorial explaining rebase and I see the commits ordered by number, and they use those numbers to remove them
+2016-03-31 22:38:07	<--	mizu_no_oto (~textual@c-50-177-170-9.hsd1.ma.comcast.net) has quit (Quit: Computer has gone to sleep.)
+2016-03-31 22:38:53	<--	Tanger (~ryan@203-206-133-252.perm.iinet.net.au) has quit (Quit: Tanger)
+2016-03-31 22:39:30	<--	cwek (cwek@185.85.148.52) has quit (Ping timeout: 244 seconds)
+2016-03-31 22:39:42	<--	Meow-J (uid69628@gateway/web/irccloud.com/x-uahvbcdnzeyxadjn) has quit (Quit: Connection closed for inactivity)
+2016-03-31 22:39:50	<--	nobso (~nobso@c-73-241-30-98.hsd1.ca.comcast.net) has quit (Quit: nobso)
+2016-03-31 22:40:01	-->	rchavik (~rchavik@unaffiliated/rchavik) has joined #git
+2016-03-31 22:40:13	<--	raijin (~raijin@unaffiliated/raijin) has quit (Ping timeout: 248 seconds)
+2016-03-31 22:42:11	<--	netj (~netj@naru.stanford.edu) has quit (Ping timeout: 268 seconds)
+2016-03-31 22:42:40	-->	netj (~netj@128.12.163.109) has joined #git
+2016-03-31 22:43:08	harwiltz	_ikke_: I have managed to remove the commits with rebase, but on github I can still see them
+2016-03-31 22:44:11	-->	NeonSynth (~NeonSynth@p549A647D.dip0.t-ipconnect.de) has joined #git
+2016-03-31 22:45:05	-->	realz (~realz@unaffiliated/realazthat) has joined #git
+2016-03-31 22:45:11	-->	FuzzySoc_ (~FuzzySock@c-71-234-150-182.hsd1.ma.comcast.net) has joined #git
+2016-03-31 22:45:41	-->	daito (~daito@203.104.128.123) has joined #git
+2016-03-31 22:46:48	<--	kellytk (~kellytk@unaffiliated/kellytk) has left #git
+2016-03-31 22:46:57	<--	FuzzySockets (~FuzzySock@pool-98-110-248-126.bstnma.fios.verizon.net) has quit (Ping timeout: 260 seconds)
+2016-03-31 22:47:10	-->	IIT_ (~xtriz@unaffiliated/xtriz) has joined #git
+2016-03-31 22:47:24	<--	michaelrice (~mrice@ip72-208-140-248.ph.ph.cox.net) has quit (Remote host closed the connection)
+2016-03-31 22:48:14	-->	mischat (~mischat@97e647c2.skybroadband.com) has joined #git
+2016-03-31 22:49:22	<--	johnwhitton (~johnwhitt@c-71-202-223-50.hsd1.ca.comcast.net) has quit (Quit: johnwhitton)
+2016-03-31 22:49:50	<--	rivarun (~rivarun@ipa210.225.tellas.gr) has quit (Ping timeout: 244 seconds)
+2016-03-31 22:50:20	<--	garyserj (~garyserj@82-69-82-248.dsl.in-addr.zen.co.uk) has quit (Ping timeout: 244 seconds)
+2016-03-31 22:50:27	<--	daito (~daito@203.104.128.123) has quit (Ping timeout: 260 seconds)
+2016-03-31 22:50:31	-->	garyserj (~garyserj@82-69-82-248.dsl.in-addr.zen.co.uk) has joined #git
+2016-03-31 22:50:47	<--	NeonSynth (~NeonSynth@p549A647D.dip0.t-ipconnect.de) has quit (Read error: Connection reset by peer)
+2016-03-31 22:50:47	<--	diegoaguilar (~diegoagui@187-163-194-96.static.axtel.net) has quit (Remote host closed the connection)
+2016-03-31 22:50:52	-->	rivarun (~rivarun@ipa210.225.tellas.gr) has joined #git
+2016-03-31 23:00:45	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #git
+2016-03-31 23:00:45	--	Topic for #git is "Welcome to #git, the place for git help and new versions: https://lkml.org/lkml/2016/3/28/436 | First visit? Read: http://jk.gs/git | Getting "cannot send to channel"? /msg gitinfo .voice | You can checkout any time you like, but you can never diff."
+2016-03-31 23:00:45	--	Topic set by Eugene (eugene@kashpureff.org) on Wed, 30 Mar 2016 21:35:58
+2016-03-31 23:00:45	--	Channel #git: 1185 nicks (1 op, 10 voices, 1174 normals)
+2016-03-31 23:00:47	--	Channel created on Sun, 26 Nov 2006 06:42:45
+2016-03-31 23:01:26	harwiltz	Hey guys. I made a repo and recently someone forked it. I need to delete commits I've made, and I've managed to delete them from my repo, but they still show up on the forked repo. Is it possible to remove those as well?
+2016-03-31 23:02:20	preaction	no
+2016-03-31 23:02:52	+Eugene	Nope. The forker would need to follow the advice in !rewrite
+2016-03-31 23:02:52	@gitinfo	Rewriting public history is not recommended. Everyone who has pulled the old history will have to do work (and you'll have to tell them to), so it's infinitely better to just move on. If you must, you can use `git push --force-with-lease <remote> <branch>` to force (and the remote may reject that, anyway). See http://goo.gl/waqum
+2016-03-31 23:03:05	preaction	well, you can ask nicely. you can also, depending on the situation, ask not-so-nicely
+2016-03-31 23:03:17	<--	ekinmur (~ekinmur@98.204.177.40) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-03-31 23:03:20	harwiltz	But the person that forked didn't provide an email address
+2016-03-31 23:03:31	+Eugene	Oh well, welcome to open source ;-)
+2016-03-31 23:04:18	harwiltz	this git push --force-with-lease basically syncs my repo with his if he accepts?
+2016-03-31 23:04:25	+Eugene	No; the link at the end
+2016-03-31 23:04:44	-->	jagob (~jacob@99-101-9-61.lightspeed.sndgca.sbcglobal.net) has joined #git
+2016-03-31 23:04:47	<--	dsantiago (~dsantiago@cpe-104-175-220-187.socal.res.rr.com) has quit (Ping timeout: 264 seconds)
+2016-03-31 23:04:48	<--	rivarun (~rivarun@ipa210.225.tellas.gr) has quit (Ping timeout: 244 seconds)
+2016-03-31 23:04:51	<--	hubertus_quack (~hubertus_@dslb-092-073-141-036.092.073.pools.vodafone-ip.de) has quit (Quit: hubertus_quack)
+2016-03-31 23:05:14	preaction	what kind of sensitive information did you just remove?
+2016-03-31 23:05:18	<--	garyserj (~garyserj@82-69-82-248.dsl.in-addr.zen.co.uk) has quit (Ping timeout: 244 seconds)
+2016-03-31 23:05:25	--	up_the_irons2 is now known as up_the_irons
+2016-03-31 23:05:35	-->	hubertus_quack (~hubertus_@dslb-092-073-141-036.092.073.pools.vodafone-ip.de) has joined #git
+2016-03-31 23:05:54	--	up_the_irons is now known as Guest14937
+2016-03-31 23:05:55	harwiltz	preaction: Nothing really sensitive. I just don't want it to be there. Since the commits are from me, there's no way of getting them to just not show?
+2016-03-31 23:06:08	-->	garyserj (~garyserj@82-69-82-248.dsl.in-addr.zen.co.uk) has joined #git
+2016-03-31 23:06:13	preaction	no. why don't you want them there?
+2016-03-31 23:06:19	--	Guest14937 is now known as up_the_irons2
+2016-03-31 23:06:22	harwiltz	...long story
+2016-03-31 23:06:36	preaction	then give me the reader's digest version
+2016-03-31 23:07:04	preaction	the point being is you absolutely cannot do anything with someone else's repository unless they want you to, so you should likely modify your wants
+2016-03-31 23:07:09	harwiltz	Basically, I uploaded an assignment I'm working on to github about a day before it was due, then we got an extension after I posted it
+2016-03-31 23:07:27	harwiltz	Obviously, when I posted it there was barely any time left to hand it in, so I didn't think it was an issue
+2016-03-31 23:07:31	<--	FuzzySoc_ (~FuzzySock@c-71-234-150-182.hsd1.ma.comcast.net) has quit (Ping timeout: 248 seconds)
+2016-03-31 23:07:39	harwiltz	However, after the extension was given, someone forked it
+2016-03-31 23:07:42	-->	rivarun (~rivarun@ipa210.225.tellas.gr) has joined #git
+2016-03-31 23:07:50	harwiltz	I don't want to get in trouble for cheating, so I warned my prof
+2016-03-31 23:08:10	+Eugene	Next time, wait until end-of-term to push
+2016-03-31 23:08:19	preaction	did you upload to github with a clear, open-source license?
+2016-03-31 23:08:37	harwiltz	The only thing is, I decided to give credit to my prof for the assignment in the README, but seeing as that no one knows my github I decided to give him a funny nickname (not insulting). I don't really want him to see it though
+2016-03-31 23:09:15	preaction	the internet is forever. lesson learned?
+2016-03-31 23:09:25	harwiltz	I guess
+2016-03-31 23:09:45	-->	eletuchy (~eletuchy@75-175-13-78.ptld.qwest.net) has joined #git
+2016-03-31 23:09:57	harwiltz	I'm debating just not linking him to the page at this point and hoping he forgets I said anything, but that's probably a bad idea
+2016-03-31 23:10:28	+Eugene	I would do that
+2016-03-31 23:10:47	harwiltz	Eugene: really? I mean it IS a class of over 300 people...
+2016-03-31 23:10:51	<--	aruntomar (~aruntomar@103.8.149.215) has quit (Quit: aruntomar)
+2016-03-31 23:10:52	harwiltz	So it's possible
+2016-03-31 23:10:56	harwiltz	Also he doesn't know my name
+2016-03-31 23:11:11	-->	hubertus_quack_ (~hubertus_@dslb-092-073-190-104.092.073.pools.vodafone-ip.de) has joined #git
+2016-03-31 23:11:23	rewt	what's the nickname?
+2016-03-31 23:12:00	harwiltz	rewt: hahaha. I wrote Dr <First Name> "The Goyish Messiah" <Last Name>
+2016-03-31 23:12:36	harwiltz	I never expected him to see it, and I particularly did not expect to link him to it myself while the course is still in progress
+2016-03-31 23:13:23	<--	hubertus_quack (~hubertus_@dslb-092-073-141-036.092.073.pools.vodafone-ip.de) has quit (Ping timeout: 248 seconds)
+2016-03-31 23:13:31	preaction	yeah... hope your professor isn't strict on potentially racist comments...
+2016-03-31 23:13:45	deltab	do you know who the forker is?
+2016-03-31 23:13:55	harwiltz	preaction: How is it racist?
+2016-03-31 23:14:06	harwiltz	deltab: No. I'm pretty sure the forker isn't even in my class
+2016-03-31 23:14:13	rewt	deltab, it's probably his prof
+2016-03-31 23:14:22	harwiltz	rewt: Definitely not my prof
+2016-03-31 23:14:42	harwiltz	rewt: I spoke to him today and I dont even think he knows what github is
+2016-03-31 23:14:56	harwiltz	preaction: Goyish simply means "not jewish". There is nothing racist there
+2016-03-31 23:14:59	<--	rivarun (~rivarun@ipa210.225.tellas.gr) has quit (Ping timeout: 264 seconds)
+2016-03-31 23:16:10	<--	Radivarig (~Radivarig@cpe-188-129-115-147.dynamic.amis.hr) has quit (Ping timeout: 244 seconds)
+2016-03-31 23:16:35	-->	Radivarig (~Radivarig@cpe-188-129-111-186.dynamic.amis.hr) has joined #git
+2016-03-31 23:16:41	<--	ahr3n (~textual@222-154-240-28.adsl.xtra.co.nz) has quit (Ping timeout: 276 seconds)
+2016-03-31 23:16:59	-->	dsantiago (~dsantiago@cpe-104-175-220-187.socal.res.rr.com) has joined #git
+2016-03-31 23:17:05	<--	hubertus_quack_ (~hubertus_@dslb-092-073-190-104.092.073.pools.vodafone-ip.de) has left #git
+2016-03-31 23:18:37	<--	jagob (~jacob@99-101-9-61.lightspeed.sndgca.sbcglobal.net) has quit (Ping timeout: 248 seconds)
+2016-03-31 23:18:57	deltab	so you've warned the prof that you've published your assignment unintentionally early
+2016-03-31 23:19:31	harwiltz	deltab: I warned him that someone forked it and may potentially have copied me
+2016-03-31 23:19:38	-->	jagob (~jacob@99-101-9-61.lightspeed.sndgca.sbcglobal.net) has joined #git
+2016-03-31 23:19:42	 *	deltab nods
+2016-03-31 23:19:49	harwiltz	But he doesn't know my name or my github account
+2016-03-31 23:20:05	deltab	if no-one uses it to cheat, is there an issue?
+2016-03-31 23:20:47	harwiltz	deltab: There shouldn't be
+2016-03-31 23:21:30	deltab	if someone does use it (not necessarily the forker), then you might have to go into more detail about it
+2016-03-31 23:22:05	harwiltz	I guess, but at this point there's nothing I can do about that
+2016-03-31 23:22:14	-->	Thorn (~Thorn@unaffiliated/thorn) has joined #git
+2016-03-31 23:22:25	harwiltz	As far as I'm concerned, nobody I know knows that I posted the code.
+2016-03-31 23:23:25	-->	rivarun (~rivarun@ipa210.225.tellas.gr) has joined #git
+2016-03-31 23:24:10	<--	Gitted (3ee80456@gateway/web/freenode/ip.62.232.4.86) has quit (Ping timeout: 250 seconds)
+2016-03-31 23:24:20	<--	AndroidVaan (~AndroidVa@p549A647D.dip0.t-ipconnect.de) has quit (Remote host closed the connection)
+2016-03-31 23:24:53	<--	clemf (~textual@c-50-139-41-170.hsd1.or.comcast.net) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2016-03-31 23:27:38	-->	aruntomar (~aruntomar@103.8.149.215) has joined #git
+2016-03-31 23:28:16	-->	medeirosthiiago (~medeirost@179.182.243.163) has joined #git
+2016-03-31 23:29:06	harwiltz	Do you think my safest bet is to remove the repo from my account and just hope he forgets about this?
+2016-03-31 23:29:28	-->	rominronin (~rominroni@89.185.127.226) has joined #git
+2016-03-31 23:29:58	preaction	you could re-create the repo so that the "fork" doesn't appear to be linked together maybe
+2016-03-31 23:31:08	harwiltz	preaction: How does recreating it solve my problem though?
+2016-03-31 23:31:29	preaction	because now it isn't forked. there's no link from your repo to that repo with the bad commits
+2016-03-31 23:32:01	harwiltz	But isn't removing it better? Then he can't blame me for posting my code online
+2016-03-31 23:32:04	preaction	unless your actual name is plastered all over it, and even then, how could that have happened? you don't remember. all you remember is what's on your repo. plausible deniability
+2016-03-31 23:32:35	harwiltz	Well I can change my name on github for now. I have my name written in the code once
+2016-03-31 23:33:00	harwiltz	But it will be fairly hard for the prof to find it and blame me for anything if I delete my repo I would think
+2016-03-31 23:33:13	harwiltz	Especially since he isn't familiar with github
+2016-03-31 23:33:38	harwiltz	He probably doesn't even know it's on github/probably doesn't remember the name github
+2016-03-31 23:33:54	preaction	i'm sensing you have a deep admiration and respect for your professor
+2016-03-31 23:34:23	<--	rominronin (~rominroni@89.185.127.226) has quit (Ping timeout: 240 seconds)
+2016-03-31 23:34:43	harwiltz	preaction: Allegedly
+2016-03-31 23:34:48	<--	nilsi (~nilsi@183.101.241.130) has quit (Remote host closed the connection)
+2016-03-31 23:35:14	harwiltz	He doesn't give us hard assignments, and the rest of the class isn't actually having frequent panic attacks
+2016-03-31 23:35:38	-->	dreiss (~dreiss@c-73-71-123-17.hsd1.ca.comcast.net) has joined #git
+2016-03-31 23:35:54	<--	mizu_no_oto (~textual@c-50-177-170-9.hsd1.ma.comcast.net) has quit (Quit: Computer has gone to sleep.)
+2016-03-31 23:39:24	-->	fedexo (~quassel@2602:30a:c021:5bf0:e0e3:5aa4:9438:b5ac) has joined #git
+2016-03-31 23:39:32	-->	grill (~grill@unaffiliated/floatingpoint) has joined #git
+2016-03-31 23:45:31	-->	Nokurn (~Nokurn@cpe-66-74-59-49.dc.res.rr.com) has joined #git
+2016-03-31 23:45:43	<--	ToBeCloud (uid51591@wikimedia/ToBeFree) has quit (Quit: Connection closed for inactivity)
+2016-03-31 23:45:58	harwiltz	Also, I can't even find my repo from a google search of the repo name
+2016-03-31 23:47:32	-->	digidog_ (~digidog@x4db3390f.dyn.telefonica.de) has joined #git
+2016-03-31 23:49:00	-->	sanketdg (~sanketdg@nas8.meghbelabroadband.in) has joined #git
+2016-03-31 23:49:00	-->	mischat (~mischat@97e647c2.skybroadband.com) has joined #git
+2016-03-31 23:49:18	-->	emPi (~emPi@unaffiliated/empi) has joined #git
+2016-03-31 23:49:21	<--	aruntomar (~aruntomar@103.8.149.215) has quit (Quit: aruntomar)
+2016-03-31 23:50:18	-->	brinck10 (~slightlyA@91.230.41.193) has joined #git
+2016-03-31 23:50:37	<--	digidog (~digidog@x4db4d2a3.dyn.telefonica.de) has quit (Ping timeout: 248 seconds)
+2016-03-31 23:50:46	-->	hahuang61 (~hahuang65@2601:647:4000:12da:f8ee:994e:bfc7:456f) has joined #git
+2016-03-31 23:50:46	<--	otho (~otho@177.180.162.31) has quit (Quit: Leaving)
+2016-03-31 23:51:02	-->	cdg (~cdg@2602:306:bd5d:2c20:41fc:27cd:679d:10d3) has joined #git
+2016-03-31 23:51:41	<--	hahuang65 (~hahuang65@2601:647:4000:12da:7958:5143:994d:c5a3) has quit (Ping timeout: 248 seconds)
+2016-03-31 23:53:09	-->	nukeu666 (~nuke@125.19.134.86) has joined #git
+2016-03-31 23:53:32	-->	aruntomar (~aruntomar@219.91.208.239) has joined #git
+2016-03-31 23:53:38	-->	IWishIKnew (~IWishIKne@nv-71-52-56-106.dhcp.embarqhsd.net) has joined #git
+2016-03-31 23:54:02	<--	drewo (~drew@S0106c04a003860e9.vc.shawcable.net) has quit (Ping timeout: 260 seconds)
+2016-03-31 23:54:20	<--	emPi (~emPi@unaffiliated/empi) has quit (Ping timeout: 268 seconds)
+2016-03-31 23:54:56	<--	brinck10 (~slightlyA@91.230.41.193) has quit (Ping timeout: 244 seconds)
+2016-03-31 23:55:08	-->	Meow-J (uid69628@gateway/web/irccloud.com/x-asuygpjqfssfigtc) has joined #git
+2016-03-31 23:55:34	<--	cdg (~cdg@2602:306:bd5d:2c20:41fc:27cd:679d:10d3) has quit (Ping timeout: 268 seconds)
+2016-03-31 23:55:47	<--	mischat (~mischat@97e647c2.skybroadband.com) has quit (Ping timeout: 260 seconds)
+2016-03-31 23:56:17	-->	emPi (~emPi@unaffiliated/empi) has joined #git

@@ -1,0 +1,23 @@
+2016-08-13 12:34:44	-->	harwiltz (~harwiltz@modemcable008.180-58-74.mc.videotron.ca) has joined #gimp
+2016-08-13 12:34:44	(●)	Topic for #gimp is "Please read http://docs.gimp.org/en/ | Don't ask to ask, don't ask for someone, just ask, make sense and wait patiently - see http://www.catb.org/~esr/faqs/smart-questions.html | 2.8.16 is out"
+2016-08-13 12:34:44	(●)	Topic set by Mikachu on Mon, 23 Nov 2015 14:32:16
+2016-08-13 12:34:44	(●)	Channel #gimp: 95 nicks (1 op, 0 voices, 94 normals)
+2016-08-13 12:34:46	(●)	Channel created on Sun, 26 Nov 2006 06:42:45
+2016-08-13 12:35:10	<--	CodingWolf (~CodingWol@st2-84-90-154-197.netvisao.pt) has quit (Read error: Connection reset by peer)
+2016-08-13 12:36:09	harwiltz	Hey guys. I'm trying to create an animation of a car tachometer, but I don't know how to do the rotation across multiple frames. After one rotation, I don't know how to efficiently select the right part to rotate
+2016-08-13 12:44:45	-->	Leates_ (~Leates@unaffiliated/leates) has joined #gimp
+2016-08-13 12:45:34	<--	Leates (~Leates@unaffiliated/leates) has quit (Read error: Connection reset by peer)
+2016-08-13 12:53:24	schumaml	harwiltz: you don't have the pointer on its own layer?
+2016-08-13 12:53:24	<--	alternate_nick (~user_name@106-68-207-24.dyn.iinet.net.au) has quit (Ping timeout: 264 seconds)
+2016-08-13 12:54:26	harwiltz	schumaml: Yeah, just did that lol. Forgot you can manually set the duration of each layer, so I set it to 0ms. But is there a way to do a smooth rotation?
+2016-08-13 12:54:40	harwiltz	Or do I have to just rotate it manually a bunch of times
+2016-08-13 12:59:36	schumaml	you have to do it manually, or use the GASP plug-ins to do that for you
+2016-08-13 12:59:43	schumaml	*GAP
+2016-08-13 13:00:15	<--	Void7 (~NULL@205.157.147.198) has quit (Ping timeout: 252 seconds)
+2016-08-13 13:00:48	<--	jost (~jost@p508BE0C4.dip0.t-ipconnect.de) has quit (Ping timeout: 252 seconds)
+2016-08-13 13:01:25	harwiltz	oh ok, thanks
+2016-08-13 13:01:42	-->	jost (~jost@p508BE260.dip0.t-ipconnect.de) has joined #gimp
+2016-08-13 13:09:41	-->	tjt263 (~user_name@115-166-15-221.dyn.iinet.net.au) has joined #gimp
+2016-08-13 13:14:43	-->	Void7 (~NULL@205.157.147.198) has joined #gimp
+2016-08-13 13:26:17	<--	Void7 (~NULL@205.157.147.198) has quit (Ping timeout: 276 seconds)
+2016-08-13 13:26:44	-->	Void7 (~NULL@205.157.147.198) has joined #gimp

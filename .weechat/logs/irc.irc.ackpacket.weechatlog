@@ -1,0 +1,84 @@
+2016-04-09 20:54:13	ackpacket	here plz
+2016-04-09 20:59:28	harwiltz	Consider a situation where you are given an array A of n positive integers, each of these integers being bounded by a polynomial n^k. Show that radix sort using k rounds, combined with Counting Sort, will allow you to sort these numbers in O(n) time.
+2016-04-09 20:59:53	ackpacket	lmao
+2016-04-09 20:59:57	ackpacket	That's gotta be a mistake
+2016-04-09 21:01:37	harwiltz	Why?
+2016-04-09 21:02:35	harwiltz	It wouldn't surprise me, my prof always assigns shit and then realizes he made like 10 mistakes a few days before its due and changes everything...
+2016-04-09 21:03:07	ackpacket	O(n) is possible depending on the data distribution.  For example sorted data.
+2016-04-09 21:03:12	ackpacket	But big-O is worst case
+2016-04-09 21:03:20	ackpacket	can't assume friendly data
+2016-04-09 21:04:06	harwiltz	Ok, but this is a sorting algorithm. Of course the input will be unsorted. I think I'm missing something haha
+2016-04-09 21:05:38	harwiltz	Also, radix sort/counting sort are not comparison sorting, so why would the data distribution even matter?
+2016-04-09 21:09:02	ackpacket	how would you sort things without comparing them?
+2016-04-09 21:09:33	ackpacket	data distribution matters because it allows early termination, to answer your question
+2016-04-09 21:09:41	ackpacket	meaning you could read the entire array once and realize there is nothing left to do
+2016-04-09 21:09:52	harwiltz	ackpacket Yes but radix sort doesn't do comparisons
+2016-04-09 21:10:01	harwiltz	Its a weird sorting algorithm
+2016-04-09 21:10:15	ackpacket	I know I've implemented it on the GPU lol
+2016-04-09 21:10:42	harwiltz	So why does the distribution matter? Either way it has to sort each column
+2016-04-09 21:14:05	ackpacket	Well for one, you can't even do a counting sort without some kind of knowledge about the data distribution
+2016-04-09 21:14:26	ackpacket	counting is basically a count, a prefix sum, and a scatter
+2016-04-09 21:14:44	harwiltz	You know that there are at most n possible digits!
+2016-04-09 21:14:58	harwiltz	If we're in base n, each digit has n possibilities
+2016-04-09 21:15:02	ackpacket	Right... which is knowledge about the data you're sorting.
+2016-04-09 21:15:24	ackpacket	<ackpacket> Well for one, you can't even do a counting sort without some kind of knowledge about the data distribution
+2016-04-09 21:15:37	ackpacket	a bound on the data is such knowledge
+2016-04-09 21:15:53	harwiltz	Ok, do you agree that if n numbers are bounded by n^k, and there are k columns, the numbers must be in base n?
+2016-04-09 21:16:07	ackpacket	Sure
+2016-04-09 21:16:19	harwiltz	Sorry, instead of k columns, I mean that radix sort goes through k passes
+2016-04-09 21:16:28	ackpacket	Right
+2016-04-09 21:16:36	harwiltz	So is there any way radix can do better than O(kn)?
+2016-04-09 21:16:46	harwiltz	In this situation I mean
+2016-04-09 21:17:40	ackpacket	Well K rounds of count sorting.  So it's K * counting_sort_complexity
+2016-04-09 21:17:58	ackpacket	You agree with that?
+2016-04-09 21:18:16	harwiltz	Right. Counting sort is O(n + q), where q is the range of numbers, and in this case q = n so O(2n) = O(n)
+2016-04-09 21:18:37	ackpacket	Then you've reached your answer
+2016-04-09 21:19:02	harwiltz	Ok, but I have to find O(n), does this mean I'm on the wrong path or something?
+2016-04-09 21:19:28	ackpacket	it could be that your professor considers the K to be something you can drop off.  My opinion is that you can't, I've explained why, but he might feel differently.
+2016-04-09 21:19:40	harwiltz	Also, I still don't understand when radix will ever do early termination
+2016-04-09 21:21:30	ackpacket	oh radix?  Won't.  Sorry I just looked at the scrollback, I was a bit tired and tabbed away, when I came back I was thinking of merge sort.  Which has variants that take advantage of already sorted data runs
+2016-04-09 21:22:34	harwiltz	Ok, so how is radix affected by data distribution?
+2016-04-09 21:23:13	ackpacket	It wouldn't, we started talking about sorting and I was saying O(n) is a possibility for certain data distributions.
+2016-04-09 21:23:54	ackpacket	there are sorts that take advantage of data distribution
+2016-04-09 21:26:36	harwiltz	Oh ok, that makes more sense
+2016-04-09 21:27:31	ackpacket	sorry if I confused you.  Probably shouldn't be on here with little rest XD
+2016-04-09 21:27:43	harwiltz	So you're saying that unless I'm allowed to drop off the factor of k, you think it's impossible for radix to do the sort in O(n) in these conditions?
+2016-04-09 21:27:51	harwiltz	Lol no problem. Youve been very helpful
+2016-04-09 21:27:59	ackpacket	Well
+2016-04-09 21:28:39	ackpacket	you could allocate n^k for the counting sort, and only do one counting sort XD
+2016-04-09 21:28:44	ackpacket	that would be O(n) lmfao
+2016-04-09 21:28:55	harwiltz	hahahaha
+2016-04-09 21:28:55	ackpacket	but you'd need a lot of memory my friend
+2016-04-09 21:29:14	ackpacket	technically it's an answer to your professor's question
+2016-04-09 21:29:14	harwiltz	Probably too much memory ;)
+2016-04-09 21:29:39	ackpacket	Even then you'd have to traverse the count array that is n^k big
+2016-04-09 21:29:57	harwiltz	But then radix sort wouldn't have k rounds
+2016-04-09 21:30:38	ackpacket	you'd still be scaling with k
+2016-04-09 21:30:51	harwiltz	Yeah but we wouldn't be using the proposed algorithm
+2016-04-09 21:31:44	ackpacket	I know I'm saying it's wrong... you don't *want* to scale with k.  Your professor is asking you to show that it only scales with n
+2016-04-09 21:31:52	ackpacket	unless he intends for you to just lop k off
+2016-04-09 21:32:20	harwiltz	Yea I see...
+2016-04-09 21:32:28	harwiltz	I just don't see how that's possible
+2016-04-09 21:32:46	ackpacket	I'll tell you what saved my life throughout college
+2016-04-09 21:32:48	harwiltz	I don't see how you can entirely get rid of the k if you're doing k rounds, that means you have to divide by k somewhere else
+2016-04-09 21:32:49	ackpacket	aced most assignments
+2016-04-09 21:32:56	ackpacket	using this technique
+2016-04-09 21:33:16	harwiltz	which technique?
+2016-04-09 21:33:26	ackpacket	1) make a good solid run at things like you are doing now.  2) go to office hours and explain your thinking.  3) prof will correct you where you went off course.  4) wrap up homework, should be mostly correct not.
+2016-04-09 21:33:35	ackpacket	*now
+2016-04-09 21:35:26	harwiltz	That makes sense. I'll probably go see him. Main problem is that I have finals soon and a bunch of assignments to finish, and I live like 2 hours away from school
+2016-04-09 21:35:36	ackpacket	ew
+2016-04-09 21:35:39	ackpacket	that's rough
+2016-04-09 21:36:00	harwiltz	:(
+2016-04-09 21:36:22	harwiltz	I'll try to talk to my prof after class on tuesday. I'm just worried that I'm not leaving myself enough time to finish
+2016-04-09 21:36:36	ackpacket	well, do everything else you can.  skip the problem
+2016-04-09 21:37:34	harwiltz	Yup. I've basically done that, thankfully. I'm pretty sure this, along with one more, are the only two left for this assignment
+2016-04-09 23:04:30	<--	ackpacket (~ackpacket@unaffiliated/ackpacket) has quit (Remote host closed the connection)
+2016-04-13 21:36:28	ackpacket	https://coderpad.io/WP7T7CQG
+2016-04-13 21:41:02	harwiltz	Sorry just saw this now!
+2016-04-13 21:41:09	ackpacket	no worries
+2016-04-13 21:41:14	ackpacket	we can do it in java if you want, actually
+2016-04-13 21:41:17	ackpacket	python is a bit more clear tho
+2016-04-13 21:42:25	harwiltz	I don't mind, doesn't make much of a difference to me
+2016-04-13 21:43:23	ackpacket	join me in the codepad.  Use comments at the bottom to chat
+2016-04-13 21:43:33	harwiltz	I'm already in

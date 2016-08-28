@@ -1,0 +1,52 @@
+2015-09-12 12:15:05	harwiltz	help register
+2015-09-12 12:15:06	--	NickServ: ***** NickServ Help *****
+2015-09-12 12:15:06	--	NickServ: Help for REGISTER:
+2015-09-12 12:15:06	--	NickServ:  
+2015-09-12 12:15:06	--	NickServ: This will register your current nickname with NickServ.
+2015-09-12 12:15:06	--	NickServ: This will allow you to assert some form of identity on
+2015-09-12 12:15:06	--	NickServ: the network and to be added to access lists. Furthermore,
+2015-09-12 12:15:06	--	NickServ: NickServ will warn users using your nick without
+2015-09-12 12:15:06	--	NickServ: identifying and allow you to kill ghosts.
+2015-09-12 12:15:06	--	NickServ: The password is a case-sensitive password that you make
+2015-09-12 12:15:06	--	NickServ: up. Please write down or memorize your password! You
+2015-09-12 12:15:06	--	NickServ: will need it later to change settings.
+2015-09-12 12:15:06	--	NickServ:  
+2015-09-12 12:15:06	--	NickServ: You have to confirm the email address. To do this,
+2015-09-12 12:15:06	--	NickServ: follow the instructions in the message sent to the email
+2015-09-12 12:15:06	--	NickServ: address.
+2015-09-12 12:15:06	--	NickServ:  
+2015-09-12 12:15:06	--	NickServ: Syntax: REGISTER <password> <email-address>
+2015-09-12 12:15:06	--	NickServ:  
+2015-09-12 12:15:06	--	NickServ: Examples:
+2015-09-12 12:15:06	--	NickServ:     /msg NickServ REGISTER bar foo@bar.com
+2015-09-12 12:15:06	--	NickServ: ***** End of Help *****
+2015-09-12 12:17:18	harwiltz	help identify
+2015-09-12 12:17:18	--	NickServ: ***** NickServ Help *****
+2015-09-12 12:17:18	--	NickServ: Help for IDENTIFY:
+2015-09-12 12:17:18	--	NickServ:  
+2015-09-12 12:17:18	--	NickServ: IDENTIFY identifies you with services so that you
+2015-09-12 12:17:18	--	NickServ: can perform general maintenance and commands that
+2015-09-12 12:17:18	--	NickServ: require you to be logged in.
+2015-09-12 12:17:18	--	NickServ:  
+2015-09-12 12:17:18	--	NickServ: Syntax: IDENTIFY <password>
+2015-09-12 12:17:18	--	NickServ:  
+2015-09-12 12:17:18	--	NickServ: You can also identify for another nick than you
+2015-09-12 12:17:18	--	NickServ: are currently using.
+2015-09-12 12:17:18	--	NickServ:  
+2015-09-12 12:17:18	--	NickServ: Syntax: IDENTIFY <nick> <password>
+2015-09-12 12:17:18	--	NickServ:  
+2015-09-12 12:17:18	--	NickServ: Example:
+2015-09-12 12:17:18	--	NickServ:     /msg NickServ IDENTIFY foo
+2015-09-12 12:17:18	--	NickServ:     /msg NickServ IDENTIFY jilles foo
+2015-09-12 12:17:18	--	NickServ: ***** End of Help *****
+2015-09-12 12:19:06	harwiltz	REGISTER 0429 harleyw@hotmail.com
+2015-09-12 12:19:07	--	NickServ: An email containing nickname activation instructions has been sent to harleyw@hotmail.com.
+2015-09-12 12:19:07	--	NickServ: If you do not complete registration within one day, your nickname will expire.
+2015-09-12 12:19:07	--	NickServ: harwiltz is now registered to harleyw@hotmail.com, with the password 0429.
+2015-09-12 12:19:07	--	NickServ:  
+2015-09-12 12:19:07	--	NickServ: For frequently-asked questions about the network, please see the
+2015-09-12 12:19:07	--	NickServ: FAQ page (http://freenode.net/faq.shtml). Should you need more
+2015-09-12 12:19:07	--	NickServ: help you can /join #freenode to find network staff.
+2015-09-12 12:19:58	harwiltz	VERIFY REGISTER harwiltz assherznikib
+2015-09-12 12:19:58	--	NickServ: harwiltz has now been verified.
+2015-09-12 12:19:58	--	NickServ: Thank you for verifying your e-mail address! You have taken steps in ensuring that your registrations are not exploited.

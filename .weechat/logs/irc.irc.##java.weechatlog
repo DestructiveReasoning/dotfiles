@@ -1,0 +1,179 @@
+2016-03-23 16:04:32	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##java
+2016-03-23 16:04:32	--	Topic for ##java is "Welcome! || Read http://javachannel.org/ before participating. || Paste limit is two lines; ~pastebin lists options. || No applets, please. || Minecraft, Android, and Javascript all have their own channel. || You are being logged."
+2016-03-23 16:04:32	--	Topic set by ojacobson on Fri, 29 May 2015 20:24:05
+2016-03-23 16:04:32	--	Channel ##java: 564 nicks (4 ops, 0 voices, 560 normals)
+2016-03-23 16:04:32	--	PvNotice(ChanServ): Please read the topic for basic channel guidelines. Thanks.
+2016-03-23 16:04:34	--	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-03-23 16:04:46	<--	TooLmaN (~TooLmaN@mx1.thomsonplastics.com) has quit (Remote host closed the connection)
+2016-03-23 16:05:03	squeakytoy	can i ask a opinionated question. New languages are growing on trees nowdays. Node.js/js, dart, go, rust - what is it with Java that makes you keep coding Java?
+2016-03-23 16:05:07	Carisius	dunno but i remember myself doing 3d in java with java3d some years ago in older hardware
+2016-03-23 16:05:18	daseiboshi	squeakytoy: Ecosystem.
+2016-03-23 16:05:35	Matthijs	OpenGL is supported by practically every computer.
+2016-03-23 16:05:39	harwiltz	Hey guys. I'm trying to implement a Tree structure in which each node keeps track of its parent node. So if each node refers to another node, does it store all of the data of the other node, or does it just store a memory address (pointer)?
+2016-03-23 16:05:43	daseiboshi	Basically, not just basic libraries but advanced software platforms and frameworks.
+2016-03-23 16:05:50	<--	blindbox (~blindbox@175.143.160.90) has quit (Ping timeout: 260 seconds)
+2016-03-23 16:05:51	--	blindbox_ is now known as blindbox
+2016-03-23 16:05:56	Carisius	squeakytoy: market
+2016-03-23 16:06:23	-->	asgs (~ident@unaffiliated/l0pher) has joined ##java
+2016-03-23 16:06:27	daseiboshi	As an example, most of the internal tooling inside my company (Amazon) targets Java first, so picking Java makes integration a lot easier.  Then you have stuff like Spark/Hadoop, etc etc.
+2016-03-23 16:06:33	squeakytoy	daseiboshi, uhu, ok
+2016-03-23 16:06:35	squeakytoy	Carisius, uhu, ok
+2016-03-23 16:06:38	harwiltz	So if my nodes have tons of neighbors, am I wasting a lot of space by having a node within a node?
+2016-03-23 16:06:43	-->	Rokko_11 (~rokko_11@p57B2F9D7.dip0.t-ipconnect.de) has joined ##java
+2016-03-23 16:07:02	daseiboshi	The community is huge and mature, there's a huge pool of programming talent, etc.
+2016-03-23 16:07:10	<--	Fastinyoh (~Fastinyoh@c-50-185-88-52.hsd1.ca.comcast.net) has quit (Ping timeout: 244 seconds)
+2016-03-23 16:07:24	Bombe	harwiltz, no.
+2016-03-23 16:07:32	-->	hwrdprkns (~hwrdprkns@unaffiliated/hwrdprkns) has joined ##java
+2016-03-23 16:07:33	harwiltz	Bombe: I'm not wasting space?
+2016-03-23 16:07:35	squeakytoy	Carisius, so you think there are more fun languages to work with, personally, but since java is so huge, it makes you stick with it?
+2016-03-23 16:07:35	ernimril	harwiltz, in java you only have references
+2016-03-23 16:07:38	pZombie	squeakytoy - lack of better alternative which has the functionality java has. I would switch instantly if there was a Java similar which had something like lwjgl included in the standard, allowed unsigned ints/longs and allowed for direct hardware access like SIMD instructions
+2016-03-23 16:07:42	Bombe	harwiltz, well, that was your question, wasn’t it?
+2016-03-23 16:07:44	ernimril	harwiltz, references are pointers
+2016-03-23 16:07:55	Carisius	Matthijs: yeah, these *old* computers which javafx 3d can't support run 3d normally, in browsers and native apps
+2016-03-23 16:08:00	harwiltz	Bombe: I wasn't sure which question you were answering of mine, because I phrased it twice
+2016-03-23 16:08:06	squeakytoy	daseiboshi, you with with jar-files? or what eco-system you refering too?
+2016-03-23 16:08:10	<--	codepete (~codepete@104.200.154.66) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-03-23 16:08:11	Bombe	harwiltz, was the other one a yes/no question?
+2016-03-23 16:08:22	harwiltz	ernimril: Ok. Just making sure, because I'm making a puzzle solver that is likely to use a lot of memory
+2016-03-23 16:08:31	harwiltz	Bombe: Yes it was.
+2016-03-23 16:08:36	Bombe	harwiltz, no, it wasn’t.
+2016-03-23 16:09:03	Carisius	squeakytoy: yeah, i don't like very much java but it's a the top of the wave and need to learn it to earn money
+2016-03-23 16:09:07	<--	krek (~krek@78-56-59-62.static.zebra.lt) has quit (Quit: My Mac Mini has gone to sleep. ZZZzzz…)
+2016-03-23 16:09:13	<--	Brewster (~Brewster@88.150.166.147) has quit (Quit: ZNC - http://znc.in)
+2016-03-23 16:09:33	harwiltz	Bombe: Ok, you're right. Still don't know why you have to educate me on my english when I'm just clarifying, but thanks for the help.
+2016-03-23 16:09:52	squeakytoy	Carisius, you have any other language you pref. more?
+2016-03-23 16:10:11	Bombe	harwiltz, I don’t care about your English. I am, however, concerned about your display of lack of common sense.
+2016-03-23 16:10:16	pZombie	i like Java quite a lot, but i can imagine something way better for my needs at least
+2016-03-23 16:10:28	@dreamreal	harwiltz: because it's IRC and sometimes it seems like people act like jerks (but more often than not, they're trying to clarify)
+2016-03-23 16:10:28	harwiltz	Bombe: Don't concern yourself. I'll be fine.
+2016-03-23 16:10:37	@dreamreal	pZombie: you should use something way better for your needs
+2016-03-23 16:10:39	Bombe	harwiltz, good.
+2016-03-23 16:10:45	daseiboshi	squeakytoy: What I mean by ecosystem is the libraries, tools, and expertise surrounding the language.
+2016-03-23 16:10:51	pZombie	dreamreal haven't found anything yet
+2016-03-23 16:10:54	squeakytoy	daseiboshi, ah ok
+2016-03-23 16:11:03	-->	Brewster (~Brewster@88.150.166.147) has joined ##java
+2016-03-23 16:11:18	<--	Rokko_11 (~rokko_11@p57B2F9D7.dip0.t-ipconnect.de) has quit (Ping timeout: 260 seconds)
+2016-03-23 16:11:24	Carisius	squeakytoy: tryed lots, but didn't master much of them, i prefer a lot of langs over java
+2016-03-23 16:11:51	@dreamreal	pZombie: well, what language provides SIMD?
+2016-03-24 18:52:40	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##java
+2016-03-24 18:52:40	--	Topic for ##java is "Welcome! || Read http://javachannel.org/ before participating. || Paste limit is two lines; ~pastebin lists options. || No applets, please. || Minecraft, Android, and Javascript all have their own channel. || You are being logged."
+2016-03-24 18:52:40	--	Topic set by ojacobson on Fri, 29 May 2015 20:24:05
+2016-03-24 18:52:40	--	Channel ##java: 507 nicks (4 ops, 0 voices, 503 normals)
+2016-03-24 18:52:40	--	PvNotice(ChanServ): Please read the topic for basic channel guidelines. Thanks.
+2016-03-24 18:52:43	--	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-03-24 18:54:07	harwiltz	Hey guys. I'm trying to write a fast search data structure. So far I made a binary tree and another class that basically stores enough bytes so that there is one bit per possible input. Using bit manipulation, adding elements switches on the bits that have been input and then searching is similar. I'm benchmarking them now to see which is faster.
+2016-03-24 18:54:54	SagaciousZed	~ blog
+2016-03-24 18:54:55	javabot	##java is not your personal blog.  Take it back to your tumblr, where your ideas will be read by thousands of hungry followers.  The next revolution will be led by YOU! Just like the last one.
+2016-03-24 18:55:09	harwiltz	Considering search in a binary tree is O(log n) in a good case, and search for my other data structure should be constant, I would expect my bit array thing to search through 10000000 elements much faster
+2016-03-24 18:55:23	harwiltz	However, my binary search is always faster
+2016-03-24 18:55:53	harwiltz	Is it possible that explicit casting takes really long or something?
+2016-03-24 18:56:09	harwiltz	Otherwise I don't see how this result is possible
+2016-03-24 18:56:31	mike802	trees are very memory ineffecient and don't often run at O(log n) in practice
+2016-03-24 18:56:40	mike802	due to system restrictions
+2016-03-24 18:56:46	harwiltz	mike802: I know. But my tree search is much faster for some reason
+2016-03-24 18:56:48	SagaciousZed	and yet it is still faster
+2016-03-24 18:57:11	SagaciousZed	and when you say bit array what is the actual type?
+2016-03-24 18:57:13	harwiltz	Sorry, not much faster, but consistently faster. I expected the other to be much faster for input size of ten million
+2016-03-24 18:57:24	harwiltz	SagaciousZed: I created it. It just stores an array of byte
+2016-03-24 18:57:36	-->	truthadjustr (~truth@unaffiliated/truthadjustr) has joined ##java
+2016-03-24 18:57:46	mike802	just time your cast
+2016-03-24 18:57:50	mike802	?
+2016-03-24 18:58:10	harwiltz	mike802: Even if the cast takes long, theres still an issue here
+2016-03-24 18:58:19	mike802	it doesn't
+2016-03-24 18:58:41	harwiltz	mike802: what?
+2016-03-24 18:59:07	mike802	so, while your data structure is sitting in memory
+2016-03-24 18:59:08	-->	mischat (~mischat@97e647c2.skybroadband.com) has joined ##java
+2016-03-24 18:59:17	mike802	do some of the unused bits get unloaded
+2016-03-24 18:59:18	mike802	?
+2016-03-24 18:59:27	harwiltz	mike802: No
+2016-03-24 18:59:35	harwiltz	I don't believe so
+2016-03-24 19:00:02	<--	Peste_Bubonica (~Peste_Bub@177.188.1.18) has quit (Quit: Leaving)
+2016-03-24 19:00:04	mike802	that could get confusing for a traversal if it did
+2016-03-24 19:00:20	<--	explodes_ (~explodes@unaffiliated/explodes) has quit (Ping timeout: 248 seconds)
+2016-03-24 19:00:37	harwiltz	I'm casting from long to int btw. Because my I take the range of numbers to be a long, so I have to do a cast for the array index even though I'm dividing it by something that guarantees that it will fit into an int
+2016-03-24 19:01:49	mike802	System.currentTimeMillis();
+2016-03-24 19:02:04	harwiltz	mike802: I'm using System.nanoTime()
+2016-03-24 19:03:54	<--	mischat (~mischat@97e647c2.skybroadband.com) has quit (Ping timeout: 240 seconds)
+2016-03-24 19:05:10	harwiltz	I'm also only casting once in search, so I don't see how that cast would be overpowering at all
+2016-03-24 19:05:27	yawkat	~microbenchmarks
+2016-03-24 19:05:28	javabot	yawkat, what does that even *mean*?
+2016-03-24 19:05:31	yawkat	~jmh
+2016-03-24 19:05:32	javabot	yawkat, jmh is http://openjdk.java.net/projects/code-tools/jmh/
+2016-03-24 19:05:36	mike802	~blog
+2016-03-24 19:05:37	javabot	##java is not your personal blog.  Take it back to your tumblr, where your ideas will be read by thousands of hungry followers.  The next revolution will be led by YOU! Just like the last one.
+2016-03-25 09:10:12	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##java
+2016-03-25 09:10:12	--	Topic for ##java is "Welcome! || Read http://javachannel.org/ before participating. || Paste limit is two lines; ~pastebin lists options. || No applets, please. || Minecraft, Android, and Javascript all have their own channel. || You are being logged."
+2016-03-25 09:10:12	--	Topic set by ojacobson on Fri, 29 May 2015 20:24:05
+2016-03-25 09:10:13	--	Channel ##java: 514 nicks (4 ops, 0 voices, 510 normals)
+2016-03-25 09:10:13	--	PvNotice(ChanServ): Please read the topic for basic channel guidelines. Thanks.
+2016-03-25 09:10:14	--	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-03-25 09:10:24	-->	explodes_ (~explodes@unaffiliated/explodes) has joined ##java
+2016-03-25 09:10:32	FeyFre	ah, I missread
+2016-03-25 09:10:40	FeyFre	ignore my last messages please
+2016-03-25 09:10:45	waz	heh
+2016-03-25 09:11:19	waz	in the end you're using an IDE and that's the most important part
+2016-03-25 09:13:00	harwiltz	Hello. I'm trying to make a puzzle solver in java, but my algorithm is way too slow so I'm trying to optimize everything. I know this is most likely not the cause of it, but would a group of if statements slow down an algorithm if their conditions are all false? I have a bunch of print commands for debugging, so my function is passed a verbose argument, so when not debugging those prints aren't called. Would
+2016-03-25 09:13:00	harwiltz	it be much faster to entirely remove the if statements and print commands altogether?
+2016-03-25 09:13:26	-->	Cooleh (~Cooleh@unaffiliated/cooleh) has joined ##java
+2016-03-25 09:13:30	Cooleh	How can I plug this: https://github.com/android/platform_packages_apps_alarmclock into eclipse?
+2016-03-25 09:13:30	javabot	title for the url from Cooleh: "GitHub - android/platform_packages_apps_alarmclock"
+2016-03-25 09:14:19	harwiltz	Cooleh: Maybe clone the repo and set its directory as your eclipse workspace?
+2016-03-25 09:14:22	<--	jnoob22 (~jnoob@unaffiliated/jnoob22) has quit (Quit: Leaving)
+2016-03-25 09:14:46	<--	explodes_ (~explodes@unaffiliated/explodes) has quit (Ping timeout: 244 seconds)
+2016-03-25 09:14:50	-->	smgs (~smgs@unaffiliated/smorgasboard) has joined ##java
+2016-03-25 09:15:09	<--	smgs (~smgs@unaffiliated/smorgasboard) has left ##java
+2016-03-25 09:15:17	-->	ResidentBiscuit (~ResidentB@unaffiliated/residentbiscuit) has joined ##java
+2016-03-25 09:17:03	yawkat	surial: the type inference will not be based on later assignments
+2016-03-25 09:17:10	yawkat	only the initial declaration is considered
+2016-03-25 09:18:15	yawkat	the type of var x = new ArrayList<X>(); will in all cases be ArrayList<X>
+2016-03-25 09:18:34	yawkat	but yes, it is stupid that they are considering var over val
+2016-03-25 09:19:42	yawkat	(that the proposal is "var, with maybe val or let" and not "val or let and maybe var")
+2016-03-25 09:21:27	<--	nikio_ (~nikio_@unaffiliated/nikio/x-5064535) has quit (Quit: Leaving)
+2016-03-25 09:24:19	-->	idletask (~fge@AOrleans-654-1-205-231.w90-21.abo.wanadoo.fr) has joined ##java
+2016-03-25 09:25:14	-->	leolrrj (~leolrrj@187.32.50.181) has joined ##java
+2016-03-25 09:25:16	<--	zg (zg@unaffiliated/zg) has left ##java
+2016-03-25 09:25:50	-->	pifon1 (~nomad101@unaffiliated/nomad101) has joined ##java
+2016-03-25 09:26:08	-->	anistor (~adrian@redhat/jboss/anistor) has joined ##java
+2016-03-25 09:26:14	<--	anistor (~adrian@redhat/jboss/anistor) has left ##java
+2016-03-25 09:26:55	-->	m3n3chm0 (~XFCE@47.61.108.171) has joined ##java
+2016-03-25 09:31:31	<--	Gloomy (~Gloomy@91.181.150.218) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-03-25 09:33:36	-->	DarkKnightCZ (~raskaluk@unaffiliated/darkknightcz) has joined ##java
+2016-03-25 09:35:24	-->	treehug88 (~textual@static-108-30-103-59.nycmny.fios.verizon.net) has joined ##java
+2016-03-25 09:35:35	-->	kamog_ (~user@95.72.147.124) has joined ##java
+2016-03-25 09:37:09	<--	kamog (~user@77.51.115.66) has quit (Ping timeout: 250 seconds)
+2016-03-25 09:37:17	--	kamog_ is now known as kamog
+2016-03-25 09:37:20	<--	Logico (~Logico@191.205.138.195) has quit (Quit: Saindo)
+2016-03-25 09:38:17	<--	raketensilo (~raketensi@unaffiliated/raketensilo) has quit (Read error: Connection reset by peer)
+2016-03-25 09:38:34	<--	mdw (~mdw@94.119.68.11) has quit (Quit: Sleeping Zzzzz)
+2016-03-25 09:39:06	-->	deSilva (deSilva@c83-254-208-197.bredband.comhem.se) has joined ##java
+2016-03-25 09:41:21	-->	prohobo (~prohobo@095160157178.dynamic-ra-10.vectranet.pl) has joined ##java
+2016-03-25 09:41:22	-->	sbalmos (~quassel@50-5-134-120.dynamic.fuse.net) has joined ##java
+2016-03-25 09:42:10	<--	dionysus69 (~Icedove@unaffiliated/dionysus69) has quit (Ping timeout: 252 seconds)
+2016-03-25 09:42:34	<--	LordWillO (~LordWillO@unaffiliated/lordwillo) has quit (Quit: Leaving)
+2016-03-25 09:42:53	<--	fscala (~fscala@unaffiliated/fscala) has quit (Ping timeout: 276 seconds)
+2016-03-25 09:43:48	-->	BOKALDO (~BOKALDO@46.109.201.70) has joined ##java
+2016-03-25 09:44:39	-->	fscala (~fscala@unaffiliated/fscala) has joined ##java
+2016-03-25 09:45:31	-->	silentz0r (~silentz0r@unaffiliated/silentz0r) has joined ##java
+2016-03-25 09:46:26	-->	algernong (~textual@dslb-188-105-067-170.188.105.pools.vodafone-ip.de) has joined ##java
+2016-03-25 09:47:36	<--	OneM_Industries (~OneMatthi@unaffiliated/onematthias) has quit (Quit: My computer lost power, or the net went out, or something worse is happning, because I never leave IRC.....)
+2016-03-25 09:51:12	<--	Nitrodev (~Nitrodev@dcx0f0ydl382mlm18dr0y-3.rev.dnainternet.fi) has quit (Read error: Connection reset by peer)
+2016-03-25 09:54:45	<--	GrayArea (~GrayArea@cpc73846-dals21-2-0-cust384.20-2.cable.virginm.net) has quit (Ping timeout: 260 seconds)
+2016-03-25 09:58:55	-->	mdw (~mdw@94.197.121.81.threembb.co.uk) has joined ##java
+2016-03-25 09:59:00	-->	bq (~chatzilla@112.65.11.68) has joined ##java
+2016-03-25 10:00:18	<--	algernong (~textual@dslb-188-105-067-170.188.105.pools.vodafone-ip.de) has quit (Ping timeout: 268 seconds)
+2016-03-25 10:00:27	<--	minot (~minot@pool-108-35-29-135.nwrknj.fios.verizon.net) has quit (Ping timeout: 276 seconds)
+2016-03-25 10:00:41	-->	feneco (uid135851@gateway/web/irccloud.com/x-ntcnvcwntibcmkzv) has joined ##java
+2016-03-25 10:00:56	-->	mdw_ (~mdw@94.197.121.117.threembb.co.uk) has joined ##java
+2016-03-25 10:01:45	<--	your_mirror (~dev@broadband-skytelecom-151-252-106-57.clients.kubtel.ru) has quit (Quit: Leaving.)
+2016-03-25 10:03:41	<--	mdw (~mdw@94.197.121.81.threembb.co.uk) has quit (Ping timeout: 276 seconds)
+2016-03-25 10:04:41	<--	CedricBeust (~cbeust@unaffiliated/cbeust) has quit (Ping timeout: 260 seconds)
+2016-03-25 10:08:10	-->	explodes_ (~explodes@unaffiliated/explodes) has joined ##java
+2016-03-25 10:08:43	-->	oste (~mike@static-71-100-91-34.tampfl.fios.verizon.net) has joined ##java
+2016-03-25 10:10:29	-->	sidetracking (~sidetrack@rrcs-24-153-208-215.sw.biz.rr.com) has joined ##java
+2016-03-25 10:11:50	-->	dionysus69 (~Icedove@unaffiliated/dionysus69) has joined ##java
+2016-03-25 10:12:19	-->	theRealGent (~theRealGe@unaffiliated/therealgent) has joined ##java
+2016-03-25 10:12:31	<--	crunchie1 (~jy@pat-131-252.wlan.net.ed.ac.uk) has quit (Quit: WeeChat 1.4)
+2016-03-25 10:13:19	-->	superbia (~superbia@unaffiliated/superbia) has joined ##java
+2016-03-25 10:13:47	<--	superbia (~superbia@unaffiliated/superbia) has left ##java
+2016-03-25 10:14:45	-->	jnoob22 (~jnoob@unaffiliated/jnoob22) has joined ##java

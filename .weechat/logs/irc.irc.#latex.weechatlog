@@ -1,0 +1,132 @@
+2016-02-14 13:22:15	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #latex
+2016-02-14 13:22:15	--	Topic for #latex is ""FAQ: http://www.tex.ac.uk/faq | Ask donald-bot about ,,lshort | For previews, ask donald-bot about ,,texbot | listings package for source code""
+2016-02-14 13:22:15	--	Topic set by tlhiv_work (~foo@c-68-57-184-196.hsd1.al.comcast.net) on Mon, 07 Sep 2015 16:56:30
+2016-02-14 13:22:15	--	Channel #latex: 267 nicks (2 ops, 0 voices, 265 normals)
+2016-02-14 13:22:15	--	PvNotice(ChanServ): Hi and Welcome to #LaTeX! Before you ask, please read the FAQ at http://faq.tug.org and the documentation at http://www.tug.org/begin.html
+2016-02-14 13:22:17	--	Channel created on Sun, 26 Nov 2006 06:42:42
+2016-02-14 13:22:32	<--	t0by (~t0by@host250-112-dynamic.180-80-r.retail.telecomitalia.it) has quit (Quit: Bye!)
+2016-02-14 13:22:54	harwiltz	Hello, I'm having trouble formatting my lstlistings. It is centering itself by default, but I want it left justified. Any idea how to do this?
+2016-02-14 13:23:48	-->	BaneAliens (uid112512@gateway/web/irccloud.com/x-injhrstdryjhhyxt) has joined #latex
+2016-02-14 13:24:49	-->	t0by (~t0by@host250-112-dynamic.180-80-r.retail.telecomitalia.it) has joined #latex
+2016-02-14 13:27:37	-->	bodhi__ (~bodhi@dslb-188-100-104-067.188.100.pools.vodafone-ip.de) has joined #latex
+2016-02-14 13:31:14	SpinTensor	harwiltz: \begin{flushleft}my stuff and code \end{flushleft} should do it
+2016-02-14 13:31:16	-->	LordKalma (~LordKalma@89.180.189.157) has joined #latex
+2016-02-14 13:31:32	<--	bodhi_ (~bodhi@dslb-088-078-207-180.088.078.pools.vodafone-ip.de) has quit (Ping timeout: 264 seconds)
+2016-02-14 13:32:05	kaste	not sure it's that easy
+2016-02-14 13:32:08	kaste	,,sample harwiltz 
+2016-02-14 13:32:09	donald-bot	Paste a sample at http://pastebin.tlhiv.org showing your problem in as little code as possible. Make sure it is a *complete* document, and if possible one that compiles! If your LaTeX aborts with errors, paste them too.
+2016-02-14 13:35:59	-->	superguest (~supergues@172.98.153.185) has joined #latex
+2016-02-14 13:40:35	-->	s3shs (~s3shs@ip68-98-42-37.ph.ph.cox.net) has joined #latex
+2016-02-14 13:40:35	-->	lytzen (~lytzen@188.114.145.241) has joined #latex
+2016-02-14 13:42:32	-->	denisk (~denisk@60.225.173.162) has joined #latex
+2016-02-14 13:45:27	-->	lazouz_ (~lazouz@2a02-8429-80cb-dc00-0e8b-fdff-fe29-e604.rev.sfr.net) has joined #latex
+2016-02-14 13:45:29	-->	zdorovo (~ds@c-174-52-161-33.hsd1.ut.comcast.net) has joined #latex
+2016-02-14 13:45:40	<--	denisk (~denisk@60.225.173.162) has quit (Ping timeout: 248 seconds)
+2016-02-14 13:48:42	<--	lytzen (~lytzen@188.114.145.241) has quit (Ping timeout: 240 seconds)
+2016-02-14 13:57:17	Bookman900	Hi guys!))
+2016-02-14 13:57:26	-->	chaosflaws (~Sascha-Ad@chaosflaws.esw-heim.tu-clausthal.de) has joined #latex
+2016-02-14 13:57:44	Bookman900	Who had experience in converting ttf font to pdfTeX compatible packages using fontforge?
+2016-02-14 14:06:25	<--	s3shs (~s3shs@ip68-98-42-37.ph.ph.cox.net) has quit (Quit: Computer has gone to sleep.)
+2016-02-14 14:06:42	kaste	Bookman900: why don't you just use ,,fontspec
+2016-02-14 14:06:43	donald-bot	kaste: I think fontspec is http://www.ctan.org/tex-archive/macros/xetex/latex/fontspec/
+2016-02-14 14:06:51	kaste	that's a lot less pain
+2016-02-14 14:07:34	Bookman900	Oh...kaste, so if I want to install GNU Typewriter, I can use such package?
+2016-02-14 14:07:48	Bookman900	Sorry, I haven't learned the whole TeX world yet :D
+2016-02-14 14:08:27	kaste	you can use any ttf and otf font file with fontspec
+2016-02-14 14:08:42	kaste	it requires xelatex or lualatex, but that's not a problem in most every case
+2016-02-14 14:10:38	Bookman900	щр тщююю
+2016-02-14 14:10:42	Bookman900	oh no...
+2016-02-14 14:11:03	-->	mark_otaris (mark_otari@wikimedia/Mark-Otaris) has joined #latex
+2016-02-14 14:11:22	Bookman900	kaste: No. I wanna not using xelatex, as a need correct babel functionning for Russian language, with breaks of ligatures.
+2016-02-14 14:13:18	kaste	so?
+2016-02-14 14:13:25	kaste	lualatex works with babel
+2016-02-14 14:13:34	Bookman900	рььь
+2016-02-14 14:13:36	Bookman900	hmmm
+2016-02-14 14:13:42	Bookman900	will try for now :)
+2016-02-14 14:13:43	kaste	but you probably actually want to use polyglossia 
+2016-02-14 14:13:59	kaste	both packages are horrible but polyglossia has less bugs
+2016-02-14 14:14:08	mark_otaris	yep, polyglossia works better than babel with LuaTeX
+2016-02-14 14:14:26	Bookman900	May be that was the 2013 version that had serious problems with babel for xetex
+2016-02-14 14:14:38	<--	bodhi__ (~bodhi@dslb-188-100-104-067.188.100.pools.vodafone-ip.de) has quit (Quit: Leaving)
+2016-02-14 14:16:27	<--	superguest (~supergues@172.98.153.185) has quit (Quit: Leaving)
+2016-02-14 14:18:56	-->	lytzen (~lytzen@188.114.145.241) has joined #latex
+2016-02-14 14:22:03	<--	axel_fly (~alex@p50903EA0.dip0.t-ipconnect.de) has quit (Quit: axel_fly)
+2016-02-14 14:26:22	<--	zdorovo (~ds@c-174-52-161-33.hsd1.ut.comcast.net) has quit (Ping timeout: 250 seconds)
+2016-02-14 14:31:10	-->	jamesjames (~ilian@93-66-112-92.pool.ukrtel.net) has joined #latex
+2016-02-14 14:33:59	kaste	no babel and xetex is the worst combination 
+2016-02-14 14:34:01	kaste	don't use that
+2016-02-14 14:34:23	kaste	polyglossia + xelatex, babel + pdflatex, or either with lualatex (though better go with polyglossia)
+2016-02-14 14:35:14	-->	denisk (~denisk@60.225.173.162) has joined #latex
+2016-02-14 14:35:37	-->	dionyziz (~dionyziz@li696-96.members.linode.com) has joined #latex
+2016-02-14 14:36:20	dionyziz	Hi. I'm trying to compile a tex on mac using xelatex. I get this error: kpathsea: Running mktexmf ywclr12
+2016-02-14 14:36:23	dionyziz	! I can't find file `ywclr12'.
+2016-02-14 14:36:39	dionyziz	It contains greek characters and uses the greektex package. I'm not sure how to install these missing fonts or where to find them.
+2016-02-14 14:36:44	Oni^	install ywclr12
+2016-02-14 14:37:11	dionyziz	Oni^: I'm not sure how to do that. I tried googling for ywclr12 and ywclr but I don't understand where to find it and how to install it.
+2016-02-14 14:38:07	<--	LordKalma (~LordKalma@89.180.189.157) has quit (Ping timeout: 276 seconds)
+2016-02-14 14:38:46	Oni^	http://aetos.it.teithe.gr/~theochim/GlwssesKaiMetaglwttistes/greekTex/
+2016-02-14 14:38:54	dionyziz	I found this forum post: http://latex-community.org/forum/viewtopic.php?f=48&t=5975&p=23394 I'm not sure how to use their advice since I don't use TeX live though.
+2016-02-14 14:39:46	<--	denisk (~denisk@60.225.173.162) has quit (Ping timeout: 240 seconds)
+2016-02-14 14:40:06	kaste	you are
+2016-02-14 14:40:30	kaste	I presume you are using mactex, which is basically texlive rebranded and compiled for mac
+2016-02-14 14:40:35	dionyziz	OK
+2016-02-14 14:40:51	dionyziz	Yes I am using mactex.
+2016-02-14 14:41:26	dionyziz	I'm still not sure how to fix the problem.
+2016-02-14 14:44:19	dionyziz	I tried running 'tlmgr search --file ywclr12.tfm --global' but this didn't find something.
+2016-02-14 14:44:24	dionyziz	Similarily without the 12.
+2016-02-14 14:52:52	kaste	dionyziz: su -; updatedb; locate ywcl.zip
+2016-02-14 14:53:27	kaste	in that folder there is a pdf doc, that explains what to do I think
+2016-02-14 14:53:40	kaste	problem is it's in Greek and I can't read it
+2016-02-14 14:53:44	kaste	but you probably will
+2016-02-14 14:54:10	kaste	if that doesn't help, I personally believe you are better off with a greek ttf/otf font and xelatex lualatex
+2016-02-14 14:54:23	kaste	that way you can type greek and it just works
+2016-02-14 14:55:15	<--	Agramer (~Agramer@51.175.164.181) has quit (Quit: Leaving)
+2016-02-14 14:55:34	-->	Agramer (~Agramer@51.175.164.181) has joined #latex
+2016-02-14 14:59:00	<--	Agramer (~Agramer@51.175.164.181) has quit (Client Quit)
+2016-02-14 14:59:20	-->	Agramer (~Agramer@51.175.164.181) has joined #latex
+2016-02-14 15:01:24	-->	s3shs (~s3shs@ip68-98-42-37.ph.ph.cox.net) has joined #latex
+2016-02-14 15:03:46	-->	jagob (~jacob@99-101-9-61.lightspeed.sndgca.sbcglobal.net) has joined #latex
+2016-02-14 15:06:36	-->	denisk (~denisk@60.225.173.162) has joined #latex
+2016-02-14 15:11:19	<--	denisk (~denisk@60.225.173.162) has quit (Ping timeout: 256 seconds)
+2016-02-14 15:19:46	dionyziz	kaste: OK I found the file ywclr12.mf in the zip. Can I somehow install all the contents?
+2016-02-14 15:19:54	dionyziz	Should I extract it somewhere?
+2016-02-14 15:20:11	kaste	dionyziz: I have no idea
+2016-02-14 15:20:13	kaste	read the pdf 
+2016-02-14 15:20:21	kaste	or better yet go fontspec
+2016-02-14 15:20:55	<--	s3shs (~s3shs@ip68-98-42-37.ph.ph.cox.net) has quit (Quit: Computer has gone to sleep.)
+2016-02-14 15:22:24	<--	Agramer (~Agramer@51.175.164.181) has quit (Quit: Leaving)
+2016-02-14 15:23:00	-->	Agramer (~Agramer@51.175.164.181) has joined #latex
+2016-02-14 15:24:27	-->	LordKalma (~LordKalma@89.180.189.157) has joined #latex
+2016-02-14 15:24:37	<--	LordKalma (~LordKalma@89.180.189.157) has quit (Max SendQ exceeded)
+2016-02-14 15:25:10	-->	LordKalma (~LordKalma@89.180.189.157) has joined #latex
+2016-02-14 15:25:15	dionyziz	I found the .zip but it has no .pdf inside, only .mf files and a .doc, I'm looking at the doc now.
+2016-02-14 15:25:19	<--	LordKalma (~LordKalma@89.180.189.157) has quit (Max SendQ exceeded)
+2016-02-14 15:25:27	dionyziz	On my mac I didn't have locate or updatedb, so I just googled for the zip file and downloaded it.
+2016-02-14 15:25:51	-->	LordKalma (~LordKalma@89.180.189.157) has joined #latex
+2016-02-14 15:25:52	kaste	hmm my mac days are long in the past
+2016-02-14 15:26:00	kaste	find would probably have worked
+2016-02-14 15:26:01	<--	LordKalma (~LordKalma@89.180.189.157) has quit (Max SendQ exceeded)
+2016-02-14 15:26:06	dionyziz	on / ?
+2016-02-14 15:26:10	dionyziz	Let me try that.
+2016-02-14 15:26:34	-->	LordKalma (~LordKalma@89.180.189.157) has joined #latex
+2016-02-14 15:26:42	<--	LordKalma (~LordKalma@89.180.189.157) has quit (Max SendQ exceeded)
+2016-02-14 15:26:43	<--	thallera1 (~thalleral@2a01:4f8:212:1753::1:1) has quit (Quit: WeeChat 1.3)
+2016-02-14 15:26:44	dionyziz	Looking for it.
+2016-02-14 15:27:24	-->	LordKalma (~LordKalma@89.180.189.157) has joined #latex
+2016-02-14 15:28:19	-->	Krauzi (5dd4acb8@gateway/web/freenode/ip.93.212.172.184) has joined #latex
+2016-02-14 15:28:54	dionyziz	OK I found the pdf, taking a read now.
+2016-02-14 15:32:21	<--	Krauzi (5dd4acb8@gateway/web/freenode/ip.93.212.172.184) has quit (Client Quit)
+2016-07-24 12:49:24	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #latex
+2016-07-24 12:49:24	(●)	Topic for #latex is ""FAQ: http://www.tex.ac.uk/faq | Ask donald-bot about ,,lshort | For previews, ask donald-bot about ,,texbot | listings package for source code""
+2016-07-24 12:49:24	(●)	Topic set by tlhiv_work (~foo@c-68-57-184-196.hsd1.al.comcast.net) on Mon, 07 Sep 2015 16:56:30
+2016-07-24 12:49:24	(●)	Channel #latex: 271 nicks (1 op, 0 voices, 270 normals)
+2016-07-24 12:49:25	(●)	PvNotice(ChanServ): Hi and Welcome to #LaTeX! Before you ask, please read the FAQ at http://faq.tug.org and the documentation at http://www.tug.org/begin.html
+2016-07-24 12:49:26	(●)	Channel created on Sun, 26 Nov 2006 06:42:42
+2016-07-24 12:50:02	harwiltz	Hey guys. Anyone know how to use hebrew characters in latex? I tried googling but haven't come across anything that works yet
+2016-07-24 12:55:24	robopal	babel, hebrew option?
+2016-07-24 12:57:03	harwiltz	robopal: Does babel have a hebrew option? I googled babel and came to a wiki with a list of supported languages and didn't see hebrew
+2016-07-24 12:57:23	robopal	ftp://ftp.yzu.edu.tw/CTAN/languages/babel/contrib/hebrew/hebrew.pdf
+2016-07-24 12:59:01	harwiltz	Hmm, thanks. Will this work with pdflatex?
+2016-07-24 12:59:40	robopal	I don't know about that
+2016-07-24 12:59:44	harwiltz	Ok
+2016-07-24 13:00:37	-->	Tobbi (~tobbi@supertux/tobbi) has joined #latex

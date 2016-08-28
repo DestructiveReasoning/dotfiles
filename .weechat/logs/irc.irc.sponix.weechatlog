@@ -1,0 +1,40 @@
+2016-06-23 13:03:22	sponix	are you looking for a small project or something smaller ?
+2016-06-23 13:03:36	BobSacamano	Anything, really. 
+2016-06-23 13:03:48	BobSacamano	Something that I can contribute to in a meaningful way
+2016-06-23 13:04:24	sponix	With your coding skills there are TONS of projects
+2016-06-23 13:05:01	BobSacamano	I know, that's the problem, I can't choose one!
+2016-06-23 13:06:13	sponix	I'm partial to Linux Mint, ZoL (ZFS On Linux), FreeBSD, and Porno Films   :)
+2016-06-23 13:07:12	BobSacamano	Hahahahaha
+2016-06-23 13:07:28	BobSacamano	So you work on Linux mint and FreeBSD?
+2016-06-23 13:07:44	BobSacamano	Or you contribute to software for them?
+2016-06-23 13:10:50	sponix	Haven't done much with FreeBSD for a long time.. Just Installed it for a bit today though, it hasn't changed much since 2002 :)
+2016-06-23 13:11:36	sponix	I'm not one to code much.. Most of what I do is just simple user Beta testing and reporting bugs and possible work-a-rounds if I find them
+2016-06-23 13:11:45	BobSacamano	Yeah, I tried FreeBSD a little while ago. It's cool, but eventually I realized that I couldn't really tell the difference between it and Linux and I just preferred Arch
+2016-06-23 13:12:31	sponix	I really should be on the Mint 18 Beta right now.. Just need another Drive in this box :P
+2016-06-23 13:14:14	BobSacamano	Hahaha
+2016-06-23 13:15:00	sponix	I Horde way to much Media.. Doesn't matter how many drives I pile in they are always Packed :(
+2016-06-23 13:15:43	BobSacamano	Jesus. How big is your drive?
+2016-06-23 13:15:58	sponix	Ha.. Drive.. Drive ?
+2016-06-23 13:16:04	sponix	Filesystem      Size  Used Avail Use% Mounted on
+2016-06-23 13:16:04	sponix	udev             16G   12K   16G   1% /dev
+2016-06-23 13:16:04	sponix	tmpfs           3.2G  1.9M  3.2G   1% /run
+2016-06-23 13:16:04	sponix	/dev/sdb1        22G  9.1G   12G  44% /
+2016-06-23 13:16:04	sponix	none            4.0K     0  4.0K   0% /sys/fs/cgroup
+2016-06-23 13:16:05	sponix	none            5.0M     0  5.0M   0% /run/lock
+2016-06-23 13:16:09	sponix	none             16G  308M   16G   2% /run/shm
+2016-06-23 13:16:11	sponix	none            100M   40K  100M   1% /run/user
+2016-06-23 13:16:13	sponix	/dev/sdb2       213G   50G  152G  25% /home
+2016-06-23 13:16:15	sponix	zdrive          3.6T  2.4T  1.2T  69% /media/sponix/zdrive
+2016-06-23 13:16:17	sponix	/dev/sdc1       4.6T  3.7T  658G  86% /media/sponix/crap
+2016-06-23 13:16:19	sponix	/dev/sdh1       1.4T  633G  673G  49% /media/sponix/EXT
+2016-06-23 13:16:49	BobSacamano	That's... not small
+2016-06-23 13:17:42	sponix	Yeah, I did a total earlier roughly 9.5TB of Drives with only like 2.5TB Free
+2016-06-23 13:18:14	sponix	I want to replace my 5 x 1TB drives with a 5 x 5TB (or 6TB) setup  ;)
+2016-06-23 13:18:50	sponix	I'm not employed at the moment and the bills are stacking up though.. SO my storage dreams are on hold   :P
+2016-06-23 13:18:52	BobSacamano	Wtf do you hoard on there?
+2016-06-23 13:19:07	sponix	I torrent the shit outta most everything
+2016-06-23 13:19:50	BobSacamano	That's impressive
+2016-06-23 13:24:18	sponix	rkeene knows his shit for sure, but he is WAY above my understanding on some things 
+2016-06-23 13:29:46	BobSacamano	Me too, to say the least. Im pretty lost hahaha
+2016-06-23 13:31:25	sponix	You haven't spent much time on *nix systems.. Have you ?
+2016-06-23 13:32:23	BobSacamano	I've used Linux for about 3 years, that's about it. Not much networking or cloud experience

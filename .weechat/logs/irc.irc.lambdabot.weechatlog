@@ -1,0 +1,3 @@
+2015-11-22 13:04:38	lambdabot	You have 1 new message. '/msg lambdabot @messages' to read it.
+2015-11-22 13:05:38	harwiltz	@messages
+2015-11-22 13:05:38	lambdabot	geekosaur said 1d 1h 2m 44s ago: curses tends to be a bit of a disaster, and wrapping it in Haskell doesn't help. we tend to recommend vty-ui instead. that said, what is your issue?

@@ -1,0 +1,111 @@
+2016-08-05 15:39:51	-->	harwiltz (~harwiltz@modemcable008.180-58-74.mc.videotron.ca) has joined #xorg
+2016-08-05 15:39:51	(●)	Topic for #xorg is "Read http://wiki.x.org/wiki/XorgIRC | xorg.conf is not used for input devices by default, see http://xrl.us/xinput & http://tinyurl.com/xinput | xserver 1.18 released | Open driver questions see also #intel-gfx, #radeon, #nouveau | Closed driver questions -> #ati, #nvidia, #poulsbo | Really. Even if those channels seem dead"
+2016-08-05 15:39:51	(●)	Topic set by alanc (~alanc@inet-hqmc06-o.oracle.com) on Fri, 19 Feb 2016 16:26:03
+2016-08-05 15:39:51	(●)	Channel #xorg: 144 nicks (0 ops, 0 voices, 144 normals)
+2016-08-05 15:39:53	(●)	Channel created on Sun, 26 Nov 2006 06:42:43
+2016-08-05 15:40:26	harwiltz	Hello all. Trying to compile my first x11 app. I'm getting a ft2build.h: No such file or directory. Any idea whats wrong?
+2016-08-05 15:41:20	vktec	harwiltz: What distro?
+2016-08-05 15:41:25	harwiltz	vktec: Arch
+2016-08-05 15:41:46	harwiltz	I checked and found that I do have freetype installed.
+2016-08-05 15:42:07	vktec	harwiltz: How are you compiling
+2016-08-05 15:42:16	harwiltz	gcc *.c -lX11
+2016-08-05 15:42:57	vktec	Try sticking -lfreetype on the end of that
+2016-08-05 15:43:38	harwiltz	vktec: Lol. I took a shot in the dark and tried -lft2, but that probably isn't a thing ;)
+2016-08-05 15:43:52	harwiltz	vktec: Just tried that though, same error
+2016-08-05 15:44:20	vktec	Hmm
+2016-08-05 15:44:56	harwiltz	vktec: I actually have the infinality version of freetype, do you think that matters?
+2016-08-05 15:45:10	vktec	Doubt it
+2016-08-05 15:45:20	vktec	Try this: gcc *.c $(pkg-config --cflags --libs freetype2 x11)
+2016-08-05 15:46:11	harwiltz	vktec: I think that's a fix... I'm getting a different error now but that's from my code ;)
+2016-08-05 15:46:26	harwiltz	vktec: Also I'm getting lots of warnings
+2016-08-05 15:46:28	vktec	:)
+2016-08-05 15:46:34	harwiltz	vktec: Thanks!
+2016-08-05 15:46:41	harwiltz	But what does that mean?
+2016-08-05 15:47:01	vktec	It uses the tool called pkg-config to get the required options for gcc
+2016-08-05 15:47:21	vktec	And then substitutes them in using bash's command substitution
+2016-08-05 15:47:27	harwiltz	so if I run what's in the brackets as a command, it should tell me what to include?
+2016-08-05 15:47:32	vktec	Yep
+2016-08-05 15:47:41	vktec	It'll output a bunch of options
+2016-08-05 15:47:54	vktec	So it's easier to just do it dynamically
+2016-08-05 15:48:05	vktec	Also means it'll work across distros too
+2016-08-05 15:48:07	harwiltz	Yeah... thanks so much! Never heard of that
+2016-08-05 15:49:17	vktec	It's quit commonly used in Makefiles
+2016-08-05 15:49:19	vktec	*quite
+2016-08-05 15:49:49	harwiltz	vktec: Just put it in my makefile, now it's not working... wtf?
+2016-08-05 15:50:57	vktec	Type this and paste the output here (it'll upload your Makefile and give you a link): nc termbin.com 9999 <Makefile
+2016-08-05 15:51:28	harwiltz	I don't think I have nc
+2016-08-05 15:52:09	harwiltz	vktec: It's not working
+2016-08-05 15:52:15	harwiltz	My Makefile is very simple though:
+2016-08-05 15:52:18	harwiltz	all:
+2016-08-05 15:52:38	harwiltz	gcc *.c $(pkg-config --cflags --libs freetype2 x11)
+2016-08-05 15:52:46	harwiltz	That's it
+2016-08-05 15:53:04	alanc	probably need $$ in the makefile so it passes the $ through to the shell instead of treating it as a makefile variable
+2016-08-05 15:53:26	harwiltz	yup! Thanks!
+2016-08-05 15:53:38	vktec	It's better to do $(shell pkg-config ...)
+2016-08-05 15:53:41	vktec	fwiw
+2016-08-05 15:53:50	harwiltz	Never heard of that either. Thanks!
+2016-08-05 15:53:50	alanc	that works too
+2016-08-05 15:54:03	alanc	well, that works for GNU make, not other makes (BSD, Solaris, etc.)
+2016-08-05 15:54:28	vktec	Oh, okay
+2016-08-05 15:54:35	 *	vktec has only ever used GNU make
+2016-08-05 15:54:58	harwiltz	;)
+2016-08-05 15:56:25	harwiltz	Stupid question... but can I not compile a C program if it doesn't have a main function?
+2016-08-05 15:57:57	vktec	harwiltz: TIAS
+2016-08-05 15:58:40	harwiltz	?
+2016-08-05 15:58:51	vktec	Try It And See
+2016-08-05 15:58:54	harwiltz	If that means try it and see, I did :)
+2016-08-05 15:58:59	vktec	:)
+2016-08-05 15:59:03	vktec	Does it work?
+2016-08-05 15:59:06	harwiltz	Oh ok haha. Never knew that. Yup
+2016-08-05 16:02:24	harwiltz	Thanks a lot guys! Guess I should get back to work.
+2016-08-05 16:02:37	vktec	np
+2016-08-05 16:04:36	<--	sungami (~sungami@unaffiliated/sungami) has quit (Ping timeout: 250 seconds)
+2016-08-05 16:06:00	-->	sungami (~sungami@unaffiliated/sungami) has joined #xorg
+2016-08-05 16:48:23	-->	harwiltz (~harwiltz@modemcable008.180-58-74.mc.videotron.ca) has joined #xorg
+2016-08-05 16:48:23	(●)	Topic for #xorg is "Read http://wiki.x.org/wiki/XorgIRC | xorg.conf is not used for input devices by default, see http://xrl.us/xinput & http://tinyurl.com/xinput | xserver 1.18 released | Open driver questions see also #intel-gfx, #radeon, #nouveau | Closed driver questions -> #ati, #nvidia, #poulsbo | Really. Even if those channels seem dead"
+2016-08-05 16:48:23	(●)	Topic set by alanc (~alanc@inet-hqmc06-o.oracle.com) on Fri, 19 Feb 2016 16:26:03
+2016-08-05 16:48:24	(●)	Channel #xorg: 144 nicks (0 ops, 0 voices, 144 normals)
+2016-08-05 16:48:25	(●)	Channel created on Sun, 26 Nov 2006 06:42:43
+2016-08-05 16:49:34	harwiltz	Hello again. I'm trying to compile my first x11 program, and I'm getting a warning saying "implicit declaration of function XCreateColorMap, followed by two errors: undefined reference to XCreateColorMap and XftFontOpenName. Any idea what I'm doing wrong?
+2016-08-05 16:52:04	alanc	implicit declaration usually means you either forgot to include a header or got the function name wrong
+2016-08-05 16:52:32	alanc	in this case, you have a typo
+2016-08-05 16:52:40	harwiltz	I do?
+2016-08-05 16:52:54	alanc	XCreateColormap (lowercase M) is defined in /usr/include/X11/Xlib.h
+2016-08-05 16:53:01	<--	anilatx (~anilatx@unaffiliated/anilatx) has quit (Ping timeout: 276 seconds)
+2016-08-05 16:53:04	harwiltz	Oh wow. Thanks
+2016-08-05 16:53:47	harwiltz	what about the other one? Can't find anything wrong with that, and I'm pretty sure I've included everything I need.
+2016-08-05 16:53:49	alanc	grep shows XftFontOpenName is defined in /usr/include/X11/Xft/Xft.h so for that one, make sure you have #include <X11/Xft/Xft.h>
+2016-08-05 16:54:03	harwiltz	alanc: I do have that
+2016-08-05 16:54:39	alanc	and when you look at that file you see the function there?
+2016-08-05 16:54:49	alanc	oh wait
+2016-08-05 16:55:02	alanc	that wasn't implicit declaration, that was undefined reference
+2016-08-05 16:55:07	harwiltz	yup
+2016-08-05 16:55:21	alanc	undefined reference is not finding a library that has the function in
+2016-08-05 16:55:44	alanc	Xft functions are in a separate library
+2016-08-05 16:55:55	harwiltz	Oh, do I have to link it somehow?
+2016-08-05 16:55:59	alanc	add "xft" to your pkg-config list
+2016-08-05 16:56:08	harwiltz	Ohhhh ok. Thanks a lot
+2016-08-05 16:56:08	alanc	i.e. pkg-config --cflags --libs freetype2 x11 xft
+2016-08-05 16:56:33	harwiltz	Yup, worked! Thanks a lot
+2016-08-05 16:57:19	harwiltz	Just one thing. In this case, I had to add xft, but how do I know to add 'xft' exactly? Why not Xft, for example?
+2016-08-05 17:02:32	alanc	because the file it's looking for is named /usr/lib/pkgconfig/xft.pc
+2016-08-05 17:02:46	alanc	we should document these names in the man pages or something, but I don't think we ever have
+2016-08-05 17:03:14	harwiltz	Oh ok, but how did you know about xft.pc?
+2016-08-05 17:03:44	alanc	from being one of the people who worked on the project to convert X to use pkg-config
+2016-08-05 17:04:01	harwiltz	alanc: Oh. Hahahaha. That's cool
+2016-08-05 17:04:20	alanc	as I said, we should document it so that new people can learn
+2016-08-05 17:04:33	harwiltz	For more clueless people like me, is it feasible to just browse /usr/lib/pkg-config?
+2016-08-05 17:04:42	alanc	probably
+2016-08-05 17:04:48	harwiltz	Oh ok.
+2016-08-05 17:04:54	harwiltz	Thanks a lot for the help.
+2016-08-05 17:05:03	alanc	other options are finding which package delivered the library you're looking for and look at the list of files it delivers
+2016-08-05 17:05:22	harwiltz	That's not a bad idea either
+2016-08-05 17:05:36	alanc	or using nm on the libraries in /usr/lib to find which delivers a function, then grepping the *.pc files for that library name
+2016-08-05 17:05:57	harwiltz	That's probably the quickest way actually.
+2016-08-05 17:06:05	harwiltz	But I don't know what nm is
+2016-08-05 17:06:18	harwiltz	Oh ok just man'd it
+2016-08-05 17:06:21	<--	gpiccoli (~gpiccoli@32.104.18.201) has quit (Quit: Leaving)
+2016-08-05 17:06:23	harwiltz	Makes a lot of sense
+2016-08-05 17:14:06	<--	jave (~jave@h-235-62.a149.priv.bahnhof.se) has quit (Ping timeout: 240 seconds)
+2016-08-05 17:16:51	-->	jave (~jave@h-235-62.a149.priv.bahnhof.se) has joined #xorg
+2016-08-05 17:18:28	<--	oky (~okay@gtg.kthxb.ai) has left #xorg

@@ -1,0 +1,365 @@
+2015-08-10 18:15:41		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-08-10 18:16:28	=!=	You can not write text in this buffer
+2015-08-10 18:16:40	=!=	You can not write text in this buffer
+2015-08-10 18:25:52		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-08-10 18:26:05	=!=	irc: unable to create temporary server "chat.freenode.net" because the creation of temporary servers with command /connect is currently disabled
+2015-08-10 18:26:05	=!=	irc: if you want to create a standard server, use the command "/server add" (see /help server); if you really want to create a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2015-08-10 18:26:28	=!=	Error with command "/server chat.freenode.net" (help on command: /help server)
+2015-09-12 12:07:52	=!=	Warning: /home/harwiltz/.weechat/script.conf, line 46: unknown option for section "scripts": dir = "%h/script"
+2015-09-12 12:07:52		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 12:08:26		irc: server freenode added
+2015-09-12 12:09:09		Option changed: irc.server.freenode.username = "Bob Sacamano"  (default: (undefined))
+2015-09-12 12:09:27	=!=	You can not write text in this buffer
+2015-09-12 12:09:36		Option changed: irc.server.freenode.realname = "Har Wiltz"  (default: (undefined))
+2015-09-12 12:10:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 12:11:27	=!=	irc: server "freenode" already exists, can't add it!
+2015-09-12 12:11:47		irc: server irc added
+2015-09-12 12:12:14		Option changed: irc.server.freenode.username = "Bob Sacamano"  (default: (undefined))
+2015-09-12 12:20:16	=!=	irc: already connected to server "irc"!
+2015-09-12 12:20:32		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 12:26:25	=!=	Error: unknown command "/clear" (type /help for help)
+2015-09-12 14:24:23		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 18:13:46		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 18:18:40		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 18:22:12	=!=	Error: option "irc.freenode.username" not found
+2015-09-12 18:22:17	=!=	Error: unknown command "/home" (type /help for help)
+2015-09-12 18:22:20	=!=	Error: unknown command "/weechat" (type /help for help)
+2015-09-12 18:22:27		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 18:25:04	=!=	Error with command "/nick Bob Sacamano" (help on command: /help nick)
+2015-09-12 18:26:21		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-12 18:26:33	=!=	irc: command "msg" must be executed on connected irc server
+2015-09-12 18:46:38	=!=	Error: unknown command "/gtmanfred" (type /help for help)
+2015-09-21 20:17:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-21 20:51:51		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-21 20:52:04	=!=	irc: command "msg" must be executed on connected irc server
+2015-10-24 16:10:56		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-10-30 19:25:45		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-10-30 19:25:48	=!=	You can not write text in this buffer
+2015-10-30 20:45:50		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-10-30 20:46:01	=!=	irc: command "join" must be executed on connected irc server
+2015-11-04 17:59:12		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-04 19:33:55		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-04 19:57:14		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-04 20:00:58		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-06 22:17:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-06 23:08:12		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-20 22:32:46		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-21 11:33:45		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-21 11:33:48	=!=	irc: command "join" must be executed on irc buffer (server or channel)
+2015-11-22 13:03:48		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-22 20:18:08		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-22 20:18:19	=!=	irc: command "join" must be executed on connected irc server
+2015-11-25 16:34:54		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-11-25 16:35:09	=!=	irc: command "msg" must be executed on connected irc server
+2015-12-05 22:45:06		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-05 22:45:10	=!=	irc: unable to add temporary server "ir" because the addition of temporary servers with command /connect is currently disabled
+2015-12-05 22:45:10	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2015-12-05 22:59:20		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-05 22:59:23	=!=	irc: command "join" must be executed on irc buffer (server or channel)
+2015-12-05 22:59:36	=!=	irc: command "join" must be executed on connected irc server
+2015-12-31 20:08:23		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-31 20:08:43	=!=	You can not write text in this buffer
+2015-12-31 20:24:07	=!=	Error: unknown command "/reset" (type /help for help)
+2015-12-31 20:24:27	=!=	Error: unknown command "/reset" (type /help for help)
+2015-12-31 20:24:39		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-31 20:25:48	=!=	Error: unknown command "/resey" (type /help for help)
+2015-12-31 20:25:51	=!=	Error: unknown command "/reset" (type /help for help)
+2015-12-31 20:25:55		[core]
+2015-12-31 20:25:55		  away     buffer   command  debug    filter   history  key      mouse    plugin   proxy    reload   save     set      upgrade  version  window 
+2015-12-31 20:25:55		  bar      color    cursor   eval     help     input    layout   mute     print    quit     repeat   secure   unset    uptime   wait   
+2015-12-31 20:25:55		[aspell]
+2015-12-31 20:25:55		  aspell
+2015-12-31 20:25:55		[xfer]
+2015-12-31 20:25:55		  me  xfer
+2015-12-31 20:25:55		[charset]
+2015-12-31 20:25:55		  charset
+2015-12-31 20:25:55		[script]
+2015-12-31 20:25:55		  script
+2015-12-31 20:25:55		[exec]
+2015-12-31 20:25:55		  exec
+2015-12-31 20:25:55		[trigger]
+2015-12-31 20:25:55		  trigger
+2015-12-31 20:25:55		[python]
+2015-12-31 20:25:55		  python
+2015-12-31 20:25:55		[relay]
+2015-12-31 20:25:55		  relay
+2015-12-31 20:25:55		[ruby]
+2015-12-31 20:25:55		  ruby
+2015-12-31 20:25:55		[guile]
+2015-12-31 20:25:55		  guile
+2015-12-31 20:25:55		[alias]
+2015-12-31 20:25:55		  AAWAY    AME      ANICK    BYE      CHAT     CLOSE    IG       K        LEAVE    MSGBUF   N        REDRAW   SIGNOFF  UB       V        WC       WII    
+2015-12-31 20:25:55		  alias    AMSG     BEEP     C        CL       EXIT     J        KB       M        MUB      Q        SAY      T        UMODE    W        WI       WW     
+2015-12-31 20:25:55		[irc]
+2015-12-31 20:25:55		  admin       connect     deop        ignore      kick        lusers      msg         op          query       remove      sapart      squery      topic       users       who       
+2015-12-31 20:25:55		  allchan     ctcp        devoice     info        kickban     map         names       oper        quiet       restart     saquit      squit       trace       version     whois     
+2015-12-31 20:25:55		  allpv       cycle       die         invite      kill        me          nick        part        quote       sajoin      server      stats       unban       voice       whowas    
+2015-12-31 20:25:55		  allserv     dcc         disconnect  ison        links       mode        notice      ping        reconnect   samode      service     summon      unquiet     wallchops 
+2015-12-31 20:25:55		  ban         dehalfop    halfop      join        list        motd        notify      pong        rehash      sanick      servlist    time        userhost    wallops   
+2015-12-31 20:25:55		[logger]
+2015-12-31 20:25:55		  logger
+2015-12-31 20:25:55		[tcl]
+2015-12-31 20:25:55		  tcl
+2015-12-31 20:25:55		[lua]
+2015-12-31 20:25:55		  lua
+2015-12-31 20:25:55		[perl]
+2015-12-31 20:25:55		  perl
+2015-12-31 20:26:02		Triggers enabled
+2015-12-31 20:26:02		List of triggers:
+2015-12-31 20:26:02		  beep: print =? /1
+2015-12-31 20:26:02		  cmd_pass: modifier(5000|input_text_display;5000|history_add;5000|irc_command_auth) ~1
+2015-12-31 20:26:02		  msg_auth: modifier(5000|irc_message_auth) ~1
+2015-12-31 20:26:02		  server_pass: modifier(5000|input_text_display;5000|history_add) ~1
+2015-12-31 20:26:10		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-31 20:26:52	=!=	Too few arguments for command "/query" (help on command: /help query)
+2015-12-31 20:26:53	=!=	You can not write text in this buffer
+2015-12-31 20:33:28		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-31 20:33:51		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-31 20:35:54		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-31 20:39:48		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-12-31 20:40:08		Option changed: weechat.color.bar_more = 60  (default: lightmagenta)
+2015-12-31 20:41:15		Option changed: weechat.color.status_count_highlight = 173  (default: magenta)
+2015-12-31 20:41:33		Option changed: weechat.color.status_data_highlight = 173  (default: lightmagenta)
+2015-12-31 20:42:22	=!=	Error: option "weechat.buffers.color_bg" not found
+2015-12-31 20:42:49		Option changed: weechat.bar.buffers.color_bg = 60  (default: default)
+2015-12-31 20:43:32	=!=	Error: option "weechat.bar.status_color_bg" not found
+2015-12-31 20:43:44		Option changed: weechat.bar.status.color_bg = 100  (default: blue)
+2015-12-31 20:43:56		Option changed: weechat.bar.status.color_bg = 60  (default: blue)
+2015-12-31 20:44:04	=!=	Error: unknown command "/colors" (type /help for help)
+2015-12-31 20:44:26		Option changed: weechat.bar.status.color_bg = 61  (default: blue)
+2015-12-31 20:44:50		Option changed: weechat.bar.status.color_bg = 214  (default: blue)
+2015-12-31 20:44:57		Option changed: weechat.bar.status.color_bg = 208  (default: blue)
+2015-12-31 20:45:01		Option changed: weechat.bar.status.color_bg = 60  (default: blue)
+2015-12-31 20:46:37		Option changed: weechat.bar.status.color_fg = 233  (default: default)
+2015-12-31 20:46:44		Option changed: weechat.bar.status.color_fg = default
+2015-12-31 20:47:05		Option changed: weechat.bar.title.color_bg = 233  (default: blue)
+2015-12-31 20:47:11		Option changed: weechat.bar.title.color_bg = 234  (default: blue)
+2015-12-31 20:47:15		Option changed: weechat.bar.title.color_bg = 235  (default: blue)
+2015-12-31 20:48:00		Option changed: weechat.bar.title.color_bg = 60  (default: blue)
+2015-12-31 20:48:11		Option changed: weechat.bar.status.color_fg = yellow  (default: default)
+2015-12-31 20:48:19		Option changed: weechat.bar.title.color_bg = 235  (default: blue)
+2015-12-31 20:48:26		Option changed: weechat.bar.title.color_bg = 60  (default: blue)
+2015-12-31 20:48:32		Option changed: weechat.bar.status.color_bg = 235  (default: blue)
+2016-01-01 15:17:33		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-01-01 16:17:18		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-01-01 16:17:31	=!=	irc: command "msg" must be executed on connected irc server
+2016-01-17 15:50:23		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-01-17 21:43:21		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-01-24 18:45:50		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-01-24 18:46:03	=!=	irc: command "msg" must be executed on connected irc server
+2016-01-30 21:35:36		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-01-31 11:00:18		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-09 15:45:49	=!=	Warning: /home/harwiltz/.weechat/irc.conf, line 84: unknown option for section "network": alternate_nick = on
+2016-02-09 15:45:49		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-14 12:08:29		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-14 20:26:23		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-14 20:49:50	=!=	Error: unknown command "/leav" (type /help for help)
+2016-02-15 19:21:37		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-15 19:23:01	=!=	irc: unable to add temporary server "lenguin.freenode.net" because the addition of temporary servers with command /connect is currently disabled
+2016-02-15 19:23:01	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-02-15 19:29:45		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-15 19:29:54	=!=	irc: command "join" must be executed on connected irc server
+2016-02-15 22:11:58		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-15 22:52:33		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-15 22:52:39	=!=	irc: command "join" must be executed on connected irc server
+2016-02-17 14:42:31		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-17 14:47:14	=!=	Error: unknown command "/inbox" (type /help for help)
+2016-02-18 21:59:05		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-21 00:37:33		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-23 19:41:59		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-23 21:38:32		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-02-28 20:48:57		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-01 13:07:01		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-03 21:19:37		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-03 21:20:32	=!=	irc: command "join" must be executed on connected irc server
+2016-03-03 21:34:53	=!=	Error: unknown command "/quir" (type /help for help)
+2016-03-05 17:04:39		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-07 22:39:19		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-09 18:19:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-09 18:20:54		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-12 15:22:43		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-13 13:45:37		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-13 13:45:54	=!=	irc: command "msg" must be executed on connected irc server
+2016-03-13 17:10:38		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-13 20:41:12		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-14 18:28:54		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-14 20:17:50		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-15 18:33:44		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-16 10:33:59		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-16 12:47:00	=!=	Error: unknown command "/quir" (type /help for help)
+2016-03-18 19:03:54		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-19 14:57:14		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-19 17:01:58		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-23 16:04:11		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-24 18:52:13		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-24 18:52:23	=!=	irc: command "join" must be executed on connected irc server
+2016-03-24 19:06:24		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-25 09:09:50		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-25 12:33:57		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-25 13:01:04		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-25 15:17:28		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-26 12:39:05		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-28 13:27:09		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-28 16:48:10		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-28 17:45:08		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-28 17:45:39	=!=	irc: unable to add temporary server "#math" because the addition of temporary servers with command /connect is currently disabled
+2016-03-28 17:45:39	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-03-29 22:34:07		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-29 22:34:19	=!=	irc: command "join" must be executed on connected irc server
+2016-03-30 20:23:33		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-31 22:29:44		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-03-31 23:00:27		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-04 22:06:37		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-05 18:11:59		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-05 18:12:31		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-05 19:11:26		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-05 19:11:29	=!=	irc: unable to add temporary server "icr" because the addition of temporary servers with command /connect is currently disabled
+2016-04-05 19:11:29	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-04-06 18:01:56		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-08 20:47:19		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-09 14:28:25		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-09 17:31:03		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-09 17:31:06	=!=	irc: unable to add temporary server "itc" because the addition of temporary servers with command /connect is currently disabled
+2016-04-09 17:31:06	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-04-10 15:45:23		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:07:51		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:07:55	=!=	You can not write text in this buffer
+2016-04-10 16:09:08		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:10:58		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:12:00		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:12:47		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:14:16		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:15:15		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:16:05		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:16:42		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:17:17		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:18:12		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:18:36		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:19:10		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:19:36		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:20:15		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:20:53	=!=	irc: unable to add temporary server "haskell" because the addition of temporary servers with command /connect is currently disabled
+2016-04-10 16:20:53	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-04-10 16:20:59	=!=	irc: unable to add temporary server "#haskell" because the addition of temporary servers with command /connect is currently disabled
+2016-04-10 16:20:59	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2016-04-10 16:21:46		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:22:26		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:24:21		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:28:52		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:31:57		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:33:06		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:34:12		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:36:43		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:39:40		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:40:38		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:41:06		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:41:39		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:42:31		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:42:58		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:43:36		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:44:04		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:44:57		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:45:13		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:45:53		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:46:14		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:46:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:47:13		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:49:27		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:52:35		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:54:17		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-10 16:55:29		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-11 21:44:15		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-12 16:24:36		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-12 19:56:32		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-13 21:01:25		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-16 11:30:50		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-16 21:28:48		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-18 18:25:56		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-18 18:26:04	=!=	irc: command "msg" must be executed on connected irc server
+2016-04-23 13:24:58		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-23 17:01:31		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-24 20:37:40		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-25 20:39:24		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-26 10:49:15		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-27 19:41:27		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-04-30 11:54:03		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-09 11:53:20	=!=	Warning: /home/harwiltz/.weechat/irc.conf, line 30: unknown option for section "look": item_away_message = on
+2016-05-09 11:53:20	=!=	Warning: /home/harwiltz/.weechat/irc.conf, line 39: unknown option for section "look": nick_color_force = ""
+2016-05-09 11:53:20	=!=	Warning: /home/harwiltz/.weechat/irc.conf, line 40: unknown option for section "look": nick_color_hash = sum
+2016-05-09 11:53:20	=!=	Warning: /home/harwiltz/.weechat/irc.conf, line 41: unknown option for section "look": nick_color_stop_chars = "_|["
+2016-05-09 11:53:20	=!=	Warning: /home/harwiltz/.weechat/irc.conf, line 68: unknown option for section "color": item_away = yellow
+2016-05-09 11:53:21		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-09 16:27:37		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-09 16:27:44	=!=	irc: command "msg" must be executed on connected irc server
+2016-05-10 19:11:46		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-10 19:15:56		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-10 19:17:53		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-10 21:17:36		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-15 21:29:49		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-15 21:29:57	=!=	irc: command "msg" must be executed on connected irc server
+2016-05-21 21:01:27		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-05-22 15:57:42		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-06-04 21:38:02		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-06-05 12:45:25		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-06-05 15:24:44		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-06-23 12:48:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-06-23 18:06:57		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-06-23 18:07:08	=!=	irc: command "msg" must be executed on connected irc server
+2016-07-02 21:12:38		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-02 22:06:15	=!=	Error: unknown command "/quite" (type /help for help)
+2016-07-17 14:04:48		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-18 21:29:22		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-19 14:41:37		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-19 16:05:26		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-21 19:21:56		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-23 13:52:07		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-24 12:48:48		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-24 17:23:37		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-24 17:24:05	=!=	Error: unknown command "/leave3" (type /help for help)
+2016-07-24 17:28:25		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-30 13:36:39		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-30 13:36:47	=!=	irc: command "msg" must be executed on connected irc server
+2016-07-31 16:33:50		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-07-31 16:49:44		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-01 23:13:07		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-03 17:13:23		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-03 21:34:21		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-03 23:05:27	=!=	Error: unknown command "/quir" (type /help for help)
+2016-08-03 23:05:32		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-03 23:05:40	=!=	irc: command "msg" must be executed on connected irc server
+2016-08-04 22:49:52		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-05 15:29:35		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-05 16:48:08		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-12 15:20:42		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-12 17:17:48		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-12 19:48:22		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-13 10:04:22		fifo: removing old fifo pipe "/home/harwiltz/.weechat/weechat_fifo_6370"
+2016-08-13 10:04:23		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-13 10:04:30	=!=	irc: command "msg" must be executed on connected irc server
+2016-08-13 10:05:58		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-13 10:17:24		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-13 12:07:11	=!=	irc: command "join" must be executed on connected irc server
+2016-08-13 12:07:30		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-13 12:07:37	=!=	irc: command "msg" must be executed on connected irc server
+2016-08-13 14:03:03		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-13 14:03:09	=!=	irc: command "msg" must be executed on connected irc server
+2016-08-15 14:16:41		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-17 17:15:47		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-17 20:09:21		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-18 11:33:21		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-19 14:50:26		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-19 18:49:39	=!=	Error: unknown command "/qui" (type /help for help)
+2016-08-19 20:15:47		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-19 20:16:01	=!=	irc: already connected to server "irc"!
+2016-08-20 19:20:56		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-20 20:30:02		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-21 11:25:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-23 13:11:11		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-23 16:57:30		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-23 17:09:56	=!=	irc: command "join" must be executed on connected irc server
+2016-08-24 14:06:18		fifo: removing old fifo pipe "/home/harwiltz/.weechat/weechat_fifo_29108"
+2016-08-24 14:06:19		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-24 16:51:14		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-24 16:51:25	=!=	irc: command "msg" must be executed on connected irc server
+2016-08-24 18:55:09		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2016-08-24 19:43:38		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer

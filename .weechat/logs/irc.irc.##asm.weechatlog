@@ -1,0 +1,788 @@
+2016-04-05 18:12:55	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##asm
+2016-04-05 18:12:55	--	Topic for ##asm is "Assembly programming channel, all architectures welcome (please specify). Don't ask to ask! Use a pastebin if appropriate! Check your manuals! More information: http://goo.gl/vZ4xwd *** AT&T vs Intel flamers will be banned."
+2016-04-05 18:12:55	--	Topic set by Jester01 (~Jester01@62.100.244.69) on Mon, 18 Jan 2016 16:23:59
+2016-04-05 18:12:55	--	Channel ##asm: 288 nicks (1 op, 0 voices, 287 normals)
+2016-04-05 18:12:58	--	Channel created on Sun, 27 May 2007 16:31:12
+2016-04-05 18:13:32	harwiltz	Hi guys. I have a MIPS assignment to do and I don't understand what I'm being asked to program. I'm worried I just don't understand something about assembly.
+2016-04-05 18:14:25	harwiltz	The problem is 'Write a program that can evaluate the expression: (A*B) + (C*D), A,B,C,D refer to main memory addresses
+2016-04-05 18:14:45	Jester01	that's confusing wording
+2016-04-05 18:14:58	Jester01	but I don't think they want you to operate on the addresses
+2016-04-05 18:15:07	Jester01	more likely, the content of said memory locations
+2016-04-05 18:15:23	harwiltz	Your code must use assembler directives (.data to request memory locations to store values in memory and .space to reserve an array in memory to hold data)
+2016-04-05 18:15:44	harwiltz	Jester01: I really don't understand why I need to use .space for this either
+2016-04-05 18:15:59	Jester01	you don't, maybe they copy-pasted that
+2016-04-05 18:16:03	harwiltz	Do you think A,B,C,D may be passed in as arguments?
+2016-04-05 18:16:11	harwiltz	Jester01: My prof wrote the assignment
+2016-04-05 18:16:21	Jester01	yeah but maybe he has more assignments
+2016-04-05 18:16:35	Jester01	so he just copy-pastes the "must use assembler directives" part
+2016-04-05 18:16:48	harwiltz	Jester01: Perhaps. Either way I have to follow the instructions though
+2016-04-05 18:17:14	Jester01	funnily enough what he didn't tell you is what kind of data type you should use
+2016-04-05 18:17:26	harwiltz	Jester01: Good point
+2016-04-05 18:17:45	harwiltz	Would it be crazy to interpret this as just declaring four words and literally just doing arithmetic?
+2016-04-05 18:17:51	-->	przemoc (~przemoc@unaffiliated/przemoc) has joined ##asm
+2016-04-05 18:18:08	Jester01	makes sense to me
+2016-04-05 18:18:10	harwiltz	Because this problem is worth the same amount as the previous one, in which I had to implement a factorial algorithm
+2016-04-05 18:18:35	Jester01	recursively? :)
+2016-04-05 18:18:48	harwiltz	Jester01: yup. The factorial one seems a little harder than this
+2016-04-05 18:18:57	harwiltz	And by a little, I mean a lot ;)
+2016-04-05 18:18:59	Jester01	if you were forced to use recursion, yeah.
+2016-04-05 18:19:04	Jester01	otherwise, no.
+2016-04-05 18:19:08	harwiltz	Jester01: I was forced to use recursion
+2016-04-05 18:19:27	harwiltz	Sorry Jester01 but I gotta go eat dinner now. Thanks for the help
+2016-04-05 19:11:50	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##asm
+2016-04-05 19:11:50	--	Topic for ##asm is "Assembly programming channel, all architectures welcome (please specify). Don't ask to ask! Use a pastebin if appropriate! Check your manuals! More information: http://goo.gl/vZ4xwd *** AT&T vs Intel flamers will be banned."
+2016-04-05 19:11:50	--	Topic set by Jester01 (~Jester01@62.100.244.69) on Mon, 18 Jan 2016 16:23:59
+2016-04-05 19:11:50	--	Channel ##asm: 293 nicks (1 op, 0 voices, 292 normals)
+2016-04-05 19:11:51	--	Channel created on Sun, 27 May 2007 16:31:12
+2016-04-05 19:12:28	harwiltz	Hey guys. I have an assignment to do in MIPS assembly and I literally don't understand what's being asked of me
+2016-04-05 19:12:36	Jester01	we know :D
+2016-04-05 19:12:48	harwiltz	Jester01: Hey Jester! I'm back haha
+2016-04-05 19:12:54	Jester01	we know! :D
+2016-04-05 19:12:54	harwiltz	Do you mind checking out the question?
+2016-04-05 19:12:55	kaizoku	the first rule of programming is DRY
+2016-04-05 19:12:58	kaizoku	Don't Repeat Yourself
+2016-04-05 19:13:11	harwiltz	http://imgur.com/123fJWC
+2016-04-05 19:13:26	harwiltz	sorry, I meant http://imgur.com/a23jfJWC
+2016-04-05 19:13:33	harwiltz	Fuck
+2016-04-05 19:13:37	Jester01	lol
+2016-04-05 19:13:44	harwiltz	http://imgur.com/a23fJWC
+2016-04-05 19:13:48	harwiltz	That's the one
+2016-04-05 19:14:02	kaizoku	what window manager?
+2016-04-05 19:14:02	harwiltz	It's Question 3
+2016-04-05 19:14:06	harwiltz	kaizoku: bspwm
+2016-04-05 19:14:14	Jester01	yeah well you already said that
+2016-04-05 19:14:49	harwiltz	I guess this is just proof to show I'm not crazy or something, and that I actually have to use the .space directive
+2016-04-05 19:15:17	-->	OxFEEDBACC (~what@176.0.66.10) has joined ##asm
+2016-04-05 19:15:18	<--	OxFEEDBACC (~what@176.0.66.10) has quit (Changing host)
+2016-04-05 19:15:18	-->	OxFEEDBACC (~what@unaffiliated/oxfeedbacc) has joined ##asm
+2016-04-05 19:15:26	<--	blackwind_123 (~IceChat9@117.192.133.120) has quit (Ping timeout: 248 seconds)
+2016-04-05 19:16:19	Jester01	yeah that still doesn't make any sense
+2016-04-05 19:16:26	Jester01	there is no array in that question
+2016-04-05 19:16:47	Jester01	".space to reserve an array in memory to hold data"
+2016-04-05 19:16:52	<--	rendar (~I@host189-116-dynamic.53-82-r.retail.telecomitalia.it) has quit (Quit: std::lower_bound + std::less_equal *works* with a vector without duplicates!)
+2016-04-05 19:17:04	harwiltz	Jester01: I couldn't agree more
+2016-04-05 19:17:22	<--	slicktux (~slicktux@unaffiliated/slicktux) has quit (Quit: leaving)
+2016-04-05 19:17:23	<--	infinite_ (~infinite@8.27.213.91) has quit (Read error: Connection reset by peer)
+2016-04-05 19:17:27	Jester01	I still say he just copy-pasted that part, or edited the question from a different one
+2016-04-05 19:17:34	-->	blackwind_123 (~IceChat9@117.192.133.136) has joined ##asm
+2016-04-05 19:17:46	harwiltz	I'm thinking that he wants us to somehow take the values of A,B,C,D as arguments so that we don't hard code them or something
+2016-04-05 19:17:56	-->	Ropeney (~Ropeney@tank.mindvision.com.au) has joined ##asm
+2016-04-05 19:18:15	Jester01	you still don't need an array
+2016-04-05 19:18:16	<--	OxCEA5ED (~what@176.2.28.64) has quit (Ping timeout: 244 seconds)
+2016-04-05 19:18:19	harwiltz	Jester01: Hmm. I actually have solutions from his previous assignments so I'll check if I can find that anywhere
+2016-04-05 19:19:15	harwiltz	His previous assignment made no reference to the .space directive, but I guess he may have copied it from somewhere else
+2016-04-05 19:21:45	harwiltz	This prof is so unclear. On our last exam he had a question that was so unclear about what he wanted that I literally solved everything that may have been what he was looking for and had like 2 pages full for a fairly short question
+2016-04-05 19:22:54	<--	hzjd (~Adium@dhcp-18-189-109-31.dyn.mit.edu) has quit (Quit: Leaving.)
+2016-04-05 19:29:10	-->	hzjd (~Adium@dhcp-18-189-109-31.dyn.MIT.EDU) has joined ##asm
+2016-04-05 19:29:20	kisskorv	is there something similar to inline in nasm or do you make macros?
+2016-04-05 19:30:32	<--	kirotawa2 (~kirotawa@189.40.101.192) has quit (Ping timeout: 276 seconds)
+2016-04-05 19:30:48	Jester01	macros
+2016-04-05 19:30:58	Jester01	it's an assembler not a compiler :)
+2016-04-05 19:31:10	-->	kirotawa2 (~kirotawa@189.40.101.192) has joined ##asm
+2016-04-05 19:31:37	kisskorv	:p
+2016-04-05 19:31:38	<--	kawaxi (~kawaxi@187.150.37.162) has quit (Remote host closed the connection)
+2016-04-05 19:33:01	fizzie	I parsed "question 3" to mean to write the result in a word of memory reserved with .space, but that's entirely a guess.
+2016-04-05 19:33:08	fizzie	I mean, there's an unterminated (.
+2016-04-05 19:33:20	Jester01	still not an array though :)
+2016-04-05 19:33:33	fizzie	Well, it's "an array" of 4 bytes.
+2016-04-05 19:33:43	Jester01	or an array of 1 word LOL
+2016-04-05 19:33:54	harwiltz	fizzie: Hmm, I hadn't thought of that. 
+2016-04-05 19:34:28	harwiltz	But yea I agree with Jester01 , why use an array?
+2016-04-05 19:35:22	Jester01	you'd still use .space to allocate your single word so at least there is that.
+2016-04-05 19:35:55	harwiltz	Jester01: Why would I use .space to allocate the word? Can't I just have something like answer: .word 0?
+2016-04-05 19:36:16	harwiltz	Basically just initialize it to 0
+2016-04-05 19:36:22	fizzie	If you take the list of directives as exhaustive, you can't have .word at all. :)
+2016-04-05 19:36:27	Jester01	:D
+2016-04-05 19:36:41	fizzie	(Then again, you can't have .text either...)
+2016-04-05 19:37:00	Jester01	that's no problem
+2016-04-05 19:37:06	Jester01	you start with .text by default
+2016-04-05 19:37:50	Jester01	also A,B,C,D are memory addresses so the data is magically already in memory you just need to input the addresses
+2016-04-05 19:38:02	harwiltz	I was confused about that too
+2016-04-05 19:38:08	Jester01	maybe this is trying to teach indirect addressing
+2016-04-05 19:38:39	harwiltz	I wouldn't know. We didn't even learn assembly in this course we were just expected to learn it on our own
+2016-04-05 19:39:01	Jester01	LOL?
+2016-04-05 19:39:15	harwiltz	yup. Haven't seen a single line of assembly in class
+2016-04-05 19:39:24	Jester01	make sure you distribute the prof's salary among the students
+2016-04-05 19:39:30	harwiltz	Hahahaha
+2016-04-05 19:39:36	nevodka	kekkies
+2016-04-05 19:47:36	fizzie	Questions 1 and 2 -- http://sprunge.us/iAAU -- seem strangely slightly more reasonable.
+2016-04-05 19:48:49	harwiltz	how did you find that?
+2016-04-05 19:48:56	fizzie	The magic of Google.
+2016-04-05 19:49:04	harwiltz	Jesus
+2016-04-05 19:49:26	harwiltz	Yea I already finished 1 and 2, but from any way I understand number 3 it seems that 3 will be way easier than 2
+2016-04-05 19:49:26	<--	Jesin (~Jesin@pool-108-45-39-144.washdc.fios.verizon.net) has quit (Quit: Leaving)
+2016-04-05 19:49:45	<--	krok (~znfzxjnin@77.77.164.30.client.entry.bg) has quit (Quit: Leaving)
+2016-04-05 19:49:59	fizzie	Not if you count the meta-work of trying to read the author's mind.
+2016-04-05 19:50:07	harwiltz	fizzie: Hahaha
+2016-04-05 19:50:25	harwiltz	Of course I meant after the telepathy has been completed
+2016-04-05 19:51:17	fizzie	(The Google-hit, by the way, was some strange-looking do-my-homework website, https://www.coursehero.com/tutors-problems/Electrical-Engineering/8947735-I-would-like-to-get-help-with-this-assignment-I-am-reading-the-materi/ )
+2016-04-05 19:51:53	harwiltz	Ah ok. I see. 
+2016-04-05 19:52:29	fizzie	Oh, do-my-homework-for-money, even.
+2016-04-05 19:52:35	Jester01	oh yay
+2016-04-05 19:52:39	 *	Jester01 resigns from his work
+2016-04-05 19:52:46	fizzie	"Answer Homework Questions" "Join our team of online tutors and earn thousands of dollars teaching students around the world. Work on your own time, build a reputation, and get promoted!"
+2016-04-05 19:52:48	harwiltz	Jesus. Hope you guys realize I'm trying to do my work honestly lol
+2016-04-05 19:52:51	fizzie	It's like the opposite of freenode.
+2016-04-05 19:53:31	-->	ob-sed (~obesd@unaffiliated/obesd) has joined ##asm
+2016-04-05 19:53:31	Jester01	some people wanted to pay me here ;)
+2016-04-05 19:54:14	-->	Jesin (~Jesin@pool-108-45-39-144.washdc.fios.verizon.net) has joined ##asm
+2016-04-05 19:56:14	fizzie	Anyhow, I would probably just pick an interpretation and hope for the best. But reserving space for the answer with .space is at least not entirely silly. It's not any "better" than your answer: .word 0, except it does manage to work the .space directive in.
+2016-04-05 19:56:58	harwiltz	fizzie: Makes sense. This assignment still isn't due until the 18th or something so I have time to ask the prof. 
+2016-04-05 19:58:47	<--	ob-sed (~obesd@unaffiliated/obesd) has left ##asm
+2016-04-05 20:01:02	-->	tsathoggua (~tsathoggu@cpe-75-82-51-231.socal.res.rr.com) has joined ##asm
+2016-04-05 20:01:28	vulture_	Jester01: nobody ever wants to pay me in here ;)
+2016-04-05 20:02:02	-->	snyp (~Snyp@14.96.31.45) has joined ##asm
+2016-04-05 20:02:06	<--	fugue (~toccata@205.189.0.111) has quit (Quit: Computer has gone to sleep)
+2016-04-05 20:02:19	<--	tsathoggua (~tsathoggu@cpe-75-82-51-231.socal.res.rr.com) has quit (Client Quit)
+2016-04-05 20:02:24	<--	nevodka (~nevodka@stupool9.seattleu.edu) has quit (Ping timeout: 264 seconds)
+2016-04-05 20:03:07	Jester01	you wouldn't call it money (what they offered me)
+2016-04-05 20:05:29	<--	snyp (~Snyp@14.96.31.45) has quit (Client Quit)
+2016-04-05 20:07:00	-->	cagmz (~cagmz@cpe-107-185-130-191.socal.res.rr.com) has joined ##asm
+2016-04-05 20:07:36	<--	TheRealThreat_ (~TheRealTh@84.40.127.166) has quit (Ping timeout: 268 seconds)
+2016-04-05 20:08:50	-->	nevodka (~nevodka@stupool9.seattleu.edu) has joined ##asm
+2016-04-05 20:19:35	<--	zerobaud (~zerobaud@a83-160-199-211.adsl.xs4all.nl) has quit (Ping timeout: 246 seconds)
+2016-04-05 20:19:56	-->	johndau (~user@113.161.95.72) has joined ##asm
+2016-04-05 20:20:41	<--	nevodka (~nevodka@stupool9.seattleu.edu) has quit (Quit: . _.)
+2016-04-05 20:21:17	<--	happy-dude (uid62780@gateway/web/irccloud.com/x-grwnlwkfbmrsequo) has quit (Quit: Connection closed for inactivity)
+2016-04-05 20:21:31	<--	hzjd (~Adium@dhcp-18-189-109-31.dyn.MIT.EDU) has quit (Quit: Leaving.)
+2016-04-05 20:23:46	-->	hzjd (~Adium@dhcp-18-189-109-31.dyn.MIT.EDU) has joined ##asm
+2016-04-05 20:24:30	kisskorv	noooooo..... ooooooo.. nooooooooooo. Lol. I thought I could LUT a whole chess game. I actually could, even with the complex rules and all. But there's 1 slight problem.  Whether a move is valid or not sometimes depends on whether there are stuff between the from-to
+2016-04-05 20:25:12	kisskorv	so I have to conditionally check what's between two squares
+2016-04-05 20:25:54	-->	DaniKitten (~DaniKitte@189.133.15.180) has joined ##asm
+2016-04-05 20:26:03	DaniKitten	Hello?
+2016-04-05 20:26:19	Jester01	"sometimes" LOL
+2016-04-05 20:26:31	kisskorv	Jester01: not with the horses
+2016-04-05 20:26:37	Jester01	right.
+2016-04-05 20:26:47	kisskorv	:p so that's "sometimes"
+2016-04-05 20:26:52	Jester01	that's pretty much the only exception ... unless I have forgotten to play chess
+2016-04-05 20:27:04	Jester01	so I'd say that's "most of the time"
+2016-04-05 20:27:34	kisskorv	Jester01: "most of the time" implies sometimes
+2016-04-05 20:28:20	<--	snhmib (~jurjen@a83-163-200-186.adsl.xs4all.nl) has quit (Ping timeout: 246 seconds)
+2016-04-05 20:28:56	kisskorv	my dream of the 5 instruction chess board is dead :(
+2016-04-05 20:32:10	-->	zerobaud (~zerobaud@a83-160-199-211.adsl.xs4all.nl) has joined ##asm
+2016-04-05 20:33:44	vulture_	kisskorv: that is handleable with bitfields
+2016-04-05 20:33:51	<--	DaniKitten (~DaniKitte@189.133.15.180) has quit (Quit: Saliendo)
+2016-04-05 20:33:54	<--	roxfan (~roxfan@196.128-242-81.adsl-dyn.isp.belgacom.be) has quit (Ping timeout: 240 seconds)
+2016-04-05 20:36:58	kisskorv	ill look into that, thanks :)
+2016-04-05 20:38:12	-->	hzjd1 (~Adium@dhcp-18-111-101-98.dyn.mit.edu) has joined ##asm
+2016-04-05 20:39:19	-->	Elyx0 (~LX00@ip75.darwineco.isp.ip4b.net) has joined ##asm
+2016-04-05 20:40:06	<--	hzjd (~Adium@dhcp-18-189-109-31.dyn.MIT.EDU) has quit (Ping timeout: 276 seconds)
+2016-04-05 20:42:47	<--	fr0gRIP (~fr0gRIP@137.21.146.123) has quit (Quit: fr0gRIP)
+2016-04-05 20:43:58	<--	Elyx0 (~LX00@ip75.darwineco.isp.ip4b.net) has quit (Ping timeout: 260 seconds)
+2016-04-06 18:03:48	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##asm
+2016-04-06 18:03:48	--	Topic for ##asm is "Assembly programming channel, all architectures welcome (please specify). Don't ask to ask! Use a pastebin if appropriate! Check your manuals! More information: http://goo.gl/vZ4xwd *** AT&T vs Intel flamers will be banned."
+2016-04-06 18:03:48	--	Topic set by Jester01 (~Jester01@62.100.244.69) on Mon, 18 Jan 2016 16:23:59
+2016-04-06 18:03:48	--	Channel ##asm: 294 nicks (1 op, 0 voices, 293 normals)
+2016-04-06 18:03:50	--	Channel created on Sun, 27 May 2007 16:31:12
+2016-04-06 18:04:01	Jester01	one less register to worry about :)
+2016-04-06 18:04:29	-->	freakazoid0223 (~matt@pool-108-52-4-99.phlapa.fios.verizon.net) has joined ##asm
+2016-04-06 18:04:31	Demon_Fox	Few transistors on a smaller die?
+2016-04-06 18:04:34	harwiltz	Hey guys. I'm trying to store words from input to a array that I have created in MIPS, but I'm getting an error saying something has wrong format
+2016-04-06 18:04:53	harwiltz	I have in .data the line input: .space 16 to allocate an array of 4 words
+2016-04-06 18:04:54	Jester01	disadvantage, you lose extra output such as carry or overflow detection
+2016-04-06 18:05:22	harwiltz	After a integer is read, I have the line sw $v0, 0(input), which gives me an error
+2016-04-06 18:05:22	Demon_Fox	Saves on chip real-estate
+2016-04-06 18:05:35	Jester01	yeah. in the () you can only use register
+2016-04-06 18:05:50	harwiltz	Jester01: Oh ok. So how would I do it for an array in RAM?
+2016-04-06 18:06:02	Jester01	sw $v0, input($0) may or may not be accepted. normally you load the address into a register first.
+2016-04-06 18:06:15	Jester01	la $t0, input;  sw $v0, ($t0)
+2016-04-06 18:06:25	harwiltz	Jester01: I see, that seems a lot better actually
+2016-04-06 18:06:28	harwiltz	Thanks
+2016-04-06 18:08:10	<--	cden (~cden@unaffiliated/cden) has quit (Quit: Leaving)
+2016-04-06 18:08:52	<--	King_Hual (~failed@unaffiliated/king-hual/x-1207580) has quit (Quit: Leaving)
+2016-04-06 18:09:34	harwiltz	Jester01: If I wanted to multiply the elements in the array, why can't I do mul 0($t0), 0($t0), 4($t0) to multiply the first two?
+2016-04-06 18:09:47	Jester01	because it's RISC :)
+2016-04-06 18:09:55	harwiltz	RISC?
+2016-04-06 18:10:02	Jester01	reduced instruction set computer
+2016-04-06 18:10:17	Jester01	hell, not even x86 can do that
+2016-04-06 18:10:27	harwiltz	ok, but surely I can multiply. Do I have to store each index of the array into a register?
+2016-04-06 18:10:32	Jester01	yes.
+2016-04-06 18:10:41	harwiltz	Then what the fuck am I using this array for hahaha
+2016-04-06 18:10:51	Jester01	not at the same time of course.
+2016-04-06 18:10:59	Jester01	you use the array because you have more memory than registers
+2016-04-06 18:11:06	harwiltz	Oh I see
+2016-04-06 18:11:16	harwiltz	But I should have enough registers for this though
+2016-04-06 18:11:46	Jester01	also, using memory and loops is dynamic (the number can change)
+2016-04-06 18:13:59	<--	fofoni (~ztcptxm1b@189.122.122.100) has quit (Quit: Konversation terminated! :))
+2016-04-06 18:16:01	harwiltz	I see. thanks for the help
+2016-04-06 18:16:54	<--	profess (~profess@unaffiliated/csddesk) has quit (Ping timeout: 240 seconds)
+2016-04-06 18:17:14	harwiltz	Also, why can't I do lw $a0, $t1?
+2016-04-06 18:17:44	harwiltz	Nvm stupid question
+2016-04-06 18:18:27	Jester01	:)
+2016-04-06 18:19:09	-->	profess (~profess@unaffiliated/csddesk) has joined ##asm
+2016-04-06 18:19:34	harwiltz	Changed that to move $a0, $t1. So now my code compiles, but I'm getting a runtime exception on sw $v0, 0($t0)
+2016-04-06 18:19:54	Jester01	either $t0 is wrong or read-only memory :)
+2016-04-06 18:20:19	<--	Martin90 (~Martin@212.87.229.42) has quit (Quit: Leaving)
+2016-04-06 18:20:23	harwiltz	What do you mean by $t0 is wrong? And arent the $tX registers for temporary storage?
+2016-04-06 18:20:31	-->	tsathoggua (~tsathoggu@cpe-75-82-51-231.socal.res.rr.com) has joined ##asm
+2016-04-06 18:20:33	Jester01	I mean, has the wrong value
+2016-04-06 18:20:50	harwiltz	I have la $t0, input
+2016-04-06 18:21:24	Jester01	then it's read-only ... did you define input in .data ?
+2016-04-06 18:21:28	<--	swatti (~memory@business-89-132-60-56.business.broadband.hu) has quit (Ping timeout: 268 seconds)
+2016-04-06 18:21:28	<--	fr0gRIP (~fr0gRIP@137.21.146.123) has quit (Quit: fr0gRIP)
+2016-04-06 18:21:40	harwiltz	Yup, input is in .data. I have input: .space 16
+2016-04-06 18:21:41	<--	tsathoggua (~tsathoggu@cpe-75-82-51-231.socal.res.rr.com) has quit (Client Quit)
+2016-04-06 18:21:44	-->	Suchorski (~regex@unaffiliated/suchorski) has joined ##asm
+2016-04-06 18:21:55	Jester01	use the debugger
+2016-04-06 18:22:05	Jester01	check value of $t0
+2016-04-06 18:22:40	harwiltz	0x1001000f
+2016-04-06 18:23:21	harwiltz	Maybe I need a .align?
+2016-04-06 18:23:37	Jester01	oh yeah.
+2016-04-06 18:23:48	Jester01	if you misaligned it :D
+2016-04-06 18:23:48	harwiltz	So do I just put .align 2 above my input declaration?
+2016-04-06 18:24:02	Jester01	I'd try .align 4  or use proper order of things
+2016-04-06 18:24:10	Jester01	I assume you have other data in there which misalign
+2016-04-06 18:24:17	harwiltz	I have a string
+2016-04-06 18:24:18	Jester01	put the aligned stuff first
+2016-04-06 18:24:22	Jester01	then the string
+2016-04-06 18:24:33	-->	swatti (~memory@business-89-132-60-56.business.broadband.hu) has joined ##asm
+2016-04-06 18:24:42	Jester01	that way you don't waste memory and you don't even need the .align ;)
+2016-04-06 18:25:02	harwiltz	good idea
+2016-04-06 18:25:43	harwiltz	it works!
+2016-04-06 18:26:11	harwiltz	Jester01: Do you remember my problem I was talking to you about last night?
+2016-04-06 18:26:21	Jester01	not as such :)
+2016-04-06 18:26:44	harwiltz	The one where it was specified that I had to use .space and we couldn't figure out why we were using arrays?
+2016-04-06 18:26:49	Jester01	ah that
+2016-04-06 18:27:27	harwiltz	I spoke to my prof today, and he said it was to store A,B,C,D (the input numbers). Do you think it's reasonable to have the user input those numbers?
+2016-04-06 18:27:40	harwiltz	Instead of hard-coding them
+2016-04-06 18:27:48	Jester01	you only need .space if you input those
+2016-04-06 18:27:57	Jester01	since if you hard code then you use initialized data
+2016-04-06 18:28:14	harwiltz	That's exactly what I was thinking
+2016-04-06 18:28:19	Jester01	unless you just make .space and store them from code, which makes no sense again
+2016-04-06 18:28:33	Jester01	but even inputting 4 numbers needs no array in memory
+2016-04-06 18:28:37	harwiltz	Haha I was about to do that and then realized how ridiculous that was
+2016-04-06 18:28:55	harwiltz	Jester01: I don't disagree.
+2016-04-06 18:29:00	<--	rendar (~I@host27-192-dynamic.181-80-r.retail.telecomitalia.it) has quit (Quit: std::lower_bound + std::less_equal *works* with a vector without duplicates!)
+2016-04-06 18:29:34	Jester01	in this particular case, you use each value only once. not much point in storing them anywhere
+2016-04-06 18:29:48	harwiltz	Exactly
+2016-04-06 18:31:37	<--	Plazma (~plazma@freenode/staff-emeritus/plazma) has quit (Remote host closed the connection)
+2016-04-06 18:32:32	-->	plazma (~plazma@freenode/staff-emeritus/plazma) has joined ##asm
+2016-04-06 18:32:43	--	plazma is now known as Plazma
+2016-04-06 18:34:57	harwiltz	Well thanks Jester01. Have a good night
+2016-04-06 18:35:04	Jester01	nite
+2016-04-08 20:47:43	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##asm
+2016-04-08 20:47:43	--	Topic for ##asm is "Assembly programming channel, all architectures welcome (please specify). Don't ask to ask! Use a pastebin if appropriate! Check your manuals! More information: http://goo.gl/vZ4xwd *** AT&T vs Intel flamers will be banned."
+2016-04-08 20:47:43	--	Topic set by Jester01 (~Jester01@62.100.244.69) on Mon, 18 Jan 2016 16:23:59
+2016-04-08 20:47:43	--	Channel ##asm: 293 nicks (2 ops, 0 voices, 291 normals)
+2016-04-08 20:47:45	--	Channel created on Sun, 27 May 2007 16:31:12
+2016-04-08 20:48:21	harwiltz	Hi guys. I have to write some MIPS programs for an assignment and I just found out I'm only allowed to use instructions from MIPS core, thus no la or li. Can you help me figure out how to replace those commands with core commands?
+2016-04-08 20:48:39	harwiltz	For li, I tried anding the register with $zero and then using ori, but it didn't work
+2016-04-08 20:48:52	harwiltz	I was getting some weird bugs
+2016-04-08 20:49:04	harwiltz	I'm lost as to how to get around la though
+2016-04-08 20:49:27	@Jester01	should work.
+2016-04-08 20:49:48	harwiltz	and with 0 and ori? It was giving me wrong results
+2016-04-08 20:50:06	@Jester01	you did it wrong. though not much you can do wrong.
+2016-04-08 20:50:34	harwiltz	I have and $v0, $v0, $zero
+2016-04-08 20:50:38	harwiltz	ori $v0, 4
+2016-04-08 20:50:44	@Jester01	should give you 4.
+2016-04-08 20:50:48	harwiltz	And thats supposed to replace li $v0, 4
+2016-04-08 20:50:56	@Jester01	but of course you can just do ori $v0, $zero, 4
+2016-04-08 20:51:07	harwiltz	Good point
+2016-04-08 20:51:26	@Jester01	la is a li in disguise
+2016-04-08 20:51:45	harwiltz	What do you mean?
+2016-04-08 20:51:50	@Jester01	it's the same.
+2016-04-08 20:52:08	@Jester01	the only problem is range
+2016-04-08 20:52:22	@Jester01	but that's an issue for li too, except you usually load small numbers :)
+2016-04-08 20:52:32	@Jester01	you will need lui to load the upper bits
+2016-04-08 20:53:03	@Jester01	and you will need assembler-specific operator to access the part of the address you are loading
+2016-04-08 20:53:08	<--	johndau (~user@113.161.95.72) has quit (Read error: Connection reset by peer)
+2016-04-08 20:53:31	harwiltz	... I have no clue how I can implement this still. How would I know how many bytes to load?
+2016-04-08 20:53:56	-->	johndau (~user@113.161.95.72) has joined ##asm
+2016-04-08 20:54:20	-->	BatBlaster (~chatzilla@ool-4351102e.dyn.optonline.net) has joined ##asm
+2016-04-08 20:54:26	<--	skywlkr (~skywlkr@unaffiliated/skywlkr) has quit (Quit: skywlkr)
+2016-04-08 20:54:30	@Jester01	with gnu assembler you have %hi and %lo
+2016-04-08 20:54:39	BatBlaster	same in MIPS, right
+2016-04-08 20:54:40	harwiltz	I'm using MarS
+2016-04-08 20:54:44	BatBlaster	same
+2016-04-08 20:54:54	harwiltz	What are %hi and %lo?
+2016-04-08 20:55:06	@Jester01	the two halves of the address
+2016-04-08 20:55:09	harwiltz	Ok I fixed li
+2016-04-08 20:55:18	BatBlaster	well immediates are 16 bits right
+2016-04-08 20:55:29	@Jester01	the first you load lui and the second you addiu
+2016-04-08 20:55:37	harwiltz	Jester01: so you mean the two halves of the string in memory?
+2016-04-08 20:55:42	<--	control (~control@unaffiliated/control) has quit (Ping timeout: 246 seconds)
+2016-04-08 20:55:42	@Jester01	no
+2016-04-08 20:55:46	@Jester01	the two halves of the address
+2016-04-08 20:55:56	harwiltz	Why do you need two halves of the address?
+2016-04-08 20:56:02	BatBlaster	because the address is too big
+2016-04-08 20:56:12	harwiltz	Too big for what?
+2016-04-08 20:56:15	BatBlaster	for one immediate value, right?
+2016-04-08 20:56:16	@Jester01	the opcode.
+2016-04-08 20:56:21	@Jester01	the instruction I mean
+2016-04-08 20:56:25	BatBlaster	yes
+2016-04-08 20:56:44	@Jester01	instructions are 32 bit. obviously you can't have a 32 bit immediate because that wouldn't leave space for the opcode and the destination
+2016-04-08 20:56:49	@Jester01	so you load two halves
+2016-04-08 20:56:52	BatBlaster	I think so
+2016-04-08 20:57:50	@Jester01	so la $a0, foo becomes lui $a0, %hi(foo); addiu $a0, $a0, %lo(foo)
+2016-04-08 20:57:52	harwiltz	So if I want to replace la $a0, string , I would do lui $a0, %hi(string)
+2016-04-08 20:58:05	harwiltz	Oh ok I was gonna say that
+2016-04-08 20:58:09	@Jester01	cool.
+2016-04-08 20:58:10	harwiltz	Nice, trying it now
+2016-04-08 20:58:26	harwiltz	Why addiu though? That part I dont get
+2016-04-08 20:58:47	BatBlaster	add immediate unsigned
+2016-04-08 20:58:52	<--	wildlander (~wild@unaffiliated/wildlander) has quit (Quit: Saliendo)
+2016-04-08 20:59:03	harwiltz	Yea but what does adding have to do with anything
+2016-04-08 20:59:19	@Jester01	lui loads the top half so you have XXXX0000 in the register
+2016-04-08 20:59:28	@Jester01	addiu then adds the low half 0000YYYY
+2016-04-08 20:59:30	BatBlaster	I donno, but I'm no expery
+2016-04-08 20:59:34	harwiltz	Ohhhh I see
+2016-04-08 20:59:35	@Jester01	so XXXX0000 + 0000YYYY = XXXXYYYY
+2016-04-08 20:59:36	BatBlaster	that sounds right though
+2016-04-08 20:59:41	harwiltz	Makes sense
+2016-04-08 21:00:22	harwiltz	Wait it doesn't compile in MARS though
+2016-04-08 21:00:48	<--	johndau (~user@113.161.95.72) has quit (Read error: Connection reset by peer)
+2016-04-08 21:00:56	harwiltz	nvm found my mistake, sorry
+2016-04-08 21:01:39	harwiltz	no still won't compile, my lui is complaining about poorly formatted arguments
+2016-04-08 21:01:55	-->	johndau (~user@113.161.95.72) has joined ##asm
+2016-04-08 21:02:13	@Jester01	so MARS might not understand %hi and %lo
+2016-04-08 21:02:36	BatBlaster	maybe the assembler does t for you
+2016-04-08 21:02:40	harwiltz	Is there any other way to represent %hi and %lo?
+2016-04-08 21:02:56	harwiltz	BatBlaster: Is it possible to assemble it and run it on a non-MIPS machine though?
+2016-04-08 21:03:13	@Jester01	not really, unless you know the address so you can calculate by hand
+2016-04-08 21:04:25	BatBlaster	MARS doesn't seem to...
+2016-04-08 21:04:31	harwiltz	Weird, because it does syntax highlighting on the %hi and %lo so you'd think it recognize it
+2016-04-08 21:04:44	harwiltz	BatBlaster: Is there any other way I can run this code then? 
+2016-04-08 21:05:01	BatBlaster	don't ask me, I got a D in this class the first time
+2016-04-08 21:05:05	harwiltz	hahaha
+2016-04-08 21:05:26	harwiltz	Well did you use MARS? I saw you mentioned an assembler
+2016-04-08 21:05:26	<--	johndau (~user@113.161.95.72) has quit (Read error: Connection reset by peer)
+2016-04-08 21:05:30	BatBlaster	and if i don't focus, will
+2016-04-08 21:05:37	BatBlaster	yes, this class uses MARS
+2016-04-08 21:05:59	harwiltz	So basically I'm screwed?
+2016-04-08 21:06:13	BatBlaster	I donno, ask someone else
+2016-04-08 21:06:19	-->	johndau (~user@113.161.95.72) has joined ##asm
+2016-04-08 21:06:31	@Jester01	I doubt it understands arithmetic on symbols either
+2016-04-08 21:06:50	@Jester01	of course %hi(x) is just x >> 16  and %lo(x) is x & 0xffff
+2016-04-08 21:07:00	<--	johndau (~user@113.161.95.72) has quit (Read error: Connection reset by peer)
+2016-04-08 21:07:02	BatBlaster	I thought if you try li and give a 32 bit immediate
+2016-04-08 21:07:10	harwiltz	I'm not allowed to use li
+2016-04-08 21:07:18	BatBlaster	it assembles that into two instructions
+2016-04-08 21:07:20	-->	johndau (~user@113.161.95.72) has joined ##asm
+2016-04-08 21:07:22	harwiltz	Jester01: Surely I can do shifts and ands though?
+2016-04-08 21:07:30	@Jester01	haha
+2016-04-08 21:07:36	@Jester01	even better assemblers can't do that
+2016-04-08 21:07:44	harwiltz	Can't do what?
+2016-04-08 21:07:48	@Jester01	shift and and
+2016-04-08 21:07:55	@Jester01	with addresses, that is
+2016-04-08 21:07:58	@Jester01	with constants, sure.
+2016-04-08 21:07:59	harwiltz	Oh right
+2016-04-08 21:08:05	@Jester01	but you can try.
+2016-04-08 21:08:06	BatBlaster	not as one instruction
+2016-04-08 21:08:38	<--	johndau (~user@113.161.95.72) has quit (Remote host closed the connection)
+2016-04-08 21:10:54	<--	thinkdoge (~thinkdoge@c-50-135-224-182.hsd1.wa.comcast.net) has quit (Quit: Leaving)
+2016-04-08 21:10:55	@Jester01	not sure what exactly you are doing, but a manual layout of data at fixed known addresses will allow you to calculate things by hand
+2016-04-08 21:11:15	harwiltz	Jester01: That's so ugly though
+2016-04-08 21:11:47	@Jester01	yes. that's what you get if you don't want to use the non-ugly pseudoinstructions invented for the purpose AND your assembler is brain dead.
+2016-04-08 21:11:55	harwiltz	Would you happen to know why when I try compiling my code with gcc or as I get unknown instructions on everything?
+2016-04-08 21:11:58	@Jester01	if it weren't ugly, nobody would need la
+2016-04-08 21:12:09	harwiltz	That's why I'm so frustrated
+2016-04-08 21:12:24	@Jester01	maybe because you try to assemble with an x86 assembler and not mips? :)
+2016-04-08 21:12:38	harwiltz	Lol. Yup
+2016-04-08 21:12:51	harwiltz	So there's no other way I can run my code?
+2016-04-08 21:13:06	@Jester01	$ as --version
+2016-04-08 21:13:06	@Jester01	This assembler was configured for a target of `mips-linux-elf'.
+2016-04-08 21:13:28	harwiltz	x86_64-pc-linux-gnu
+2016-04-08 21:13:40	@Jester01	that won't understand mips unfortunately
+2016-04-08 21:13:44	harwiltz	I figured haha
+2016-04-08 21:14:13	harwiltz	Is there any other way I can run my code then besides using MARS>
+2016-04-08 21:14:22	@Jester01	spim?
+2016-04-08 21:14:36	harwiltz	I'll try that, is that just an assembler?
+2016-04-08 21:14:39	@Jester01	no idea if that supports %hi though
+2016-04-08 21:14:46	@Jester01	no, that's a simulator
+2016-04-08 21:14:54	@Jester01	spim or qtspim
+2016-04-08 21:15:27	harwiltz	I think I previously tried spim and it wasn't really working. Downloading qtspim now
+2016-04-08 21:15:56	@Jester01	spim doesn't understand %hi, I doubt qtspim will
+2016-04-08 21:16:19	@Jester01	but I don't have qtspim, stuff beginning with qt has no place on my computer :D
+2016-04-08 21:16:42	harwiltz	It doesn't understand %hi. Not a fan of qtspim either
+2016-04-08 21:16:54	harwiltz	Btw, random question, but do you happen to be a gentoo user?
+2016-04-08 21:16:54	BatBlaster	$hi?
+2016-04-08 21:17:04	harwiltz	No, %hi
+2016-04-08 21:17:19	@Jester01	no, I use debian
+2016-04-08 21:17:19	BatBlaster	oh, I donno, I'm getting a bit tired
+2016-04-08 21:17:42	harwiltz	Jester01: Ah ok. I used gentoo briefly and I remember always disabling qt in my USE flags
+2016-04-08 21:18:25	harwiltz	So basically there's no way I have la functionality on a non-MIPS machine without manually computing the different addresses?
+2016-04-08 21:19:10	@Jester01	you can run the gnu assembler on a non-mips machine, but it needs to be a mips assembler.
+2016-04-08 21:19:23	harwiltz	how do I get a mips assembler?
+2016-04-08 21:19:30	@Jester01	google?
+2016-04-08 21:19:33	@Jester01	or build one.
+2016-04-08 21:19:47	harwiltz	Building one sounds like overkill
+2016-04-08 21:20:40	@Jester01	lol
+2016-04-08 21:21:36	-->	skywlkr (~skywlkr@unaffiliated/skywlkr) has joined ##asm
+2016-04-08 21:21:47	@Jester01	but note that as is just an assembler.you also need the linker (which is luckily in the same binutils package)
+2016-04-08 21:21:58	@Jester01	and, no idea if mars or qtspim can load actual binaries
+2016-04-08 21:22:28	@Jester01	so what OS are you on now/
+2016-04-08 21:22:31	harwiltz	I'm trying something called gxemul, which can apparently emulate a mips machine
+2016-04-08 21:22:36	harwiltz	Jester01: I'm on arch linux
+2016-04-08 21:22:46	@Jester01	https://aur.archlinux.org/packages/cross-mipsel-linux-gnu-binutils
+2016-04-08 21:23:01	harwiltz	Jester01: Thanks, looking into that 
+2016-04-08 21:23:28	harwiltz	Jester01: Only one issue though, how can I assume how my prof will try compiling my program>
+2016-04-08 21:23:35	@Jester01	haha
+2016-04-08 21:23:38	@Jester01	how should I know?
+2016-04-08 21:23:42	harwiltz	If he uses MARS I'm fucked
+2016-04-08 21:23:51	@Jester01	then use the ugly way.
+2016-04-08 21:23:52	harwiltz	Jester01: I didn't actually expect you to answer that ;)
+2016-04-08 21:24:03	@Jester01	note, you are fucked if he doesn't use what you use.
+2016-04-08 21:24:16	@Jester01	he should have specified what is the target assembler/environment
+2016-04-08 21:24:32	@Jester01	assemblers have different syntaxes
+2016-04-08 21:24:35	harwiltz	Jester01: He isn't always very clear unfortunately
+2016-04-08 21:24:46	@Jester01	yeah this is the .space guy, right?
+2016-04-08 21:24:46	harwiltz	Jester01: I'm pretty sure he wants SPIM though
+2016-04-08 21:24:51	harwiltz	Jester01: indeed
+2016-04-08 21:25:25	@Jester01	well, half ugly solution
+2016-04-08 21:25:34	@Jester01	make sure you don't use more than 64k data
+2016-04-08 21:25:35	harwiltz	Whats that?
+2016-04-08 21:25:53	harwiltz	*the half-ugly solution I mean
+2016-04-08 21:25:58	@Jester01	that means you can load the top 16 bits with a constant
+2016-04-08 21:26:10	@Jester01	and the low 16 bits with symbols (if silly MARS accepts that)
+2016-04-08 21:26:22	harwiltz	What do you mean by symbols?
+2016-04-08 21:26:32	@Jester01	labels
+2016-04-08 21:26:36	harwiltz	Oh ok
+2016-04-08 21:26:44	@Jester01	so if you have .data 0x10000000
+2016-04-08 21:26:59	@Jester01	then all the data within the first 64k will of course have top bits 0x1000
+2016-04-08 21:27:05	@Jester01	so you can write lui $a0, 0x1000
+2016-04-08 21:27:06	harwiltz	So I would have lui $a0, 16(string) or something?
+2016-04-08 21:27:23	@Jester01	and then add the low bits as  addiu $a0, $a0, string
+2016-04-08 21:27:32	harwiltz	Is my lui correct?
+2016-04-08 21:27:33	@Jester01	*if* MARS is happy with that at least
+2016-04-08 21:27:38	@Jester01	no it isn't.
+2016-04-08 21:27:42	@Jester01	does it look like mine?
+2016-04-08 21:27:48	harwiltz	Not at all haha
+2016-04-08 21:28:07	harwiltz	But I don't understand what your .data 0x10000000 represents
+2016-04-08 21:28:19	@Jester01	.data section at address 0x10000000
+2016-04-08 21:28:31	harwiltz	Ok, so where would I define the string?
+2016-04-08 21:28:40	@Jester01	after that, as usual
+2016-04-08 21:28:47	@Jester01	you do put your strings in .data, no?
+2016-04-08 21:29:01	harwiltz	Oh ok, I think I see
+2016-04-08 21:29:09	harwiltz	But what if I have multiple strings?
+2016-04-08 21:29:24	@Jester01	well, what do you think?
+2016-04-08 21:29:33	@Jester01	you declare them one after another maybe?
+2016-04-08 21:29:35	harwiltz	I'm not sure how I would define the address of the next one
+2016-04-08 21:29:42	harwiltz	Oh lol, silly me
+2016-04-08 21:29:43	@Jester01	with a label?
+2016-04-08 21:29:50	@Jester01	you do use labels, right?
+2016-04-08 21:29:57	harwiltz	I manually calculate the starting address of the next one? Yes I use labels
+2016-04-08 21:30:02	@Jester01	what for
+2016-04-08 21:30:04	@Jester01	use the labels.
+2016-04-08 21:30:14	@Jester01	the whole point is to not have to calculate.
+2016-04-08 21:30:22	@Jester01	if you DO calculate by hand, that's the ugly way :)
+2016-04-08 21:30:31	harwiltz	But how would I extract the first half of the second string? Previously you used the first half of the memory address
+2016-04-08 21:30:57	@Jester01	as I said, if all your data fits into 64k, then the top half is constant, 0x1000 in the example.
+2016-04-08 21:31:11	@Jester01	so you can hardcode the top half, and use the labels for the low half
+2016-04-08 21:31:18	@Jester01	which is why it's the half-ugly solution :)
+2016-04-08 21:31:33	@Jester01	assuming MARS likes that
+2016-04-08 21:31:36	harwiltz	But wouldn't 0x1000 always represent the first part of the first string?
+2016-04-08 21:31:46	@Jester01	no.
+2016-04-08 21:31:57	harwiltz	I don't understand that operation then
+2016-04-08 21:32:13	@Jester01	which part is confusing? the 64k memory starting at 0x10000000 ends at 0x1000FFFF
+2016-04-08 21:32:23	@Jester01	so the top half of EVERYTHING in that 64k is 0x1000
+2016-04-08 21:32:33	harwiltz	Yes, but how would I extract a second string then? How do I distinguish the strings?
+2016-04-08 21:32:39	@Jester01	by the label?
+2016-04-08 21:32:48	harwiltz	Oh shit, the addiu part...
+2016-04-08 21:32:51	@Jester01	yes.
+2016-04-08 21:32:55	@Jester01	the low half
+2016-04-08 21:33:06	@Jester01	question is, does MARS accept that at least
+2016-04-08 21:33:11	harwiltz	I'll try that. 
+2016-04-08 21:33:24	@Jester01	also, hopefully it will accept a subtraction
+2016-04-08 21:33:30	@Jester01	that's normal
+2016-04-08 21:33:51	harwiltz	Why do you need to subtract?
+2016-04-08 21:33:53	@Jester01	if addiu $a0, $a0, string does not work, you might thus try addiu $a0, $a0, string - .data
+2016-04-08 21:33:58	@Jester01	or addiu $a0, $a0, string - 0x10000000
+2016-04-08 21:34:16	harwiltz	I don't think it will do that subtraction
+2016-04-08 21:34:21	harwiltz	But ill try
+2016-04-08 21:34:36	@Jester01	it should. offsetting is a basic thing, and that is normally accepted for addresses.
+2016-04-08 21:34:46	@Jester01	first try the plain version
+2016-04-08 21:34:50	@Jester01	addiu $a0, $a0, string
+2016-04-08 21:35:20	harwiltz	It's not accepting my string declaration
+2016-04-08 21:35:26	@Jester01	lol
+2016-04-08 21:36:10	harwiltz	Wait missed one 0 haha
+2016-04-08 21:36:24	harwiltz	But for the addiu it is saying that string is not the correct type
+2016-04-08 21:36:30	harwiltz	lui worked though
+2016-04-08 21:36:34	@Jester01	of course.
+2016-04-08 21:36:50	@Jester01	if it couldn't even load a constant, lui would be totally useless :D
+2016-04-08 21:38:06	harwiltz	Not accepting the subtraction either
+2016-04-08 21:38:20	@Jester01	neither version?
+2016-04-08 21:38:34	-->	Cooler (~CoolerExt@117.207.161.187) has joined ##asm
+2016-04-08 21:38:40	harwiltz	nope
+2016-04-08 21:38:47	@Jester01	stupid MARS
+2016-04-08 21:39:03	harwiltz	Well, it never formally says anywhere that I have to output text, so at this point I think i'll just forget about la altogether
+2016-04-08 21:39:14	@Jester01	I have no other idea then ... you will have to use manual counting
+2016-04-08 21:39:20	@Jester01	if you need it
+2016-04-08 21:39:49	harwiltz	I'm either doing no text output or convincing my prof to allow la
+2016-04-08 21:40:16	@Jester01	if you only need this for strings, you could write code
+2016-04-08 21:40:28	@Jester01	that prints a string by index
+2016-04-08 21:40:35	@Jester01	so you don't have to do length counting
+2016-04-08 21:40:45	@Jester01	you'd just say, print the 5th string
+2016-04-08 21:41:00	--	Z8029857 is now known as Lokomotiv
+2016-04-08 21:41:01	harwiltz	I don't know enough assembly. Like I said, we haven't seen any assembly in class. I also have so many other assignments to do and I have no time...
+2016-04-08 21:41:07	<--	Lokomotiv (~ASAP@pool-74-102-9-167.nwrknj.fios.verizon.net) has quit (Changing host)
+2016-04-08 21:41:07	-->	Lokomotiv (~ASAP@unaffiliated/lokomotiv) has joined ##asm
+2016-04-08 21:41:32	-->	phax (~phax@unaffiliated/phax) has joined ##asm
+2016-04-08 21:41:53	@Jester01	okay, one more idea
+2016-04-08 21:42:09	harwiltz	:D
+2016-04-08 21:42:20	@Jester01	embed the string in the code :)
+2016-04-08 21:42:38	harwiltz	How would I do that? You mean directly reference the string?
+2016-04-08 21:42:44	@Jester01	use JAL to jump over it
+2016-04-08 21:43:01	@Jester01	the trick there is that JAL sets up the return address $ra
+2016-04-08 21:43:08	@Jester01	which would then point to your string
+2016-04-08 21:43:13	@Jester01	automatically
+2016-04-08 21:43:18	harwiltz	hmmm
+2016-04-08 21:43:37	harwiltz	So I still leave that data 0x10000000 and my string label right?
+2016-04-08 21:43:42	@Jester01	no
+2016-04-08 21:43:49	harwiltz	So where do I put my string>
+2016-04-08 21:43:50	@Jester01	you embed the string in the code
+2016-04-08 21:43:58	@Jester01	and jump over it with a JAL
+2016-04-08 21:44:16	harwiltz	Ok but what does 'embed the string in the code' entail?
+2016-04-08 21:44:24	@Jester01	stick it in there.
+2016-04-08 21:44:45	harwiltz	So i just put a string in quotes in my .text?
+2016-04-08 21:45:04	@Jester01	along with the directive you use of course
+2016-04-08 21:45:06	@Jester01	.asciiz ?
+2016-04-08 21:45:12	@Jester01	or whatever MARS uses.
+2016-04-08 21:45:25	harwiltz	inside .text? And I need a label?
+2016-04-08 21:45:34	@Jester01	no label needed
+2016-04-08 21:45:44	harwiltz	so just .asciiz "some string"
+2016-04-08 21:46:45	@Jester01	LOL
+2016-04-08 21:46:53	@Jester01	does MARS like that?
+2016-04-08 21:46:56	@Jester01	stupid spim complains
+2016-04-08 21:46:59	harwiltz	I haven't tried that
+2016-04-08 21:47:01	@Jester01	"can't put data in .text"
+2016-04-08 21:47:10	 *	Jester01 slaps spim
+2016-04-08 21:47:16	@Jester01	nothnig wrong with that!
+2016-04-08 21:47:25	 *	harwiltz beats mars, brutally
+2016-04-08 21:48:11	@Jester01	http://paste.debian.net/428703/
+2016-04-08 21:48:17	@Jester01	that's what I wanted to try
+2016-04-08 21:48:50	-->	Goplat (~goplat@reactos/developer/Goplat) has joined ##asm
+2016-04-08 21:49:39	harwiltz	That looks pretty clever
+2016-04-08 21:49:56	harwiltz	Not sure what the point of banning la is in the first place, it's just ridiculous
+2016-04-08 21:50:02	@Jester01	yeah
+2016-04-08 21:50:19	@Jester01	does MARS accept that?
+2016-04-08 21:50:53	harwiltz	I'll try
+2016-04-08 21:51:29	@Jester01	(the nop might not be needed)
+2016-04-08 21:52:28	LedHed2	okay so if my initial location for the etch-a-sketch assignment is (64,62) pixel location in a 128x124 rectangle.  The range is xC000-xFDFF if the starting address is xC000.  Would (64,62) converted to memory location be (x0040,x1F00)?
+2016-04-08 21:52:40	harwiltz	no, .asciiz cannot be placed in .text
+2016-04-08 21:53:32	<--	skywlkr (~skywlkr@unaffiliated/skywlkr) has quit (Read error: Connection reset by peer)
+2016-04-08 21:54:19	BatBlaster	in .data right
+2016-04-08 21:54:46	harwiltz	BatBlaster: No, in .text, it was Jester01's genius plan
+2016-04-08 21:54:56	harwiltz	That wasn't sarcastic btw, it was a really cool plan
+2016-04-08 21:55:36	harwiltz	Jester01: Fuck this, I'm just not going to output strings
+2016-04-08 21:55:43	@Jester01	final idea
+2016-04-08 21:55:53	@Jester01	http://paste.debian.net/428705/
+2016-04-08 21:55:56	@Jester01	this should work
+2016-04-08 21:56:45	LedHed2	write me up some code!  ;)
+2016-04-08 21:57:12	@Jester01	LedHed2: memory location should be a single address. and you had the formula for it.
+2016-04-08 21:57:32	LedHed2	xC000+x+128y
+2016-04-08 21:57:35	@Jester01	right.
+2016-04-08 21:57:45	@Jester01	so, stick the numbers into that, and you get an address out.
+2016-04-08 21:57:46	LedHed2	but how do I separate x and y coordinates
+2016-04-08 21:57:52	@Jester01	separate???
+2016-04-08 21:58:07	-->	Jos_BG (~ircap@186.167.249.115) has joined ##asm
+2016-04-08 21:58:12	LedHed2	ohhhhh
+2016-04-08 21:58:12	@Jester01	(64,62) means x=64 y=62
+2016-04-08 21:58:15	LedHed2	I see
+2016-04-08 21:58:22	Jos_BG	that gave ban to ELCUMPI?
+2016-04-08 21:58:29	LedHed2	xC000-xFDFF is the range of every location
+2016-04-08 21:58:32	LedHed2	so I gotcha
+2016-04-08 21:58:39	@Jester01	Jos_BG: yeah what?
+2016-04-08 21:58:39	-->	johndau (~user@113.161.95.72) has joined ##asm
+2016-04-08 21:59:42	@Jester01	looked like a spammer trying to get people into his channel or something
+2016-04-08 21:59:50	Jos_BG	[Jester01] that you read. :)
+2016-04-08 22:00:13	 *	Jester01 blinks
+2016-04-08 22:00:35	<--	Kallis (~Kallis@cpc15-slam6-2-0-cust171.2-4.cable.virginm.net) has quit (Read error: Connection reset by peer)
+2016-04-08 22:00:55	@Jester01	harwiltz: did you try that yet?
+2016-04-08 22:01:31	harwiltz	Jester01: Sorry, checking now
+2016-04-08 22:01:53	Jos_BG	[Jester01] take away the ban!
+2016-04-08 22:02:30	 *	Jos_BG Bah. :/
+2016-04-08 22:02:44	@Jester01	okay
+2016-04-08 22:02:56	@Jester01	but if he comes back not talking about assembly I will ban him again and you too :D
+2016-04-08 22:03:12	LedHed2	so (64,62) = xDF40 :)
+2016-04-08 22:03:41	LedHed2	is it normal this started to make more sense after I opened a beer?
+2016-04-08 22:03:49	--	Mode ##asm [-b *!~Androirc@host164.190-30-28.telecom.net.ar] by Jester01
+2016-04-08 22:03:59	Jos_BG	Que pendejo este wacho.
+2016-04-08 22:04:13	LedHed2	I think I am overthinking it and putting to much pressure on myself because programing scares me honestly
+2016-04-08 22:04:45	Jos_BG	as you say wanker :)
+2016-04-08 22:05:00	harwiltz	Jester01: Genius
+2016-04-08 22:05:24	LedHed2	I thought vulture was the genius
+2016-04-08 22:05:27	@Jester01	that at least gives you a string table you can index
+2016-04-08 22:05:29	<--	lapinozz (~lapinozz@69.9.82.72) has quit (Ping timeout: 244 seconds)
+2016-04-08 22:05:32	LedHed2	can't have more than one
+2016-04-08 22:05:33	harwiltz	Jester01: It works
+2016-04-08 22:05:35	<--	Xylitol (~temari@unaffiliated/xylitol) has quit (Quit: Sharpen your sickle at sunset)
+2016-04-08 22:05:36	@Jester01	the best we can do under the circumstances
+2016-04-08 22:05:44	@Jester01	I guess you understand how that works
+2016-04-08 22:06:20	-->	SwiftMatt (~Objective@130.253.27.221) has joined ##asm
+2016-04-08 22:06:23	SwiftMatt	If you guys take a look at some pipeline simulator code, how would you be able to tell what computer architecture is being modeled? I know it's some version of MIPS, but how do you know what it is specifically?
+2016-04-08 22:06:26	@Jester01	each pointer in the table is 4 bytes, so first string at offset 0, second 4, third 8, etc.
+2016-04-08 22:06:39	harwiltz	I believe so. For some reason, it's not printing the newline character after my strings, but that's no big deal
+2016-04-08 22:06:47	harwiltz	Jester01: Yes, I understand that part
+2016-04-08 22:06:50	@Jester01	did you add one? LOL
+2016-04-08 22:06:58	harwiltz	Isn't it implied in .asciiz
+2016-04-08 22:07:01	@Jester01	no
+2016-04-08 22:07:08	harwiltz	I thought the z means it adds a newline
+2016-04-08 22:07:11	@Jester01	no
+2016-04-08 22:07:13	-->	Z8029857 (~ASAP@pool-74-102-9-167.nwrknj.fios.verizon.net) has joined ##asm
+2016-04-08 22:07:14	@Jester01	that means add a zero
+2016-04-08 22:07:19	@Jester01	to terminate the string
+2016-04-08 22:07:26	@Jester01	not to print a newline
+2016-04-08 22:07:27	harwiltz	Ok then!
+2016-04-08 22:07:52	harwiltz	Before it was printing a newline when I was using la though. Tbh, I like it better without the newline anyway
+2016-04-08 22:08:06	@Jester01	you did something else back then :)
+2016-04-08 22:08:24	<--	Lokomotiv (~ASAP@unaffiliated/lokomotiv) has quit (Ping timeout: 264 seconds)
+2016-04-08 22:08:25	@Jester01	it doesn't print a newline, not even with la (all this affects is how the address is loaded, not what is in memory)
+2016-04-08 22:08:26	-->	majestic (~majestic@213-21-89-17.customer.t3.se) has joined ##asm
+2016-04-08 22:08:40	<--	SwiftMatt (~Objective@130.253.27.221) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2016-04-08 22:09:21	-->	Geek_ (~Geek@212.73.149.139) has joined ##asm
+2016-04-08 22:09:56	harwiltz	Jester01: I'm using the exact same string, with la it did a newline somehow. Though what you said makes a lot of sense
+2016-04-08 22:09:58	<--	sthns^ (~sthns@x4d06a6dc.dyn.telefonica.de) has quit (Read error: Connection reset by peer)
+2016-04-08 22:10:03	<--	majestic (~majestic@213-21-89-17.customer.t3.se) has left ##asm
+2016-04-08 22:10:38	@Jester01	you can stick la $a0, string3 in that code and see if it changes
+2016-04-08 22:11:04	--	Mode ##asm [-o Jester01] by Jester01
+2016-04-08 22:12:36	<--	Cooler (~CoolerExt@117.207.161.187) has quit (Ping timeout: 248 seconds)
+2016-04-08 22:13:14	<--	BatBlaster (~chatzilla@ool-4351102e.dyn.optonline.net) has quit (Ping timeout: 244 seconds)
+2016-04-08 22:13:58	-->	SwiftMatt (~Objective@130.253.27.221) has joined ##asm
+2016-04-08 22:14:29	Jester01	SwiftMatt: I don't know what versions exist, but can you compare supported instructions or something?
+2016-04-08 22:14:56	SwiftMatt	hmm
+2016-04-08 22:14:56	SwiftMatt	not sure
+2016-04-08 22:15:27	Jester01	also if it's 32 or 64 bit :D
+2016-04-08 22:15:27	SwiftMatt	do the supported instructions greatly differ across MIPS architectures
+2016-04-08 22:15:29	Jos_BG	if they speak nonsense
+2016-04-08 22:15:36	Jos_BG	:l
+2016-04-08 22:15:54	<--	Geek_ (~Geek@212.73.149.139) has quit (Ping timeout: 240 seconds)
+2016-04-08 22:16:27	harwiltz	Jester01: It works. And of course adding \n to the string does the newline
+2016-04-08 22:16:32	Jester01	https://en.wikipedia.org/wiki/MIPS_instruction_set
+2016-04-08 22:16:39	Jester01	lists differences
+2016-04-08 22:17:01	harwiltz	I have that in my bookmarks ;)
+2016-04-08 22:18:26	 *	Jos_BG and if you did wrong, I regret, it was not my intention, I hope you understand ~
+2016-04-08 22:18:58	Jester01	no problem
+2016-04-08 22:19:04	Jos_BG	where they are?
+2016-04-08 22:19:46	SwiftMatt	where does it compare Jester01
+2016-04-08 22:19:53	SwiftMatt	MIPS32/MIPS64 release 1/2/3/4/5/6 ?
+2016-04-08 22:19:54	LedHed2	how can I use .STRINGZ to clear all addressses between xC000-xFDFF or is it easier to write a loop with a counter?
+2016-04-08 22:20:00	Jos_BG	*dies ignored*
+2016-04-08 22:20:01	Jester01	use a loop
+2016-04-08 22:20:20	Jester01	since you will need to clear it everytime the user presses return
+2016-04-08 22:20:27	Jester01	you can't do that with .stringz
+2016-04-08 22:20:27	<--	phax (~phax@unaffiliated/phax) has quit (Quit: phax)
+2016-04-08 22:20:29	LedHed2	yeah that makes sense
+2016-04-08 22:20:34	<--	MulleDK19 (~MulleDK19@unaffiliated/mulledk19) has quit
+2016-04-08 22:20:42	LedHed2	Jos_BG I wasn't sure what you were talking about
+2016-04-08 22:21:00	harwiltz	goodnight all. Thanks for the help as always Jester01 
+2016-04-08 22:21:06	Jester01	nite
+2016-04-08 22:21:13	 *	Jester01 off too
+2016-04-18 18:26:17	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined ##asm
+2016-04-18 18:26:17	(●)	Topic for ##asm is "Assembly programming channel, all architectures welcome (please specify). Don't ask to ask! Use a pastebin if appropriate! Check your manuals! More information: http://goo.gl/vZ4xwd *** AT&T vs Intel flamers will be banned."
+2016-04-18 18:26:17	(●)	Topic set by Jester01 (~Jester01@62.100.244.69) on Mon, 18 Jan 2016 16:23:59
+2016-04-18 18:26:17	(●)	Channel ##asm: 283 nicks (0 ops, 0 voices, 283 normals)
+2016-04-18 18:26:19	(●)	Channel created on Sun, 27 May 2007 16:31:12
+2016-04-18 18:27:25	harwiltz	Hi guys. I'm studying for a final, and looking at a past final I see a question that asks to convert the following line of C code to MIPS: a++. Where a is an int. This seems too easy though, isn't it just addi $a, $a, 1?
+2016-04-18 18:27:46	harwiltz	I know in C that if you have ++ it doesn't increment the variable right away, but I have no clue how to deal with that
+2016-04-18 18:29:03	-->	saph0 (hoofman@odin.sdf-eu.org) has joined ##asm
+2016-04-18 18:29:23	Jester01	also depends on what the type of a is
+2016-04-18 18:29:27	Jester01	and you should use addiu
+2016-04-18 18:29:51	Jester01	furthermore, if a is in memory you will need to read-modify-write
+2016-04-18 18:30:05	Jester01	through register indirection, even
+2016-04-18 18:30:06	harwiltz	It just says that it is an int. So the correct answer would be addiu $a, $a, 1?
+2016-04-18 18:30:26	Jester01	you can't write $a if a is not a register
+2016-04-18 18:30:35	harwiltz	Jester01: It says specify the contents of relevant registers, so I'm imagining you can set them yourself
+2016-04-18 18:30:45	harwiltz	Jester01: I know, just couldn't decide on a register name right now haha
+2016-04-18 18:30:49	harwiltz	More worried about the concept
+2016-04-18 18:31:05	Jester01	yeah if you can specify that some register holds a, then yeah, that's it.
+2016-04-18 18:31:28	harwiltz	So say I have ori $1, $0, 1; addiu $1, $1, 1
+2016-04-18 18:31:44	harwiltz	Where $1 stores the value a which equals 1
+2016-04-18 18:33:23	<--	Xylitol^ (~temari@218.116.88.79.rev.sfr.net) has quit (Read error: Connection reset by peer)
+2016-04-18 18:34:00	-->	t-j-r (~t-j-r@unaffiliated/-tjr-/x-7847713) has joined ##asm
+2016-04-18 18:35:12	SwiftMatt	instead of r1, r2, r3
+2016-04-18 18:35:21	SwiftMatt	or $r1, $r2, $r3
+2016-04-18 18:35:30	SwiftMatt	is it very common for instructions to refer to registers with $t3
+2016-04-18 18:35:41	SwiftMatt	and is that generally a direct mapping such that $t3 is register 3?
+2016-04-18 18:36:02	-->	sygo (~sygo@iceland.sdf.org) has joined ##asm
+2016-04-18 18:36:36	Jester01	$t3 is actually $11
+2016-04-18 18:36:45	Jester01	but the assignment is constant, yes
+2016-04-18 18:37:54	<--	_tjr_ (~t-j-r@unaffiliated/-tjr-/x-7847713) has quit (Ping timeout: 240 seconds)
+2016-04-18 18:37:55	SwiftMatt	why is it $11
+2016-04-18 18:38:13	SwiftMatt	otherwise am I supposed to refer to it with simply r0
+2016-04-18 18:38:15	SwiftMatt	r3, r5
+2016-04-18 18:38:34	SwiftMatt	or with '$'
+2016-04-18 18:38:44	SwiftMatt	like add $r3, $r2, $r1 or add r3, r2, r1
+2016-04-18 18:39:17	SwiftMatt	Jester01
+2016-04-18 18:39:41	Jester01	it's 11 just because :D
+2016-04-18 18:40:02	Jester01	$0 is $zero, $1 is $at, $2 is $v0, etc...
+2016-04-18 18:40:22	Jester01	what syntax you can use depends on your assembler
+2016-04-18 18:42:44	SwiftMatt	so are there some registers that are off limits
+2016-04-18 18:43:08	<--	rendar (~I@host141-182-dynamic.37-79-r.retail.telecomitalia.it) has quit (Quit: std::lower_bound + std::less_equal *works* with a vector without duplicates!)
+2016-04-18 18:43:19	Jester01	$k0 and $k1
+2016-04-18 18:43:51	SwiftMatt	but even though some register like $1
+2016-04-18 18:43:55	Jester01	(unless you are in kernel mode obviously)
+2016-04-18 18:43:57	SwiftMatt	https://en.wikibooks.org/wiki/MIPS_Assembly/MIPS_Details
+2016-04-18 18:44:07	SwiftMatt	even though some register like $1 is designated as "reserved for assembler"
+2016-04-18 18:44:09	SwiftMatt	I can use it?
+2016-04-18 18:44:17	Jester01	yes
+2016-04-18 18:44:23	SwiftMatt	or $2 and $3 are first and second return values
+2016-04-18 18:44:30	SwiftMatt	it doesn't matter if I just use them freely in instructions?
+2016-04-18 18:44:40	Jester01	it doesn't.
+2016-04-18 18:44:44	SwiftMatt	ok
+2016-04-18 18:44:44	SwiftMatt	great
+2016-04-18 18:44:47	Jester01	obviously you MUST be able to
+2016-04-18 18:44:55	Jester01	how else would you process return values :)
+2016-04-18 18:45:09	SwiftMatt	don't know
+2016-04-18 18:45:29	SwiftMatt	and can I denote the actually register content by R[$2]
+2016-04-18 18:45:30	Jester01	it's like, I will give you a cookie but you can't touch it :D
+2016-04-18 18:45:55	Jester01	use $at only if you know what you are doing
+2016-04-18 18:46:13	Jester01	it may be used by the assembler when resolving pseudoinstructions
+2016-04-18 18:46:36	Jester01	no, you can't use R[$2]
+2016-04-18 18:46:40	SwiftMatt	why is that
+2016-04-18 18:47:02	Jester01	at least I am not aware of an assembler that allows that
+2016-04-18 18:47:11	Jester01	but as I said, the syntax depends on assembler
+2016-04-18 18:47:22	Jester01	but that would be a very strange and pointless syntax
+2016-04-18 18:48:55	SwiftMatt	not the aseembler
+2016-04-18 18:48:59	SwiftMatt	but when I am referring to stuff
+2016-04-18 18:49:40	Jester01	oh then you can call it dragon for all we care
+2016-04-18 18:51:39	SwiftMatt	http://www-inst.eecs.berkeley.edu/~cs61c/resources/MIPS_help.html
+2016-04-18 18:51:42	SwiftMatt	like that page for example jester
+2016-04-18 18:51:43	SwiftMatt	it does that
+2016-04-18 18:51:51	SwiftMatt	Mem[$2]
+2016-04-18 18:52:52	Jester01	that makes sense to denote memory indirection
+2016-04-18 18:52:59	Jester01	you don't have register indirection
+2016-04-18 18:53:15	Jester01	$2 there is already the content of register 2
+2016-04-18 18:53:22	<--	cagmz (~cagmz@209.129.115.58) has quit (Remote host closed the connection)
+2016-04-18 18:53:50	Jester01	I understand you want to say Mem[R[$2]] which is pointless to me
+2016-04-18 18:53:51	SwiftMatt	then how come that page
+2016-04-18 18:53:53	SwiftMatt	refers to things also
+2016-04-18 18:53:55	SwiftMatt	with R[$2]
+2016-04-18 18:54:20	Jester01	they don't
+2016-04-18 18:54:23	Jester01	they use R[2]
+2016-04-18 18:54:41	Jester01	well okay
+2016-04-18 18:54:51	SwiftMatt	ok
+2016-04-18 18:54:51	Jester01	further down they do
+2016-04-18 18:54:59	Jester01	not very logical
+2016-04-18 18:55:06	Jester01	they say "R[N]             Refers to the general-purpose register number N."
+2016-04-18 18:55:11	Jester01	that makes sense, R[2]
+2016-04-18 18:55:14	Jester01	R[2]=$2
+2016-04-18 18:55:24	SwiftMatt	okay
+2016-04-18 18:55:25	Jester01	R[$2] that is misleading
+2016-04-18 18:55:38	Jester01	because you'd think it's the register whose index is in register #2
+2016-04-18 18:56:05	Jester01	sll $rd, $rt, shamt             R[$rd] ← R[$rt] << shamt
+2016-04-18 18:56:10	Jester01	should have written that as
+2016-04-18 18:56:15	Jester01	sll $rd, $rt, shamt             R[rd] ← R[rt] << shamt
+2016-04-18 18:57:02	SwiftMatt	ok
+2016-04-18 18:57:13	SwiftMatt	yea that makes sense
+2016-04-18 18:57:44	Jester01	anyway, as long as everybody understands it, it should not be a problem
+2016-04-18 19:01:07	<--	nkaretnikov (~nikita@unaffiliated/nkar) has quit (Ping timeout: 250 seconds)
+2016-04-18 19:06:43	-->	SilverKey (~SilverKey@rrcs-67-79-8-126.sw.biz.rr.com) has joined ##asm
+2016-04-18 19:07:01	<--	wellick (~wellick@4.196.60.94.rev.vodafone.pt) has quit (Quit: Going offline, see ya! (www.adiirc.com))
+2016-04-18 19:08:48	<--	SilverKey (~SilverKey@rrcs-67-79-8-126.sw.biz.rr.com) has quit (Client Quit)
+2016-04-18 19:14:54	<--	ybden (~ybden@unaffiliated/ybden) has quit (Ping timeout: 240 seconds)
+2016-04-18 19:15:10	-->	ybden (~ybden@cpc80353-grim18-2-0-cust241.12-3.cable.virginm.net) has joined ##asm
+2016-04-18 19:15:12	-->	nkaretnikov (~nikita@unaffiliated/nkar) has joined ##asm
+2016-04-18 19:20:46	<--	ybden (~ybden@cpc80353-grim18-2-0-cust241.12-3.cable.virginm.net) has quit (Quit: leaving)
+2016-04-18 19:26:43	<--	Kallis (~Kallis@cpc15-slam6-2-0-cust171.2-4.cable.virginm.net) has quit (Quit: Leaving)
+2016-04-18 19:26:59	-->	cagmz (~cagmz@209.129.115.58) has joined ##asm
+2016-04-18 19:30:52	<--	EI24 (~EI24@90-224-11-165-no124.tbcn.telia.com) has quit (Remote host closed the connection)
+2016-04-18 19:34:33	<--	phax (~phax@unaffiliated/phax) has quit (Quit: phax)
+2016-04-18 19:37:05	-->	anarhist94 (258eeee0@gateway/web/freenode/ip.37.142.238.224) has joined ##asm
+2016-04-18 19:38:28	anarhist94	After I do DIV operation on EDX:EAX / 32 Bit divisor. The remainder is saved in EDX, but can I access the remainder through DL?
+2016-04-18 19:38:36	Jester01	sure.
+2016-04-18 19:39:00	Jester01	DL is the low 8 bits of EDX
+2016-04-18 19:39:11	-->	Xylitol (~temari@unaffiliated/xylitol) has joined ##asm
+2016-04-18 19:41:23	SwiftMatt	begina: sub $31, $4, $1
+2016-04-18 19:41:23	SwiftMatt	bgez $31, endloopa
+2016-04-18 19:41:29	SwiftMatt	that's a RAW hazard right Jester01 ?
+2016-04-18 19:41:40	Jester01	yeah

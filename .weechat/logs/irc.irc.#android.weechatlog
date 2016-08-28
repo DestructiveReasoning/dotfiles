@@ -1,0 +1,122 @@
+2016-01-01 16:17:54	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #android
+2016-01-01 16:17:54	--	Topic for #android is "Welcome to the official Android platform IRC channel! || AOSP review at https://r.android.com/ || Android 6.0 (Marshmallow) source released || Root? Modded ROMs? Head to #android-root || App development questions? See #android-dev || Not talking android? Head to #android-offtopic"
+2016-01-01 16:17:54	--	Topic set by kroot (~locutus@of.the-b.org) on Mon, 05 Oct 2015 21:13:34
+2016-01-01 16:17:54	--	Channel #android: 901 nicks (2 ops, 0 voices, 899 normals)
+2016-01-01 16:17:55	--	Channel created on Mon, 05 Nov 2007 17:48:37
+2016-01-01 16:18:08	--	PvNotice(ChanServ): Welcome to #android! No bots, no publicly-accessible logging, and no bridging Android apps to this channel, please. Please show good IRC etiquette: don't send private messages without asking first.
+2016-01-01 16:18:11	<--	eyohansa (~eyohansa@139.194.160.238) has quit (Read error: Connection reset by peer)
+2016-01-01 16:18:44	<--	dojmin (~mj@unaffiliated/dojmin) has quit (Quit: rage)
+2016-01-01 16:18:48	<--	tachibana (~jffgs@dpc6745113147.direcpc.com) has quit (Ping timeout: 264 seconds)
+2016-01-01 16:19:08	<--	beaglebagel (~quassel@cpe-72-231-9-84.nyc.res.rr.com) has quit (Ping timeout: 240 seconds)
+2016-01-01 16:19:23	harwiltz	Hey all, I'm trying to develop a game and whenever I try to set my activity fullscreen, it crashes instantly. The line of code that causes the crash is requestWindowFeature(Window.FEATURE_NO_TITLE); Any idea why it's crashing?
+2016-01-01 16:19:33	-->	loadedanvils (~androirc@pool-173-79-80-210.washdc.fios.verizon.net) has joined #android
+2016-01-01 16:19:42	<--	Khaytsus (U2FsdGVkX1@fedora/khaytsus) has quit (Ping timeout: 245 seconds)
+2016-01-01 16:19:42	harwiltz	I'm testing it on a Samsung Note 4
+2016-01-01 16:20:55	<--	happy-dude (uid62780@gateway/web/irccloud.com/x-krpeynmcuxlrdxkz) has quit (Quit: Connection closed for inactivity)
+2016-01-01 16:21:30	-->	AlexTheLion_ (~alextheli@adsl-74-242-204-251.rmo.bellsouth.net) has joined #android
+2016-01-01 16:21:32	<--	jackbrown (~se@unaffiliated/jackbrown) has quit (Quit: Sto andando via)
+2016-01-01 16:21:33	loadedanvils	good morning internet
+2016-01-01 16:22:08	<--	Guest60099 (~Homer@2001:470:1d:184:c9f2:d48f:e825:d2f6) has quit (Ping timeout: 240 seconds)
+2016-01-01 16:22:11	-->	awweaver (~awweaver@pool-173-64-207-24.dllstx.fios.verizon.net) has joined #android
+2016-01-01 16:22:47	<--	almostworking (~almostwor@unaffiliated/almostworking) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2016-01-01 16:24:11	<--	BlueProtoman (~BlueProto@ool-4577ffe6.dyn.optonline.net) has left #android ("Leaving")
+2016-06-04 21:42:28	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #android
+2016-06-04 21:42:28	(●)	Topic for #android is "Welcome to the official Android platform IRC channel! || AOSP review at https://r.android.com/ || Android N preview released http://goo.gl/QnsKsv || Root? Modded ROMs? Head to #android-root || App development questions? See #android-dev || Not talking Android? Head to #android-offtopic"
+2016-06-04 21:42:28	(●)	Topic set by kroot (~locutus@of.the-b.org) on Wed, 09 Mar 2016 22:15:58
+2016-06-04 21:42:29	(●)	Channel #android: 610 nicks (2 ops, 0 voices, 608 normals)
+2016-06-04 21:42:29	(●)	PvNotice(ChanServ): Welcome to #android! No bots, no publicly-accessible logging, and no bridging Android apps to this channel, please. Please show good IRC etiquette: don't send private messages without asking first.
+2016-06-04 21:42:30	(●)	Channel created on Mon, 05 Nov 2007 17:48:37
+2016-06-04 21:42:31	alphamule	RPC2 is a huge waste of time
+2016-06-04 21:42:57	harwiltz	Hello. Is this an appropriate place to ask questions about android app development?
+2016-06-04 21:43:05	alphamule	If you ignore/delete all the .BUP files (or replace them with the IFO's) except for the last bogus 1GB IFO's, it works fine.
+2016-06-04 21:43:17	alphamule	Oh that's right Android
+2016-06-04 21:43:20	alphamule	Not PC ;)
+2016-06-04 21:43:57	marcx	 #android-dev
+2016-06-04 21:44:00	<--	nilsi (~nilsi@61.37.219.36) has quit (Ping timeout: 252 seconds)
+2016-06-04 21:44:02	harwiltz	Thanks
+2016-06-04 21:44:05	sivir	my cheap acer works great with linux (as you talked about it previously)
+2016-06-04 21:44:16	alphamule	/invite harwiltz #android-dev  <-- Am I doing that wrong?  ;)
+2016-06-04 21:44:40	sivir	only bad thing with linux is graphics drivers, this one doesnt have one with own memory so no problems with changing with the intel chip and "external" gpu
+2016-06-04 21:45:13	sivir	but my previous one with ati gpu 2gb I had horrible problems with battery life etc
+2016-06-04 21:46:10	-->	Leeds (~Leeds@n112118177182.netvigator.com) has joined #android
+2016-06-04 21:47:40	<--	astrofog (~astrofog@unaffiliated/astrofog) has quit (Quit: Quite)
+2016-06-04 21:47:57	-->	doomlord (~textual@host86-152-129-204.range86-152.btcentralplus.com) has joined #android
+2016-06-04 21:48:19	-->	Smeef (~deathonat@unaffiliated/smeef) has joined #android
+2016-06-04 21:48:48	alphamule	http://www.phonebunch.com/phone/lg_x_power-2467/  Damnit, LG
+2016-06-04 21:49:13	alphamule	LOL, not really.  The existance of this model made the others super cheap.
+2016-06-04 21:49:32	Khaytsus	mAh Non-removable Li-Ion Battery?  Seriously?
+2016-06-04 21:49:45	Khaytsus	Mediatek MT6735 processor..  Third world country phone?
+2016-06-04 21:50:06	alphamule	Yeah, LG is joining the dark side.
+2016-06-04 21:51:12	 *	alphamule never buys one with a non-removable battery
+2016-06-04 21:51:18	ForTheWin	as long as the flagship stays with remov battery and no mediatek crap, i may end up getting lg next, samsung has done messed himself up
+2016-06-04 21:51:30	alphamule	Vaporware anyways
+2016-06-04 21:51:39	Khaytsus	No flagship in a first world country will have mediatek
+2016-06-04 21:51:42	alphamule	It might not even be Qualcomm OR MTK.
+2016-06-04 21:51:53	<--	SCHAAP137 (~dorian@unaffiliated/schaap137) has quit (Quit: Leaving)
+2016-06-04 21:52:41	alphamule	Other than the TracFone low-end, cheap-as-dirt models, LG is decent?
+2016-06-04 21:53:08	alphamule	TBH, they're the only cheap phones I'd want, anyways.  XD
+2016-06-04 21:54:14	<--	AtumT (~IRC@177.205.96.217.dynamic.adsl.gvt.net.br) has quit (Remote host closed the connection)
+2016-06-04 21:54:15	Khaytsus	LG made the Nexus 5, 5x..  LG G2, G3, G4, and G5 are good phones.  I dunno about their other models
+2016-06-04 21:54:27	ForTheWin	lg g5 or v10?
+2016-06-04 21:54:47	-->	ced117 (~ced117@opensuse/member/ced117) has joined #android
+2016-06-04 21:54:56	Khaytsus	Fuck v10
+2016-06-04 21:55:13	Khaytsus	Kooky little secondary screen is useless unless you use stock
+2016-06-04 21:55:21	Khaytsus	But if you're a stock-only kind of person, I guess it's fine
+2016-06-04 21:55:41	ForTheWin	Khaytsus: didnt know that. in that case, i pass. cant stay stock
+2016-06-04 21:56:25	-->	entourage (~entourage@unaffiliated/entourage) has joined #android
+2016-06-04 21:57:26	Khaytsus	Stock is for the weak
+2016-06-04 22:02:37	bytemeoftn	^+1
+2016-06-04 22:02:57	sivir	depends on the stock and what do you do for the stock
+2016-06-04 22:03:27	-->	sandeepkr (~sandeep@111.235.64.4) has joined #android
+2016-06-04 22:03:31	sivir	as long as you have root you can make the stock work quite nice, like for example galaxy s5+ the configured stock rom beats other roms available
+2016-06-04 22:08:17	<--	entourage (~entourage@unaffiliated/entourage) has quit (Quit: entourage)
+2016-06-04 22:10:28	Khaytsus	Because samsung sucks dick and nobody makes custom ROMs for it anymore
+2016-06-04 22:10:47	<--	de-facto (~de-facto@unaffiliated/de-facto) has quit (Quit: Leaving)
+2016-06-04 22:11:29	<--	MRashad (~Thunderbi@41.69.96.149) has quit (Remote host closed the connection)
+2016-06-04 22:11:39	<--	rubycrab (~redcrusta@unaffiliated/rubycrab) has quit (Quit: leaving)
+2016-06-04 22:14:43	<--	armistace (~armistace@34.06.01a8.ip4.static.sl-reverse.com) has quit (Ping timeout: 260 seconds)
+2016-06-04 22:15:10	-->	dimm0k (~dimm0k@unaffiliated/dimm0k) has joined #android
+2016-06-04 22:15:16	alphamule	OK, wait, that "non-removable" spec for the LG is likely bogus.
+2016-06-04 22:15:38	alphamule	It says that for a LG Leon and I know for a fact, that you just have to slide off the back.
+2016-06-04 22:15:56	alphamule	Same effort as installing a SD Card, in fact.
+2016-06-04 22:16:45	<--	saschpe (~saschpe@opensuse/member/saschpe) has quit (Ping timeout: 244 seconds)
+2016-06-04 22:16:55	alphamule	If QualComm was as easy to dump stock firmware on as the MTK's...  Would be a nicer world.  :P
+2016-06-04 22:17:44	-->	rubycrab (~redcrusta@unaffiliated/rubycrab) has joined #android
+2016-06-04 22:17:59	alphamule	Stock can be customized to point where only the kernel and device-specific code remains, but who actually bothers?
+2016-06-04 22:18:54	alphamule	At that point, you might as well have used a CFW.
+2016-06-04 22:18:56	-->	saschpe (~saschpe@opensuse/member/saschpe) has joined #android
+2016-06-04 22:19:14	alphamule	Hacked in the binary blobs :/
+2016-06-04 22:25:33	<--	poleprogger (~mj@dslb-188-110-055-005.188.110.pools.vodafone-ip.de) has quit (Ping timeout: 244 seconds)
+2016-06-04 22:27:24	<--	wildlander (~wild@unaffiliated/wildlander) has quit (Quit: Saliendo)
+2016-06-04 22:30:11	<--	finlstrm (~finlstrm@ip72-200-182-134.ri.ri.cox.net) has quit (Ping timeout: 252 seconds)
+2016-06-04 22:33:18	<--	Leates (~Leates@unaffiliated/rbxdev) has quit (Quit: Follow me - http://www.twitter.com/TheLeates)
+2016-06-04 22:35:32	-->	skweek (~skweek@68-200-183-216.res.bhn.net) has joined #android
+2016-06-04 22:35:53	<--	Lildirt (~Lildirt@lildirt.com) has quit (Ping timeout: 244 seconds)
+2016-06-04 22:36:12	-->	nealshire (~Nealshire@unaffiliated/nealshire) has joined #android
+2016-06-04 22:37:59	<--	ElectroMotive (~ElectroMo@unaffiliated/electromotive) has quit (Quit: Leaving)
+2016-06-04 22:40:03	-->	zoraj (~zoraj@41.136.69.47) has joined #android
+2016-06-04 22:41:27	-->	Lildirt (~Lildirt@lildirt.com) has joined #android
+2016-06-04 22:42:08	<--	lucyinthesky (~lucyinthe@unaffiliated/lucyinthesky) has quit (Quit: ya ne ponimayu, gde vy.)
+2016-06-04 22:42:29	-->	almostworking (~almostwor@unaffiliated/almostworking) has joined #android
+2016-06-04 22:43:03	-->	arooni (~textual@108-207-116-185.lightspeed.mssnks.sbcglobal.net) has joined #android
+2016-06-04 22:43:23	-->	pclover (~pclover@unaffiliated/pclov3r) has joined #android
+2016-06-04 22:43:42	pclover	Khaytsus, not sure if you saw that earlier. I managed to screw up a device that was 100% fully stock
+2016-06-04 22:44:37	-->	realz (~realz@unaffiliated/realazthat) has joined #android
+2016-06-04 22:44:42	pclover	Khaytsus, the factory reset somehow didn't format /cache correctly and recovery was in like a boot loop so i couldn't actually try to format it again.
+2016-06-04 22:45:02	<--	zoraj (~zoraj@41.136.69.47) has quit (Ping timeout: 260 seconds)
+2016-06-04 22:45:21	pclover	kept flashing no command and going black
+2016-06-04 22:47:23	-->	finlstrm (~finlstrm@ip72-200-182-134.ri.ri.cox.net) has joined #android
+2016-06-04 22:47:25	pclover	used the official verizon tool to completely reflash the stock rom and that didn't fix it. I was able to actually flash a formatted cache image and than go into recovery and format it again so it would show up as the correct size.
+2016-06-04 22:47:35	<--	applegal (uid157807@gateway/web/irccloud.com/x-dwnoxkxuxaamjqof) has quit (Quit: Connection closed for inactivity)
+2016-06-04 22:48:59	<--	CoreISP (~CoreISP@simplemachines/rootadmin/CoreISP) has quit (Quit: Quit)
+2016-06-04 22:50:55	-->	zodiak (~zodiak@dhcp-60-a4-4c-a0-df-90.cpe.ezlink.ca) has joined #android
+2016-06-04 22:51:47	<--	zodiak (~zodiak@dhcp-60-a4-4c-a0-df-90.cpe.ezlink.ca) has left #android
+2016-06-04 22:54:24	<--	cyborg-one (~cyborg-on@62.16.11.192) has quit (Ping timeout: 252 seconds)
+2016-06-04 22:54:57	<--	dpyro (~dpyro@173.57.222.165) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-06-04 23:02:03	-->	cyborg-one (~cyborg-on@62.16.11.192) has joined #android
+2016-06-04 23:04:50	<--	finlstrm (~finlstrm@ip72-200-182-134.ri.ri.cox.net) has quit (Ping timeout: 252 seconds)
+2016-06-04 23:09:16	-->	daniloslv (~Danilo@189.6.16.96) has joined #android
+2016-06-04 23:10:11	<--	KingKeA (~quassel@unaffiliated/kingkea) has quit (Remote host closed the connection)
+2016-06-04 23:13:38	<--	daniloslv (~Danilo@189.6.16.96) has quit (Ping timeout: 252 seconds)
+2016-06-04 23:13:41	<--	johnline3 (~hupert@90.194.94.251) has quit (Quit: im working on my acceptance speech. 4 ur apologe)
+2016-06-04 23:15:03	-->	CheckDavid (uid14990@gateway/web/irccloud.com/x-akufeyxilnxuvluu) has joined #android

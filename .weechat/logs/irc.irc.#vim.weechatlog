@@ -1,0 +1,403 @@
+2016-05-10 19:12:15	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #vim
+2016-05-10 19:12:15	(●)	Topic for #vim is "Can't Talk? Get Registered on freenode (HOWTO: http://bit.ly/23YhaS1) | Vim 7.4.1829 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | DONATE: http://www.vim.org/sponsor"
+2016-05-10 19:12:15	(●)	Topic set by ntnn on Tue, 10 May 2016 14:35:19
+2016-05-10 19:12:15	(●)	Channel #vim: 1067 nicks (0 ops, 0 voices, 1067 normals)
+2016-05-10 19:12:15	(●)	PvNotice(ChanServ): vim discussion .. www.vim.org, vim.sf.net, :help
+2016-05-10 19:12:15	(●)	URL for #vim: http://vi-improved.org
+2016-05-10 19:12:18	(●)	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-05-10 19:12:34	osse	1987 was a good year,
+2016-05-10 19:13:04	harwiltz	Hey guys. I'm trying to use NERDTree, but whenever I try opening a file (using o,i, or t) nothing happens. Opening directories works properly though. Any idea what I'm doing wrong?
+2016-05-10 19:13:12	<--	d6chung (~hnl-pi@cpe-66-27-216-142.hawaii.res.rr.com) has quit (Ping timeout: 246 seconds)
+2016-05-10 19:13:15	-->	duggiefresh (~duggiefre@209-6-228-54.c3-0.smr-ubr2.sbo-smr.ma.cable.rcn.com) has joined #vim
+2016-05-10 19:13:20	<--	steele2345 (~steele234@noisebridge130.static.monkeybrains.net) has quit (Remote host closed the connection)
+2016-05-10 19:13:21	<--	shoug4 (~shougo@KD106130013147.au-net.ne.jp) has quit (Ping timeout: 276 seconds)
+2016-05-10 19:13:55	<--	firstdayonthejob (~firstdayo@cpc99346-croy26-2-0-cust153.19-2.cable.virginm.net) has quit (Ping timeout: 240 seconds)
+2016-05-10 19:14:18	-->	d6chung (~hnl-pi@cpe-66-27-216-142.hawaii.res.rr.com) has joined #vim
+2016-05-10 19:14:35	-->	steele2345 (~steele234@noisebridge130.static.monkeybrains.net) has joined #vim
+2016-05-10 19:14:58	-->	cpage_ (~cpage@17.201.46.239) has joined #vim
+2016-05-10 19:15:40	<--	nwkj86 (~nwkj86@143.133.199.146.dyn.plus.net) has quit (Ping timeout: 252 seconds)
+2016-05-10 19:15:40	-->	oconnorct1 (~connor@nc-76-4-9-193.dhcp.embarqhsd.net) has joined #vim
+2016-05-10 19:16:18	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #vim
+2016-05-10 19:16:18	(●)	Topic for #vim is "Can't Talk? Get Registered on freenode (HOWTO: http://bit.ly/23YhaS1) | Vim 7.4.1829 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | DONATE: http://www.vim.org/sponsor"
+2016-05-10 19:16:18	(●)	Topic set by ntnn on Tue, 10 May 2016 14:35:19
+2016-05-10 19:16:18	(●)	Channel #vim: 1066 nicks (0 ops, 0 voices, 1066 normals)
+2016-05-10 19:16:18	(●)	PvNotice(ChanServ): vim discussion .. www.vim.org, vim.sf.net, :help
+2016-05-10 19:16:18	(●)	URL for #vim: http://vi-improved.org
+2016-05-10 19:16:20	(●)	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-05-10 19:17:48	<--	xall (~xall@ip98-167-206-11.ph.ph.cox.net) has quit (Ping timeout: 250 seconds)
+2016-05-10 19:18:12	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #vim
+2016-05-10 19:18:12	(●)	Topic for #vim is "Can't Talk? Get Registered on freenode (HOWTO: http://bit.ly/23YhaS1) | Vim 7.4.1829 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | DONATE: http://www.vim.org/sponsor"
+2016-05-10 19:18:12	(●)	Topic set by ntnn on Tue, 10 May 2016 14:35:19
+2016-05-10 19:18:12	(●)	Channel #vim: 1065 nicks (0 ops, 0 voices, 1065 normals)
+2016-05-10 19:18:12	(●)	PvNotice(ChanServ): vim discussion .. www.vim.org, vim.sf.net, :help
+2016-05-10 19:18:12	(●)	URL for #vim: http://vi-improved.org
+2016-05-10 19:18:14	(●)	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-05-10 19:18:32	<--	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has left #vim
+2016-05-10 20:10:26	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #vim
+2016-05-10 20:10:26	(●)	Topic for #vim is "Can't Talk? Get Registered on freenode (HOWTO: http://bit.ly/23YhaS1) | Vim 7.4.1829 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | DONATE: http://www.vim.org/sponsor"
+2016-05-10 20:10:26	(●)	Topic set by ntnn on Tue, 10 May 2016 14:35:19
+2016-05-10 20:10:26	(●)	Channel #vim: 1066 nicks (0 ops, 0 voices, 1066 normals)
+2016-05-10 20:10:26	(●)	PvNotice(ChanServ): vim discussion .. www.vim.org, vim.sf.net, :help
+2016-05-10 20:10:26	(●)	URL for #vim: http://vi-improved.org
+2016-05-10 20:10:28	(●)	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-05-10 20:10:58	harwiltz	Hello. Anyone have any idea why I can't open files from nerdtree? I tried i,o,t and enter, but nothing happens
+2016-05-10 20:11:28	<--	leeN (~leeN@x55b5c9c4.dyn.telefonica.de) has quit (Remote host closed the connection)
+2016-05-10 20:11:56	ntnn	did you check their bugtracker?
+2016-05-10 20:12:10	ntnn	did you try disabling other plugins?
+2016-05-10 20:12:28	<--	ZyX-I (~ZyX-I@broadband-77-37-230-77.nationalcablenetworks.ru) has quit (Ping timeout: 260 seconds)
+2016-05-10 20:12:31	ntnn	and check what those keystrokes are mapped to in the nerdtree buffer
+2016-05-10 20:12:33	harwiltz	Nope, I'll check. The only other plugin I use is for compiling latex
+2016-05-10 20:12:48	harwiltz	ntnn How can I check what they're mapped to?
+2016-05-10 20:13:05	ntnn	`:verbose map <key>` i.e.
+2016-05-10 20:13:06	<--	Zenuiflora (~Zenuiflor@unaffiliated/zenuiflora) has quit (Quit: Leaving)
+2016-05-10 20:13:22	harwiltz	ntnn: Thanks
+2016-05-10 20:14:30	<--	fengshaun (~fengshaun@unaffiliated/fengshaun) has quit (Quit: bibi!)
+2016-05-10 20:14:35	harwiltz	ntnn: It just says ui_glue#invokeKeymap("t"), for example. Is that correct?
+2016-05-10 20:14:49	-->	fengshaun (~fengshaun@unaffiliated/fengshaun) has joined #vim
+2016-05-10 20:15:08	ntnn	no clue, but at least it is bound to something
+2016-05-10 20:15:09	-->	bruno- (~bruno@cpe-188-252-129-249.zg5.cable.xnet.hr) has joined #vim
+2016-05-10 20:15:30	<--	mfukar (~mfukar@unaffiliated/mfukar) has quit (Ping timeout: 246 seconds)
+2016-05-10 20:15:39	ntnn	if their issue tracker doesn't give out information see if they have some kind of debug command or option
+2016-05-10 20:15:58	harwiltz	ntnn: Alright, good idea. Thanks
+2016-05-10 20:16:15	-->	naught101_ (~naught101@58.109.142.242) has joined #vim
+2016-05-10 20:17:59	<--	unbalancedparen (~unbalance@181.229.158.7) has quit (Quit: WeeChat 1.5)
+2016-05-10 20:18:55	<--	Lunatix (~Lunatix@AMontpellier-651-1-454-237.w81-251.abo.wanadoo.fr) has quit (Ping timeout: 252 seconds)
+2016-05-10 20:19:06	<--	liamonade (~liamonade@host86-189-176-75.range86-189.btcentralplus.com) has quit (Quit: Leaving)
+2016-05-10 20:20:44	-->	thrillho (~Luke@unaffiliated/rockandorroll) has joined #vim
+2016-05-10 20:21:01	<--	steele2345 (~steele234@noisebridge130.static.monkeybrains.net) has quit
+2016-05-10 20:21:12	-->	itaipu (~Marco@189.56.17.89) has joined #vim
+2016-05-10 20:23:36	<--	colinbits (~colinbits@104.192.139.250) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-05-10 20:24:05	<--	ekinmur (~ekinmur@98.204.177.40) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-05-10 20:24:44	-->	colinbits (~colinbits@104.192.139.250) has joined #vim
+2016-05-10 20:25:31	<--	thrillho (~Luke@unaffiliated/rockandorroll) has quit (Ping timeout: 252 seconds)
+2016-05-10 20:26:21	<--	rindolf (~shlomif@bzq-79-176-0-62.red.bezeqint.net) has quit (Quit: Leaving)
+2016-05-10 20:26:45	-->	ekinmur (~ekinmur@98.204.177.40) has joined #vim
+2016-05-10 20:27:19	<--	rosten (~rosten@cpe-45-48-9-161.socal.res.rr.com) has quit (Ping timeout: 244 seconds)
+2016-05-10 20:28:14	<--	cpage_ (~cpage@17.201.46.239) has quit (Quit: cpage_)
+2016-05-10 20:28:24	<--	tax (~tax@cpe-72-182-54-164.austin.res.rr.com) has quit (Quit: Leaving)
+2016-05-10 20:28:35	<--	neoncontrails (~neoncontr@wsip-174-79-243-9.sd.sd.cox.net) has quit (Remote host closed the connection)
+2016-05-10 20:28:46	-->	tax (~tax@cpe-72-182-54-164.austin.res.rr.com) has joined #vim
+2016-05-10 20:29:24	<--	colinbits (~colinbits@104.192.139.250) has quit (Ping timeout: 276 seconds)
+2016-05-10 20:30:54	<--	tax (~tax@cpe-72-182-54-164.austin.res.rr.com) has quit (Read error: Connection reset by peer)
+2016-05-10 20:31:16	-->	tax (~tax@cpe-72-182-54-164.austin.res.rr.com) has joined #vim
+2016-05-10 20:34:03	<--	ahmedelgabri (~ahmedelga@162.216.46.146) has quit (Ping timeout: 260 seconds)
+2016-05-10 20:35:22	<--	tax (~tax@cpe-72-182-54-164.austin.res.rr.com) has quit (Read error: Connection reset by peer)
+2016-05-10 20:35:38	-->	tax (~tax@cpe-72-182-54-164.austin.res.rr.com) has joined #vim
+2016-05-10 20:36:29	-->	fengling (~fengling@111.198.29.53) has joined #vim
+2016-05-10 20:37:37	<--	nopf (~frosch@static.142.192.47.78.clients.your-server.de) has quit (Ping timeout: 252 seconds)
+2016-05-10 20:38:04	-->	nopf (~frosch@static.142.192.47.78.clients.your-server.de) has joined #vim
+2016-05-10 20:38:10	<--	Bucciarati (buccia@u.nix.is) has quit (Ping timeout: 252 seconds)
+2016-05-10 20:39:30	<--	bruno- (~bruno@cpe-188-252-129-249.zg5.cable.xnet.hr) has quit (Read error: Connection reset by peer)
+2016-05-10 20:39:44	<--	ekinmur (~ekinmur@98.204.177.40) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-05-10 20:40:37	-->	lytzen (~lytzen@188.114.145.241) has joined #vim
+2016-05-10 20:41:40	<--	zerox (~zerox@107.181.154.120) has quit (Remote host closed the connection)
+2016-05-10 20:41:48	-->	zerox (~zerox@107.181.154.120) has joined #vim
+2016-05-10 20:43:38	-->	Bucciarati (buccia@u.nix.is) has joined #vim
+2016-05-10 20:44:49	-->	griffindy (~textual@216.229.136.107) has joined #vim
+2016-05-10 20:44:54	<--	mSSM (~SuperFluf@unaffiliated/superfluffy) has quit (Ping timeout: 240 seconds)
+2016-05-10 20:45:17	-->	bruno- (~bruno@cpe-188-252-129-249.zg5.cable.xnet.hr) has joined #vim
+2016-05-10 20:45:19	<--	lytzen (~lytzen@188.114.145.241) has quit (Ping timeout: 252 seconds)
+2016-05-10 20:46:55	-->	thrillho (~Luke@unaffiliated/rockandorroll) has joined #vim
+2016-05-10 20:48:00	-->	afuentes (~kusanagi@201.165.35.37.dynamic.jazztel.es) has joined #vim
+2016-05-10 20:48:24	<--	chalcedny (~llhull@unaffiliated/chalcedony) has quit (Ping timeout: 240 seconds)
+2016-05-10 20:49:46	-->	shdeng (~shaohui@220.249.11.58) has joined #vim
+2016-05-10 20:50:02	<--	chalcedony (~chalcedon@unaffiliated/chalcedony) has quit (Ping timeout: 244 seconds)
+2016-05-10 20:51:05	-->	yan4138 (~yan4138@27.115.109.69) has joined #vim
+2016-05-10 20:51:20	<--	thrillho (~Luke@unaffiliated/rockandorroll) has quit (Ping timeout: 260 seconds)
+2016-05-10 20:51:36	<--	hannesroest (~hr@DNab421cb9.stanford.edu) has quit (Ping timeout: 244 seconds)
+2016-05-10 20:54:30	<--	bruno- (~bruno@cpe-188-252-129-249.zg5.cable.xnet.hr) has quit (Read error: Connection reset by peer)
+2016-05-10 20:54:54	-->	bruno- (~bruno@cpe-188-252-129-249.zg5.cable.xnet.hr) has joined #vim
+2016-05-10 20:56:02	<--	yan4138 (~yan4138@27.115.109.69) has quit (Ping timeout: 276 seconds)
+2016-05-10 20:56:45	<--	kdlv (~aa47f8@212-181-143-117-no270.tbcn.telia.com) has quit (Ping timeout: 244 seconds)
+2016-05-10 21:18:18	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #vim
+2016-05-10 21:18:18	(●)	Topic for #vim is "Can't Talk? Get Registered on freenode (HOWTO: http://bit.ly/23YhaS1) | Vim 7.4.1829 http://www.vim.org | Don't ask to ask! | Use :help and :helpgrep | WIKI: http://vim.wikia.com | PASTE: http://vpaste.net/?ft=vim | DONATE: http://www.vim.org/sponsor"
+2016-05-10 21:18:18	(●)	Topic set by ntnn on Tue, 10 May 2016 14:35:19
+2016-05-10 21:18:18	(●)	Channel #vim: 1060 nicks (0 ops, 0 voices, 1060 normals)
+2016-05-10 21:18:18	(●)	PvNotice(ChanServ): vim discussion .. www.vim.org, vim.sf.net, :help
+2016-05-10 21:18:18	(●)	URL for #vim: http://vi-improved.org
+2016-05-10 21:18:20	(●)	Channel created on Sun, 26 Nov 2006 06:42:44
+2016-05-10 21:18:33	harwiltz	Hello. Does anyone here have any experience using nerdtree?
+2016-05-10 21:19:15	alx741	harwiltz: I have use it a bit, maybe, just maaaybe i'm able to help, what is it?
+2016-05-10 21:19:16	-->	strull (~strull@pD9F4BA07.dip0.t-ipconnect.de) has joined #vim
+2016-05-10 21:20:13	harwiltz	alx741: For some reason, if I try to open a file that is within a directory other than the one that I launched vim in, it doesn't open
+2016-05-10 21:21:04	harwiltz	In fact, the only time I am able to open a file is if there are no other directories present in the nerdtree window. So if I go up a level, and then scroll down to my directory and open it, I won't be able to open a file 
+2016-05-10 21:21:31	harwiltz	Are there any good alternatives to nerdtree?
+2016-05-10 21:21:44	ntnn	:h netrw
+2016-05-10 21:21:45	digmbot	:help netrw -> http://vimhelp.appspot.com/pi_netrw.txt.html#netrw
+2016-05-10 21:21:49	ntnn	vimgor: dirvish
+2016-05-10 21:21:49	vimgor	Dunno, ntnn.
+2016-05-10 21:21:52	ntnn	vimgor: vinegar
+2016-05-10 21:21:52	vimgor	I don't know.
+2016-05-10 21:21:55	ntnn	o.O
+2016-05-10 21:22:08	harwiltz	digmbot: Thanks
+2016-05-10 21:22:09	digmbot	harwiltz: boop!!
+2016-05-10 21:22:16	ntnn	anyhow, those two last are netrw enhancements/replacements
+2016-05-10 21:22:24	alx741	harwiltz: have you any nerdtree configuration in your vimrc?
+2016-05-10 21:22:29	ntnn	nerdtree is just broken in general
+2016-05-10 21:22:34	harwiltz	alx741: None
+2016-05-10 21:22:51	harwiltz	The only thing I have is a key mapping for the toggling of nerdtree
+2016-05-10 21:22:55	alx741	but yeah.. i would rather use vinegar or dirvish or netrw
+2016-05-10 21:22:59	-->	uptick (~therue@1-162-82-106.dynamic.hinet.net) has joined #vim
+2016-05-10 21:23:00	alx741	what does that key mapping says?
+2016-05-10 21:23:05	harwiltz	Ok. I shall try those
+2016-05-10 21:23:07	ntnn	plus that netrw is built in
+2016-05-10 21:23:26	-->	kerananw (~kerananw@unaffiliated/kerananw) has joined #vim
+2016-05-10 21:23:28	harwiltz	nmap <C-S-N>  :NERDTreeToggle<CR>
+2016-05-10 21:23:29	alx741	ntnn: a little bit buggy but awasome anyways
+2016-05-10 21:23:29	-->	MattMaker (~MattMaker@rrcs-24-227-162-10.sw.biz.rr.com) has joined #vim
+2016-05-10 21:23:53	<--	|ifei5g00d (~sharris12@192.253.246.78) has quit (Ping timeout: 265 seconds)
+2016-05-10 21:24:04	<--	zacstewart (~zacstewar@c-98-192-38-139.hsd1.ga.comcast.net) has quit (Ping timeout: 246 seconds)
+2016-05-10 21:24:05	harwiltz	ntnn: This may be an extremely stupid question, but is netrw the Explore functionality?
+2016-05-10 21:24:16	harwiltz	like if I did :E
+2016-05-10 21:24:18	ntnn	ye
+2016-05-10 21:24:29	<--	captain_morgan (~morgan@104.236.136.56) has left #vim
+2016-05-10 21:24:38	<--	lucasem (uid147261@gateway/web/irccloud.com/x-gnjlsraecndvarki) has quit (Quit: Connection closed for inactivity)
+2016-05-10 21:24:39	harwiltz	Oh ok. Is there a way to easily open it an a small side window like nerdtree?
+2016-05-10 21:24:45	-->	fish3485 (~benjamin@2601:283:4101:6540:ae0f:5566:6f77:1404) has joined #vim
+2016-05-10 21:25:28	<--	sangy (~Sangy@unaffiliated/sangy) has quit (Ping timeout: 276 seconds)
+2016-05-10 21:25:31	ntnn	map to something like `20leftabove vertical e .`
+2016-05-10 21:26:00	harwiltz	ntnn: Oh nice, I didn't know you can specify the size of a new window
+2016-05-10 21:26:00	<--	uptick (~therue@1-162-82-106.dynamic.hinet.net) has quit (Client Quit)
+2016-05-10 21:26:02	ntnn	but it won't give you the functionality to open a file in another window by default
+2016-05-10 21:26:20	harwiltz	ntnn: Oh... so there's no easy way to open a file in a new tab?
+2016-05-10 21:26:34	alx741	i dunno ¯\_(ツ)_/¯  , maybe reinstalling nerdtree
+2016-05-10 21:26:39	ntnn	besides opening the new window/tab and :e'ing from there no
+2016-05-10 21:27:10	ntnn	mainly because thats not how vim was 'meant' to be used and vim is generally not an editor you can make something else entirely out of
+2016-05-10 21:27:28	harwiltz	I think I'll have to try something else then... That might be a little annoying. Working on an android app and I have a bunch of files in different directories
+2016-05-10 21:27:29	<--	cdg (~cdg@157.166.173.4) has quit (Remote host closed the connection)
+2016-05-10 21:27:40	harwiltz	ntnn: Fair enough.
+2016-05-10 21:27:42	-->	uptick (~therue@1-162-82-106.dynamic.hinet.net) has joined #vim
+2016-05-10 21:27:57	ntnn	and tbh nerdtree doesn't make much sense imho - mostly because if the directory structure is plain enough to actually give an overview with it it is easy enough to remember
+2016-05-10 21:28:02	alx741	i would also recomend ctrl+p or FZF , those are not the same thing that nerdtree, etc. But Serve a similar purpose, i'm not a nerdtree user now becouse of fzf.vim
+2016-05-10 21:28:04	<--	scarygelatin (~Scary@190.195.95.39) has quit (Quit: Leaving)
+2016-05-10 21:28:16	ntnn	and if the dir structure is so complicated that you actually need overview nerdtree is too small
+2016-05-10 21:28:24	-->	cdg (~cdg@157.166.173.4) has joined #vim
+2016-05-10 21:28:26	harwiltz	alx741: What's fzf?
+2016-05-10 21:28:38	-->	meth__ (~meth@unaffiliated/meth) has joined #vim
+2016-05-10 21:28:39	alx741	harwiltz: https://github.com/junegunn/fzf
+2016-05-10 21:28:49	harwiltz	ntnn: I don't have trouble remembering the directories, it's just annoying to manually open them all
+2016-05-10 21:28:58	<--	meth__ (~meth@unaffiliated/meth) has quit (Read error: Connection reset by peer)
+2016-05-10 21:29:00	-->	krompus (~krompus@192.64.141.117) has joined #vim
+2016-05-10 21:29:01	harwiltz	alx741: Thansk
+2016-05-10 21:29:20	ntnn	thats what :h :argadd :h :e :h :find etc are for
+2016-05-10 21:29:20	digmbot	:help :argadd -> http://vimhelp.appspot.com/editing.txt.html#%3Aargadd | :help :e -> http://vimhelp.appspot.com/editing.txt.html#%3Ae | :help :find -> http://vimhelp.appspot.com/editing.txt.html#%3Afind
+2016-05-10 21:29:39	-->	cdown (~cdown@82-132-214-188.dab.02.net) has joined #vim
+2016-05-10 21:30:26	<--	goweol (~Thunderbi@115.95.5.219) has quit (Remote host closed the connection)
+2016-05-10 21:30:48	<--	itaipu (~Marco@189.56.17.89) has quit (Ping timeout: 250 seconds)
+2016-05-10 21:31:01	harwiltz	ntnn: It's much easier to navigate directories and open files by typing single characters than typing their names and using tab completion though
+2016-05-10 21:31:15	-->	|ifei5g00d (~sharris12@192.253.246.78) has joined #vim
+2016-05-10 21:31:23	<--	domgetter (68898721@gateway/web/cgi-irc/kiwiirc.com/ip.104.137.135.33) has quit (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+2016-05-10 21:31:53	<--	meth (~meth@unaffiliated/meth) has quit (Ping timeout: 240 seconds)
+2016-05-10 21:32:04	-->	goweol (~Thunderbi@115.95.5.219) has joined #vim
+2016-05-10 21:32:17	-->	cdown_ (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 21:32:57	<--	cdg (~cdg@157.166.173.4) has quit (Ping timeout: 260 seconds)
+2016-05-10 21:33:05	ntnn	i takes more keystrokes - in nerdtree you'll have to open nerdtree, navigate to the line, open the fold, navigate to the file, then hit another key to open it - not counting subfolders
+2016-05-10 21:33:42	ntnn	i mean its your way to do it - do however you like it, but from a 'vim' perspective it is counter productive
+2016-05-10 21:33:44	<--	|ifei5g00d (~sharris12@192.253.246.78) has quit (Remote host closed the connection)
+2016-05-10 21:34:15	<--	cdown (~cdown@82-132-214-188.dab.02.net) has quit (Ping timeout: 252 seconds)
+2016-05-10 21:34:17	(●)	cdown_ is now known as cdown
+2016-05-10 21:34:19	harwiltz	ntnn: So would you recommend not even using netrw?
+2016-05-10 21:34:29	ntnn	and argadd and family and e etc all understand patterns
+2016-05-10 21:34:32	ntnn	ye
+2016-05-10 21:34:38	<--	fish3485 (~benjamin@2601:283:4101:6540:ae0f:5566:6f77:1404) has quit (Quit: fish3485)
+2016-05-10 21:34:53	harwiltz	ntnn: Ok, cool. I can try that
+2016-05-10 21:34:54	ntnn	netrw is also broken, just less broken than nerdtree
+2016-05-10 21:35:00	-->	_shivers_ (~jshivers@cpe-65-190-149-181.nc.res.rr.com) has joined #vim
+2016-05-10 21:36:18	harwiltz	If I go to a directory and open vim without a filename specified (just 'blank' vim), and then open a file with :e, do I open another file from the directory I started vim in, or the one my file is currently in?
+2016-05-10 21:36:26	-->	|ifei5g00d (~sharris12@192.253.246.78) has joined #vim
+2016-05-10 21:36:26	-->	vonpupp (~vonpupp@unaffiliated/vonpupp) has joined #vim
+2016-05-10 21:36:29	ntnn	my only issue with :e is that it throws an error on multiple matches
+2016-05-10 21:36:39	-->	bklebe (~user@pool-74-104-185-42.bstnma.fios.verizon.net) has joined #vim
+2016-05-10 21:37:01	<--	jmoyers (~jmoyers@173-164-145-222-SFBA.hfc.comcastbusiness.net) has quit (Read error: Connection reset by peer)
+2016-05-10 21:37:26	ntnn	your pwd is the one you started vim in, :h :pwd :h :cd
+2016-05-10 21:37:26	digmbot	:help :pwd -> http://vimhelp.appspot.com/editing.txt.html#%3Apwd | :help :cd -> http://vimhelp.appspot.com/editing.txt.html#%3Acd
+2016-05-10 21:38:20	ntnn	if you're e.g. in ~/src and run `:e src/somefile.c` you'll open a new buffer and get an error on writing since the directory ~/src/src doesn't exist
+2016-05-10 21:38:32	-->	chalcedony (~chalcedon@unaffiliated/chalcedony) has joined #vim
+2016-05-10 21:38:37	ntnn	since :e and family go from your pwd
+2016-05-10 21:39:07	ntnn	(if that was your question, i didn't fully get what you were asking)
+2016-05-10 21:39:49	harwiltz	ntnn: Hmmm, that didn't work. Lets say I open vim in ~/. Then I open a file with :e dir1/file1. Lets say I want to open ~/dir2/file2 in a new tab. I tried :tabedit dir2/file2, but that didn't work. So I had to do :tabedit ../dir2/file2
+2016-05-10 21:40:32	ntnn	mhm, do you have :h 'autochdir' on?
+2016-05-10 21:40:32	digmbot	:help 'autochdir' -> http://vimhelp.appspot.com/options.txt.html#%27autochdir%27
+2016-05-10 21:40:41	ntnn	that is on in neovim iirc
+2016-05-10 21:40:55	harwiltz	ntnn: I'm not using neovim, but I'll check
+2016-05-10 21:40:56	jamessan	not by default it isn't
+2016-05-10 21:41:31	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 21:41:41	harwiltz	I don't believe it's on
+2016-05-10 21:43:02	ntnn	what do `:pwd` and `:verbose set autochdir?` say?
+2016-05-10 21:43:43	harwiltz	My pwd shows that my directory was changed
+2016-05-10 21:43:44	-->	nkaretnikov (~nikita@unaffiliated/nkar) has joined #vim
+2016-05-10 21:44:03	harwiltz	:verbose set autochdir doesn't display anything
+2016-05-10 21:44:11	ntnn	with the question mark
+2016-05-10 21:44:12	-->	cdown (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 21:44:18	harwiltz	Oh shit
+2016-05-10 21:44:19	jamessan	after restarting
+2016-05-10 21:44:19	<--	Sasazuka (~Sasazuka@unaffiliated/sasazuka) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-05-10 21:44:22	jamessan	since you've just set it
+2016-05-10 21:44:49	harwiltz	noautochdir
+2016-05-10 21:45:06	ntnn	mhm
+2016-05-10 21:45:13	<--	ToBeCloud (uid51591@wikimedia/ToBeFree) has quit (Quit: Connection closed for inactivity)
+2016-05-10 21:45:18	-->	Kryptron_ (~Kryptron@unaffiliated/kryptron) has joined #vim
+2016-05-10 21:45:30	ntnn	you were only using nerdtree and a tex plugin, right?
+2016-05-10 21:45:40	harwiltz	Right
+2016-05-10 21:45:49	ntnn	try it with vim -u NONE
+2016-05-10 21:45:57	harwiltz	Ok
+2016-05-10 21:46:06	-->	djmoch (~djmoch@72-238-47-115.res.bhn.net) has joined #vim
+2016-05-10 21:46:28	harwiltz	Then pwd works
+2016-05-10 21:46:56	ntnn	then you have some kind of autocmd or something in your vimrc that does that
+2016-05-10 21:47:08	harwiltz	That does what?
+2016-05-10 21:47:14	harwiltz	autochdir is off
+2016-05-10 21:47:20	ntnn	changing your pwd
+2016-05-10 21:47:32	harwiltz	Ok, I'll check my autocmd's
+2016-05-10 21:47:47	ntnn	or your tex plugin, could also do that
+2016-05-10 21:47:47	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 21:48:07	<--	afuentes (~kusanagi@201.165.35.37.dynamic.jazztel.es) has quit (Ping timeout: 260 seconds)
+2016-05-10 21:48:32	<--	Kryptron (~Kryptron@unaffiliated/kryptron) has quit (Ping timeout: 265 seconds)
+2016-05-10 21:48:32	harwiltz	I tried vim --noplugin, I still get that issue. So I guess it isn't the tex plugin
+2016-05-10 21:49:31	-->	oconnorct1 (~connor@nc-76-4-9-193.dhcp.embarqhsd.net) has joined #vim
+2016-05-10 21:49:34	<--	bklebe (~user@pool-74-104-185-42.bstnma.fios.verizon.net) has quit (Remote host closed the connection)
+2016-05-10 21:49:41	-->	neoncontrails (~neoncontr@104-12-0-157.lightspeed.sndgca.sbcglobal.net) has joined #vim
+2016-05-10 21:49:50	-->	bklebe (~user@pool-74-104-185-42.bstnma.fios.verizon.net) has joined #vim
+2016-05-10 21:49:57	harwiltz	I don't see how my autocmd's would affect that. Would you like to see my vimrc?
+2016-05-10 21:50:14	ntnn	--noplugin only cuts off stuff in &rtp/plugin iirc, not ftplugins or the like
+2016-05-10 21:50:51	-->	rcyr (~rcyr@unaffiliated/rcyr) has joined #vim
+2016-05-10 21:50:55	harwiltz	ntnn: Oh ok
+2016-05-10 21:50:57	ntnn	sure, paste it somewhere
+2016-05-10 21:51:03	harwiltz	Thansk
+2016-05-10 21:51:07	harwiltz	*Thanks
+2016-05-10 21:51:17	<--	djmoch (~djmoch@72-238-47-115.res.bhn.net) has quit (Ping timeout: 276 seconds)
+2016-05-10 21:51:47	ntnn	your best bet to load without plugins is to comment them out, depending on what you use to install them
+2016-05-10 21:52:21	ntnn	if you just untar them into ~/.vim its harder to do that
+2016-05-10 21:52:48	<--	Sixmsj (~Sixmsj@c-73-189-102-185.hsd1.ca.comcast.net) has quit (Quit: Sixmsj)
+2016-05-10 21:53:12	-->	cdown (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 21:53:32	harwiltz	https://github.com/DestructiveReasoning/dotfiles/blob/master/.vimrc
+2016-05-10 21:54:18	ntnn	what the
+2016-05-10 21:54:22	ntnn	whats with that header
+2016-05-10 21:54:33	ntnn	why is archlinux not using the system vimrc for that?
+2016-05-10 21:55:21	harwiltz	I have no clue. I've had this file for a long time now. I'm pretty sure I originally copied it from a default vimrc or something
+2016-05-10 21:56:31	-->	variable (~variable@freebsd/developer/variable) has joined #vim
+2016-05-10 21:56:45	-->	benklebe (~user@pool-74-104-185-42.bstnma.fios.verizon.net) has joined #vim
+2016-05-10 21:57:00	-->	ekinmur (~ekinmur@98.204.177.40) has joined #vim
+2016-05-10 21:57:37	ntnn	nothing really looks suspicious. guess you have to use bsfl
+2016-05-10 21:57:40	ntnn	vimgor: bsfl
+2016-05-10 21:57:40	vimgor	Binary Search Fault Localisation: Put the :finish keyword in the middle of your ~/.vimrc (but not inside a block, like: while, for, try and functions). This will disable the latter half of the file. Retest to see if your problem persists. If so then the problem is inside the still active half. Otherwise the problem is in the disabled half. Repeat with binary divisions as necessary. See bisectly
+2016-05-10 21:58:05	-->	duggiefresh (~duggiefre@209-6-228-54.c3-0.smr-ubr2.sbo-smr.ma.cable.rcn.com) has joined #vim
+2016-05-10 21:58:09	harwiltz	Jesus. That's gory. It's really not that much of an issue though. 
+2016-05-10 21:58:15	-->	pKlUiVeRt (pKlUiVeRt@24-246-4-199.cable.teksavvy.com) has joined #vim
+2016-05-10 21:58:43	harwiltz	Weirdly, however, is if I try doing tabedit ../, it default to opening a nerdtree window rather than netrw. Any way to change that?
+2016-05-10 21:58:59	harwiltz	If I could do that, I think I could manage
+2016-05-10 21:59:25	<--	oconnorct1 (~connor@nc-76-4-9-193.dhcp.embarqhsd.net) has quit (Ping timeout: 246 seconds)
+2016-05-10 21:59:36	harwiltz	Or is there a way to 'hide' nerdtree from vim without deleting it?
+2016-05-10 21:59:48	ntnn	nertree has some setting to replace netrw, you'll have to grep the documentation for that
+2016-05-10 22:00:08	harwiltz	That's crazy. I don't like nerdtree.
+2016-05-10 22:00:09	ntnn	removing it's path from :h 'rtp' after infext()
+2016-05-10 22:00:10	digmbot	:help 'rtp' -> http://vimhelp.appspot.com/options.txt.html#%27rtp%27
+2016-05-10 22:00:48	-->	torgdor (~weechat@cpe-104-32-77-28.socal.res.rr.com) has joined #vim
+2016-05-10 22:01:08	harwiltz	Ok, I'll try that. THanks
+2016-05-10 22:01:27	<--	andyhoang-work (~andyhoang@125.234.4.10) has quit (Read error: Connection reset by peer)
+2016-05-10 22:01:38	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 22:02:35	-->	cdown (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 22:03:08	harwiltz	what happens if I just rename my nerdtree directory?
+2016-05-10 22:03:33	ntnn	pathogen wildcards it, so you could also move it somewhere else, ye
+2016-05-10 22:04:14	harwiltz	Hmm, somehow that didn't work
+2016-05-10 22:04:42	harwiltz	I renamed my .vim/bundle/nerdtree to .vim/bundle/nerdtree_hidden, and I can still open nerdtree
+2016-05-10 22:05:03	ntnn	as i said, pathogen wildcards it (.vim/bundle/*)
+2016-05-10 22:05:12	ntnn	so you have to move nerdtree out of .vim/bundle
+2016-05-10 22:05:19	harwiltz	Ohhh sorry. I see
+2016-05-10 22:05:26	<--	bklebe (~user@pool-74-104-185-42.bstnma.fios.verizon.net) has quit (Remote host closed the connection)
+2016-05-10 22:05:26	<--	benklebe (~user@pool-74-104-185-42.bstnma.fios.verizon.net) has quit (Remote host closed the connection)
+2016-05-10 22:05:35	-->	yan4138 (~yan4138@27.115.109.69) has joined #vim
+2016-05-10 22:06:09	(●)	Elronnd is now known as constant
+2016-05-10 22:06:17	(●)	constant is now known as Elronnd
+2016-05-10 22:06:45	<--	aplund (~aplund@115-64-197-37.static.tpgi.com.au) has quit (Quit: leaving)
+2016-05-10 22:06:51	(●)	variable is now known as constant
+2016-05-10 22:07:11	-->	aplund (~aplund@115-64-197-37.static.tpgi.com.au) has joined #vim
+2016-05-10 22:07:16	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 22:07:23	-->	mizu_no_oto (~textual@c-50-177-170-9.hsd1.ma.comcast.net) has joined #vim
+2016-05-10 22:08:01	-->	cdown (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 22:08:04	harwiltz	ntnn: That worked. Thanks a lot
+2016-05-10 22:08:19	jamessan	or rename it to nerdtree~
+2016-05-10 22:08:23	<--	dchapman (~neo@unaffiliated/dchapman) has quit (Quit: leaving)
+2016-05-10 22:09:01	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 22:09:19	<--	nkaretnikov (~nikita@unaffiliated/nkar) has quit (Ping timeout: 265 seconds)
+2016-05-10 22:09:31	harwiltz	One more thing! Is there a way to change the way vim names its tabs? If I open another tab, it's title includes the entire path. For example, I have a tab called ~/A/P/a/s/m/j/c/w/d/o/Filename.java
+2016-05-10 22:09:55	harwiltz	I guess it abbreviated the directory names to fit it in the tab. But that whole path isn't exactly useful to me
+2016-05-10 22:10:01	jamessan	:help 'tabline'
+2016-05-10 22:10:01	digmbot	:help 'tabline' -> http://vimhelp.appspot.com/options.txt.html#%27tabline%27
+2016-05-10 22:10:02	-->	cdown (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 22:10:06	harwiltz	Thanks
+2016-05-10 22:10:38	-->	cqi (~cqi@114.253.78.232) has joined #vim
+2016-05-10 22:11:48	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 22:12:03	<--	Miblo (~matt@156.136.46.217.dyn.plus.net) has quit (Quit: WeeChat 1.5)
+2016-05-10 22:12:04	harwiltz	Strangely, from google this appears to be a consequence of having autochdir on
+2016-05-10 22:12:41	-->	cdown (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 22:12:48	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 22:12:57	harwiltz	And when I do :verbose set autochdir?, it says noautochdir, last set by some netrw config file
+2016-05-10 22:13:12	<--	cpe (~cpe@unaffiliated/cpe) has quit (Ping timeout: 244 seconds)
+2016-05-10 22:14:01	Lepidopterist	what's the general take on neovim? people describe it as the future of vim. has it really lived up to the hype?
+2016-05-10 22:14:09	<--	Internet13 (~chatzilla@cpc98328-croy25-2-0-cust492.19-2.cable.virginm.net) has quit (Ping timeout: 260 seconds)
+2016-05-10 22:14:41	-->	cdown (~cdown@82-132-235-10.dab.02.net) has joined #vim
+2016-05-10 22:14:46	-->	cpe (~cpe@unaffiliated/cpe) has joined #vim
+2016-05-10 22:14:53	MachinShin	i can't answer that, but i will say that at a minimum it seems to have forced a lot of forward momentum in vim
+2016-05-10 22:16:13	Lepidopterist	i have heard that it pushed vim to give support for asynchronous scripts
+2016-05-10 22:16:48	Lepidopterist	i'm a relatively new user to vim and will probably stick with it, if only for tendonitis issues. anyway, wondering if i should just use neovim or whether i should just wait
+2016-05-10 22:17:14	-->	scottbot84 (~scottbot8@c-98-215-92-128.hsd1.il.comcast.net) has joined #vim
+2016-05-10 22:17:34	-->	zacstewart (~zacstewar@c-98-192-38-139.hsd1.ga.comcast.net) has joined #vim
+2016-05-10 22:17:38	jamessan	Try both and determine which you prefer :)
+2016-05-10 22:17:46	ntnn	^
+2016-05-10 22:17:47	-->	xpen (~xpen@198.11.183.53) has joined #vim
+2016-05-10 22:18:13	ntnn	personally i've had major issues with neovim and tag files, especially when the tag file is big neovim tended to segfault
+2016-05-10 22:18:46	ntnn	given, i haven't used neovim in two~ months now, so they might've fixed it
+2016-05-10 22:18:53	<--	MattMaker (~MattMaker@rrcs-24-227-162-10.sw.biz.rr.com) has quit (Remote host closed the connection)
+2016-05-10 22:18:55	-->	Internet13 (~chatzilla@cpc98328-croy25-2-0-cust492.19-2.cable.virginm.net) has joined #vim
+2016-05-10 22:19:14	<--	scottbot84 (~scottbot8@c-98-215-92-128.hsd1.il.comcast.net) has quit (Client Quit)
+2016-05-10 22:19:31	ntnn	and about 'future of vim' - we'll see who has the longer breath
+2016-05-10 22:19:53	Lepidopterist	neovim seems like a more sustainable model. vim seems like it is destined to collapse after its leader dies
+2016-05-10 22:19:53	<--	mizu_no_oto (~textual@c-50-177-170-9.hsd1.ma.comcast.net) has quit (Quit: Computer has gone to sleep.)
+2016-05-10 22:20:14	<--	strull (~strull@pD9F4BA07.dip0.t-ipconnect.de) has quit (Quit: Reconnecting)
+2016-05-10 22:20:22	-->	strull (~strull@pD9F4BA07.dip0.t-ipconnect.de) has joined #vim
+2016-05-10 22:20:23	-->	cpage_ (~cpage@17.201.46.239) has joined #vim
+2016-05-10 22:21:54	harwiltz	ntnn: Is there a quick way to bypass the ftplugins?
+2016-05-10 22:22:27	<--	cdown (~cdown@82-132-235-10.dab.02.net) has quit (Remote host closed the connection)
+2016-05-10 22:22:29	ntnn	:h :filetype
+2016-05-10 22:22:29	digmbot	:help :filetype -> http://vimhelp.appspot.com/filetype.txt.html#%3Afiletype
+2016-05-10 22:22:57	ntnn	filetype plugin off iirc, but better look it up
+2016-05-10 22:22:58	harwiltz	And that will take care of disabling my tex plugin?
+2016-05-10 22:24:31	ntnn	depends
+2016-05-10 22:25:14	ntnn	you'll still be able to execute autoload functions and stuff from its plugin/ dir
+2016-05-10 22:25:19	<--	rbennace_ (~rbennacer@50.153.241.59) has quit (Remote host closed the connection)
+2016-05-10 22:25:20	-->	bibekG (~bibek22@150.107.204.69) has joined #vim
+2016-05-10 22:25:22	ntnn	as well as indent, syntax etc
+2016-05-10 22:25:28	harwiltz	Yeah, it didn't work
+2016-05-10 22:25:58	harwiltz	I'm pretty frustrated right now. I literally see nothing that can possibly be screwing with this pwd and tabline stuff
+2016-05-10 22:26:41	Lepidopterist	I know about the ci( sentence. What if I am at the beginning of a line, which toward the end has a parentheses and I want to change what is in the parentheses. Logically it seems to me that ci( should still work, but in fact it doesn't. Is there a better way than to do f(ci(  ?
+2016-05-10 22:28:43	-->	chalcedny (~llhull@unaffiliated/chalcedony) has joined #vim
+2016-05-10 22:29:14	<--	andreazevedo (~andreazev@199.201.64.135) has quit (Ping timeout: 252 seconds)
+2016-05-10 22:29:54	-->	rbennacer (~rbennacer@50.153.242.230) has joined #vim
+2016-05-10 22:34:04	<--	anishathalye (~anish@dhcp-18-189-54-158.dyn.MIT.EDU) has quit (Remote host closed the connection)
+2016-05-10 22:35:17	<--	Kryptron_ (~Kryptron@unaffiliated/kryptron) has quit (Ping timeout: 252 seconds)
+2016-05-10 22:35:18	<--	kkeuning (~textual@c-98-253-165-107.hsd1.il.comcast.net) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-05-10 22:36:26	<--	bullygrumpus (~bullygrum@50-196-167-205-static.hfc.comcastbusiness.net) has quit (Quit: zzz)
+2016-05-10 22:38:03	-->	reverse_light (~reverse_l@ntszok034224.szok.nt.adsl.ppp.infoweb.ne.jp) has joined #vim
+2016-05-10 22:38:38	<--	tingol (~tingol@79-101-240-230.dynamic.isp.telekom.rs) has quit (Ping timeout: 260 seconds)
+2016-05-10 22:39:35	<--	pKlUiVeRt (pKlUiVeRt@24-246-4-199.cable.teksavvy.com) has quit
+2016-05-10 22:40:02	-->	anishathalye (~anish@dhcp-18-189-54-158.dyn.MIT.EDU) has joined #vim
+2016-05-10 22:41:21	<--	dharrigan (~dharrigan@unaffiliated/bootlaces) has quit (Read error: Connection reset by peer)
+2016-05-10 22:41:38	-->	dharrigan (~dharrigan@host86-180-220-16.range86-180.btcentralplus.com) has joined #vim
+2016-05-10 22:41:38	<--	dharrigan (~dharrigan@host86-180-220-16.range86-180.btcentralplus.com) has quit (Changing host)
+2016-05-10 22:41:38	-->	dharrigan (~dharrigan@unaffiliated/bootlaces) has joined #vim
+2016-05-10 22:41:44	-->	Naraka (~Opodeldoc@208.114.92.193) has joined #vim
+2016-05-10 22:41:48	<--	xpen (~xpen@198.11.183.53) has quit (Remote host closed the connection)
+2016-05-10 22:41:55	-->	lytzen (~lytzen@188.114.145.241) has joined #vim
+2016-05-10 22:42:54	-->	kkeuning (~textual@c-98-253-165-107.hsd1.il.comcast.net) has joined #vim
+2016-05-10 22:43:07	harwiltz	I have gone through (recursively) every .vim file starting from /usr/share/vim/vimfiles, and have found none that make any reference to the string 'chdir'
+2016-05-10 22:43:48	jamessan	Lepidopterist: The patches discussed in this thread may be of interest: http://thread.gmane.org/gmane.editors.vim.devel/43570
+2016-05-10 22:43:58	<--	kkeuning (~textual@c-98-253-165-107.hsd1.il.comcast.net) has quit (Max SendQ exceeded)
+2016-05-10 22:44:39	-->	kkeuning (~textual@c-98-253-165-107.hsd1.il.comcast.net) has joined #vim
+2016-05-10 22:45:28	<--	torgdor (~weechat@cpe-104-32-77-28.socal.res.rr.com) has quit (Quit: torgdor)
+2016-05-10 22:47:02	<--	lytzen (~lytzen@188.114.145.241) has quit (Ping timeout: 260 seconds)
+2016-05-10 22:47:04	<--	azx (~nick@2602:306:311d:1640::49) has quit (Ping timeout: 250 seconds)
+2016-05-10 22:48:18	-->	andyhoang-work (~andyhoang@14.161.32.199) has joined #vim
+2016-05-10 22:49:17	-->	HeN (uid3747@gateway/web/irccloud.com/x-smheeqvqbtjiyrui) has joined #vim
+2016-05-10 22:49:58	<--	THEmetaphysician (~THEmetaph@2601:540:8200:c5bb:d5e:89da:11b7:d084) has quit (Ping timeout: 276 seconds)
+2016-05-10 22:50:49	<--	diegoviola (~diego@unaffiliated/diegoviola) has quit (Quit: WeeChat 1.5)
+2016-05-10 22:50:56	<--	lee_Jenks (~tf_is_thi@mobile-130-126-255-48.near.illinois.edu) has quit (Ping timeout: 244 seconds)

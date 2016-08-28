@@ -1,0 +1,679 @@
+2016-08-24 20:32:38	netz	ok, lets move over here for now :)
+2016-08-24 20:32:52	netz	its really simple. what host os are you using to make the usb stick?
+2016-08-24 20:34:01	harwiltz	Ah I see
+2016-08-24 20:34:08	harwiltz	I'm using Arch
+2016-08-24 20:34:20	harwiltz	But it worked for BIOS install, it's just hanging for UEFI
+2016-08-24 20:34:21	netz	ok, so arch to arch, gotcha.
+2016-08-24 20:34:35	netz	do you have 7z installed on the donor os?
+2016-08-24 20:34:42	harwiltz	I believe so
+2016-08-24 20:34:50	netz	if you don't, that's cool, I'll just have to adjust the method.
+2016-08-24 20:35:06	harwiltz	why should I have to change the usb though?
+2016-08-24 20:35:17	harwiltz	If the package is called 7z, I don't have it 
+2016-08-24 20:35:26	netz	makes certain aspects easier.
+2016-08-24 20:35:40	netz	ah, the package name is p7zip
+2016-08-24 20:35:45	netz	its pretty useful.
+2016-08-24 20:35:53	harwiltz	Yeah I have it :)
+2016-08-24 20:36:01	harwiltz	But my livecd works though
+2016-08-24 20:36:11	netz	yeah, but you can't edit it.
+2016-08-24 20:36:31	harwiltz	edit what?
+2016-08-24 20:37:01	netz	anything on the usb
+2016-08-24 20:37:16	harwiltz	That's fine for now. I just want to install the OS hahaha
+2016-08-24 20:37:24	harwiltz	Unless I have to edit it for UEFI?
+2016-08-24 20:37:51	netz	you don't have to, but its nice to be able to edit the bootloader stuff and not have to remember all that you tried.
+2016-08-24 20:38:19	harwiltz	Oh ok. My thing is still hanging though, I'm gonna just try a reboot first
+2016-08-24 20:38:37	netz	in any case, we can do it as is. fire it up, and when you get to the systemd-boot menu (the ugly one with the shells and arch installer) move your selection up or down to stop the timeout
+2016-08-24 20:39:01	harwiltz	Done
+2016-08-24 20:39:27	netz	ok, I forget what the systemd boot option is, but get to where you can edit the kernel command line
+2016-08-24 20:39:43	harwiltz	I can try UEFI shell 
+2016-08-24 20:39:55	netz	nah, don't worry about it.
+2016-08-24 20:40:07	netz	did you diddle with any uefi setting in the firmware?
+2016-08-24 20:40:14	harwiltz	Theres also uefi default loader
+2016-08-24 20:40:21	harwiltz	No, I didn't
+2016-08-24 20:40:40	harwiltz	Should I try the livecd again?
+2016-08-24 20:41:03	netz	yeah, uefi default loader doesn't do anything unless there is a uefi capable system installed.
+2016-08-24 20:41:09	netz	are you not at the boot menu?
+2016-08-24 20:41:13	harwiltz	Ok
+2016-08-24 20:41:22	harwiltz	I'm at the systemd-boot thing you were talking about
+2016-08-24 20:41:38	netz	ok, somehow you can edit the kernel parameters here, I forget how.
+2016-08-24 20:41:49	harwiltz	What would that do for me?
+2016-08-24 20:42:14	netz	exactly what it sounds like. edit the params so it doesn't blackscreen/hang
+2016-08-24 20:42:21	netz	ok, press 'e'
+2016-08-24 20:42:25	harwiltz	Ok
+2016-08-24 20:42:36	netz	this will feed you a line of text, which is the kernel command line
+2016-08-24 20:42:38	harwiltz	Yup
+2016-08-24 20:42:45	netz	it should end in quiet, I think.
+2016-08-24 20:42:51	harwiltz	Lemme check
+2016-08-24 20:43:06	harwiltz	It doesn't
+2016-08-24 20:43:11	netz	its been a while since I installed, but its not that much of problem. 
+2016-08-24 20:43:16	netz	ok, what does it say?
+2016-08-24 20:43:32	harwiltz	It's really long, just a sec, gonna go over and copy it
+2016-08-24 20:43:36	netz	k
+2016-08-24 20:43:53	netz	also, which iso are you currently using? so I can get the exact copy and check what it is.
+2016-08-24 20:44:50	harwiltz	initrd=\EFI\archiso\intel-ucode.img initrd=\EFI\archiso\archiso.img archisobasedir=arch archisolabel=ARCH_201608
+2016-08-24 20:45:18	harwiltz	I'm using the one from august 2016
+2016-08-24 20:46:02	netz	ok, cool. get to the end of the line and add 'nomodeset' at the end, without '
+2016-08-24 20:46:27	harwiltz	I guess I put a space after 201608
+2016-08-24 20:46:46	netz	yeah.
+2016-08-24 20:46:47	harwiltz	And just press enter?
+2016-08-24 20:46:57	netz	I believe so. it could be another key, though.
+2016-08-24 20:47:17	harwiltz	Pressed enter, right now I have a blank screen, let's wait it out for a min
+2016-08-24 20:47:28	netz	k.
+2016-08-24 20:48:10	netz	and for the record, what was the mobo again?
+2016-08-24 20:48:19	harwiltz	ASRock Z170A-X1/3.1
+2016-08-24 20:48:31	netz	and any super gpu?
+2016-08-24 20:48:34	netz	nvidia or sommat?
+2016-08-24 20:48:40	harwiltz	Radeon RX480
+2016-08-24 20:48:47	netz	ok, cpu?
+2016-08-24 20:48:52	harwiltz	intel i7 6700k
+2016-08-24 20:49:03	netz	integrated gpu, right?
+2016-08-24 20:49:11	netz	how are you hooked up to your display?
+2016-08-24 20:49:19	harwiltz	I believe so. I'm plugged into the gpu
+2016-08-24 20:49:28	harwiltz	But when I did the BIOS boot, it worked
+2016-08-24 20:50:01	harwiltz	I actually can't connect my mobo to my monitor because I don't have the right cable :(
+2016-08-24 20:50:10	netz	ok. you may want to consider using the igpu for the mo.... ah, that sucks.
+2016-08-24 20:50:23	harwiltz	You think that's the problem?
+2016-08-24 20:50:27	netz	can't you temp steal one from somewhere in your house?
+2016-08-24 20:50:34	harwiltz	No one in my house has one
+2016-08-24 20:50:46	harwiltz	I think at this point I'll just forget about uefi
+2016-08-24 20:50:48	netz	prolly not, but getting a reliably booting system could assist in the process.
+2016-08-24 20:51:11	netz	harwiltz well, if you do, go ahead and make the disk GPT, with an ESP, and such, because you can always convert later :)
+2016-08-24 20:51:27	netz	what bootloader are you intending to use?
+2016-08-24 20:51:33	harwiltz	Hmm, I guess thats true. Are the benefits actually that good?
+2016-08-24 20:51:37	harwiltz	I intend on using grub
+2016-08-24 20:52:11	netz	well, gpt's benefits are nice, but depending on the size of the disk it may not matter.
+2016-08-24 20:52:30	netz	for 2tb+ disks, you pretty much have to use gpt.
+2016-08-24 20:52:33	harwiltz	Well I will still use gpt, so will I really be missing out on a lot?
+2016-08-24 20:52:57	netz	maybe, depends on the firmware, but its always a good idea to keep your options open.
+2016-08-24 20:53:24	netz	and sacrificing say 256mb of disk space is not that big of a deal :)
+2016-08-24 20:53:29	harwiltz	Ok. So I make a small BIOS boot partition and a boot partition?
+2016-08-24 20:54:03	harwiltz	the boot partition being labeled as EFI and formatted to FAT32?
+2016-08-24 20:54:16	netz	well, you need an esp. this can be /boot, but it doesn't have to be. for GPT-on-BIOS-with-GRUB, you need an ef02 partition with no filesystem
+2016-08-24 20:54:29	harwiltz	netz Isn't it supposed to be vfat?
+2016-08-24 20:54:35	harwiltz	Oh nvm
+2016-08-24 20:54:47	netz	filesystem label doesn't matter, but the gpt table needs to have it flagged as ef00
+2016-08-24 20:55:42	netz	but I do suggest you make heavy use of labeling for filesystems. makes fstab and such much simpler to deal with :)
+2016-08-24 20:55:44	harwiltz	Ok wait a sec. I'm gonna create a 8M BIOS Boot Partition (EF02), no filesystem. I'll also create a 512M EFI partition (EF00) formatted as FAT32
+2016-08-24 20:56:00	harwiltz	The latter mounted to /boot
+2016-08-24 20:56:13	harwiltz	Is that right?
+2016-08-24 20:56:24	netz	I'm not sure, but I think the ef02 one has to be first.
+2016-08-24 20:56:34	harwiltz	netz Yeah it will be
+2016-08-24 20:56:49	harwiltz	Otherwise looks good?
+2016-08-24 20:56:50	netz	https://wiki.archlinux.org/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions
+2016-08-24 20:57:06	netz	this covers a lot of the specifics, but yes, that sounds about right.
+2016-08-24 20:57:28	harwiltz	Alright, I'll try that. Thanks so much for the help btw
+2016-08-24 20:57:38	netz	no prob. so, is it still frozen?
+2016-08-24 20:58:15	harwiltz	Yup. Just rebooted and I'll try the BIOS one. My laptop has UEFI (computer I'm on now) and I've never really made specific use of it. Hopefully it won't bite me in the ass
+2016-08-24 20:58:48	netz	ah, the order doesn't matter, as long as the ef02 partition occurs in the first two terabytes
+2016-08-24 20:59:19	harwiltz	Lol. That shouldn't be a problem :)
+2016-08-24 20:59:25	harwiltz	I'll put it first anyway
+2016-08-24 20:59:29	netz	yeah.
+2016-08-24 20:59:38	harwiltz	You think 256M will be big enough for a potential efi partition?
+2016-08-24 21:00:29	netz	yeah. lemme check mine real quick.
+2016-08-24 21:00:38	harwiltz	Thanks
+2016-08-24 21:00:52	netz	yeah, looks like I used 128mb on this machine, actually :P
+2016-08-24 21:01:07	harwiltz	Great. I'll do 256 just in case.
+2016-08-24 21:01:24	netz	yeah.
+2016-08-24 21:02:39	harwiltz	So I don't mount the EF02 one or anything right?
+2016-08-24 21:02:54	netz	nope. if you do it right, you can't.
+2016-08-24 21:03:00	harwiltz	Awesome
+2016-08-24 21:03:04	netz	you do not mkfs.foo on it
+2016-08-24 21:03:10	harwiltz	Thanks so much for the help
+2016-08-24 21:03:19	netz	grub will basically just dd itself into the area
+2016-08-24 21:03:30	netz	prolly more complicated than that, but you get the idea.
+2016-08-24 21:03:53	harwiltz	Yup. As long as it all finally works, I don't really care lol
+2016-08-24 21:04:25	netz	heh. I love knowing how it works.
+2016-08-24 21:04:45	harwiltz	I usually do too. But I'm really tired and my back fuckin kills now hahaha
+2016-08-24 21:04:46	netz	I'm actually working on some firmware for security dvr devices :)
+2016-08-24 21:04:50	netz	lol
+2016-08-24 21:04:52	harwiltz	That's sick
+2016-08-24 21:05:03	netz	yes, it does make me sick
+2016-08-24 21:05:11	harwiltz	If you don't mind me asking, do you have a uni degree?
+2016-08-24 21:05:16	netz	fuckers used the linux kernel and u-boot, and didn't release source.
+2016-08-24 21:05:28	harwiltz	Hahahha
+2016-08-24 21:05:33	netz	nope, I'm just a random 1337 hax0r, self taught :P
+2016-08-24 21:05:43	netz	also, never again will I utter those characters to you :P
+2016-08-24 21:05:48	harwiltz	That's impressive. Again, if you don't mind, how old are you?
+2016-08-24 21:05:56	netz	soon to be 28
+2016-08-24 21:06:28	harwiltz	Oh ok. Are you doing that for a job or as a hobby?
+2016-08-24 21:06:38	netz	hobby, hoping for jobs at some point
+2016-08-24 21:06:51	harwiltz	That's really cool
+2016-08-24 21:06:55	netz	I made a wreck out of my life early on, so its tough going
+2016-08-24 21:06:55	harwiltz	How did you even get into that?
+2016-08-24 21:07:05	netz	just happend, sorta.
+2016-08-24 21:07:13	harwiltz	Well it sounds like you're doing pretty well now. 
+2016-08-24 21:07:31	netz	I had bought a few hardware hacking devices, bus pirates and shikra and such, and was doing work on some other coolish stuff.
+2016-08-24 21:07:59	harwiltz	Idk how any of that stuff works. I just know a little bit of software hahaha
+2016-08-24 21:08:14	netz	my workplace has two of these systems, I took the hood off one, uart'd in, found it was linux (old as fuck linux, 2.6.28), and googling led me to the fact that all these devices are insecure as fuck.
+2016-08-24 21:08:47	harwiltz	Wow. Does anyone else know about that?
+2016-08-24 21:09:02	netz	everyone with a bit of google fu can and probably does.
+2016-08-24 21:09:17	netz	"cctv vulnerability raysharp"
+2016-08-24 21:09:21	harwiltz	Hahaha ok
+2016-08-24 21:09:28	netz	interesting reads, actually.
+2016-08-24 21:09:41	harwiltz	Yeah, I'm sure. Sounds awesome
+2016-08-24 21:09:54	harwiltz	I was never able to get into that kind of hacking
+2016-08-24 21:09:57	netz	intitle:"Web Client for DVR" in google will pull up cctv systems you can view using that insecurity.
+2016-08-24 21:10:01	harwiltz	But I've always wanted to
+2016-08-24 21:10:19	netz	and everything that matches that accepts the same hard-coded, unchangeable password and username.
+2016-08-24 21:10:21	harwiltz	Have you improved it?
+2016-08-24 21:10:34	harwiltz	Lol
+2016-08-24 21:10:34	netz	not yet. still working on getting a bootable, modern kernel on it.
+2016-08-24 21:10:52	harwiltz	Sounds tough. I'm sure it will be really satisfying though
+2016-08-24 21:10:52	netz	next after that is proper v4l2 support for the media interfaces
+2016-08-24 21:11:15	netz	then, a new webserver, secured, with rtsp and html5, browser-agnostic code.
+2016-08-24 21:11:16	harwiltz	Jesus. Where do you even learn this stuff?
+2016-08-24 21:11:24	netz	google and man pages and docs.
+2016-08-24 21:11:49	netz	and lots and lots of caffine, nicotine, and music
+2016-08-24 21:11:54	harwiltz	How long have you been working on this ;)
+2016-08-24 21:12:03	netz	one sec, food is here.
+2016-08-24 21:12:11	harwiltz	Music though. That actually is really helpful for me too :)
+2016-08-24 21:15:58	netz	yah
+2016-08-24 21:16:05	netz	also, lots and lots of delivery food
+2016-08-24 21:16:09	harwiltz	Hahahaha
+2016-08-24 21:16:27	harwiltz	Out of curiosity, what kind of music are you into? I have a bit of a theory
+2016-08-24 21:16:29	netz	pizza, chinese, sammiches, whatever
+2016-08-24 21:16:55	netz	hrm. I'm kinda eclectic. I like a lot of mainstream rock and such, but also nerd-core hip-hop, vocaloid, some wubwubwub
+2016-08-24 21:17:09	netz	video game music, anime ost's
+2016-08-24 21:17:13	harwiltz	Lol. Is wubwubwub supposed to be dubstep?
+2016-08-24 21:17:22	netz	that and its kin, yeah.
+2016-08-24 21:17:36	harwiltz	Hahaha. OK
+2016-08-24 21:18:06	netz	but seriously, the web interface for these machines are so shit, they won't run on anything other than windows seven and older, with IE, and security turned down.
+2016-08-24 21:18:24	harwiltz	Why does it need IE?
+2016-08-24 21:18:47	netz	activex plugins
+2016-08-24 21:19:08	netz	like I said, the program is utter shit.
+2016-08-24 21:19:15	harwiltz	Oh. Hahahaha. Sounds like shit
+2016-08-24 21:19:21	harwiltz	That's actually horrible
+2016-08-24 21:19:38	netz	not only does it only work via windows, arguably the shittiest OS ever, it only works via IE, factually the worst fucking browser ever.
+2016-08-24 21:19:51	netz	even people who like windows hate IE
+2016-08-24 21:20:04	harwiltz	Exactly. Nobody even uses IE anymore as far as I'm concerned
+2016-08-24 21:20:18	harwiltz	That's literally the shittiest portability I've ever heard of
+2016-08-24 21:20:18	netz	nobody that matters, at least.
+2016-08-24 21:20:23	harwiltz	;)
+2016-08-24 21:20:39	netz	yep. so, mister 'I know some software', do you know about webdev?
+2016-08-24 21:20:48	netz	that's a serious gap in my knowledge.
+2016-08-24 21:21:32	harwiltz	I feel like an utter idiot, but no
+2016-08-24 21:21:45	netz	I was thinking to use qt embedded for the local display (eg, monitor hooked up directly)
+2016-08-24 21:21:56	harwiltz	I've done a bit of game dev, and made some cool command line apps, that's it
+2016-08-24 21:21:57	netz	don't. maybe ignorant in some areas, but not an idiot :)
+2016-08-24 21:22:09	harwiltz	Hahaha. Thanks
+2016-08-24 21:22:24	netz	hey, that's fun shit :)
+2016-08-24 21:22:47	harwiltz	It is fun! I don't get much time with school though
+2016-08-24 21:22:54	netz	today I'm having chinese, in honor of these shitty chinese dvrs
+2016-08-24 21:23:01	netz	oh that's cool, college or whatnot?
+2016-08-24 21:23:02	harwiltz	Hahahahaha
+2016-08-24 21:23:23	harwiltz	Yup. Believe it or not I'm a computer engineering student. Only starting year 2 though. 
+2016-08-24 21:23:40	netz	hey, you're ahead of me in the game
+2016-08-24 21:23:58	netz	how old, if you don't mind?
+2016-08-24 21:24:12	harwiltz	20 :)
+2016-08-24 21:24:38	harwiltz	But I'm in quebec, so the school system is... unique
+2016-08-24 21:24:50	netz	see, you got into this shit when you were still young and fresh. Me, I only got into this shit around four years ago, when I was 23/4
+2016-08-24 21:25:24	harwiltz	I don't think I'd know as much as you do in four years though. Still impressive
+2016-08-24 21:25:39	netz	nah man, never understimate the young mind
+2016-08-24 21:26:20	netz	there's a reason its best to learn languages early
+2016-08-24 21:26:29	harwiltz	I don't think I know as much about software as you do about your hardware stuff here. And I've been into this for probably about 3-4 years hahaha
+2016-08-24 21:27:03	netz	nah. most of my 'hardware' knowledge is actually software, just very low level
+2016-08-24 21:27:13	netz	like for instance, linux kernel is obviously software, no?
+2016-08-24 21:27:35	harwiltz	Yeah, I guess that's a better way of putting it :)
+2016-08-24 21:27:40	netz	but, its so low level, you really need to know harware to hack it.
+2016-08-24 21:28:00	netz	and hack in the classic sense of the term, not what the media portrays it as :?
+2016-08-24 21:28:02	netz	:/*
+2016-08-24 21:28:12	harwiltz	Exactly
+2016-08-24 21:28:18	netz	protip: get a good keyboard. seriously. 
+2016-08-24 21:28:24	netz	and if you can afford it, a good chair.
+2016-08-24 21:28:26	harwiltz	I just did!
+2016-08-24 21:28:37	harwiltz	You won't believe the sick deal I got on the keyboard for this build
+2016-08-24 21:28:53	netz	noice! I've got an OK one, but I have a better one coming in around the middle of next month
+2016-08-24 21:28:56	netz	whazzup?
+2016-08-24 21:29:08	harwiltz	I ordered a Cooler Master Quickfire Ultimate with cherry mx blues on sale for $85 CAD, from $120.
+2016-08-24 21:29:33	harwiltz	They sent me the Cooler Master Quickfire XTi with Cheryy MX Blues, which is worth $160 USD, which is approx $210 CAD
+2016-08-24 21:29:45	netz	noice indeed! I'm currently rocking a logitech g710 with blues
+2016-08-24 21:29:49	netz	oh fuck yeah!
+2016-08-24 21:30:00	netz	next month, I get my ergodox infinity
+2016-08-24 21:30:19	harwiltz	My friends have the g710 with browns, but I don't like browns. Cool kb though. 
+2016-08-24 21:30:19	netz	and then I get to build the fucker! :D
+2016-08-24 21:30:27	harwiltz	And that ergodox is nuts hahahha
+2016-08-24 21:30:34	netz	infuckingsane man
+2016-08-24 21:30:46	harwiltz	That's the two piece one right?
+2016-08-24 21:30:53	harwiltz	And wish me luck, about to reboot!!!
+2016-08-24 21:31:16	netz	k! and yeah, the newest and greatest one, usb type c connectors man :D
+2016-08-24 21:31:37	harwiltz	Holy shit.
+2016-08-24 21:31:50	harwiltz	That's gonna be awesome. You a redditor by any chance?
+2016-08-24 21:32:07	netz	the ergodox ez is pretty sexy looking, but its just a standard ergodox with a better shell.
+2016-08-24 21:32:15	netz	I am, but I don't post much.
+2016-08-24 21:32:37	harwiltz	Holy shit. My system booted, but I made a typo in my crypttab
+2016-08-24 21:32:48	netz	oh cool, crypted setup eh?
+2016-08-24 21:32:49	harwiltz	Actually, I made a typo in my cryptsetup command
+2016-08-24 21:32:57	harwiltz	I fuckin called my partition rot
+2016-08-24 21:33:15	harwiltz	Is there any way to fix that without restarting?
+2016-08-24 21:33:35	netz	see, I like UEFI for crypted boots, because, you can put the ESP on a removable stick, and crypt /boot with grub2, and the whole thing is crypted :D
+2016-08-24 21:33:49	netz	harwiltz hrm... no, I don't think so, did you get dumped into the rescue shell?
+2016-08-24 21:34:07	harwiltz	Yup
+2016-08-24 21:34:21	harwiltz	I tried opening it but it says can'y use device because it's already mounted
+2016-08-24 21:34:47	harwiltz	Fuck this
+2016-08-24 21:34:56	netz	you could use cryptsetup luksOpen.... mount.... etc and maybe get into a working system, but to be honest it would be best to reboot, get to the grub menu, edit the boot command (I assume you passed something like root=/dev/mapper/rot) and fix it there
+2016-08-24 21:35:09	harwiltz	Oh I can do that?
+2016-08-24 21:35:16	harwiltz	How do I edit the boot command?
+2016-08-24 21:35:35	netz	yeah. so if you're gonna crypto your system, you gotta be thorough. erm, e at the boot menu I think
+2016-08-24 21:35:38	harwiltz	netz Actually I think I initially did cryptsetup open /dev/sda3 rot
+2016-08-24 21:35:47	harwiltz	I'll try
+2016-08-24 21:35:57	netz	but passed root=/dev/mapper/root to the kernel? yeah, bummer.
+2016-08-24 21:36:13	harwiltz	If that's the case, do I have to restart?
+2016-08-24 21:36:26	netz	I'm pretty sure you can fix it permanently once you get booted into the new system, or from a live disk.
+2016-08-24 21:36:45	harwiltz	I can't even reboot
+2016-08-24 21:36:48	netz	erm... yes, prolly, but its fucky. you gotta know exactly what happens during bootup to fix the fuckup
+2016-08-24 21:36:57	harwiltz	Tried pressing the power buttong on my pc too, not working
+2016-08-24 21:37:11	netz	yank it. system is fresh, nothing to lose :D
+2016-08-24 21:37:22	harwiltz	I just held the power button and it worked
+2016-08-24 21:37:25	harwiltz	now for grub
+2016-08-24 21:37:30	netz	yeah, that's good.
+2016-08-24 21:37:38	netz	make sure to move the cursor to prvent timeout
+2016-08-24 21:38:07	harwiltz	Wait, can't I change it from root=/dev/mapper/root to rot here?
+2016-08-24 21:38:15	netz	yep
+2016-08-24 21:38:32	netz	that's what I've been saying :)
+2016-08-24 21:38:46	netz	or did you mean 'restart' as in 'restart installation all over'?
+2016-08-24 21:38:57	harwiltz	restart installation!
+2016-08-24 21:39:06	netz	ah, nah, you don't need to do that.
+2016-08-24 21:39:24	netz	just alter the boot command line, get into the system and fix up what you need, and reboot again, should be golden.
+2016-08-24 21:39:25	harwiltz	It worked!
+2016-08-24 21:39:44	harwiltz	Lol. I forgot to set the root password hahaha
+2016-08-24 21:39:47	netz	now, with this knowledge, you realize you should password protect grub :P
+2016-08-24 21:40:03	harwiltz	Indeed!
+2016-08-24 21:40:05	netz	to prevent any init=/bin/sh sidejacking :P
+2016-08-24 21:40:15	harwiltz	Wait, how can I change the rot to root though?
+2016-08-24 21:40:46	netz	depends... how did you set 'root' ?
+2016-08-24 21:40:52	netz	basically edit that.
+2016-08-24 21:41:02	harwiltz	before I mounted, cryptsetup open /dev/sda3 rot
+2016-08-24 21:41:11	netz	cryptsetup luksOpen will accept any name
+2016-08-24 21:41:18	harwiltz	I know
+2016-08-24 21:41:34	netz	ok, now how did you pass 'rot' to the kernel via grub?
+2016-08-24 21:41:34	harwiltz	Can I do mv /dev/mapper/rot /dev/mapper/root?
+2016-08-24 21:41:40	netz	harwiltz nono
+2016-08-24 21:41:47	netz	may not hurt, but sounds risky.
+2016-08-24 21:41:48	harwiltz	I edited my /etc/default/grub
+2016-08-24 21:42:00	harwiltz	But I want to change everything to root from rot
+2016-08-24 21:42:11	netz	and passed something like cryptdevice=/dev/sda3:root or the like, no?
+2016-08-24 21:42:17	harwiltz	Yuo
+2016-08-24 21:42:21	harwiltz	*Yup
+2016-08-24 21:42:26	netz	well, adjust that
+2016-08-24 21:42:55	harwiltz	I adjusted it to rot. But how will that change the /dev/mapper entry?
+2016-08-24 21:42:59	netz	if I wasn't such a lazy fuck I'd crypto it
+2016-08-24 21:43:10	harwiltz	I adjusted the default/grub for now to say rot, but I want everything to be root
+2016-08-24 21:43:20	netz	well, the /dev/mapper/rot only exists because of what you pass to the kernel
+2016-08-24 21:43:24	harwiltz	Honestly, doing the crypto is pretty easy, unless you fuck up like me
+2016-08-24 21:43:38	netz	yeah, but then I have to decrypt every boot... 
+2016-08-24 21:43:49	netz	not that I boot frequently or anything. but lazy is as lazy does.
+2016-08-24 21:44:28	harwiltz	Do I change from /dev/mapper/rot to /dev/mapper/root too?
+2016-08-24 21:44:30	netz	I will probably crypto my home on my laptop, so that fuckwits stealing my shit can still log in via a guest account and connect to the internet so I can track them :D
+2016-08-24 21:44:48	harwiltz	So cryptdevice=/dev/sda3:root=/dev/mapper/root rw?
+2016-08-24 21:44:57	netz	yeah. basically just make all the configs correct, and regen grub.cfg, should work
+2016-08-24 21:44:59	harwiltz	netz Hahahahaha. That's clever
+2016-08-24 21:45:09	harwiltz	Do I have to run grub-install again?
+2016-08-24 21:45:18	netz	erm, yeah, but I think it needs to be cryptdevice=/dev/sda3:root root=/dev/mapper/root rw
+2016-08-24 21:45:23	netz	nah. just grub-mkconfig
+2016-08-24 21:45:35	netz	also, may I suggest 'rootfs' instead?
+2016-08-24 21:45:49	harwiltz	netz, yeah, you're righyt
+2016-08-24 21:45:49	netz	something a little bit different, to make easy the reading :)
+2016-08-24 21:46:05	netz	also, I suggest something other than /dev/sda3, because that can change :P
+2016-08-24 21:46:55	harwiltz	I'm not actually using /dev/sda3
+2016-08-24 21:46:58	harwiltz	I'm using the partuuid
+2016-08-24 21:47:11	netz	ah thats good.
+2016-08-24 21:47:26	netz	which, by the way, would not work on an mbr system :P
+2016-08-24 21:47:40	harwiltz	It worked!
+2016-08-24 21:47:52	harwiltz	Really? Didn't know it wouldn't work on mbr lol
+2016-08-24 21:48:01	netz	yeah. mbr has less data.
+2016-08-24 21:48:19	harwiltz	I guess it's older?
+2016-08-24 21:48:19	netz	partuuids exist, even when there is no filesystem. uuids exist only with filesystems.
+2016-08-24 21:48:24	netz	yep. hella older.
+2016-08-24 21:48:35	netz	its also only 512b long.
+2016-08-24 21:48:49	netz	gpt is sommat like 32x that
+2016-08-24 21:48:58	harwiltz	Holy shit. I would call that significant
+2016-08-24 21:49:14	netz	nah. 16 kilos is nada.
+2016-08-24 21:49:25	harwiltz	I meant a significant improvement
+2016-08-24 21:49:56	netz	hella better.
+2016-08-24 21:50:18	netz	for one, no limit on primary partitions. by default you can have up to 128 of them on one disk
+2016-08-24 21:50:24	harwiltz	Wow.
+2016-08-24 21:50:46	netz	mbr is limited to 4, unless you use extended/logical partitions, which is black magick fuckery
+2016-08-24 21:51:26	netz	product of its time, but something that should be left in the dust :)
+2016-08-24 21:51:41	harwiltz	Jeus
+2016-08-24 21:51:43	harwiltz	*Jesus
+2016-08-24 21:51:54	harwiltz	Definitely should be left in the dust
+2016-08-24 21:52:02	netz	also mbr disks are limited to 2tb max. 
+2016-08-24 21:52:27	netz	granted, that's a shitload of data, but in today's day and age when rotating disks are cheaper than dirt, not cool.
+2016-08-24 21:52:30	harwiltz	I guess that wouldn't be an issue for me, but still I can see how that's limiting
+2016-08-24 21:52:51	netz	think enterprise. data centers and shit
+2016-08-24 21:52:58	harwiltz	What are the odds that xorg works with my RX480 in the next hour? ;)
+2016-08-24 21:53:09	netz	and ssd are getting better and cheaper each day :D
+2016-08-24 21:53:12	harwiltz	netz Oh yeah, that's true. That's a big issue hahaha
+2016-08-24 21:53:22	netz	I've got four of the bad boys in raid :D
+2016-08-24 21:53:29	harwiltz	Four SSD's?
+2016-08-24 21:53:44	netz	yeah.
+2016-08-24 21:54:10	harwiltz	That's awesome. Sounds like a big pc
+2016-08-24 21:54:10	netz	granted, they are cheapo $50 USD 120gb ssd, but it was a good investment :D
+2016-08-24 21:54:17	netz	CPU~Triple core AMD FX-6300 Six-Core (-HT-MCP-) speed/max~1400/3500 MHz Kernel~4.7.1-1-ARCH x86_64 Up~5 days Mem~3349.5/32130.4MB HDD~2480.5GB(10.7% used) Procs~171 Client~WeeChat 1.5  inxi~2.3.0  
+2016-08-24 21:54:21	harwiltz	Thats still good
+2016-08-24 21:54:23	netz	Graphics:  Card NVIDIA GM107 [GeForce GTX 750 Ti]
+2016-08-24 21:54:25	netz	           Display Server X.Org 1.18.4 driver nvidia Resolution 1920x1080@60.00hz
+2016-08-24 21:54:27	netz	           GLX Renderer GeForce GTX 750 Ti/PCIe/SSE2 GLX Version 4.5.0 NVIDIA 367.35
+2016-08-24 21:54:29	netz	:D
+2016-08-24 21:54:33	harwiltz	Nice
+2016-08-24 21:54:38	harwiltz	Thats awesome
+2016-08-24 21:54:43	netz	self-build, like yourself :)
+2016-08-24 21:55:15	netz	granted, its shit for what I could build for the same price today, but it's served me well for 3 years or so.
+2016-08-24 21:55:17	harwiltz	Sick. Overall I really enjoyed the self build
+2016-08-24 21:55:24	netz	its fun stuff :)
+2016-08-24 21:55:38	harwiltz	Plus I got some ram with leds on sale and it just looks awesome
+2016-08-24 21:55:56	netz	heh, nice.
+2016-08-24 21:56:15	netz	my next build is planned at $1k for a basic bootable system.
+2016-08-24 21:56:23	netz	more will be added later on.
+2016-08-24 21:56:39	harwiltz	Mine went a little over-budget. Probably $1500 CAD hahaha. But the CAD is complete trash now
+2016-08-24 21:56:52	netz	everything is getting trashed.
+2016-08-24 21:57:04	netz	me, I'm gonna get serious about investing in bitcoin.
+2016-08-24 21:57:32	harwiltz	Really? Though it wasn't really rising anymore
+2016-08-24 21:57:52	netz	atm no, but you never know. plus its handy ;)
+2016-08-24 21:58:05	netz	I actually bought my bus pirate with bitcoin.
+2016-08-24 21:58:32	harwiltz	Really? Thats actually pretty cool
+2016-08-24 21:59:01	harwiltz	Holy shit! startx worked first shot!
+2016-08-24 21:59:20	netz	it can only get better. as more fiat currency is printed, existing money will devalue, whereas bitcoin/gold/etc, which have a fixed finite amount, will only be worth more of an increasingly shitty currency.
+2016-08-24 21:59:26	netz	noice!
+2016-08-24 22:00:01	harwiltz	netz That's actually true. Clever thinking
+2016-08-24 22:00:27	harwiltz	One of my friends lost $200 with doge coin lol. But that wasn't as legit as bitcoin obviously
+2016-08-24 22:00:54	netz	eh. it was just as legit, but it didn't have as much backing. just like vhs vs beta, or hddvd vs blueray
+2016-08-24 22:01:02	netz	shit wins, other shit loses. 
+2016-08-24 22:01:19	harwiltz	I guess that's true
+2016-08-24 22:02:01	harwiltz	I can't believe how easily x was to setup. Haven't done it for real in a while, but on a vm its a pain in the ass
+2016-08-24 22:02:18	netz	well, vms are a pain in the ass unto themselves.
+2016-08-24 22:02:30	harwiltz	That's certainly true. Have you ever used gentoo btw?
+2016-08-24 22:02:37	netz	useful pains in the ass, but still pitas
+2016-08-24 22:02:54	netz	nah. I like the idea of it, but compiling literally everything from source is too much of a timesuck.
+2016-08-24 22:03:10	netz	arch gets me as close to the bleeding edge as I like, and has repos! :D
+2016-08-24 22:03:42	netz	maybe if I get a machine that can compile all the shit I care about in a few minutes, sure, but as of right now arch is good enough.
+2016-08-24 22:03:49	harwiltz	I agree. Tried gentoo in a few vm's, it was really cool, but everything took so long. 
+2016-08-24 22:03:50	netz	besides, PKGBUILD is love, PKGBUILD is life
+2016-08-24 22:03:57	harwiltz	That's true
+2016-08-24 22:04:11	harwiltz	Whenever I doubt arch (and that's not often) I think of the PKGBUILDS
+2016-08-24 22:04:16	harwiltz	Do you maintain any packages?
+2016-08-24 22:04:33	netz	repo stuff? nah.
+2016-08-24 22:04:46	harwiltz	AUR stuff, I meant
+2016-08-24 22:04:56	netz	I have some shit on the aur, yeah, but nothing to write home about.
+2016-08-24 22:05:12	harwiltz	Hahaha. Me too, certainly nothing to write home about.
+2016-08-24 22:05:42	netz	man, be it as far from authentic as it is, something is just soo damned good about chinese takeout
+2016-08-24 22:05:56	harwiltz	I agree
+2016-08-24 22:06:17	netz	I mean, I'd never eat delivery sushi, but chinese just works :)
+2016-08-24 22:06:32	harwiltz	My mother started to be gluten free about a year ago, so she can't really eat chinese. But my brother and I went to a chinese place recently and fuckin devoured everything. So good
+2016-08-24 22:07:16	netz	ah, bummer. I'm 'kosher'ish. some of it I don't buy, but for the most part I'll toe the line on what the rabbis say :P
+2016-08-24 22:07:34	harwiltz	You're a jew?
+2016-08-24 22:07:41	netz	eg, no pork or shellfish. yeah, there's other stuff I can't eat, but its not common in 'murica
+2016-08-24 22:08:18	harwiltz	Lol. What are the odds. L'chaim brother!
+2016-08-24 22:08:26	netz	not quite, I suppose. I wasn't born or raised a jew, was never formally converted, but I believe in the torah
+2016-08-24 22:08:30	netz	L'chaim
+2016-08-24 22:09:00	harwiltz	Wow, really? So you're Jewish by choice? I'd say that makes you more Jewish than most
+2016-08-24 22:09:13	netz	granted, I also believe that Yeshua is Mashiach, so I get the feeling I'm not exactly 'Jewish' jewish :P
+2016-08-24 22:09:29	harwiltz	Hahahahaha
+2016-08-24 22:09:42	netz	or maybe I'm even more jewish :P
+2016-08-24 22:10:18	harwiltz	I just tried a reboot, but I'm getting 6 stop jobs running... wtf
+2016-08-24 22:10:32	netz	happens. what jobs?
+2016-08-24 22:10:48	netz	session c2 for user harwiltz ?
+2016-08-24 22:10:51	harwiltz	Looks mostly like crypto stuff but I can't read them
+2016-08-24 22:10:55	harwiltz	That was one of them
+2016-08-24 22:11:13	harwiltz	What does that mean?
+2016-08-24 22:11:56	netz	not sure. has to do with cgroups, I think. did you have something running via sudo at the time?
+2016-08-24 22:12:19	netz	I think the crypto stuff should sort itself out once you get a full, clean boot.
+2016-08-24 22:12:35	harwiltz	Also, whenever I boot, after I enter the key for the root volume, the screen flashes and it says invalid PCI ROM header signature: expecting 0xaa55, got 0xffff
+2016-08-24 22:12:52	harwiltz	Don't think I was running any sudo commands
+2016-08-24 22:12:55	netz	oh, interesting. what pci devices do you have?
+2016-08-24 22:13:13	harwiltz	My RX480
+2016-08-24 22:13:17	harwiltz	It also mentioned amdgpu there
+2016-08-24 22:13:38	netz	hrm. I've not dealt with amd gpus under arch, so I have no experience to draw upon
+2016-08-24 22:13:45	harwiltz	How do I test those glxspheres again?
+2016-08-24 22:13:49	harwiltz	Or is it glxgears
+2016-08-24 22:13:52	netz	glxgears
+2016-08-24 22:14:00	harwiltz	Is that a package name
+2016-08-24 22:14:07	netz	ah, no. mesa-demos
+2016-08-24 22:14:17	harwiltz	Ah, thanks
+2016-08-24 22:14:59	harwiltz	Huh, that seems to be working
+2016-08-24 22:15:16	harwiltz	What kind of fps should I expect from that?
+2016-08-24 22:15:29	netz	see, this is my delimma... nvidia are closed source prop. assholes, but damned if their hw isn't nice
+2016-08-24 22:15:31	harwiltz	Actually nvm, says it should be the same as the monitor refresh rate
+2016-08-24 22:15:37	netz	yep
+2016-08-24 22:15:41	harwiltz	netz Thats why I chose amd ;)
+2016-08-24 22:15:56	netz	and here lately I've been becoming more of a foss purist
+2016-08-24 22:16:05	netz	but, mah vidja games ;-;
+2016-08-24 22:16:46	harwiltz	hahahaha. I just play urban terror. Got 90 fps on my GT 750M on my laptop. I don't actually care too much about the graphics, just wanted to get something in case I will in the future
+2016-08-24 22:17:10	netz	ah. I actually have a 750 ti on this rig
+2016-08-24 22:17:22	harwiltz	That's quite a bit better than a 750M ;)
+2016-08-24 22:17:56	netz	yeah. honestly its overkill; the most modern game I currently (well, not currently, but recently) play is minecraft and lethal league
+2016-08-24 22:18:08	 *	netz has less time for play as his play becomes work
+2016-08-24 22:19:06	 *	netz knows he should vote with his wallet and give nvidia linus' finger
+2016-08-24 22:19:07	harwiltz	Hahahaha
+2016-08-24 22:19:16	harwiltz	I think you'll be fine with the 750ti
+2016-08-24 22:19:27	netz	yeah, but I'm thinking for my next build
+2016-08-24 22:19:28	harwiltz	I occasionally play some ncurses games that I made.
+2016-08-24 22:19:45	netz	nice, hey man, its not all about the gfx and fps right?
+2016-08-24 22:19:46	harwiltz	Hopefully the rx480 will handle it lol
+2016-08-24 22:19:53	harwiltz	that's right!
+2016-08-24 22:19:57	netz	shit, super mario is one of the greatest ever.
+2016-08-24 22:20:02	netz	and nethack
+2016-08-24 22:20:14	harwiltz	That's true
+2016-08-24 22:20:15	netz	and all these other oldie goldie moldie games :)
+2016-08-24 22:20:19	harwiltz	But never heard of nethack
+2016-08-24 22:20:31	netz	text based dungeon crawler.
+2016-08-24 22:20:41	netz	its kinda like the original dark souls :P
+2016-08-24 22:21:06	harwiltz	Wow. That sounds awesome
+2016-08-24 22:21:36	netz	it is, in its own way. you will die a million times though ;)
+2016-08-24 22:21:41	harwiltz	Hahahaa
+2016-08-24 22:21:45	harwiltz	Sounds like Oregon Trail
+2016-08-24 22:21:58	netz	shoudn't talk shit about Terry
+2016-08-24 22:22:04	harwiltz	Terry?
+2016-08-24 22:22:15	netz	yeah man, you die of dissen' Terry
+2016-08-24 22:22:24	harwiltz	In nethack?
+2016-08-24 22:22:29	harwiltz	Oh
+2016-08-24 22:22:30	harwiltz	Hahahaha
+2016-08-24 22:22:33	harwiltz	I get it
+2016-08-24 22:22:34	netz	XD
+2016-08-24 22:22:49	harwiltz	Have you ever seen penguinz0 play oregon trail? 
+2016-08-24 22:23:16	netz	nope, lately I've been watching a lot of mario maker kaizo shit. contemplating buying a wii u for that alone
+2016-08-24 22:23:37	harwiltz	You should definitely watch the penguinz0 gameplay of oregon trail. It's a classic
+2016-08-24 22:23:47	netz	though, if I do that, I prolly will never get anything achieved again :P
+2016-08-24 22:24:10	netz	I'll put it on my list
+2016-08-24 22:24:47	harwiltz	Sorry to bug you again... But for my keyboard I was told to download firmware, but it comes as an exe.
+2016-08-24 22:24:56	netz	ah, lemme see it.
+2016-08-24 22:25:00	harwiltz	Do I seriously need to setup wine to get this firmware working?
+2016-08-24 22:25:06	netz	I actually have experience with fucky keyboards :)
+2016-08-24 22:25:08	harwiltz	Thanks. I'll post the link
+2016-08-24 22:25:19	netz	no, don't do that. you never want to do hardware-level shit in wine.
+2016-08-24 22:25:28	harwiltz	http://gaming.coolermaster.com/en/products/keyboards/quickfire-xti/
+2016-08-24 22:25:37	harwiltz	The firmware is in the download tab
+2016-08-24 22:25:46	harwiltz	I unzipped it and now I have an exe
+2016-08-24 22:26:13	netz	that's a pretty sexy keyboard, for being so standard :)
+2016-08-24 22:26:18	harwiltz	:D
+2016-08-24 22:26:54	harwiltz	I can't find the drivers in the AUR though
+2016-08-24 22:27:15	netz	eg, its nothing freaky like this https://ultimatehackingkeyboard.com
+2016-08-24 22:27:43	harwiltz	Hahaha
+2016-08-24 22:27:44	harwiltz	Wtf
+2016-08-24 22:28:14	harwiltz	You think I can do anything about that exe though? 
+2016-08-24 22:28:23	netz	does the keyboard 'work' as of right now?
+2016-08-24 22:28:45	netz	even without all the bells and whistles?
+2016-08-24 22:28:50	harwiltz	Yeah, it seems to work. Not sure if it has all the led effects though ;)
+2016-08-24 22:29:44	netz	because, there are a lot of third party programs that can do the same things... I was hoping to find some data I could extract from the exe, but no love atm. gonna fiddle more.
+2016-08-24 22:30:19	harwiltz	Oh ok. I really appreciate it, but you really don't have to worry about it. It'll be ok for now
+2016-08-24 22:31:28	netz	hrm... gimme da lsusb of the keyboard. I love a good challenge.
+2016-08-24 22:31:50	harwiltz	netz ...If you insist!
+2016-08-24 22:32:04	netz	methinks it maybe dfu-able
+2016-08-24 22:32:16	harwiltz	I don't know what to gather from this though
+2016-08-24 22:32:29	harwiltz	Not sure which one is the keyboard
+2016-08-24 22:32:38	netz	clbin it or sommat.
+2016-08-24 22:32:51	harwiltz	What does that mean?
+2016-08-24 22:33:07	netz	I think, if I can present it a fake keyboard via uhid/uinput, I can trick it into extracting itself
+2016-08-24 22:33:20	harwiltz	Hahaha
+2016-08-24 22:33:21	netz	pacman -S pbpst; lsusb | pbpst -S
+2016-08-24 22:34:14	harwiltz	https://ptpb.pw/Lq9I
+2016-08-24 22:34:18	netz	truth be told I've done a lot of work with dealing with windows-only driver shit in linux
+2016-08-24 22:34:48	netz	like, my keyboard. there is a userspace driver for it I've helped with a bit on github
+2016-08-24 22:35:04	harwiltz	That's awesome. Linux community really needs that
+2016-08-24 22:35:08	netz	Bus 001 Device 003: ID 2516:002e
+2016-08-24 22:35:14	netz	this is is, I guarantee it.
+2016-08-24 22:35:16	harwiltz	How do you know that's it?
+2016-08-24 22:35:28	netz	you only have two devices plugged in right now, no?
+2016-08-24 22:35:35	harwiltz	Yup
+2016-08-24 22:35:41	netz	via usb, at least.
+2016-08-24 22:35:58	harwiltz	Yup, keyboard and mouse
+2016-08-24 22:35:58	netz	yeah. the lack of a device name just means its not in the usb.id database yet
+2016-08-24 22:36:08	harwiltz	Oh, ok
+2016-08-24 22:36:10	netz	and those linux devices are just virtual ones
+2016-08-24 22:36:20	harwiltz	Ah ok
+2016-08-24 22:36:26	netz	and I know unifying recievers fairly well from experience :P
+2016-08-24 22:36:37	harwiltz	;)
+2016-08-24 22:37:07	harwiltz	But what are you trying to do here? You said you are trying to extract itself, but what does that really mean?
+2016-08-24 22:37:55	netz	well, like I said, I think its a dfu firmware
+2016-08-24 22:38:22	harwiltz	Oh, ok
+2016-08-24 22:38:28	netz	dfu is a standard protocol for upgrading usb devices
+2016-08-24 22:38:39	harwiltz	Ah, I see
+2016-08-24 22:39:06	netz	My thought is, the exe you got, it checks for the existance of the correct usb device, extracts the dfu firmware somewhere, and then uses dfu to update it
+2016-08-24 22:39:17	netz	this is the usual case for exe bios updaters
+2016-08-24 22:39:22	harwiltz	Oh wow, that's pretty clever
+2016-08-24 22:39:44	netz	it is, but I'd appreciate it if they just had the bare dfu firmware.
+2016-08-24 22:39:54	harwiltz	So would I :)
+2016-08-24 22:40:08	netz	so, I'ma pop this baby into ida, and see if I can't trick it.
+2016-08-24 22:40:16	netz	now that I know what its looking for
+2016-08-24 22:40:26	harwiltz	netz Jeez, you gotta do some assembly here or something?
+2016-08-24 22:40:35	netz	maybe.
+2016-08-24 22:40:55	netz	I'm more familiar with ida shit than faking usb devices, so I may as well go with that.
+2016-08-24 22:41:02	harwiltz	Hahahaha
+2016-08-24 22:41:33	netz	but, once I get it, you can most likely install it via the dfu-utils. in fact, do me a favor
+2016-08-24 22:41:40	harwiltz	Yup
+2016-08-24 22:41:55	netz	install the package dfu-util, and run dfu-util -l
+2016-08-24 22:42:01	harwiltz	Just a sec
+2016-08-24 22:42:42	harwiltz	What do you want to see from that?
+2016-08-24 22:42:48	harwiltz	It says dfu-util 0.9
+2016-08-24 22:43:06	harwiltz	Then some copyright info
+2016-08-24 22:43:26	netz	that was dfu-util -`lamed' if your font is messing with it.
+2016-08-24 22:43:41	harwiltz	How do I do a 'lamed'?
+2016-08-24 22:43:56	netz	not literally. I just mean the letter L, not the number 1
+2016-08-24 22:44:03	harwiltz	I did a letter l
+2016-08-24 22:44:09	netz	k, some fonts are fucky.
+2016-08-24 22:44:11	harwiltz	Lowercase ell
+2016-08-24 22:44:20	netz	ok, try it again with sudo
+2016-08-24 22:44:24	harwiltz	Ok
+2016-08-24 22:44:53	netz	Found Runtime: [0b05:17cb] ver=0112, devnum=5, cfg=1, intf=3, path="6-1", alt=0, name="UNKNOWN", serial="5CF37069F229" << I'm hoping for something like this
+2016-08-24 22:45:08	harwiltz	Nope :( Same as before
+2016-08-24 22:45:47	netz	hrm.
+2016-08-24 22:45:58	netz	and apparently standards are worth jack shit.
+2016-08-24 22:46:04	harwiltz	Hahaha
+2016-08-24 22:47:05	netz	oh hey! looks like its c# code
+2016-08-24 22:47:23	harwiltz	Hmm, I wasn't expecting that. How do you know?
+2016-08-24 22:47:35	harwiltz	Brb, just getting a snack
+2016-08-24 22:47:52	netz	k
+2016-08-24 22:50:00	harwiltz	Ok, I'm back. Hows it going?
+2016-08-24 22:50:38	netz	I'm not 100% sure its c#, but in general c/c++ binaries don't have this many nice looking classes/methods when popped into a disassembler
+2016-08-24 22:50:56	harwiltz	Oh, ok. That's pretty interesting
+2016-08-24 22:51:13	netz	c# is kinda like java in a lot of ways.
+2016-08-24 22:51:46	netz	with java, you can pretty trivially decompile (hence minecraft modding) because it doesn't compile down to actual binary shit
+2016-08-24 22:51:49	harwiltz	Yeah, that's what I've heard
+2016-08-24 22:51:57	netz	well, everything on a computer is binary shit, but you get my meaning.
+2016-08-24 22:52:03	harwiltz	Yup
+2016-08-24 22:52:16	netz	it keeps enough info that you can turn the hamburger into a semblance of the cow
+2016-08-24 22:52:23	netz	c# is similar.
+2016-08-24 22:52:56	netz	hrm.
+2016-08-24 22:53:05	netz	shit... how do you mount the debugfs again...
+2016-08-24 22:53:24	harwiltz	Sorry, I have no clue hahaha
+2016-08-24 22:53:37	netz	mount -t debugfs none /sys/kernel/debug
+2016-08-24 22:53:56	netz	^ very useful for debugging usb/hid devices, this.
+2016-08-24 22:54:30	harwiltz	Hmm. Never heard of that!
+2016-08-24 22:54:44	netz	now, after that, you should be able to cd /sys/kernel/debug/hid/
+2016-08-24 22:54:48	netz	(need root)
+2016-08-24 22:54:56	netz	like, real root. sudo su or sommat.
+2016-08-24 22:55:04	harwiltz	You want me to do this?
+2016-08-24 22:55:17	netz	sure. its not dangerous, and its nifty knowledge :)
+2016-08-24 22:55:38	netz	if you ls in this directory, it will have one more directory for each hid device
+2016-08-24 22:55:39	harwiltz	Oh ok haha. Thought you needed me to for your hack. I'll try though
+2016-08-24 22:56:10	netz	generally the format is 0003:VID:PID:XXXX where vid is the usb vendor id and pid is the usb product id
+2016-08-24 22:56:38	harwiltz	Why would most people need to do this?
+2016-08-24 22:57:02	netz	most people? not needed. but if you're reversing an unknown device, lots of valuable info here.
+2016-08-24 22:57:48	netz	you should see one named 0003:2516:002E.XXXX, and maybe two or more of those, all the same but the XXXX
+2016-08-24 22:58:33	netz	XXXX is a number that will increment each time you unplug/replug a device, and should never be counted on
+2016-08-24 22:58:54	harwiltz	Hahaha. Why would that ever be useful though?
+2016-08-24 22:58:56	netz	if you cd into one of these folders, it will have two files, events and rdesc
+2016-08-24 22:59:23	netz	oh, well for example rdesc contains data detailing how the usb device describes itself
+2016-08-24 22:59:35	netz	eg, cat rdesc
+2016-08-24 22:59:39	netz	or less rdesc
+2016-08-24 23:00:08	netz	events will emit keypresses and such when cat'd, so its useful for dealing with devices that do stupid custom shit
+2016-08-24 23:00:28	netz	reading that, you can figure out how the device talks, and engineer a driver from that data :)
+2016-08-24 23:00:32	harwiltz	No, why would the directory be named based on how many times it was reconnected?
+2016-08-24 23:00:43	netz	ah, I dunno. 
+2016-08-24 23:00:47	netz	:P
+2016-08-24 23:00:54	harwiltz	Hahaha. Ok. This is interesting stuff though
+2016-08-24 23:00:56	netz	some kernel stuff, prolly.
+2016-08-24 23:01:13	harwiltz	That's true
+2016-08-24 23:01:59	netz	so, what I'ma do is try and find where it looks for 2516:002e in windows-speak and override it.
+2016-08-24 23:02:24	harwiltz	Ah, I see. That's actually really cool
+2016-08-24 23:03:02	netz	and found one instance of it :)
+2016-08-24 23:03:11	netz	prolly more, but lets see what's here :)
+2016-08-24 23:04:00	harwiltz	Awesome!
+2016-08-24 23:05:45	netz	ok, patched it to look for a device I actually have and have no worry about breakage
+2016-08-24 23:06:00	harwiltz	Nice
+2016-08-24 23:06:18	netz	ok, not enough.
+2016-08-24 23:06:22	netz	lessee...
+2016-08-24 23:06:55	netz	lsusb -vvv -d 2516:002e | pbpst -S
+2016-08-24 23:07:23	netz	this pipes a very verbose lsusb for just the keyboard into pbpst
+2016-08-24 23:07:34	harwiltz	Ok, just a sec
+2016-08-24 23:07:39	netz	in other words: MOAR DATA
+2016-08-24 23:08:34	harwiltz	https://ptpb.pw/IR6k
+2016-08-24 23:09:15	harwiltz	It says couldn't open device, some information will be missing though
+2016-08-24 23:09:39	netz	yeah, that's expected.
+2016-08-24 23:09:52	harwiltz	Ok nice
+2016-08-24 23:09:53	netz	the missing data is in that rdesc file I mentioned.
+2016-08-24 23:10:25	harwiltz	Nice
+2016-08-24 23:10:29	netz	jesus shit. this thing has three interfaces
+2016-08-24 23:13:05	netz	hrm.
+2016-08-24 23:13:19	harwiltz	Hahahaha
+2016-08-24 23:13:28	netz	do you have access to a windows machine at all? yeah, its kinda fucky to use windows when you want linux, but sometimes it can aid things.
+2016-08-24 23:13:41	harwiltz	Sorry but I don't :(
+2016-08-24 23:13:45	netz	hrm.
+2016-08-24 23:14:13	harwiltz	But seriously, I really appreciate all this. If you it's too much work, really don't feel obligated to do this lol
+2016-08-24 23:14:24	netz	eh, its fun :)
+2016-08-24 23:14:32	harwiltz	Alrighty!
+2016-08-24 23:14:48	netz	here, one thing you can do for me that would be helpful later. do you have a working knowledge of git?
+2016-08-24 23:15:29	harwiltz	Define working knowledge ;) I know how to clone and push and stuff
+2016-08-24 23:16:07	netz	good enough, lol.
+2016-08-24 23:17:39	netz	https://github.com/GSeriesDev/; there is a repo there, forget the name, it has a file CONTRIBUTING.md; this has instructions for providing data about an unknown device for the sake of reverse engineering
+2016-08-24 23:17:56	netz	clone, follow instructions (as much as you can), pr :)
+2016-08-24 23:18:11	harwiltz	What does pr mean?
+2016-08-24 23:18:44	netz	pull request
+2016-08-24 23:19:03	netz	if you don't have a github account, you can just git diff it and send me the patch.
+2016-08-24 23:19:38	harwiltz	I have a github account, not sure I understand what you want me to do though :S
+2016-08-24 23:19:50	harwiltz	Lemme follow the instructions first, then maybe it'll be more clear
+2016-08-24 23:19:59	netz	the file in the repo has full instructions.
+2016-08-24 23:20:26	netz	I don't know if you feel like fucking about with a windows vm or not, so you can chose to ignore that part.
+2016-08-24 23:21:13	harwiltz	Yeah not now haha
+2016-08-24 23:21:48	netz	at this moment I'm unsure about the firmware exe. perhaps it pulls the data from a remote server. I'll do some more fiddling and see.
+2016-08-24 23:27:12	harwiltz	netz I'm following the instructions, but after mounting debugfs I can't get to that hid directory
+2016-08-24 23:27:20	netz	need root
+2016-08-24 23:27:28	harwiltz	Righ
+2016-08-24 23:27:30	harwiltz	*Right
+2016-08-24 23:29:02	harwiltz	My keyboard has three directories
+2016-08-24 23:29:15	netz	yep, one for each interface
+2016-08-24 23:29:31	netz	there is an example with multiple dirs on that repo
+2016-08-24 23:29:39	harwiltz	Yup, got it
+2016-08-24 23:30:53	netz	whelp, I went through the entire output of strings on the exe, nothing jumped out at me.
+2016-08-24 23:31:18	netz	I'll say this: this will not be something we get done in one sitting.
+2016-08-24 23:31:28	harwiltz	Hahahaha
+2016-08-24 23:31:29	harwiltz	Alright
+2016-08-24 23:32:04	netz	in fact, short of you picking up all the info on hid/usb device reversing I have (and more), you alone won't likely be able to do it.
+2016-08-24 23:32:41	netz	because, from what I read about the kb, its far more complicated than any of the logitech gseries keyboards.
+2016-08-24 23:32:45	harwiltz	Jesus. Honestly, at this point I think I'll just leave it as is
+2016-08-24 23:32:54	netz	prolly for the best, for now.
+2016-08-24 23:33:08	harwiltz	Yup. Thanks a lot though anyway. Really appreciate it.
+2016-08-24 23:33:12	netz	unless you're slightly obsessive like me, its prolly not worth the effort.
+2016-08-24 23:33:15	harwiltz	That was exciting nonetheles
+2016-08-24 23:33:58	netz	feel free to hit me up. you can use memoserv to message me if I'm offline on irc
+2016-08-24 23:34:07	harwiltz	It may bother me, but for now it's fine. I've had a long day haha. I'll look through the interwebs to see if maybe someone found a fix, though after seeing what you've done that's probably unlikely
+2016-08-24 23:34:24	harwiltz	netz Thanks so much. Seriously, I really appreciate all this
+2016-08-24 23:34:30	netz	iffn' you ever do grab ahold of a win machine or vm and feel like some serious debugging lemme know
+2016-08-24 23:34:38	netz	np. 
+2016-08-24 23:34:54	netz	idk, it looks pretty new, so there may not be much done on it yet.
+2016-08-24 23:34:58	harwiltz	I may take you up on that. Reverse engineering has always seemed like a lot of fun
+2016-08-24 23:35:10	harwiltz	You're probably right
+2016-08-24 23:35:11	netz	yep, it is indeed.
+2016-08-24 23:35:24	netz	hella headache, but fun.
+2016-08-24 23:35:36	harwiltz	I think I'm gonna get to bed now ;) You've been a great help though. 
+2016-08-24 23:35:46	netz	sure man. later o/
+2016-08-24 23:36:23	harwiltz	Indeed! 

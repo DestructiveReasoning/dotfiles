@@ -1,0 +1,372 @@
+2016-06-04 21:44:10	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #android-dev
+2016-06-04 21:44:10	(●)	Topic for #android-dev is "Android application development | Android N Preview released http://goo.gl/QnsKsv | Official docs at http://d.android.com/ | Root/custom ROMs, head to #android-root | No bots, and no advertising please, jobs or otherwise | Source at source.android.com | http://imgur.com/jacoj"
+2016-06-04 21:44:10	(●)	Topic set by kroot (~locutus@of.the-b.org) on Wed, 09 Mar 2016 22:14:25
+2016-06-04 21:44:10	(●)	Channel #android-dev: 377 nicks (1 op, 0 voices, 376 normals)
+2016-06-04 21:44:12	(●)	Channel created on Mon, 20 Oct 2008 23:03:40
+2016-06-04 21:44:17	grekkos	no problem
+2016-06-04 21:45:01	grekkos	that will actually run through the app, so you'd need a device connected or an emulator which isn't as fast as a robolectric test but it's closer to real user interaction and it can check ui elements have the right content and so on
+2016-06-04 21:45:44	harwiltz	Hello. I'm trying to create a live wallpaper, but I'm getting a failed binder transaction error. I understand that has to do with passing too much data or something, which I believe arises from the images I'm using in the wallpaper. So I guess I should somehow store those images in the phones storage and load them from there. Can someone explain how to do that?
+2016-06-04 21:46:11	-->	Leeds (~Leeds@n112118177182.netvigator.com) has joined #android-dev
+2016-06-04 21:47:00	Anthaas	Hypothetical here.
+2016-06-04 21:47:32	Anthaas	A service needs the Activity to not change for it to be able to send the callback, right? So could/should I change the callback activity in onPause() of the original callback before it changes?
+2016-06-04 21:48:00	<--	SwiftMatt (~Objective@162.242.95.135) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2016-06-04 21:49:49	b1ackcat	anthaas, it's been awhile since I've used services, but iirc you should set the callback while binding then remove the callback when unbinding (unbinding in onpause/stop/destroy whatever works for your use case)
+2016-06-04 21:50:06	harwiltz	Hmm, actually I'm not entirely sure what's causing this failed binder transaction. If I'm doing a live wallpaper, I'm never using any Intents or Bundles. I just refer to a GLEngine. How can I bypass this error?
+2016-06-04 21:50:33	Anthaas	b1ackcat, Interesting, so I can't foretell the service where it should redirect to?
+2016-06-04 21:50:54	Anthaas	I guess this would be the case if my activity hasn't been created yet, but the previous activity has paused, when the service finishes.
+2016-06-04 21:52:54	harwiltz	Also another weird thing is that the combined size of the images I'm using is < 1mb
+2016-06-04 21:54:14	<--	AtumT (~IRC@177.205.96.217.dynamic.adsl.gvt.net.br) has quit (Remote host closed the connection)
+2016-06-04 21:54:45	-->	ced117 (~ced117@opensuse/member/ced117) has joined #android-dev
+2016-06-04 21:56:46	grekkos	I need some UI advice... I'm trying to dynamically generate some ui programmatically to create a set of like 2-3 views which a certain layout, then I need to combine all of these views and place them all next to each other and wrap lines and such
+2016-06-04 21:56:50	grekkos	anyone have any ideas?
+2016-06-04 21:57:07	<--	crankslider (~slidercra@unaffiliated/slidercrank) has quit (Ping timeout: 244 seconds)
+2016-06-04 21:58:17	grekkos	wait maybe some guy already wrote this since the last time I chcked
+2016-06-04 21:59:02	grekkos	let me try this first :D
+2016-06-04 22:01:35	harwiltz	Also, I'm using the same renderer in an activity and a service (live wallpaper), and the activity works perfectly. I'm just getting the failed bind transaction on the live wallpaper
+2016-06-04 22:01:35	<--	^v (~v^@c-68-41-215-101.hsd1.mi.comcast.net) has quit (Ping timeout: 252 seconds)
+2016-06-04 22:06:26	<--	Adyrhan (~Adyrhan@196.red-81-39-100.dynamicip.rima-tde.net) has quit (Ping timeout: 244 seconds)
+2016-06-04 22:06:42	-->	kuldeep (~kuldeepdh@unaffiliated/kuldeepdhaka) has joined #android-dev
+2016-06-04 22:09:37	-->	perlsyntax (~perlsynta@unaffiliated/perlsyntax) has joined #android-dev
+2016-06-04 22:09:52	<--	perlsyntax (~perlsynta@unaffiliated/perlsyntax) has left #android-dev
+2016-06-04 22:10:02	<--	weaksauce (~weaksauce@son.alphabio.com) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2016-06-04 22:11:39	<--	rubycrab (~redcrusta@unaffiliated/rubycrab) has quit (Quit: leaving)
+2016-06-04 22:13:30	-->	joshkovach (~JoshKovac@99-62-252-161.lightspeed.gdrpmi.sbcglobal.net) has joined #android-dev
+2016-06-04 22:15:45	<--	g00s (~g00s@unaffiliated/g00s) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2016-06-04 22:16:45	<--	saschpe (~saschpe@opensuse/member/saschpe) has quit (Ping timeout: 244 seconds)
+2016-06-04 22:17:44	-->	rubycrab (~redcrusta@unaffiliated/rubycrab) has joined #android-dev
+2016-06-04 22:18:56	-->	saschpe (~saschpe@opensuse/member/saschpe) has joined #android-dev
+2016-06-04 22:21:56	<--	bitkiller (~bitkiller@191.179.224.38) has quit (Quit: Life)
+2016-06-04 22:22:15	alphamule	That talk about crashing...  Is there some tool in the ADK that detects who the last few screens or events were, right before an App becomes unresponsive or is forced to exit?
+2016-06-04 22:22:34	alphamule	Some kind of event log/spy?
+2016-06-04 22:23:06	alphamule	<-- Is coming from (old) Windows world.
+2016-06-04 22:23:35	alphamule	Idea being that you would know how you made it crash.
+2016-06-04 22:23:36	alphamule	:)
+2016-06-04 22:24:31	-->	Sixmsj (~Sixmsj@cpe-172-248-206-161.socal.res.rr.com) has joined #android-dev
+2016-06-04 22:25:33	<--	poleprogger (~mj@dslb-188-110-055-005.188.110.pools.vodafone-ip.de) has quit (Ping timeout: 244 seconds)
+2016-06-04 22:29:37	<--	grekkos (~gmcquilla@64.187.160.122) has quit (Ping timeout: 246 seconds)
+2016-06-04 22:30:35	<--	orbyt_ (446b4c73@gateway/web/cgi-irc/kiwiirc.com/ip.68.107.76.115) has quit (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+2016-06-04 22:31:37	-->	molikto (molikto@2400:8900::f03c:91ff:fe6e:74ae) has joined #android-dev
+2016-06-04 22:31:54	Anthaas	Do you ever bang your head on the desk and scream inside yourself "wtf is null here?!?"
+2016-06-04 22:34:13	Anthaas	My JobService is trying to run getSystemService on a null object?
+2016-06-04 22:34:17	Anthaas	Itself is null?
+2016-06-04 22:34:19	Anthaas	That cannot be.
+2016-06-04 22:35:06	Zharf	nope, I never do that
+2016-06-04 22:35:06	<--	fels (~fels@213.137.8.154) has quit (Remote host closed the connection)
+2016-06-04 22:35:12	Anthaas	I want to a lot.
+2016-06-04 22:35:17	Zharf	NPEs are simple
+2016-06-04 22:35:27	Anthaas	Yeah, but this one is throwing me for some reason.
+2016-06-04 22:35:36	-->	skweek (~skweek@68-200-183-216.res.bhn.net) has joined #android-dev
+2016-06-04 22:35:42	Anthaas	getSystemService belongs to the Service class, right?
+2016-06-04 22:36:11	Zharf	context
+2016-06-04 22:36:26	Anthaas	Ok, but Service extends Context, yes?
+2016-06-04 22:36:32	Zharf	yep
+2016-06-04 22:36:55	Anthaas	Right, within this JobService subclass, I am calling getSystemService(...)
+2016-06-04 22:37:06	Anthaas	But am apparently doing it on a null object reference.
+2016-06-04 22:38:40	<--	dunkel2 (~dunkel2@189.153.144.12) has quit
+2016-06-04 22:39:14	Anthaas	It would seem likely that my Context is null...:S
+2016-06-04 22:40:03	-->	zoraj (~zoraj@41.136.69.47) has joined #android-dev
+2016-06-04 22:40:09	-->	orbyt_ (446b4c73@gateway/web/cgi-irc/kiwiirc.com/ip.68.107.76.115) has joined #android-dev
+2016-06-04 22:40:16	Anthaas	Passing it the context...
+2016-06-04 22:40:19	Anthaas	Seems to work.
+2016-06-04 22:42:00	-->	weaksauce (~weaksauce@ip72-194-65-47.oc.oc.cox.net) has joined #android-dev
+2016-06-04 22:45:02	<--	zoraj (~zoraj@41.136.69.47) has quit (Ping timeout: 260 seconds)
+2016-06-04 22:47:37	Anthaas	Quite literally this line that is failing: JobScheduler scheduler =
+2016-06-04 22:47:37	Anthaas	 (JobScheduler)getSystemService(Context.JOB_SCHEDULER_SERVICE);
+2016-06-04 22:47:46	Anthaas	Sorry, was meant to remove the extra line.
+2016-06-04 22:49:11	-->	SwiftMatt (~Objective@162.242.94.236) has joined #android-dev
+2016-06-04 22:51:02	-->	CedricBeust (~cbeust@unaffiliated/cbeust) has joined #android-dev
+2016-06-04 22:51:02	(●)	Mode #android-dev [+o CedricBeust] by ChanServ
+2016-06-04 22:51:27	-->	zodiak (~zodiak@dhcp-60-a4-4c-a0-df-90.cpe.ezlink.ca) has joined #android-dev
+2016-06-04 22:52:41	Anthaas	Ok, so I know what is happening, just not why.
+2016-06-04 22:53:26	<--	bankai_ (~bankai@unaffiliated/bankai/x-6544441) has quit (Quit: leaving)
+2016-06-04 22:53:52	<--	DLSteve (~DLSteve@c-73-239-22-33.hsd1.wa.comcast.net) has quit (Quit: All rise, the honorable DLSteve has left the channel.)
+2016-06-04 22:53:56	-->	bankai_ (~bankai@unaffiliated/bankai/x-6544441) has joined #android-dev
+2016-06-04 22:54:22	Anthaas	https://gist.github.com/anonymous/50b55356222746d72b0945f19820d36a
+2016-06-04 22:54:25	Anthaas	Could someone help me?
+2016-06-04 22:54:57	<--	dpyro (~dpyro@173.57.222.165) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-06-04 22:55:09	Zharf	context is null in constructor
+2016-06-04 22:55:29	Zharf	if you were doing that in there
+2016-06-04 22:56:03	Anthaas	It uses mContext fine.
+2016-06-04 22:56:35	Anthaas	The problem now lies with mCallBack
+2016-06-04 22:56:51	Anthaas	In my activity which launches this service, I call mService.setUiCallback(this)
+2016-06-04 22:57:15	Anthaas	The activity implements DataServiceInterface (which has onReceiveStartJob() and onReceiveStopJob())
+2016-06-04 22:57:49	Anthaas	It is the callback of onReceiveStartJob() that is throwing NPE
+2016-06-04 22:58:16	orbyt_	guys, weird issue. Does this look weird to anyone else?: http://prntscr.com/bchen6
+2016-06-04 22:59:23	Zharf	Anthaas, timing issues, the job starts before you call the callback thing
+2016-06-04 22:59:57	Anthaas	I am calling setUiCallback before even creating the intent which starts the service...
+2016-06-04 23:00:09	orbyt_	http://prntscr.com/bchf3l
+2016-06-04 23:00:18	Zharf	what
+2016-06-04 23:00:20	orbyt_	first log.d is executed
+2016-06-04 23:00:22	orbyt_	second is not
+2016-06-04 23:00:33	Zharf	you seem to be very confused about how services work
+2016-06-04 23:00:56	Anthaas	Im calling it on the Service object rather than the service itself.
+2016-06-04 23:01:10	Anthaas	i.e. Im setting where my service should currently callback to before the service is launched.
+2016-06-04 23:01:20	Anthaas	When I have a context change, I can change this.
+2016-06-04 23:01:36	Zharf	useless talk without code
+2016-06-04 23:01:43	Zharf	you're doingit wrong
+2016-06-04 23:03:59	Anthaas	I think I know what Im doing wrong.
+2016-06-04 23:04:18	<--	Sixmsj (~Sixmsj@cpe-172-248-206-161.socal.res.rr.com) has quit (Ping timeout: 260 seconds)
+2016-06-04 23:09:16	-->	daniloslv (~Danilo@189.6.16.96) has joined #android-dev
+2016-06-04 23:12:05	-->	^v (~v^@c-68-41-215-101.hsd1.mi.comcast.net) has joined #android-dev
+2016-06-04 23:13:38	<--	daniloslv (~Danilo@189.6.16.96) has quit (Ping timeout: 252 seconds)
+2016-06-04 23:14:41	-->	CheckDavid (uid14990@gateway/web/irccloud.com/x-akufeyxilnxuvluu) has joined #android-dev
+2016-06-05 12:45:43	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #android-dev
+2016-06-05 12:45:43	(●)	Topic for #android-dev is "Android application development | Android N Preview released http://goo.gl/QnsKsv | Official docs at http://d.android.com/ | Root/custom ROMs, head to #android-root | No bots, and no advertising please, jobs or otherwise | Source at source.android.com | http://imgur.com/jacoj"
+2016-06-05 12:45:43	(●)	Topic set by kroot (~locutus@of.the-b.org) on Wed, 09 Mar 2016 22:14:25
+2016-06-05 12:45:43	(●)	Channel #android-dev: 361 nicks (3 ops, 0 voices, 358 normals)
+2016-06-05 12:45:45	(●)	Channel created on Mon, 20 Oct 2008 23:03:40
+2016-06-05 12:46:12	harwiltz	Hey all. Anyone ever get the Failed Binder Transaction error when trying to make a live wallpaper?
+2016-06-05 12:47:16	Napalm|afk	harwiltz: theres lots of reason for that.. can you pastebin the entire exception
+2016-06-05 12:47:38	-->	Transfusion (transfusio@trivialand/master/transfusion) has joined #android-dev
+2016-06-05 12:47:43	(●)	Napalm|afk is now known as Napalm
+2016-06-05 12:48:12	harwiltz	Napalm|afk: Sure, I just booted my computer so I gotta load up android studio. If it helps for now, it says something about exceeding 8mb, but the combined size of my image resources is less than 1mb...
+2016-06-05 12:49:06	Napalm	harwiltz: your images resources are compressed Bitmap's are not. so your image resources could easily exceed 8MB
+2016-06-05 12:49:31	harwiltz	Oh.... That makes a lot of sense. Do you know of any way to get around that?
+2016-06-05 12:49:51	Napalm	why on earth are you transacting so much data
+2016-06-05 12:50:04	harwiltz	Napalm: I'm not, as far as I'm concerned
+2016-06-05 12:50:06	Napalm	sounds to me like your doing it wrong
+2016-06-05 12:50:11	harwiltz	I'm just drawing a few images
+2016-06-05 12:50:21	-->	DeadSix27 (~deadsix@unaffiliated/deadsix17) has joined #android-dev
+2016-06-05 12:50:33	Napalm	and how are you doing that with your live wallpaper
+2016-06-05 12:50:39	harwiltz	Napalm: That's possible, but I used the exact same renderer class for a regular app rather than a live wallpaper, and there was no issue
+2016-06-05 12:50:59	Napalm	if i remember correctly you have a window surface you render too. so what are you transacting?
+2016-06-05 12:51:32	harwiltz	Napalm: I reference a custom WallpaperService.Engine that I wrote, which invokes a custom GLRenderer, which instantiates a few textures (I'm using opengl) by creating Bitmaps
+2016-06-05 12:51:38	<--	nunumint (~nunu@p5DC8EF36.dip0.t-ipconnect.de) has quit (Quit: Leaving)
+2016-06-05 12:52:22	Napalm	Sounds to me like your doing something wrong
+2016-06-05 12:52:36	Napalm	pastebin some code. and then we can see
+2016-06-05 12:53:09	harwiltz	Napalm: Sounds good, do you want to see my GLRenderer class? 
+2016-06-05 12:53:17	Napalm	would help
+2016-06-05 12:53:29	harwiltz	Napalm: Ok, thanks a lot.
+2016-06-05 12:54:16	harwiltz	Napalm: Actually, it might be better to see how I'm creating textures first. I have a class called Texture
+2016-06-05 12:54:22	harwiltz	*TextureMechanic that handles tat
+2016-06-05 12:54:27	harwiltz	I'll post that first
+2016-06-05 12:54:40	Napalm	sure
+2016-06-05 12:55:16	harwiltz	http://pastebin.com/X9UXVjAe
+2016-06-05 12:55:34	harwiltz	I'm using the loadTexture method to create opengl textures in my renderer
+2016-06-05 12:56:35	harwiltz	And I should mention that I'm creating 5 textures in total in my GLRenderer
+2016-06-05 12:56:59	Napalm	doesnt matter
+2016-06-05 12:57:07	harwiltz	Ok
+2016-06-05 12:57:37	<--	Leeds (~Leeds@n112118177182.netvigator.com) has quit (Quit: Leaving)
+2016-06-05 12:59:09	harwiltz	Also, the int resourceID is the reference to my image in the res folder. So usually its something like R.drawable.picture
+2016-06-05 12:59:38	Napalm	are you going to send the renderer and service?
+2016-06-05 12:59:54	harwiltz	Oh yeah, sure. Is everything ok with the texturemechanic?
+2016-06-05 13:00:01	Napalm	yes
+2016-06-05 13:00:12	harwiltz	Ok, I'm uploading the renderer now
+2016-06-05 13:00:18	<--	acerbic (~acerbic@2602:30a:2cf9:4710:f27b:cbff:fe81:c6b3) has quit (Ping timeout: 260 seconds)
+2016-06-05 13:00:41	harwiltz	http://pastebin.com/N8eKDdDJ
+2016-06-05 13:00:55	Napalm	i dont think its related directly to the textures
+2016-06-05 13:01:04	harwiltz	Ok, cool
+2016-06-05 13:01:10	Napalm	but if it is.. you could reduce the size by turning off the mipmaps
+2016-06-05 13:01:15	Napalm	anyway
+2016-06-05 13:01:19	Napalm	question for you.
+2016-06-05 13:01:25	harwiltz	Yup?
+2016-06-05 13:01:37	Napalm	what is the screen resolution of the test device/emulator
+2016-06-05 13:02:01	harwiltz	2560x1440
+2016-06-05 13:02:01	-->	min2 (566044a7@gateway/web/freenode/ip.86.96.68.167) has joined #android-dev
+2016-06-05 13:02:14	harwiltz	I'm testing on my galaxy note 4
+2016-06-05 13:02:37	<--	weaksauce (~weaksauce@ip72-194-65-47.oc.oc.cox.net) has quit (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+2016-06-05 13:02:53	Napalm	well 2560x1440 x 32bit = 14.7MB
+2016-06-05 13:02:59	Napalm	just a thought
+2016-06-05 13:03:00	<--	g00s (~g00s@unaffiliated/g00s) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-06-05 13:03:25	harwiltz	Napalm: ok... Not sure how to avoid that issue though
+2016-06-05 13:03:43	-->	liuwenhao (~liuwenhao@2605:a000:a7c1:5300:4a4:8068:63be:57b1) has joined #android-dev
+2016-06-05 13:03:45	harwiltz	You can make live wallpapers for this phone
+2016-06-05 13:04:01	Napalm	you can avoid it easily.. but thats not the point
+2016-06-05 13:04:05	liuwenhao	Is it possible to use IntelliJ UML diagrams feature in Android Studio? Or it is IntelliJ only? https://www.jetbrains.com/help/idea/2016.1/working-with-diagrams.html
+2016-06-05 13:04:06	harwiltz	And also I used this exact WatchRenderer class within an activity and it worked properly
+2016-06-05 13:04:18	Napalm	can you paste yuor service.. thats the most important bit here
+2016-06-05 13:04:26	harwiltz	Napalm: Sure, just a sec
+2016-06-05 13:05:03	harwiltz	http://pastebin.com/DPVchLvA
+2016-06-05 13:05:27	harwiltz	Napalm: Also, I forgot I have another class called GLWallpaperSurfaceView, might be helpful as well
+2016-06-05 13:05:29	Napalm	liuwenhao: are you using AS 2.1 or 2.2?
+2016-06-05 13:05:35	liuwenhao	2.2
+2016-06-05 13:05:56	Napalm	then it will support it.. so no reason why not.
+2016-06-05 13:06:00	Napalm	perhaps look at the plugins
+2016-06-05 13:06:20	liuwenhao	It's not in the plugin list and I can't find it in repositories either
+2016-06-05 13:06:20	-->	acerbic (~acerbic@2602:30a:2cf9:4710:f27b:cbff:fe81:c6b3) has joined #android-dev
+2016-06-05 13:06:30	Napalm	harwiltz: yes, that too
+2016-06-05 13:06:35	harwiltz	http://pastebin.com/94ge4fza
+2016-06-05 13:06:39	-->	nilsi (~nilsi@61.37.219.36) has joined #android-dev
+2016-06-05 13:06:41	harwiltz	This one is very simple though
+2016-06-05 13:07:30	<--	kiao2938 (~mj@dslb-094-216-049-080.094.216.pools.vodafone-ip.de) has quit (Ping timeout: 244 seconds)
+2016-06-05 13:08:56	-->	purplex88 (~purplex88@117.214.210.248) has joined #android-dev
+2016-06-05 13:09:25	-->	kiao2938 (~mj@dslb-094-216-049-080.094.216.pools.vodafone-ip.de) has joined #android-dev
+2016-06-05 13:09:34	harwiltz	Napalm: Actually, the problem seems to come from the getHolder() call according to the stack trace
+2016-06-05 13:09:38	<--	rubenwardy (~rubenward@unaffiliated/rubenwardy) has quit (Ping timeout: 260 seconds)
+2016-06-05 13:10:11	Napalm	pastebin your stacktrace
+2016-06-05 13:10:17	harwiltz	Napalm: I think I may have figured something out... The stack trace is filled with getHolder() calls
+2016-06-05 13:10:23	Napalm	i am just going to eat my lunch and i'll take a look
+2016-06-05 13:10:24	harwiltz	Literally, that's the only thing in the stack
+2016-06-05 13:10:32	harwiltz	And it says stack size is 8mb
+2016-06-05 13:10:34	Napalm	patebin it quick
+2016-06-05 13:10:37	harwiltz	Ok, no problem
+2016-06-05 13:11:03	harwiltz	http://pastebin.com/9hRrf4PJ
+2016-06-05 13:11:18	<--	nilsi (~nilsi@61.37.219.36) has quit (Ping timeout: 252 seconds)
+2016-06-05 13:11:28	Napalm	found your problem
+2016-06-05 13:11:29	harwiltz	It's like as if getHolder calls itself recursively or something
+2016-06-05 13:11:29	Napalm	GLWallpaperSurfaceView
+2016-06-05 13:11:32	Napalm	it calls itself
+2016-06-05 13:11:37	harwiltz	lol
+2016-06-05 13:11:45	harwiltz	Do you know where?
+2016-06-05 13:12:03	Napalm	GLWallpaperSurfaceView should be inside your service class
+2016-06-05 13:12:06	Napalm	as a child class
+2016-06-05 13:12:07	Napalm	is it?
+2016-06-05 13:12:16	harwiltz	Nope, I'll do that. Thanks so much
+2016-06-05 13:12:33	Napalm	sorry i mean inside your engine
+2016-06-05 13:13:00	harwiltz	My engine is a child of my service class, so this is like a grandchild of my service class?
+2016-06-05 13:13:08	Napalm	yes
+2016-06-05 13:13:13	harwiltz	Ok, cool. Thanks a lot
+2016-06-05 13:13:18	Napalm	see the onCreate of your Engine.. that gives you the surfaceHolder
+2016-06-05 13:13:31	Napalm	save it into a member variable
+2016-06-05 13:13:49	Napalm	then have getHolder of your GLWallpaperSurfaceView return it
+2016-06-05 13:13:53	harwiltz	Oh... I see
+2016-06-05 13:13:54	purplex88	what is really meaning of min and max target versions? if i use the features from say 6.0 how will they be avaliable in min target say 4.2?
+2016-06-05 13:13:55	harwiltz	Thanks
+2016-06-05 13:14:05	-->	orbyt_ (446b4c73@gateway/web/cgi-irc/kiwiirc.com/ip.68.107.76.115) has joined #android-dev
+2016-06-05 13:14:35	Napalm	purplex88: they wont be
+2016-06-05 13:14:57	Napalm	purplex88: you have to conditionally check in your code.. AS will warn you in most situations
+2016-06-05 13:15:41	purplex88	so app won't compile in that case?
+2016-06-05 13:16:09	Napalm	it will compile just fine
+2016-06-05 13:16:13	purplex88	unless i change min target to something where those features are there?
+2016-06-05 13:16:16	Napalm	your targeting a later version
+2016-06-05 13:16:26	Napalm	ok purplex88
+2016-06-05 13:16:56	Napalm	purplex88: your compileSdkVersion is the compilation level of compatiblity
+2016-06-05 13:17:14	-->	svm_invictvs (~patrick@unaffiliated/svminvictvs/x-938456) has joined #android-dev
+2016-06-05 13:17:23	Napalm	your minSdkVersion is your minimum supported runtime level of compatibility
+2016-06-05 13:17:47	purplex88	this confuses me
+2016-06-05 13:18:03	Napalm	and your targetSdkVersion is what platform you are targeting.. this is used by the Play Store and OS to determine compatibility with future versions
+2016-06-05 13:18:09	Napalm	purplex88: how can this confuse you?
+2016-06-05 13:18:12	Napalm	its simple
+2016-06-05 13:18:14	<--	orbyt_ (446b4c73@gateway/web/cgi-irc/kiwiirc.com/ip.68.107.76.115) has quit (Client Quit)
+2016-06-05 13:18:30	Napalm	you compile against say 23, you target 23, and your min is say 16
+2016-06-05 13:18:36	purplex88	i compile for 6.0 but i want it to run on 4.0 how can it still run there?
+2016-06-05 13:18:47	Napalm	it will still run there
+2016-06-05 13:19:01	harwiltz	Napalm: It worked! Thanks so much!
+2016-06-05 13:19:03	Napalm	APIs you call that dont exist will throw an exception.. when you try to call them
+2016-06-05 13:19:10	Napalm	harwiltz: np
+2016-06-05 13:19:21	purplex88	ah so it will crash
+2016-06-05 13:19:26	Napalm	purplex88: this is standard Java behaviour
+2016-06-05 13:19:44	purplex88	but still run? haha
+2016-06-05 13:19:50	(●)	Mariu is now known as Alphabet
+2016-06-05 13:19:53	Napalm	purplex88: thats why you put a conditional around API calls for later versions than your min
+2016-06-05 13:20:20	Napalm	purplex88: https://developer.android.com/guide/topics/manifest/uses-sdk-element.html
+2016-06-05 13:20:29	Napalm	read that page
+2016-06-05 13:20:30	purplex88	so on min device it won't run with full potential?
+2016-06-05 13:20:31	Napalm	it explains it all
+2016-06-05 13:20:46	purplex88	if say i use 6.0 features
+2016-06-05 13:20:48	-->	rubenwardy (~rubenward@unaffiliated/rubenwardy) has joined #android-dev
+2016-06-05 13:20:54	Napalm	then it will crash
+2016-06-05 13:20:58	Napalm	on 4.0
+2016-06-05 13:21:05	Napalm	because they simply dont exist
+2016-06-05 13:21:12	purplex88	oh right makes sense now
+2016-06-05 13:21:16	Napalm	thats why we have the Compat support librarys
+2016-06-05 13:21:40	Napalm	they backport/or-shim/or-ignore features
+2016-06-05 13:21:52	purplex88	so i guess it is like if (using 6.0) then do this else if (4.0) do this that way
+2016-06-05 13:22:35	Napalm	purplex88: here's an example of conditional check https://stackoverflow.com/questions/18664450/how-to-use-a-function-only-if-the-version-is-11
+2016-06-05 13:23:18	-->	weaksauce (~weaksauce@son.alphabio.com) has joined #android-dev
+2016-06-05 13:23:21	Napalm	if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){ /* do magic*/ }else{ /* puff of smoke */ }
+2016-06-05 13:23:24	Napalm	got it
+2016-06-05 13:23:25	Napalm	?@
+2016-06-05 13:23:32	purplex88	yes  i see
+2016-06-05 13:24:12	Napalm	purplex88: https://developer.android.com/topic/libraries/support-library/index.html
+2016-06-05 13:24:15	Napalm	check that area out
+2016-06-05 13:24:23	Napalm	lots of sub-sections on the left also
+2016-06-05 13:26:48	-->	Gloomy (~Gloomy@ip-80-236-201-141.dsl.scarlet.be) has joined #android-dev
+2016-06-05 13:28:02	-->	yonder (~yonder@unaffiliated/yonder) has joined #android-dev
+2016-06-05 13:33:22	kbs	Does someone who uses "fluent" assertion libraries tell me what I'm missing (maybe a tool? lint?) as I notice somewhat subtle misuses of said fluency even within test libraries? [or, for entertainment play detect-the-bug in this test case https://github.com/robolectric/robolectric/blob/master/robolectric/src/test/java/org/robolectric/shadows/ShadowIntentFilterTest.java#L14]
+2016-06-05 13:34:07	-->	clarjon1 (~clarjon1@unaffiliated/clarjon1) has joined #android-dev
+2016-06-05 13:37:56	-->	d4rklit3 (~textual@cpe-76-90-191-36.socal.res.rr.com) has joined #android-dev
+2016-06-05 13:42:20	<--	Rayne (~Rayne@2a01:5c0:11:ea51:89ea:e370:2bff:9509) has quit (Quit: FATAL ERROR)
+2016-06-05 13:47:23	<--	kbs (~user@4.16.44.91) has quit (Read error: Connection reset by peer)
+2016-06-05 13:47:42	-->	CEnnis91 (uid3543@gateway/web/irccloud.com/x-csbsmheeqxhbhney) has joined #android-dev
+2016-06-05 13:52:02	-->	katharee (~katharee@unaffiliated/katharee) has joined #android-dev
+2016-06-05 13:54:25	-->	thepoosh (~thepoosh@bzq-109-65-114-27.red.bezeqint.net) has joined #android-dev
+2016-06-05 13:54:49	<--	cerberillo (~cerberill@148.3.10.94) has quit (Ping timeout: 240 seconds)
+2016-06-05 13:56:00	-->	Peste_Bubonica (~Peste_Bub@177.138.231.219) has joined #android-dev
+2016-06-05 13:58:51	-->	wget (~wget@unaffiliated/wget) has joined #android-dev
+2016-06-05 14:01:43	-->	ron_frown (~ronnyfro@24-176-228-82.static.snlo.ca.charter.com) has joined #android-dev
+2016-06-05 14:04:03	-->	vbampme (~vbampme@c-73-238-35-25.hsd1.ma.comcast.net) has joined #android-dev
+2016-06-05 14:04:07	-->	g00s (~g00s@unaffiliated/g00s) has joined #android-dev
+2016-06-05 15:25:05	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #android-dev
+2016-06-05 15:25:05	(●)	Topic for #android-dev is "Android application development | Android N Preview released http://goo.gl/QnsKsv | Official docs at http://d.android.com/ | Root/custom ROMs, head to #android-root | No bots, and no advertising please, jobs or otherwise | Source at source.android.com | http://imgur.com/jacoj"
+2016-06-05 15:25:05	(●)	Topic set by kroot (~locutus@of.the-b.org) on Wed, 09 Mar 2016 22:14:25
+2016-06-05 15:25:05	(●)	Channel #android-dev: 371 nicks (3 ops, 0 voices, 368 normals)
+2016-06-05 15:25:07	(●)	Channel created on Mon, 20 Oct 2008 23:03:40
+2016-06-05 15:25:35	-->	kus (~minot@pool-100-1-168-123.nwrknj.fios.verizon.net) has joined #android-dev
+2016-06-05 15:26:08	-->	DrBenway (~DrBenway@190.246.178.171) has joined #android-dev
+2016-06-05 15:27:24	harwiltz	Hey all. I'm working on a live wallpaper and I'm having trouble creating the settings part. I have an xml file for my wallpaper where I have defined the android:settingsActivity. However, when I try clicking the "Settings" button after selecting my wallpaper, the settings activity that I made never opens and Live Wallpaper Picker crashes. Any idea what I can be doing wrong?
+2016-06-05 15:28:27	-->	thegeoman (~thegeoman@135-23-195-18.cpe.pppoe.ca) has joined #android-dev
+2016-06-05 15:29:04	Napalm	harwiltz: did you look at the log
+2016-06-05 15:29:17	harwiltz	Napalm: Yes, but I couldn't even find anything strangely
+2016-06-05 15:29:27	harwiltz	The log doesn't suggest that anything went wrong
+2016-06-05 15:29:38	Napalm	what is android:settingsActivity set to?
+2016-06-05 15:30:01	harwiltz	com.package.name.ClassName
+2016-06-05 15:30:03	-->	poleprogger (~mj@dslb-094-216-049-080.094.216.pools.vodafone-ip.de) has joined #android-dev
+2016-06-05 15:30:06	<--	kiao2938 (~mj@dslb-094-216-049-080.094.216.pools.vodafone-ip.de) has quit (Quit: Konversation terminated!)
+2016-06-05 15:30:09	Napalm	well thats wrong
+2016-06-05 15:30:15	<--	jackcom (~jack@unaffiliated/jackcom) has quit (Quit: jackcom)
+2016-06-05 15:30:20	harwiltz	Napalm: Oh... why?
+2016-06-05 15:30:26	Napalm	unless you just mean a generic name because you dont want to tell us your package?
+2016-06-05 15:30:27	Napalm	lol
+2016-06-05 15:30:35	harwiltz	Yeah thats it lol
+2016-06-05 15:30:46	Napalm	explain?
+2016-06-05 15:30:47	-->	vbampme (~vbampme@2601:184:4500:27b5:11ad:e8b0:475e:f58e) has joined #android-dev
+2016-06-05 15:31:04	harwiltz	I don't want to hide my package name, its just kinda long and temporary
+2016-06-05 15:31:23	harwiltz	I don't see how my package names should affect anything here, but if you really want to see it I don't mind
+2016-06-05 15:31:34	Napalm	no its ok
+2016-06-05 15:31:47	Napalm	just your reply wasnt clear
+2016-06-05 15:32:00	Napalm	"Yeah thats it lol" could mean what you said was what you were using.. not that it was hidden
+2016-06-05 15:32:06	Napalm	aNYWAY
+2016-06-05 15:32:08	Napalm	oopsy
+2016-06-05 15:32:11	Napalm	anyway
+2016-06-05 15:32:17	harwiltz	Hahaha sorry about that
+2016-06-05 15:32:23	-->	xorgate (~xorgate@e61128.upc-e.chello.nl) has joined #android-dev
+2016-06-05 15:32:23	Napalm	is that activity listed in your AndroidManifest.xml?
+2016-06-05 15:32:41	Napalm	what class do you extend?
+2016-06-05 15:32:45	Napalm	PreferenceActivity?
+2016-06-05 15:32:49	Napalm	AppCompatActivity?
+2016-06-05 15:32:52	harwiltz	Yup. I extend Activity
+2016-06-05 15:33:01	Napalm	good enough
+2016-06-05 15:33:07	Napalm	and its in the manifest?
+2016-06-05 15:33:21	Napalm	pastebin your manifest entry
+2016-06-05 15:33:32	harwiltz	It is in the manifest, but I'll pastebin it
+2016-06-05 15:34:07	<--	tyl (~tyl@unaffiliated/tyl) has quit (Quit: Sleep)
+2016-06-05 15:34:41	harwiltz	http://pastebin.com/D1DwU1Zh
+2016-06-05 15:34:55	<--	vbampme (~vbampme@2601:184:4500:27b5:11ad:e8b0:475e:f58e) has quit (Ping timeout: 250 seconds)
+2016-06-05 15:35:08	harwiltz	The activity in question is SettingsActivity
+2016-06-05 15:35:24	Napalm	add android:exported="true" to it
+2016-06-05 15:35:44	<--	DragonPunch (~textual@c-76-30-233-127.hsd1.tx.comcast.net) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-06-05 15:35:45	harwiltz	In the activity section for SettingsActivity?
+2016-06-05 15:36:05	Napalm	yes
+2016-06-05 15:36:26	harwiltz	Ok, I'll try that. What does that do though?
+2016-06-05 15:36:38	<--	rubenwardy (~rubenward@unaffiliated/rubenwardy) has quit (Ping timeout: 260 seconds)
+2016-06-05 15:36:43	-->	CrystalSkull (simon@gateway/vpn/mullvad/x-uugxmvdzuiivxwuq) has joined #android-dev
+2016-06-05 15:37:25	harwiltz	Napalm: ...That worked. Wow!
+2016-06-05 15:37:33	harwiltz	I just don't understand why it worked
+2016-06-05 15:37:45	-->	LunarEclipse120 (~LunarEcli@unaffiliated/lunareclipse120) has joined #android-dev
+2016-06-05 15:38:07	Napalm	your activity was not accessible to external apps
+2016-06-05 15:38:23	Napalm	so the system wallpaper app couldnt launch it.. it would have been logged.
+2016-06-05 15:38:32	Napalm	you should turn off your filter in logcat to see it
+2016-06-05 15:38:59	harwiltz	Napalm: Hmmm, I see. Thanks so much! You have figuratively saved my life today
+2016-06-05 15:40:33	Napalm	np
+2016-06-05 15:40:39	alphamule	2016-06-05 19:36:53 (31.3 MB/s) - `jdk-8u91-linux-x64.tar.gz' saved [181367942/181367942]  Ouch  :P
+2016-06-05 15:41:06	alphamule	Was going to develope using a Debian VPS
+2016-06-05 15:41:29	alphamule	At least most of that is libraries.
+2016-06-05 15:42:45	alphamule	"<Mavrik> God, how long does chromium source need to checkout"  It's the mothership.
+2016-06-05 15:42:52	alphamule	It might be done by now.
+2016-06-05 15:44:57	<--	mine0901 (uid123762@gateway/web/irccloud.com/x-dtsnxwvvgtbczuxi) has quit (Quit: Connection closed for inactivity)
+2016-06-05 15:47:56	<--	Alphabet (~Jimmy98@89.41.57.33) has quit (Quit: leaving)
+2016-06-05 15:48:37	<--	nilsi (~nilsi@183.101.241.130) has quit (Remote host closed the connection)
+2016-06-05 15:48:52	-->	xuin (~xuin@unaffiliated/xuin) has joined #android-dev
+2016-06-05 16:00:03	<--	ced117 (~ced117@opensuse/member/ced117) has quit (Remote host closed the connection)
+2016-06-05 16:01:30	-->	dmr (~dmr@fsf/member/dmr) has joined #android-dev
+2016-06-05 16:01:51	-->	subsignal (~subsignal@50.251.111.225) has joined #android-dev
+2016-06-05 16:02:16	<--	stefkos (~stefkos@82.177.144.226) has quit (Quit: Leaving)
+2016-06-05 16:02:31	<--	xuin (~xuin@unaffiliated/xuin) has quit (Quit: xuin)
+2016-06-05 16:04:15	<--	CedricBeust (~cbeust@unaffiliated/cbeust) has quit (Ping timeout: 260 seconds)
+2016-06-05 16:07:55	<--	CEnnis91 (uid3543@gateway/web/irccloud.com/x-csbsmheeqxhbhney) has quit (Quit: Connection closed for inactivity)
+2016-06-05 16:08:14	<--	subsignal (~subsignal@50.251.111.225) has quit (Ping timeout: 276 seconds)
+2016-06-05 16:08:40	-->	xorgate_ (~xorgate@84.241.198.165) has joined #android-dev
+2016-06-05 16:09:01	-->	ced117 (~ced117@opensuse/member/ced117) has joined #android-dev
+2016-06-05 16:10:32	<--	pulse (~pulse@unaffiliated/pulse) has quit (Quit: pulse)
+2016-06-05 16:11:41	<--	xorgate (~xorgate@e61128.upc-e.chello.nl) has quit (Ping timeout: 252 seconds)

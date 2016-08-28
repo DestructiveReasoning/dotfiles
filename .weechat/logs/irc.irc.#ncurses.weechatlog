@@ -1,0 +1,29 @@
+2015-11-25 16:57:13	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #ncurses
+2015-11-25 16:57:13	--	Topic for #ncurses is "Anybody want to be the new operator? For support questions, please note that it might take a day or two to get a response. More active ncurses discussion takes place on the bug-ncurses@gnu.org mailing list."
+2015-11-25 16:57:13	--	Topic set by Boobuigi_ (~weechat@softbank221024067122.bbtec.net) on Mon, 27 Apr 2015 02:36:42
+2015-11-25 16:57:13	--	Channel #ncurses: 18 nicks (1 op, 0 voices, 17 normals)
+2015-11-25 16:57:13	--	PvNotice(ChanServ): NCurses channel, help, development, all. Welcome!
+2015-11-25 16:57:13	--	URL for #ncurses: http://www.gnu.org/software/ncurses/ncurses.html
+2015-11-25 16:57:15	--	Channel created on Tue, 27 Jan 2009 05:34:21
+2015-11-25 17:06:55	-->	TyrfingMjolnir (~Tyrfing@c-66-229-198-181.hsd1.fl.comcast.net) has joined #ncurses
+2015-11-25 17:34:33	harwiltz	Hello, does anyone have any experience with hscurses?
+2015-12-05 22:56:19	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #ncurses
+2015-12-05 22:56:20	--	Topic for #ncurses is "Anybody want to be the new operator? For support questions, please note that it might take a day or two to get a response. More active ncurses discussion takes place on the bug-ncurses@gnu.org mailing list."
+2015-12-05 22:56:20	--	Topic set by Boobuigi_ (~weechat@softbank221024067122.bbtec.net) on Mon, 27 Apr 2015 02:36:42
+2015-12-05 22:56:20	--	Channel #ncurses: 12 nicks (1 op, 0 voices, 11 normals)
+2015-12-05 22:56:20	--	PvNotice(ChanServ): NCurses channel, help, development, all. Welcome!
+2015-12-05 22:56:20	--	URL for #ncurses: http://www.gnu.org/software/ncurses/ncurses.html
+2015-12-05 22:56:21	--	Channel created on Tue, 27 Jan 2009 05:34:21
+2015-12-05 22:56:39	harwiltz	Hello, anyone have any experience with hscurses?
+2015-12-05 22:59:09	<--	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has left #ncurses ("WeeChat 1.3")
+2016-01-17 15:50:48	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #ncurses
+2016-01-17 15:50:48	--	Topic for #ncurses is "Anybody want to be the new operator? For support questions, please note that it might take a day or two to get a response. More active ncurses discussion takes place on the bug-ncurses@gnu.org mailing list."
+2016-01-17 15:50:48	--	Topic set by Boobuigi_ (~weechat@softbank221024067122.bbtec.net) on Mon, 27 Apr 2015 02:36:42
+2016-01-17 15:50:48	--	Channel #ncurses: 16 nicks (1 op, 0 voices, 15 normals)
+2016-01-17 15:50:48	--	PvNotice(ChanServ): NCurses channel, help, development, all. Welcome!
+2016-01-17 15:50:48	--	URL for #ncurses: http://www.gnu.org/software/ncurses/ncurses.html
+2016-01-17 15:50:50	--	Channel created on Tue, 27 Jan 2009 05:34:21
+2016-01-17 15:51:28	harwiltz	Hello, I'm having issues refreshing windows. My screen is flickering. Anyone know what I can be doing wrong?
+2016-01-17 16:10:41	harwiltz	Nevermind, just changed most of my wclears to werase. Works fine now.
+2016-01-17 16:30:56	<--	freanux (~freanux@unaffiliated/freanux) has quit (*.net *.split)
+2016-01-17 16:48:22	<--	SpinTensor (~SpinTenso@i53877D42.versanet.de) has quit (Quit: WeeChat 1.3)

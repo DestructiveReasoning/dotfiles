@@ -1,0 +1,69 @@
+2016-08-03 17:13:42	-->	harwiltz (~harwiltz@modemcable008.180-58-74.mc.videotron.ca) has joined ##crypto
+2016-08-03 17:13:42	(●)	Topic for ##crypto is "Welcome to ##crypto for cryptography theory and practice | The DAO? More like the D'OH. | Resources: http://www.cacr.math.uwaterloo.ca/hac http://www.keylength.com | Ethics: http://web.cs.ucdavis.edu/~rogaway/papers/moral-fn.pdf"
+2016-08-03 17:13:42	(●)	Topic set by hlieberman on Sun, 26 Jun 2016 23:03:50
+2016-08-03 17:13:42	(●)	Channel ##crypto: 679 nicks (1 op, 0 voices, 678 normals)
+2016-08-03 17:13:44	(●)	Channel created on Sun, 26 Nov 2006 06:42:42
+2016-08-03 17:15:00	harwiltz	Hey guys. I recently became interested in crypto after reading a bit about it in my Linear Algebra textbook. Just wanted to know, what do you guys use crypto for? If I plan on learning it, how can I expect to use my knowledge?
+2016-08-03 17:17:13	Alipha	um, secure communication (e.g., HTTPS), encrypting files/drives, storing passwords, blockchains (e.g., bitcoin)...
+2016-08-03 17:18:31	<--	eVolutive (~textual@120.18.23.95.dynamic.jazztel.es) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-08-03 17:20:18	eightyeight	TLS is the main use, ubiquitously
+2016-08-03 17:20:59	harwiltz	Ok, but stuff like HTTPS and bitcoin, as well as the encryption schemes for my files have already been written. I understand that crypto is needed to improve those things, but as a learning cryptographer, how can I apply my knowledge?
+2016-08-03 17:21:18	harwiltz	eightyeight: Excuse my idiocy, what's TLS?
+2016-08-03 17:21:50	eightyeight	transport layer security. it's the protocol attached to HTTP to give HTTPS; IMAP to give IMAPS, etc., etc., etc.
+2016-08-03 17:22:03	harwiltz	eightyeight: Oh, ok. Thanks
+2016-08-03 17:22:03	eightyeight	the logical continuation of SSL
+2016-08-03 17:24:32	<--	amelotti (~amelotti@unaffiliated/amelotti) has quit (Remote host closed the connection)
+2016-08-03 17:24:38	Alipha	harwiltz: every. single. business. needs security/crypto experts and there's far too few of them, as evident from breach after breach after breach
+2016-08-03 17:24:50	k3d3	Anyone here going to blackhat or planning on going to defcon?
+2016-08-03 17:25:39	harwiltz	Alipha: I appreciate that. But before I get a job, is learning crypto entirely theoretical?
+2016-08-03 17:26:07	eightyeight	http://news.softpedia.com/news/pokemon-go-ddos-attacks-postponed-as-poodlecorp-botnet-suffers-security-breach-506910.shtml
+2016-08-03 17:26:28	<--	MoALTz (~no@78-11-183-124.static.ip.netia.com.pl) has quit (Quit: Leaving)
+2016-08-03 17:26:33	harwiltz	eightyeight: Link doesn't work for me
+2016-08-03 17:26:40	<--	D4nt3 (~Dante@41.193.215.84) has quit (Quit: Leaving)
+2016-08-03 17:26:45	eightyeight	i'm sorry
+2016-08-03 17:27:06	<--	fael (~notyrbusi@unaffiliated/rafael-cunha/x-5167236) has quit (Read error: Connection reset by peer)
+2016-08-03 17:27:26	<--	iJens (~realname@unaffiliated/ijens) has quit (Quit: Leaving)
+2016-08-03 17:28:21	Peng	wfm
+2016-08-03 17:29:21	<--	jmckind (~jmckind@50.56.229.9) has quit (Quit: laters...)
+2016-08-03 17:30:37	Alipha	harwiltz: depends upon if you want to pursue the mathematical side of crypto or the applicable side of crypto. Companies need security people who know how to apply crypto correctly. The mathematical side would be more developing new algorithms or breaking existing ones, which is a much narrower field 
+2016-08-03 17:30:49	-->	eVolutive (~textual@120.18.23.95.dynamic.jazztel.es) has joined ##crypto
+2016-08-03 17:31:42	-->	cyborg-one (~cyborg-on@188-115-133-149.broadband.tenet.odessa.ua) has joined ##crypto
+2016-08-03 17:32:53	<--	NeoThermic_III (~NeoThermi@79-69-9-88.dynamic.dsl.as9105.com) has quit (Changing host)
+2016-08-03 17:32:53	-->	NeoThermic_III (~NeoThermi@unaffiliated/neothermic) has joined ##crypto
+2016-08-03 17:33:00	(●)	NeoThermic_III is now known as NeoThermic
+2016-08-03 17:35:01	<--	dev2lead (~pi@vps-0110.nolimitvpn.net) has quit (Ping timeout: 244 seconds)
+2016-08-03 17:38:04	-->	whathappens (~whathappe@107-195-64-10.lightspeed.irvnca.sbcglobal.net) has joined ##crypto
+2016-08-03 17:38:43	Alipha	harwiltz: a computer programmer can apply crypto to create software without any advance math classes or giving a shit about how the algorithms work internally. They just need to know that to do X, they use A, B, and C and not do D or E. Knowing some of the theory will help then understand why you do A, B, and C but not D or E, but that's not completely necessary 
+2016-08-03 17:41:27	-->	nodebase (~textual@c-67-164-214-129.hsd1.ca.comcast.net) has joined ##crypto
+2016-08-03 17:42:04	<--	byteflame (~byteflame@70-89-65-45-little-rock-ar.hfc.comcastbusiness.net) has quit (Ping timeout: 244 seconds)
+2016-08-03 17:43:50	<--	Dyonisos (~Dyonisos@unaffiliated/dyonisos) has quit (Quit: Quis custodiet ipsos custodes ?)
+2016-08-03 17:44:28	<--	nodebase (~textual@c-67-164-214-129.hsd1.ca.comcast.net) has quit (Changing host)
+2016-08-03 17:44:28	-->	nodebase (~textual@unaffiliated/nodebase) has joined ##crypto
+2016-08-03 17:44:42	<--	potatosalad (~potatosal@69.20.161.247) has quit (Ping timeout: 260 seconds)
+2016-08-03 17:45:02	<--	acidfu_ (~acidfoo@198-48-218-90.cpe.pppoe.ca) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-08-03 17:45:47	(●)	You are now known as BobSacamano
+2016-08-03 17:47:19	<--	ilushka4 (~Int3rsys@dsl212-143-41-238.bb.netvision.net.il) has quit (Quit: Leaving)
+2016-08-03 17:47:19	-->	thiras (~Thiras@unaffiliated/thiras) has joined ##crypto
+2016-08-03 17:47:28	sarnold	BobSacamano: in fact, one might argue that knowing the details leads programmers astray, because then they're more likely to do something themselves rather than just use an existing tool
+2016-08-03 17:48:26	-->	dev2lead (~pi@vps-0108.nolimitvpn.net) has joined ##crypto
+2016-08-03 17:51:43	BobSacamano	sarnold: But if you're not programming the crypto, what exactly are you doing? 
+2016-08-03 17:51:56	sarnold	BobSacamano: tying together APIs
+2016-08-03 17:52:09	sarnold	aka "boring programming" :)
+2016-08-03 17:52:14	BobSacamano	Lol
+2016-08-03 17:52:16	eightyeight	gluing
+2016-08-03 17:52:17	sarnold	"java programming"
+2016-08-03 17:53:05	sarnold	reminds me of a stack overflow question I read a few years ago, "plz give me the api for using the camera as a pulse sensor"
+2016-08-03 17:53:06	<--	rasmoo (~ras@unaffiliated/rasmoo) has quit (Quit: MAGA)
+2016-08-03 17:54:06	-->	dtty (~dtty@unaffiliated/dtty) has joined ##crypto
+2016-08-03 17:58:00	-->	blueness (~blueness@gentoo/developer/blueness) has joined ##crypto
+2016-08-03 17:59:33	<--	thebaer (~bear@2601:348:302:4070:91c9:9ccf:6d8c:c528) has quit (Quit: Leaving)
+2016-08-03 18:02:16	<--	o_lalertom (~o_lalerto@moonstonemedical/developer/o-lalertom) has quit (Quit: Saindo)
+2016-08-03 18:02:29	-->	Soaked (~Soaked@unaffiliated/soaked) has joined ##crypto
+2016-08-03 18:03:17	-->	pyface (~pyface@about/security/contributor/pyface) has joined ##crypto
+2016-08-03 18:03:34	<--	Soaked (~Soaked@unaffiliated/soaked) has quit (Client Quit)
+2016-08-03 18:06:15	-->	inrace (~inrace@host209-40-dynamic.249-95-r.retail.telecomitalia.it) has joined ##crypto
+2016-08-03 18:06:17	<--	eVolutive (~textual@120.18.23.95.dynamic.jazztel.es) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-08-03 18:06:41	-->	eVolutive (~textual@120.18.23.95.dynamic.jazztel.es) has joined ##crypto
+2016-08-03 18:07:50	-->	khj1 (~Thunderbi@90.236.16.95.dynamic.jazztel.es) has joined ##crypto
+2016-08-03 18:07:53	<--	khj (~Thunderbi@124.227.217.87.dynamic.jazztel.es) has quit (Ping timeout: 258 seconds)
+2016-08-03 18:08:49	<--	der-landgraf (~der-landg@unaffiliated/der-landgraf) has quit (Quit: WeeChat 1.5)

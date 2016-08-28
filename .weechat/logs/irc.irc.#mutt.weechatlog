@@ -1,0 +1,14 @@
+2016-08-17 17:17:29	-->	harwiltz (~harwiltz@modemcable065.71-82-70.mc.videotron.ca) has joined #mutt
+2016-08-17 17:17:29	(●)	Topic for #mutt is "latest mutt: 1.6.2 (2016-07-06) | http://WIKI.mutt.org/ | read "MuttChannel" guidelines there! channel statistics and excerpts are logged | paste to http://paste.lisp.org/new/mutt | remember pdmef (Rocco)"
+2016-08-17 17:17:29	(●)	Topic set by kevin8t8 (~kevin8t8@tuna.8t8.us) on Wed, 06 Jul 2016 20:57:23
+2016-08-17 17:17:29	(●)	Channel #mutt: 206 nicks (0 ops, 0 voices, 206 normals)
+2016-08-17 17:17:29	(●)	PvNotice(ChanServ): Welcome to #mutt. Please, BEFORE YOU ASK, READ FIRST  MuttChannel  guidelines, see "/topic"!
+2016-08-17 17:17:29	(●)	URL for #mutt: http://www.mutt.org/
+2016-08-17 17:17:31	(●)	Channel created on Sun, 26 Nov 2006 06:42:42
+2016-08-17 17:17:43	(●)	Topic for #mutt is "latest mutt: 1.6.2 (2016-07-06) | http://WIKI.mutt.org/ | read "MuttChannel" guidelines there! channel statistics and excerpts are logged | paste to http://paste.lisp.org/new/mutt | remember pdmef (Rocco)"
+2016-08-17 17:17:43	(●)	Topic set by kevin8t8 (~kevin8t8@tuna.8t8.us) on Wed, 06 Jul 2016 20:57:23
+2016-08-17 17:19:42	harwiltz	Hello everyone. I have configured my muttrc and mailcap to automatically display HTML emails in links. However, when it does this, I cannot click the hyperlinks. So I further configured it to allow me to open the emails in chromium, by hitting v to view the attachment, followed by m to check the mailcap. 
+2016-08-17 17:20:04	<--	jalalsfs (~jalal@unaffiliated/jalalsfs) has quit (Quit: Konversation terminated!)
+2016-08-17 17:20:47	harwiltz	I would like to make a shortcut for this, but I don't know how. For example, if it were vim I would do nmap z vm
+2016-08-17 17:20:56	harwiltz	What is the mutt equivalent of this?
+2016-08-17 17:40:46	<--	coco (~coco@84-74-76-240.dclient.hispeed.ch) has quit (Quit: WeeChat 1.5)

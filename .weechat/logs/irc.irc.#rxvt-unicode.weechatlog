@@ -1,0 +1,7 @@
+2016-01-17 21:51:03	-->	harwiltz (~harwiltz@modemcable109.165-58-74.mc.videotron.ca) has joined #rxvt-unicode
+2016-01-17 21:51:03	--	Topic for #rxvt-unicode is "rxvt-unicode terminal emulator | homepage (including FAQ) http://software.schmorp.de/pkg/rxvt-unicode.html | please wait up to 24 hours for a response to your question! | latest release: 9.21"
+2016-01-17 21:51:03	--	Topic set by exg on Thu, 01 Jan 2015 19:07:19
+2016-01-17 21:51:03	--	Channel #rxvt-unicode: 49 nicks (0 ops, 0 voices, 49 normals)
+2016-01-17 21:51:03	--	URL for #rxvt-unicode: http://software.schmorp.de/pkg/rxvt-unicode.html
+2016-01-17 21:51:05	--	Channel created on Sun, 26 Nov 2006 06:43:12
+2016-01-17 21:51:55	harwiltz	Hello. I'm trying to build a file manager with ncurses, and in urxvt for some reason the backspace key isn't being detected (theres no issue in xterm). Any idea why that may be happening?
