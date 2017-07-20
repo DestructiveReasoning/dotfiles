@@ -1,0 +1,9 @@
+#!/bin/sh
+
+umount -lf /mnt/chroot/run/udev
+umount -lf /mnt/chroot/dev/shm
+umount -lf /mnt/chroot/dev/pts
+umount -lf /mnt/chroot/tmp
+umount -lf /mnt/chroot/sys
+umount -lf /mnt/chroot/proc
+umount -lf /mnt/chroot/dev
