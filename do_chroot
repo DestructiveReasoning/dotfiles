@@ -1,0 +1,28 @@
+#!/bin/sh
+
+mount --rbind /dev /mnt/chroot/dev
+mount --make-rslave /mnt/chroot/dev
+mount -t proc /proc /mnt/chroot/proc
+mount --rbind /sys /mnt/chroot/sys
+mount --make-rslave /mnt/chroot/sys
+mount --rbind /tmp /mnt/chroot/tmp
+mount --rbind /dev/pts /mnt/chroot/dev/pts
+mount --make-rslave /mnt/chroot/dev/pts
+mount --rbind /dev/shm /mnt/chroot/dev/shm
+mount --make-rslave /mnt/chroot/dev/shm
+mount --rbind /run/udev /mnt/chroot/run/udev
+mount --make-rslave /mnt/chroot/run/udev
+
+#mount -t proc none /mnt/chroot/proc
+#mount -o bind /dev /mnt/chroot/dev
+#mount -o bind /usr/portage /mnt/chroot/usr/portage
+#mount -o bind /usr/src/linux /mnt/chroot/src/linux
+#mount -o bind /lib/modules /mnt/chroot/modules
+#mount -o bind /sys /mnt/chroot/sys
+#mount -o bind /dev/pts /mnt/chroot/dev/pts
+cp /etc/resolv.conf /mnt/chroot/etc/
+
+chroot /mnt/chroot /bin/bash
+env-update
+source /etc/profile
+export PS1="<*> $PS1"
